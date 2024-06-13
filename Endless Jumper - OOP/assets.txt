@@ -22,6 +22,10 @@ Texture tile21 Assets\Tiles\Tile_21.png
 Texture tile22 Assets\Tiles\Tile_22.png
 Texture tile22 Assets\Tiles\Tile_23.png
 Texture tile23 Assets\Tiles\Tile_24.png
+Texture background01 Assets\Clouds\Clouds1\1.png
+Texture background02 Assets\Clouds\Clouds1\2.png
+Texture background03 Assets\Clouds\Clouds1\3.png
+Texture background04 Assets\Clouds\Clouds1\4.png
 Texture mainIdle Assets\Player\Idle.png
 Texture mainJump Assets\Player\Jump.png
 Texture mainRun Assets\Player\Run.png
@@ -30,12 +34,16 @@ Font RETROGAMING Assets\Fonts\Retro_Gaming.ttf
 Animation grass01 tile01 1 0
 Animation grass02 tile02 1 0
 Animation grass03 tile03 1 0
+Animation background1 background01 1 0
+Animation background2 background02 1 0
+Animation background3 background03 1 0
+Animation background4 background04 1 0
 Animation playerIdle mainIdle 11 6
 Animation playerJump mainJump 1 0
 Animation playerRun mainRun 12 3
 Animation playerFall mainFall 1 0
-Animation dirt01 tile16 1 0
-Animation dirt02 tile15 1 0
+Animation dirt02 tile16 1 0
+Animation dirt01 tile15 1 0
 Animation dirt03 tile17 1 0
 Animation metal01 tile11 1 0
 Animation metal02 tile12 1 0

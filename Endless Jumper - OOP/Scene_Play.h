@@ -10,7 +10,7 @@ protected:
 	bool m_drawTextures = true;
 	bool m_drawCollision = false;
 	bool m_drawGrid = false;
-	Vec2 m_gridSize = { 64,64 };
+	Vec2 m_gridSize = { 32,32 };
 
 	std::shared_ptr<Entity> m_player;
 	// player config>!?!?!?!?!?!?

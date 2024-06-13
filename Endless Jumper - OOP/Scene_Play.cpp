@@ -81,7 +81,7 @@ void Scene_Play::spawnPlayer() {
 	auto size = m_player->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 	m_player->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
 
-	m_player->addComponent<CTransform>(Vec2(200, 100));
+	m_player->addComponent<CTransform>(Vec2(m_game->window().getSize().x / 2, m_game->window().getSize().y / 2));
 	// Remember to change again.
 	m_player->addComponent<CGravity>();
 	m_player->addComponent<CState>();
@@ -106,7 +106,7 @@ void Scene_Play::loadLevel(const std::string& levelpath) {
 			file >> name >> x >> y;
 			auto e = m_entityManager.addEntity(identifier);
 			e->addComponent<CAnimation>(m_game->getAssets().getAnimation(name), false);
-			e->getComponent<CAnimation>().animation.getSprite().setScale(4, 4);
+			e->getComponent<CAnimation>().animation.getSprite().setScale(2, 2);
 			auto size = e->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 			e->addComponent<CBoundingBox>(Vec2(size.getSize().x,size.getSize().y));
 			e->addComponent<CTransform>(Vec2(x*m_gridSize.x+m_gridSize.x/2, m_game->window().getSize().y-y*m_gridSize.y-m_gridSize.y / 2));
@@ -116,15 +116,18 @@ void Scene_Play::loadLevel(const std::string& levelpath) {
 	}
 
 	spawnPlayer();
-	// NOTE: Your final code should position the entity with the grid x,y position read from the file:
-	// brick->addComponent<CTransform>(gridToMidPixel(gridX,gridY,brick));
 }
 
 void Scene_Play::sRender() {
 	auto & player_pos = m_player->getComponent<CTransform>().pos;
 	auto& window = m_game->window();
-	sf::View view(sf::Vector2f(window.getSize().x/2, player_pos.y), sf::Vector2f(1280.f, 720.f));
-	window.clear(sf::Color::Cyan);
+	window.clear(sf::Color::Blue);
+	window.draw(m_game->getAssets().getAnimation("background1").getSprite());
+	window.draw(m_game->getAssets().getAnimation("background2").getSprite());
+	window.draw(m_game->getAssets().getAnimation("background3").getSprite());
+	window.draw(m_game->getAssets().getAnimation("background4").getSprite());
+	sf::View view(sf::Vector2f(window.getSize().x/2, player_pos.y), sf::Vector2f(1024, 720.f));
+	view.setViewport(sf::FloatRect(0.1f, 0, 0.8, 1));
 	window.setView(view);
 	if (m_drawTextures) {
 		for (auto e : m_entityManager.getEntities()) {
