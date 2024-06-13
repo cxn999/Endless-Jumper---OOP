@@ -121,11 +121,38 @@ void Scene_Play::loadLevel(const std::string& levelpath) {
 void Scene_Play::sRender() {
 	auto & player_pos = m_player->getComponent<CTransform>().pos;
 	auto& window = m_game->window();
-	window.clear(sf::Color::Blue);
-	window.draw(m_game->getAssets().getAnimation("background1").getSprite());
-	window.draw(m_game->getAssets().getAnimation("background2").getSprite());
-	window.draw(m_game->getAssets().getAnimation("background3").getSprite());
-	window.draw(m_game->getAssets().getAnimation("background4").getSprite());
+	window.clear(sf::Color::Black);
+
+
+	// Define parallax speeds for each background layer
+	float parallaxSpeed1 = 0.1f; // Farthest background
+	float parallaxSpeed2 = 0.3f;
+	float parallaxSpeed3 = 0.5f;
+	float parallaxSpeed4 = 0.7f; // Closest background
+
+	// Calculate parallax offsets based on player position
+	float offset1 = player_pos.y * parallaxSpeed1;
+	float offset2 = player_pos.y * parallaxSpeed2;
+	float offset3 = player_pos.y * parallaxSpeed3;
+	float offset4 = player_pos.y * parallaxSpeed4;
+
+	// Adjust background positions with parallax effect
+	auto bg1 = m_game->getAssets().getAnimation("background1").getSprite();
+	auto bg2 = m_game->getAssets().getAnimation("background2").getSprite();
+	auto bg3 = m_game->getAssets().getAnimation("background3").getSprite();
+	auto bg4 = m_game->getAssets().getAnimation("background4").getSprite();
+
+	bg1.setPosition(0, offset1);
+	bg2.setPosition(0, offset2);
+	bg3.setPosition(0, offset3);
+	bg4.setPosition(0, offset4);
+
+	// Draw background layers
+	window.draw(bg1);
+	window.draw(bg2);
+	window.draw(bg3);
+	window.draw(bg4);
+
 	sf::View view(sf::Vector2f(window.getSize().x/2, player_pos.y), sf::Vector2f(1024, 720.f));
 	view.setViewport(sf::FloatRect(0.1f, 0, 0.8, 1));
 	window.setView(view);
