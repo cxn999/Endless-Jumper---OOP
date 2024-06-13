@@ -1,0 +1,42 @@
+Texture tile01 Assets\Tiles\Tile_01.png
+Texture tile02 Assets\Tiles\Tile_02.png
+Texture tile03 Assets\Tiles\Tile_03.png
+Texture tile04 Assets\Tiles\Tile_04.png
+Texture tile05 Assets\Tiles\Tile_05.png
+Texture tile06 Assets\Tiles\Tile_06.png
+Texture tile07 Assets\Tiles\Tile_07.png
+Texture tile08 Assets\Tiles\Tile_08.png
+Texture tile09 Assets\Tiles\Tile_09.png
+Texture tile10 Assets\Tiles\Tile_10.png
+Texture tile11 Assets\Tiles\Tile_11.png
+Texture tile12 Assets\Tiles\Tile_12.png
+Texture tile13 Assets\Tiles\Tile_13.png
+Texture tile14 Assets\Tiles\Tile_14.png
+Texture tile15 Assets\Tiles\Tile_15.png
+Texture tile16 Assets\Tiles\Tile_16.png
+Texture tile17 Assets\Tiles\Tile_17.png
+Texture tile18 Assets\Tiles\Tile_18.png
+Texture tile19 Assets\Tiles\Tile_19.png
+Texture tile20 Assets\Tiles\Tile_20.png
+Texture tile21 Assets\Tiles\Tile_21.png
+Texture tile22 Assets\Tiles\Tile_22.png
+Texture tile22 Assets\Tiles\Tile_23.png
+Texture tile23 Assets\Tiles\Tile_24.png
+Texture mainIdle Assets\Player\Idle.png
+Texture mainJump Assets\Player\Jump.png
+Texture mainRun Assets\Player\Run.png
+Texture mainFall Assets\Player\Fall.png
+Font RETROGAMING Assets\Fonts\Retro_Gaming.ttf
+Animation grass01 tile01 1 0
+Animation grass02 tile02 1 0
+Animation grass03 tile03 1 0
+Animation playerIdle mainIdle 11 6
+Animation playerJump mainJump 1 0
+Animation playerRun mainRun 12 3
+Animation playerFall mainFall 1 0
+Animation dirt01 tile16 1 0
+Animation dirt02 tile15 1 0
+Animation dirt03 tile17 1 0
+Animation metal01 tile11 1 0
+Animation metal02 tile12 1 0
+Animation metal03 tile13 1 0
