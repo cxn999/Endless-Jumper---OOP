@@ -22,10 +22,9 @@ void Scene_Play::init(const std::string& levelPath) {
 	registerAction(sf::Keyboard::T, "TOGGLE_TEXTURE"); // Toggle drawing textures
 	registerAction(sf::Keyboard::C, "TOGGLE_COLLISION"); // Toggle drawing collision boxes
 	registerAction(sf::Keyboard::G, "TOGGLE_GRID");
-	registerAction(sf::Keyboard::W, "UP");
+	// registerAction(sf::Keyboard::W, "UP"); POSSIBLE DOUBLE JUMP LATER
 	registerAction(sf::Keyboard::A, "LEFT");
 	registerAction(sf::Keyboard::D, "RIGHT");
-	registerAction(sf::Keyboard::S, "DOWN");
 
 	// TODO: REGISTER ALL OTHER GAMEPLAY ACTIONS
 
@@ -41,35 +40,20 @@ void Scene_Play::sDoAction(const Action& action) {
 		else if (action.name() == "TOGGLE_GRID") { m_drawGrid = !m_drawGrid; }
 		else if (action.name() == "PAUSE") { setPaused(!m_paused); }
 		else if (action.name() == "QUIT") { onEnd(); }
-		if (action.name() == "UP") {
-			m_player->getComponent<CInput>().up = false;
-			if (m_player->getComponent<CInput>().canJump) {
-				m_player->getComponent<CInput>().up = true;
-			}
-		}
 		if (action.name() == "RIGHT") {
 			m_player->getComponent<CInput>().right = true;	
 		}
 		if (action.name() == "LEFT") {
 			m_player->getComponent<CInput>().left = true;
 		}
-		if (action.name() == "DOWN") {
-			m_player->getComponent<CInput>().down = true;
-		}
 		// ADD REMAINING ACTIONS
 	}
 	else if (action.type() == "END") {
-		if (action.name() == "UP") {
-			m_player->getComponent<CInput>().up = false;
-		}
 		if (action.name() == "RIGHT") {
 			m_player->getComponent<CInput>().right = false;
 		}
 		if (action.name() == "LEFT") {
 			m_player->getComponent<CInput>().left = false;
-		}
-		if (action.name() == "DOWN") {
-			m_player->getComponent<CInput>().down = false;
 		}
 	}
 }
@@ -92,7 +76,7 @@ void Scene_Play::spawnBullet(std::shared_ptr<Entity> entity) {
 void Scene_Play::spawnPlayer() {
 	// sample code
 	m_player = m_entityManager.addEntity("player");
-	m_player->addComponent<CAnimation>(m_game->getAssets().getAnimation("playerRun"), false);
+	m_player->addComponent<CAnimation>(m_game->getAssets().getAnimation("playerFall"), false);
 	m_player->getComponent<CAnimation>().animation.getSprite().setScale(2, 2);
 	auto size = m_player->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 	m_player->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
@@ -137,10 +121,14 @@ void Scene_Play::loadLevel(const std::string& levelpath) {
 }
 
 void Scene_Play::sRender() {
-	m_game->window().clear(sf::Color::Cyan);
+	auto & player_pos = m_player->getComponent<CTransform>().pos;
+	auto& window = m_game->window();
+	sf::View view(sf::Vector2f(window.getSize().x/2, player_pos.y), sf::Vector2f(1280.f, 720.f));
+	window.clear(sf::Color::Cyan);
+	window.setView(view);
 	if (m_drawTextures) {
 		for (auto e : m_entityManager.getEntities()) {
-			m_game->window().draw(e->getComponent<CAnimation>().animation.getSprite());
+			window.draw(e->getComponent<CAnimation>().animation.getSprite());
 		}
 	}
 
@@ -154,7 +142,7 @@ void Scene_Play::sRender() {
 			BoundingBox.setOutlineColor(sf::Color::Blue);
 			BoundingBox.setFillColor(sf::Color::Transparent);
 			BoundingBox.setOutlineThickness(1);
-			m_game->window().draw(BoundingBox);
+			window.draw(BoundingBox);
 		}
 	}
 	if (m_drawGrid) {
@@ -162,17 +150,17 @@ void Scene_Play::sRender() {
 			sf::RectangleShape linex(sf::Vector2f(m_game->window().getSize().x, 1));
 			linex.setFillColor(sf::Color::White);
 			linex.setPosition(0, 64*i);
-			m_game->window().draw(linex);
+			window.draw(linex);
 		}
 		for (int i = 1; i < 20; i++) {
 			sf::RectangleShape liney(sf::Vector2f(m_game->window().getSize().y, 1));
 			liney.rotate(90);
 			liney.setFillColor(sf::Color::White);
 			liney.setPosition(64*i, 0);
-			m_game->window().draw(liney);
+			window.draw(liney);
 		}
 	}
-	m_game->window().display();
+	window.display();
 }
 
 void Scene_Play::sAnimation() {
@@ -185,19 +173,9 @@ void Scene_Play::sAnimation() {
 			animation = m_game->getAssets().getAnimation("playerJump");
 		}
 	}
-	else if (player_state == "idle") {
-		if (animation.getName() != "playerIdle") {
-			animation = m_game->getAssets().getAnimation("playerIdle");
-		}
-	}
 	else if (player_state == "fall") {
 		if (animation.getName() != "playerFall") {
 			animation = m_game->getAssets().getAnimation("playerFall");
-		}
-	}
-	else if (player_state == "run") {
-		if (animation.getName() != "playerRun") {
-			animation = m_game->getAssets().getAnimation("playerRun");
 		}
 	}
 
@@ -235,7 +213,7 @@ void Scene_Play::sCollision() {
 				// stand on tile
 				m_player->getComponent<CInput>().canJump = true;
 				m_player->getComponent<CGravity>().gravity = 0;
-				player.velocity.y = 0;
+				player.velocity.y = -20;
 				// collision resolution
 				player.pos.y -= overlap.y;
 			}
@@ -290,12 +268,8 @@ void Scene_Play::sMovement() {
 	if (player_pos.y > player.prevPos.y) {
 		m_player->getComponent<CState>().state = "fall";
 	}
-	if (input.up) {
-		if (m_player->getComponent<CInput>().canJump) {
-			player_velocity.y = -8;
-			m_player->getComponent<CInput>().canJump = false;
-			m_player->getComponent<CState>().state = "jump";
-		}
+	if (player_pos.y < player.prevPos.y) {
+		m_player->getComponent<CState>().state = "jump";
 	}
 
 	m_player->getComponent<CTransform>().prevPos = player_pos;

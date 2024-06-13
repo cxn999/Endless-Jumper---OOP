@@ -8,9 +8,8 @@
 #include <SFML/Graphics.hpp>
 #include "EntityManager.h"
 
-class Scene_Menu : public Scene {
+class Scene_Shop : public Scene {
 protected:
-	std::string m_title = "ENDLESS JUMPER";
 	sf::Text m_titleText;
 	std::vector<sf::Text> m_texts;
 	std::vector<std::string> m_menuStrings;
@@ -24,6 +23,6 @@ protected:
 	void sDoAction(const Action& action);
 
 public:
-	Scene_Menu(GameEngine* gameEngine = nullptr);
+	Scene_Shop(GameEngine* gameEngine = nullptr);
 	void sRender();
 };

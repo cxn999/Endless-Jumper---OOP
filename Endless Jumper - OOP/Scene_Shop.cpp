@@ -1,18 +1,16 @@
 #pragma warning(disable : 4996)
 
-#include "Scene_Menu.h"
 #include "Scene_Shop.h"
-#include "Scene_Settings.h"
-#include "Scene_Play.h"
+#include "Scene_Menu.h"
 #include "GameEngine.h"
 
-Scene_Menu::Scene_Menu(GameEngine* gameEngine)
+Scene_Shop::Scene_Shop(GameEngine* gameEngine)
 	: Scene(gameEngine)
 {
 	init();
 }
 
-void Scene_Menu::init() {
+void Scene_Shop::init() {
 	registerAction(sf::Keyboard::P, "PAUSE");
 	registerAction(sf::Keyboard::Escape, "QUIT");
 	registerAction(sf::Keyboard::Enter, "ENTER");
@@ -29,18 +27,17 @@ void Scene_Menu::init() {
 	// Calculate middle of the screen in X axis
 	auto mx = m_window.getSize().x / 2;
 	// Set the titleText
-	m_titleText = sf::Text(m_title, f, 80);
 	// Set it's position and it's color
 	m_titleText.setPosition(mx - m_titleText.getGlobalBounds().width / 2.f, 50);
 	m_titleText.setColor(sf::Color::Black);
-	
+
 	// Constant for the fontSize of the levels
 	int levels_fontSize = 50;
 
 	// Add levels text to the vector
-	m_texts.push_back(sf::Text("Play", f, levels_fontSize));
-	m_texts.push_back(sf::Text("Shop", f, levels_fontSize));
-	m_texts.push_back(sf::Text("Settings", f, levels_fontSize));
+	m_texts.push_back(sf::Text("Element 1", f, levels_fontSize));
+	m_texts.push_back(sf::Text("Element 2", f, levels_fontSize));
+	m_texts.push_back(sf::Text("Element 3", f, levels_fontSize));
 
 	std::string helpText("UP: W   DOWN: S   ENTER: ENTER   BACK: ESC");
 	m_texts.push_back(sf::Text(helpText, f, 30));
@@ -52,43 +49,32 @@ void Scene_Menu::init() {
 	}
 }
 
-void Scene_Menu::update() {
+void Scene_Shop::update() {
 	m_entityManager.update();
 	sRender();
 }
 
-void Scene_Menu::onEnd() {
-	m_game->quit();
+void Scene_Shop::onEnd() {
+	m_game->changeScene("MENU", std::make_shared<Scene_Menu>(m_game), true);
 }
 
-void Scene_Menu::sDoAction(const Action& action) {
+void Scene_Shop::sDoAction(const Action& action) {
 	if (action.type() == "START") {
 		if (action.name() == "PAUSE") { setPaused(!m_paused); }
 		else if (action.name() == "QUIT") { onEnd(); }
-		else if (action.name() == "ENTER") {
-			if (m_selectedMenuIndex == 0) {
-				m_game->changeScene("PLAY", std::make_shared<Scene_Play>(m_game, "level1.txt"), true);
-			}
-			else if (m_selectedMenuIndex == 1) {
-				m_game->changeScene("SHOP", std::make_shared<Scene_Shop>(m_game), true);
-			}
-			else if (m_selectedMenuIndex == 2) {
-				m_game->changeScene("SETTINGS", std::make_shared<Scene_Settings>(m_game), true);
-			}
-		}
+		else if (action.name() == "ENTER") { std::cout << "ENTER PRESSED" << std::endl; }
 		else if (action.name() == "DOWN") { m_selectedMenuIndex = (m_selectedMenuIndex + 1) % 3; }
 		else if (action.name() == "UP") { m_selectedMenuIndex = (m_selectedMenuIndex + 2) % 3; }
 	}
 }
 
-void Scene_Menu::sRender() {
+void Scene_Shop::sRender() {
 	// Store sf::window in a variable for more convenience
 	auto& m_window = m_game->window();
-	m_window.setView(m_window.getDefaultView());
 	// Calculate middle of the screen in X axis
 	auto mx = m_window.getSize().x / 2;
 	// Clear the window with blue
-	m_window.clear(sf::Color::Yellow);
+	m_window.clear(sf::Color::Green);
 
 	// Iterate through the text vector and set their respective color and position
 	for (int i = 0; i < 3; i++) {
