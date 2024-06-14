@@ -36,7 +36,7 @@ void Scene_Shop::init() {
 
 	// Add levels text to the vector
 	m_texts.push_back(sf::Text("Element 1", f, levels_fontSize));
-	m_texts.push_back(sf::Text("Element 2", f, levels_fontSize));
+	m_texts.push_back(sf::Text("Element XD", f, levels_fontSize));
 	m_texts.push_back(sf::Text("Element 3", f, levels_fontSize));
 
 	std::string helpText("UP: W   DOWN: S   ENTER: ENTER   BACK: ESC");

@@ -136,7 +136,7 @@ void Scene_Play::sRender() {
 	float parallaxSpeed3 = 0.6f;
 	float parallaxSpeed4 = 0.5f; // Closest background
 	float parallaxSpeed5 = 0.3f;
-	float parallaxSpeed6 = 0.1f; // Closest background
+	float parallaxSpeed6 = 0.1f; // Closest background`
 
 	// Calculate parallax offsets based on player position
 	float offset1 = player_pos.y * parallaxSpeed1;
