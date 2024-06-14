@@ -19,6 +19,7 @@ void Scene_Settings::init() {
 	registerAction(sf::Keyboard::Up, "UP");
 	registerAction(sf::Keyboard::Down, "DOWN");
 
+	// sdjgksdjgksjdgks
 
 	// Set the sf::window in a more convenient variable
 	auto& m_window = m_game->window();

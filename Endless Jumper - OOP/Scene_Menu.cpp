@@ -18,8 +18,8 @@ void Scene_Menu::init() {
 	registerAction(sf::Keyboard::Enter, "ENTER");
 	registerAction(sf::Keyboard::S, "DOWN");
 	registerAction(sf::Keyboard::W, "UP");
-	registerAction(sf::Keyboard::Up, "DOWN");
-	registerAction(sf::Keyboard::Down, "UP");
+	registerAction(sf::Keyboard::Up, "UP");
+	registerAction(sf::Keyboard::Down, "DOWN");
 
 
 	// Set the sf::window in a more convenient variable
