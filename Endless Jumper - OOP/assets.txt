@@ -22,10 +22,10 @@ Texture tile21 Assets\Tiles\Tile_21.png
 Texture tile22 Assets\Tiles\Tile_22.png
 Texture tile22 Assets\Tiles\Tile_23.png
 Texture tile23 Assets\Tiles\Tile_24.png
-Texture background01 Assets\Clouds\Clouds1\1.png
-Texture background02 Assets\Clouds\Clouds1\2.png
-Texture background03 Assets\Clouds\Clouds1\3.png
-Texture background04 Assets\Clouds\Clouds1\4.png
+Texture background01 Assets\Clouds\Clouds4\1.png
+Texture background02 Assets\Clouds\Clouds4\2.png
+Texture background03 Assets\Clouds\Clouds4\3.png
+Texture background04 Assets\Clouds\Clouds4\4.png
 Texture mainIdle Assets\Player\Idle.png
 Texture mainJump Assets\Player\Jump.png
 Texture mainRun Assets\Player\Run.png

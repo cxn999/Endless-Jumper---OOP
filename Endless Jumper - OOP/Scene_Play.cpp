@@ -22,7 +22,7 @@ void Scene_Play::init(const std::string& levelPath) {
 	registerAction(sf::Keyboard::T, "TOGGLE_TEXTURE"); // Toggle drawing textures
 	registerAction(sf::Keyboard::C, "TOGGLE_COLLISION"); // Toggle drawing collision boxes
 	registerAction(sf::Keyboard::G, "TOGGLE_GRID");
-	// registerAction(sf::Keyboard::W, "UP"); POSSIBLE DOUBLE JUMP LATER
+	registerAction(sf::Keyboard::W, "UP"); //POSSIBLE DOUBLE JUMP LATER
 	registerAction(sf::Keyboard::A, "LEFT");
 	registerAction(sf::Keyboard::D, "RIGHT");
 
@@ -46,11 +46,17 @@ void Scene_Play::sDoAction(const Action& action) {
 		if (action.name() == "LEFT") {
 			m_player->getComponent<CInput>().left = true;
 		}
+		if (action.name() == "UP") {
+			m_player->getComponent<CInput>().up = true;
+		}
 		// ADD REMAINING ACTIONS
 	}
 	else if (action.type() == "END") {
 		if (action.name() == "RIGHT") {
 			m_player->getComponent<CInput>().right = false;
+		}
+		if (action.name() == "UP") {
+			m_player->getComponent<CInput>().up = false;
 		}
 		if (action.name() == "LEFT") {
 			m_player->getComponent<CInput>().left = false;
@@ -125,10 +131,10 @@ void Scene_Play::sRender() {
 
 
 	// Define parallax speeds for each background layer
-	float parallaxSpeed1 = 0.1f; // Farthest background
-	float parallaxSpeed2 = 0.3f;
-	float parallaxSpeed3 = 0.5f;
-	float parallaxSpeed4 = 0.7f; // Closest background
+	float parallaxSpeed1 = 0.7f; // Farthest background
+	float parallaxSpeed2 = 0.5f;
+	float parallaxSpeed3 = 0.3f;
+	float parallaxSpeed4 = 0.1f; // Closest background
 
 	// Calculate parallax offsets based on player position
 	float offset1 = player_pos.y * parallaxSpeed1;
@@ -142,10 +148,10 @@ void Scene_Play::sRender() {
 	auto bg3 = m_game->getAssets().getAnimation("background3").getSprite();
 	auto bg4 = m_game->getAssets().getAnimation("background4").getSprite();
 
-	bg1.setPosition(0, offset1);
-	bg2.setPosition(0, offset2);
-	bg3.setPosition(0, offset3);
-	bg4.setPosition(0, offset4);
+	bg1.setPosition(bg1.getPosition().x, offset1- bg1.getGlobalBounds().height/3.5f);
+	bg2.setPosition(bg2.getPosition().x, offset2 - bg2.getGlobalBounds().height / 3.5f);
+	bg3.setPosition(bg3.getPosition().x, offset3 - bg3.getGlobalBounds().height / 3.5f);
+	bg4.setPosition(bg4.getPosition().x, offset4 - bg4.getGlobalBounds().height / 3.5f);
 
 	// Draw background layers
 	window.draw(bg1);
@@ -294,6 +300,10 @@ void Scene_Play::sMovement() {
  	}
 	if (input.down) {
 		player_velocity.y = 5;
+	}
+	if (input.up) {
+		player_velocity.y = -50;
+		m_player->getComponent<CState>().state = "run";
 	}
 	if (player_pos.y > player.prevPos.y) {
 		m_player->getComponent<CState>().state = "fall";

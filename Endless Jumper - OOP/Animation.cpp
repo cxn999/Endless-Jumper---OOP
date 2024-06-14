@@ -15,12 +15,10 @@ Animation::Animation (const std::string& name, const sf::Texture& t, size_t fram
 	, m_speed(speed) 
 {
 	m_size = Vec2((float)(t.getSize().x) / frameCount, (float)t.getSize().y);
+	m_sprite.setOrigin(m_size.x / 2.f, m_size.y / 2.f);
 	m_sprite.setTextureRect(sf::IntRect(floor(m_currentFrame) * m_size.x, 0, m_size.x, m_size.y));
 	if (name == "background1" || name == "background2" || name == "background3" || name == "background4") {
-		m_sprite.setScale(6,6);
-	}
-	else {
-		m_sprite.setOrigin(m_size.x / 2.f, m_size.y / 2.f);
+		m_sprite.setScale(8,8);
 	}
 }
 
