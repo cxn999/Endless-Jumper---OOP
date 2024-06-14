@@ -7,6 +7,8 @@ class Scene_Play : public Scene {
 protected:
 	sf::Text m_gridText;
 	std::string m_levelPath;
+	size_t m_currentFrame = 0;
+	size_t m_lastPlatformRender;
 	bool m_drawTextures = true;
 	bool m_drawCollision = false;
 	bool m_drawGrid = false;
@@ -24,6 +26,7 @@ public:
 	void onEnd();
 
 	// Systems
+	void sPlatformGeneration();
 	void sAnimation();
 	void sMovement();
 	void sEnemySpawner();

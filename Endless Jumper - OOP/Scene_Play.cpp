@@ -6,7 +6,8 @@
 #include "Components.h"
 #include "Action.h"
 #include <fstream>
-
+#include <cstdlib>
+#include <time.h>
 #include <iostream>
 
 Scene_Play::Scene_Play(GameEngine* gameEngine, const std::string& levelPath) 
@@ -14,6 +15,7 @@ Scene_Play::Scene_Play(GameEngine* gameEngine, const std::string& levelPath)
 	, m_levelPath(levelPath) 
 {
 	init(m_levelPath);
+	srand(time(NULL));
 }
 
 void Scene_Play::init(const std::string& levelPath) {
@@ -69,10 +71,11 @@ void Scene_Play::update() {
 	if (!m_paused) {
 		sCollision();
 		sMovement();
-		//sLifespan();
+		sPlatformGeneration();
 		sAnimation();
 	}
 	sRender();
+	m_currentFrame++;
 }
 
 void Scene_Play::spawnBullet(std::shared_ptr<Entity> entity) {
@@ -342,3 +345,24 @@ void Scene_Play::onEnd() {
 	m_game->changeScene("MENU", std::make_shared<Scene_Menu>(m_game), true);
 }
 
+void Scene_Play::sPlatformGeneration() {
+	auto & window = m_game->window();
+
+	std::cout << window.getView().getViewport().getSize().x* window.getView().getSize().x << " " << window.getView().getSize().y << std::endl;
+
+	/*
+	if (m_lastPlatformRender - 50 > m_currentFrame) {
+		std::cout << m_player->getComponent<CTransform>().pos.x << " " << m_player->getComponent<CTransform>().pos.y << std::endl;
+		auto tile = m_entityManager.addEntity("tile");
+		tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
+		tile->getComponent<CAnimation>().animation.getSprite().setScale(2, 2);
+		auto size = tile->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
+		tile->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
+
+
+		tile->addComponent<CTransform>(Vec2(m_currentFrame * 10, m_currentFrame * 10));
+		auto pos = tile->getComponent<CTransform>().pos;
+		tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
+	}
+	*/
+}
