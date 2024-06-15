@@ -67,7 +67,7 @@ void Scene_Menu::sDoAction(const Action& action) {
 		else if (action.name() == "QUIT") { onEnd(); }
 		else if (action.name() == "ENTER") {
 			if (m_selectedMenuIndex == 0) {
-				m_game->changeScene("PLAY", std::make_shared<Scene_Play>(m_game, "level1.txt"), true);
+				m_game->changeScene("PLAY", std::make_shared<Scene_Play>(m_game), true);
 			}
 			else if (m_selectedMenuIndex == 1) {
 				m_game->changeScene("SHOP", std::make_shared<Scene_Shop>(m_game), true);

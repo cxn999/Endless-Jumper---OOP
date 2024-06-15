@@ -10,15 +10,14 @@
 #include <time.h>
 #include <iostream>
 
-Scene_Play::Scene_Play(GameEngine* gameEngine, const std::string& levelPath) 
+Scene_Play::Scene_Play(GameEngine* gameEngine) 
 	: Scene(gameEngine)
-	, m_levelPath(levelPath) 
 {
-	init(m_levelPath);
 	srand(time(NULL));
+	init();
 }
 
-void Scene_Play::init(const std::string& levelPath) {
+void Scene_Play::init() {
 	registerAction(sf::Keyboard::P, "PAUSE");
 	registerAction(sf::Keyboard::Escape, "QUIT");
 	registerAction(sf::Keyboard::T, "TOGGLE_TEXTURE"); // Toggle drawing textures
@@ -27,10 +26,7 @@ void Scene_Play::init(const std::string& levelPath) {
 	registerAction(sf::Keyboard::A, "LEFT");
 	registerAction(sf::Keyboard::D, "RIGHT");
 
-	// TODO: REGISTER ALL OTHER GAMEPLAY ACTIONS
-
-	// m_gridText.setFont(m_game->getAssets().getFont("NAMEFONT"))
-	loadLevel(levelPath);
+	loadLevel();
 }
 
 void Scene_Play::sDoAction(const Action& action) {
@@ -81,25 +77,19 @@ void Scene_Play::update() {
 	m_currentFrame++;
 }
 
-void Scene_Play::spawnBullet(std::shared_ptr<Entity> entity) {
-	// Bullet should go in direction player is facing
-}
 
 void Scene_Play::spawnPlayer() {
-	// sample code
 	m_player = m_entityManager.addEntity("player");
 	m_player->addComponent<CAnimation>(m_game->getAssets().getAnimation("playerFall"), false);
 	m_player->getComponent<CAnimation>().animation.getSprite().setScale(2, 2);
 	auto size = m_player->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 	m_player->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
-
-	m_player->addComponent<CTransform>(Vec2(m_game->window().getSize().x / 2, m_game->window().getSize().y / 2));
-	// Remember to change again.
+	m_player->addComponent<CTransform>(Vec2(m_game->window().getSize().x / 2, -20));
 	m_player->addComponent<CGravity>();
 	m_player->addComponent<CState>();
 }
 
-void Scene_Play::loadLevel(const std::string& levelpath) {
+void Scene_Play::loadLevel() {
 	// reset the entity manager every time we load a level
 	m_entityManager = EntityManager();
 
@@ -107,20 +97,27 @@ void Scene_Play::loadLevel(const std::string& levelpath) {
 	
 	spawnPlayer();
 
-	float y = m_player->getComponent<CTransform>().pos.y - 50.0f;
+	auto& window = m_game->window();
+
+	auto x_spawn_min = window.getView().getViewport().getPosition().x * window.getSize().x;
+	int win_width = window.getView().getSize().x*0.8;
+
+	float y_pos = m_player->getComponent<CTransform>().pos.y - 50.0f;
 	for (int i = 0; i < initialPlatformCount; ++i) {
 			auto tile = m_entityManager.addEntity("tile");
-			y -= 100.0f;  // Adjust spacing as necessary
+			y_pos -= 100.0f;  // Adjust spacing between tiles
 			tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
-			tile->getComponent<CAnimation>().animation.getSprite().setScale(6, 1);
+			tile->getComponent<CAnimation>().animation.getSprite().setScale(0.15, 0.15);
 			auto size = tile->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 			tile->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
 
 			if (i == 0) {
-				tile->addComponent<CTransform>(m_player->getComponent<CTransform>().pos+Vec2(0,20));
+				tile->addComponent<CTransform>(m_player->getComponent<CTransform>().pos+Vec2(0,60));
 			}
 			else {
-				tile->addComponent<CTransform>(Vec2(rand() % 819 + 0.1 * 1280, y));
+				int size_x = tile->getComponent<CBoundingBox>().size.x;
+				auto x_pos = (rand() % (win_width - size_x*2)) + x_spawn_min + size_x*2;
+				tile->addComponent<CTransform>(Vec2(x_pos, y_pos));
 			}
 			auto pos = tile->getComponent<CTransform>().pos;
 			tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
@@ -132,7 +129,8 @@ void Scene_Play::sRender() {
 	auto& window = m_game->window();
 	window.clear(sf::Color::Black);
 
-	/*
+	std::cout << m_player->getComponent<CTransform>().pos.y << std::endl;
+	
 	// Define parallax speeds for each background layer
 	float parallaxSpeed1 = 0.8f; // Farthest background
 	float parallaxSpeed2 = 0.7f;
@@ -171,10 +169,10 @@ void Scene_Play::sRender() {
 	window.draw(bg4);
 	window.draw(bg5);
 	window.draw(bg6);
-
+	
 	m_score.setString(std::to_string(abs(player_pos.y)));
 	window.draw(m_score);
-	*/
+	
 
 	sf::View view(sf::Vector2f(window.getSize().x/2, player_pos.y), sf::Vector2f(1024, 720.f));
 	view.setViewport(sf::FloatRect(0.1f, 0, 0.8, 1));
@@ -260,10 +258,6 @@ void Scene_Play::sCollision() {
 	}
 }
 
-Vec2 Scene_Play::gridToMidPixel(float gridX, float gridY, std::shared_ptr<Entity> entity) {
-	return Vec2(0, 0);
-}
-
 void Scene_Play::sMovement() {
 	auto& input = m_player->getComponent<CInput>();
 	auto& player_pos = m_player->getComponent<CTransform>().pos;
@@ -321,14 +315,19 @@ void Scene_Play::sPlatformGeneration() {
 
 	auto& player_pos = m_player->getComponent<CTransform>().pos;
 
+	auto x_spawn_min = window.getView().getViewport().getPosition().x*window.getSize().x;
+	int win_width = window.getView().getSize().x;
+
 	// Generate new platforms above the highest one if the player is nearing the top
 	if (abs(player_pos.y) > abs(highestPlatformY)-300) {
 		auto tile = m_entityManager.addEntity("tile");
 		tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
-		tile->getComponent<CAnimation>().animation.getSprite().setScale(6, 1);
+		tile->getComponent<CAnimation>().animation.getSprite().setScale(0.15, 0.15);
 		auto size = tile->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 		tile->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
-		tile->addComponent<CTransform>(Vec2(rand() % 819 + 0.1 * 1280, highestPlatformY-100));
+		int size_x = tile->getComponent<CBoundingBox>().size.x;
+		auto pos_x = (rand() % (win_width - size_x*2)) + x_spawn_min + size_x;
+		tile->addComponent<CTransform>(Vec2(pos_x, highestPlatformY - 100));
 		auto pos = tile->getComponent<CTransform>().pos;
 		tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
 	}

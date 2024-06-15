@@ -6,9 +6,7 @@
 class Scene_Play : public Scene {
 protected:
 	sf::Text m_score;
-	std::string m_levelPath;
 	size_t m_currentFrame = 0;
-	size_t m_lastPlatformRender = 0;
 	bool m_drawTextures = true;
 	bool m_drawCollision = false;
 	Vec2 m_gridSize = { 32,32 };
@@ -16,10 +14,10 @@ protected:
 	std::shared_ptr<Entity> m_player;
 	// player config>!?!?!?!?!?!?
 public:
-	Scene_Play(GameEngine* gameEngine, const std::string& levelPath);
+	Scene_Play(GameEngine* gameEngine);
 
 	// Check which is public or private smh
-	void init(const std::string & path);
+	void init();
 	void update();
 
 	void onEnd();
@@ -32,13 +30,6 @@ public:
 	void sCollision();
 	void sRender();
 	void sDoAction(const Action& a);
-
 	void spawnPlayer();
-	void spawnBullet(std::shared_ptr<Entity> entity);
-
-	// LOAD FROM FILE EACH BLOCK POSITION ETC
-	void loadLevel(const std::string & levelpath);
-
-	Vec2 gridToMidPixel(float gridX, float gridY, std::shared_ptr<Entity> entity);
-
+	void loadLevel();
 };
