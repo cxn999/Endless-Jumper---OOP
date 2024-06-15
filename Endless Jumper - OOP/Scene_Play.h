@@ -8,7 +8,7 @@ protected:
 	sf::Text m_gridText;
 	std::string m_levelPath;
 	size_t m_currentFrame = 0;
-	size_t m_lastPlatformRender;
+	size_t m_lastPlatformRender = 0;
 	bool m_drawTextures = true;
 	bool m_drawCollision = false;
 	bool m_drawGrid = false;

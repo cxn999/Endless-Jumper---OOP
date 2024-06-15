@@ -124,7 +124,23 @@ void Scene_Play::loadLevel(const std::string& levelpath) {
 		}
 	}
 
+	size_t initialPlatformCount = 70;
+	
 	spawnPlayer();
+
+	float y = m_player->getComponent<CTransform>().pos.y - 50.0f;
+	for (int i = 0; i < initialPlatformCount; ++i) {
+			auto tile = m_entityManager.addEntity("tile");
+			y -= 100.0f;  // Adjust spacing as necessary
+			tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
+			tile->getComponent<CAnimation>().animation.getSprite().setScale(6, 1);
+			auto size = tile->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
+			tile->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
+
+			tile->addComponent<CTransform>(Vec2(rand() % 819 + 0.1 * 1280,y));
+			auto pos = tile->getComponent<CTransform>().pos;
+			tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
+	}
 }
 
 void Scene_Play::sRender() {
@@ -250,41 +266,21 @@ void Scene_Play::sAnimation() {
 void Scene_Play::sCollision() {
 	auto& player = m_player->getComponent<CTransform>();
 	for (auto& e : m_entityManager.getEntities("tile")) {
-		auto& tile = e->getComponent<CTransform>();
+		if (player.pos.y > player.prevPos.y) {
+			auto& tile = e->getComponent<CTransform>();
+			Vec2 overlap = GetOverlap(m_player, e);
+			Vec2 prevOverlap = GetPreviousOverlap(m_player, e);
 
-		Vec2 overlap = GetOverlap(m_player, e);
-		Vec2 prevOverlap = GetPreviousOverlap(m_player, e);
+			float dy = tile.pos.y - player.pos.y;
 
-		float dy = tile.pos.y - player.pos.y;
-
-		if (0 < overlap.x && -m_gridSize.y < overlap.x && dy > 0) {
-			if (0 <= overlap.y && prevOverlap.y <= 0) {
-				// stand on tile
-				m_player->getComponent<CInput>().canJump = true;
-				m_player->getComponent<CGravity>().gravity = 0;
-				player.velocity.y = -20;
-				// collision resolution
-				player.pos.y -= overlap.y;
-			}
-		}
-		// check if player hits the tile from the bottom
-		if (0 < overlap.x && -m_gridSize.y < overlap.y && dy < 0) {
-			if (0 <= overlap.y && prevOverlap.y <= 0) {
-				player.pos.y += overlap.y;
-				player.velocity.y = 0;
-			}
-		}
-		// check player and tile side collide
-		float dx = tile.pos.x - player.pos.x;
-		if (0 < overlap.y && -m_gridSize.x < overlap.x) {
-			if (0 <= overlap.x && prevOverlap.x <= 0) {
-				if (dx > 0) {
-					// tile is right of player
-					player.pos.x -= overlap.x;
-				}
-				else {
-					// tile is left of player
-					player.pos.x += overlap.x;
+			if (0 < overlap.x && -m_gridSize.y < overlap.x && dy > 0) {
+				if (0 <= overlap.y && prevOverlap.y <= 0) {
+					// stand on tile
+					m_player->getComponent<CInput>().canJump = true;
+					m_player->getComponent<CGravity>().gravity = 0;
+					player.velocity.y = -20;
+					// collision resolution
+					player.pos.y -= overlap.y;
 				}
 			}
 		}
@@ -347,11 +343,10 @@ void Scene_Play::onEnd() {
 
 void Scene_Play::sPlatformGeneration() {
 	auto & window = m_game->window();
-
-	std::cout << window.getView().getViewport().getSize().x* window.getView().getSize().x << " " << window.getView().getSize().y << std::endl;
-
 	/*
-	if (m_lastPlatformRender - 50 > m_currentFrame) {
+
+	if (m_lastPlatformRender + 50 == m_currentFrame) {
+		m_lastPlatformRender = m_currentFrame;
 		std::cout << m_player->getComponent<CTransform>().pos.x << " " << m_player->getComponent<CTransform>().pos.y << std::endl;
 		auto tile = m_entityManager.addEntity("tile");
 		tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
@@ -360,7 +355,11 @@ void Scene_Play::sPlatformGeneration() {
 		tile->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
 
 
-		tile->addComponent<CTransform>(Vec2(m_currentFrame * 10, m_currentFrame * 10));
+
+		auto player_y = m_player->getComponent<CTransform>().pos.y;
+		auto tilePos = Vec2(rand() % 819 + 0.1 * 1280, rand() % 200 + player_y - 200);
+		std::cout << tilePos.x << " " << tilePos.y << std::endl;
+		tile->addComponent<CTransform>(tilePos);
 		auto pos = tile->getComponent<CTransform>().pos;
 		tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
 	}
