@@ -23,14 +23,12 @@ void Scene_Play::init(const std::string& levelPath) {
 	registerAction(sf::Keyboard::Escape, "QUIT");
 	registerAction(sf::Keyboard::T, "TOGGLE_TEXTURE"); // Toggle drawing textures
 	registerAction(sf::Keyboard::C, "TOGGLE_COLLISION"); // Toggle drawing collision boxes
-	registerAction(sf::Keyboard::G, "TOGGLE_GRID");
 	registerAction(sf::Keyboard::W, "UP"); //POSSIBLE DOUBLE JUMP LATER
 	registerAction(sf::Keyboard::A, "LEFT");
 	registerAction(sf::Keyboard::D, "RIGHT");
 
 	// TODO: REGISTER ALL OTHER GAMEPLAY ACTIONS
 
-	m_gridText.setCharacterSize(12);
 	// m_gridText.setFont(m_game->getAssets().getFont("NAMEFONT"))
 	loadLevel(levelPath);
 }
@@ -39,7 +37,6 @@ void Scene_Play::sDoAction(const Action& action) {
 	if (action.type() == "START") {
 		if (action.name() == "TOGGLE_TEXTURE") { m_drawTextures = !m_drawTextures; }
 		else if (action.name() == "TOGGLE_COLLISION") { m_drawCollision = !m_drawCollision; }
-		else if (action.name() == "TOGGLE_GRID") { m_drawGrid = !m_drawGrid; }
 		else if (action.name() == "PAUSE") { setPaused(!m_paused); }
 		else if (action.name() == "QUIT") { onEnd(); }
 		if (action.name() == "RIGHT") {
@@ -64,6 +61,11 @@ void Scene_Play::sDoAction(const Action& action) {
 			m_player->getComponent<CInput>().left = false;
 		}
 	}
+
+	m_score.setFont(m_game->getAssets().getFont("RETROGRAMING"));
+	m_score.setFillColor(sf::Color::White);
+	m_score.setCharacterSize(90);
+	m_score.setPosition(500, 30);
 }
 
 void Scene_Play::update() {
@@ -100,36 +102,10 @@ void Scene_Play::spawnPlayer() {
 void Scene_Play::loadLevel(const std::string& levelpath) {
 	// reset the entity manager every time we load a level
 	m_entityManager = EntityManager();
-	/*
-	std::ifstream file(levelpath);
-	std::string identifier;
 
-	if (!file.is_open()) {
-		std::cerr << "Error opening file...\n";
-		exit(EXIT_FAILURE);
-	}
-
-	while (file >> identifier) {
-		std::string name;
-		int x, y;;
-		if (identifier == "tile") {
-			file >> name >> x >> y;
-			auto e = m_entityManager.addEntity(identifier);
-			e->addComponent<CAnimation>(m_game->getAssets().getAnimation(name), false);
-			e->getComponent<CAnimation>().animation.getSprite().setScale(2, 2);
-			auto size = e->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
-			e->addComponent<CBoundingBox>(Vec2(size.getSize().x,size.getSize().y));
-			e->addComponent<CTransform>(Vec2(x*m_gridSize.x+m_gridSize.x/2, m_game->window().getSize().y-y*m_gridSize.y-m_gridSize.y / 2));
-			auto pos = e->getComponent<CTransform>().pos;
-			e->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
-		}
-	}
-	*/
 	size_t initialPlatformCount = 70;
 	
 	spawnPlayer();
-
-
 
 	float y = m_player->getComponent<CTransform>().pos.y - 50.0f;
 	for (int i = 0; i < initialPlatformCount; ++i) {
@@ -156,7 +132,7 @@ void Scene_Play::sRender() {
 	auto& window = m_game->window();
 	window.clear(sf::Color::Black);
 
-
+	/*
 	// Define parallax speeds for each background layer
 	float parallaxSpeed1 = 0.8f; // Farthest background
 	float parallaxSpeed2 = 0.7f;
@@ -196,6 +172,10 @@ void Scene_Play::sRender() {
 	window.draw(bg5);
 	window.draw(bg6);
 
+	m_score.setString(std::to_string(abs(player_pos.y)));
+	window.draw(m_score);
+	*/
+
 	sf::View view(sf::Vector2f(window.getSize().x/2, player_pos.y), sf::Vector2f(1024, 720.f));
 	view.setViewport(sf::FloatRect(0.1f, 0, 0.8, 1));
 	window.setView(view);
@@ -216,21 +196,6 @@ void Scene_Play::sRender() {
 			BoundingBox.setFillColor(sf::Color::Transparent);
 			BoundingBox.setOutlineThickness(1);
 			window.draw(BoundingBox);
-		}
-	}
-	if (m_drawGrid) {
-		for (int i = 1; i<12; i++) {
-			sf::RectangleShape linex(sf::Vector2f(m_game->window().getSize().x, 1));
-			linex.setFillColor(sf::Color::White);
-			linex.setPosition(0, 64*i);
-			window.draw(linex);
-		}
-		for (int i = 1; i < 20; i++) {
-			sf::RectangleShape liney(sf::Vector2f(m_game->window().getSize().y, 1));
-			liney.rotate(90);
-			liney.setFillColor(sf::Color::White);
-			liney.setPosition(64*i, 0);
-			window.draw(liney);
 		}
 	}
 	window.display();
@@ -340,6 +305,10 @@ void Scene_Play::sMovement() {
 	if (player.pos == player.prevPos) {
 		m_player->getComponent<CState>().state = "idle";
 	}
+
+	auto y_score = m_game->window().getSize().y;
+
+	m_score.setPosition(200, y_score + 20);
 }
 
 void Scene_Play::onEnd() {
@@ -348,27 +317,21 @@ void Scene_Play::onEnd() {
 
 void Scene_Play::sPlatformGeneration() {
 	auto & window = m_game->window();
-	/*
+	float highestPlatformY = m_entityManager.getEntities("tile").back()->getComponent<CTransform>().pos.y;
 
-	if (m_lastPlatformRender + 50 == m_currentFrame) {
-		m_lastPlatformRender = m_currentFrame;
-		std::cout << m_player->getComponent<CTransform>().pos.x << " " << m_player->getComponent<CTransform>().pos.y << std::endl;
+	auto& player_pos = m_player->getComponent<CTransform>().pos;
+
+	// Generate new platforms above the highest one if the player is nearing the top
+	if (abs(player_pos.y) > abs(highestPlatformY)-300) {
 		auto tile = m_entityManager.addEntity("tile");
 		tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
-		tile->getComponent<CAnimation>().animation.getSprite().setScale(2, 2);
+		tile->getComponent<CAnimation>().animation.getSprite().setScale(6, 1);
 		auto size = tile->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 		tile->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
-
-
-
-		auto player_y = m_player->getComponent<CTransform>().pos.y;
-		auto tilePos = Vec2(rand() % 819 + 0.1 * 1280, rand() % 200 + player_y - 200);
-		std::cout << tilePos.x << " " << tilePos.y << std::endl;
-		tile->addComponent<CTransform>(tilePos);
+		tile->addComponent<CTransform>(Vec2(rand() % 819 + 0.1 * 1280, highestPlatformY-100));
 		auto pos = tile->getComponent<CTransform>().pos;
 		tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
 	}
-	*/
 }
 
 void Scene_Play::sRemoveDeadPlatforms() {

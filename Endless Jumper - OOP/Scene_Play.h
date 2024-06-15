@@ -5,13 +5,12 @@
 
 class Scene_Play : public Scene {
 protected:
-	sf::Text m_gridText;
+	sf::Text m_score;
 	std::string m_levelPath;
 	size_t m_currentFrame = 0;
 	size_t m_lastPlatformRender = 0;
 	bool m_drawTextures = true;
 	bool m_drawCollision = false;
-	bool m_drawGrid = false;
 	Vec2 m_gridSize = { 32,32 };
 
 	std::shared_ptr<Entity> m_player;
