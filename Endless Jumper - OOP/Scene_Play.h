@@ -26,14 +26,13 @@ public:
 	void onEnd();
 
 	// Systems
+	void sRemoveDeadPlatforms();
 	void sPlatformGeneration();
 	void sAnimation();
 	void sMovement();
-	void sEnemySpawner();
 	void sCollision();
 	void sRender();
 	void sDoAction(const Action& a);
-	void sDebug();
 
 	void spawnPlayer();
 	void spawnBullet(std::shared_ptr<Entity> entity);

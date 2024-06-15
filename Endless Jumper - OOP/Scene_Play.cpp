@@ -67,6 +67,7 @@ void Scene_Play::sDoAction(const Action& action) {
 }
 
 void Scene_Play::update() {
+	sRemoveDeadPlatforms();
 	m_entityManager.update();
 	if (!m_paused) {
 		sCollision();
@@ -99,7 +100,7 @@ void Scene_Play::spawnPlayer() {
 void Scene_Play::loadLevel(const std::string& levelpath) {
 	// reset the entity manager every time we load a level
 	m_entityManager = EntityManager();
-
+	/*
 	std::ifstream file(levelpath);
 	std::string identifier;
 
@@ -123,10 +124,12 @@ void Scene_Play::loadLevel(const std::string& levelpath) {
 			e->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
 		}
 	}
-
+	*/
 	size_t initialPlatformCount = 70;
 	
 	spawnPlayer();
+
+
 
 	float y = m_player->getComponent<CTransform>().pos.y - 50.0f;
 	for (int i = 0; i < initialPlatformCount; ++i) {
@@ -137,7 +140,12 @@ void Scene_Play::loadLevel(const std::string& levelpath) {
 			auto size = tile->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 			tile->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
 
-			tile->addComponent<CTransform>(Vec2(rand() % 819 + 0.1 * 1280,y));
+			if (i == 0) {
+				tile->addComponent<CTransform>(m_player->getComponent<CTransform>().pos+Vec2(0,20));
+			}
+			else {
+				tile->addComponent<CTransform>(Vec2(rand() % 819 + 0.1 * 1280, y));
+			}
 			auto pos = tile->getComponent<CTransform>().pos;
 			tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
 	}
@@ -307,12 +315,9 @@ void Scene_Play::sMovement() {
 		player_velocity.x = 5;
 		m_player->getComponent<CState>().state = "run";
  	}
-	if (input.down) {
-		player_velocity.y = 5;
-	}
 	if (input.up) {
 		player_velocity.y = -50;
-		m_player->getComponent<CState>().state = "run";
+		m_player->getComponent<CState>().state = "jump";
 	}
 	if (player_pos.y > player.prevPos.y) {
 		m_player->getComponent<CState>().state = "fall";
@@ -364,4 +369,14 @@ void Scene_Play::sPlatformGeneration() {
 		tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
 	}
 	*/
+}
+
+void Scene_Play::sRemoveDeadPlatforms() {
+	auto& player_pos = m_player->getComponent<CTransform>().pos;
+	for (auto& tile : m_entityManager.getEntities("tile")) {
+		auto& tile_pos = tile->getComponent<CTransform>().pos;
+		if (tile_pos.y - 700 > player_pos.y) {
+			tile->destroy();
+		}
+	}
 }
