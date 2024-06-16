@@ -31,7 +31,7 @@ void Scene_Menu::init() {
 	// Set the titleText
 	m_titleText = sf::Text(m_title, f, 80);
 	// Set it's position and it's color
-	m_titleText.setPosition(mx - m_titleText.getGlobalBounds().width / 2.f, 50);
+	m_titleText.setPosition(mx - m_titleText.getLocalBounds().width / 2.f, 50);
 	m_titleText.setColor(sf::Color::Black);
 	
 	// Constant for the fontSize of the levels

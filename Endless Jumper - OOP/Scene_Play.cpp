@@ -1,3 +1,5 @@
+#pragma warning(disable : 4996)
+
 #include "Scene_Play.h"
 #include "Scene_Menu.h"
 #include "Physics.h"
@@ -34,6 +36,10 @@ void Scene_Play::init() {
 	m_view = sf::View(sf::Vector2f(window.getSize().x / 2, player_pos.y), sf::Vector2f(1024, 720.f));
 	m_view.setViewport(sf::FloatRect(0.1f, 0, 0.8, 1));
 	window.setView(m_view);
+
+	auto& f = m_game->getAssets().getFont("RETROGAMING");
+	m_score = sf::Text("0", f, 50);
+	m_score.setColor(sf::Color::White);
 }
 
 void Scene_Play::sDoAction(const Action& action) {
@@ -64,11 +70,6 @@ void Scene_Play::sDoAction(const Action& action) {
 			m_player->getComponent<CInput>().left = false;
 		}
 	}
-
-	m_score.setFont(m_game->getAssets().getFont("RETROGRAMING"));
-	m_score.setFillColor(sf::Color::White);
-	m_score.setCharacterSize(90);
-	m_score.setPosition(500, 30);
 }
 
 void Scene_Play::update() {
@@ -106,8 +107,8 @@ void Scene_Play::loadLevel() {
 
 	auto& window = m_game->window();
 
-	auto x_spawn_min = window.getView().getViewport().getPosition().x * window.getSize().x;
-	int win_width = window.getView().getSize().x*0.8;
+	auto x_spawn_min = 0.1 * window.getSize().x;
+	int win_width = window.getSize().x*0.8;
 
 	float y_pos = m_player->getComponent<CTransform>().pos.y - 50.0f;
 	for (int i = 0; i < initialPlatformCount; ++i) {
@@ -123,7 +124,7 @@ void Scene_Play::loadLevel() {
 			}
 			else {
 				int size_x = tile->getComponent<CBoundingBox>().size.x;
-				auto x_pos = (rand() % (win_width - size_x*2)) + x_spawn_min + size_x*2;
+				auto x_pos = (rand() % (win_width-size_x) + x_spawn_min+(size_x/2.f));
 				tile->addComponent<CTransform>(Vec2(x_pos, y_pos));
 			}
 			auto pos = tile->getComponent<CTransform>().pos;
@@ -181,11 +182,6 @@ void Scene_Play::sRender() {
 	window.draw(bg5);
 	window.draw(bg6);
 	
-	m_score.setString(std::to_string(abs(player_pos.y)));
-	window.draw(m_score);
-	
-	
-
 	if (m_drawTextures) {
 		for (auto e : m_entityManager.getEntities()) {
 			window.draw(e->getComponent<CAnimation>().animation.getSprite());
@@ -205,6 +201,9 @@ void Scene_Play::sRender() {
 			window.draw(BoundingBox);
 		}
 	}
+
+	window.draw(m_score);
+
 	window.display();
 }
 
@@ -331,9 +330,10 @@ void Scene_Play::sMovement() {
 		m_player->getComponent<CState>().state = "idle";
 	}
 
-	auto y_score = m_game->window().getSize().y;
-
-	m_score.setPosition(200, y_score + 20);
+	if (player_pos.y < player.prevPos.y) {
+		m_score.setString(std::to_string(abs((int)player_pos.y)));
+	}
+	m_score.setPosition(m_view.getCenter().x-m_score.getGlobalBounds().width/2.f, m_view.getCenter().y - 350);
 }
 
 void Scene_Play::onEnd() {
@@ -371,7 +371,6 @@ void Scene_Play::sRemoveDeadPlatforms() {
 		auto& tile_pos = tile->getComponent<CTransform>().pos;
 		if (abs(tile_pos.y)+400 < abs(view_center.y)) {
 			tile->destroy();
-			std::cout << m_entityManager.getEntities("tile").size() << std::endl;
 		}
 	}
 }
