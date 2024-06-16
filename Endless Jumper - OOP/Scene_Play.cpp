@@ -144,43 +144,15 @@ void Scene_Play::sRender() {
 
 
 	// Define parallax speeds for each background layer
-	float parallaxSpeed1 = 0.8f; // Farthest background
-	float parallaxSpeed2 = 0.7f;
-	float parallaxSpeed3 = 0.6f;
-	float parallaxSpeed4 = 0.5f; // Closest background
-	float parallaxSpeed5 = 0.3f;
-	float parallaxSpeed6 = 0.1f; // Closest background`
-
-	// Calculate parallax offsets based on player position
-	float offset1 = view_center.y * parallaxSpeed1;
-	float offset2 = view_center.y * parallaxSpeed2;
-	float offset3 = view_center.y * parallaxSpeed3;
-	float offset4 = view_center.y * parallaxSpeed4;
-	float offset5 = view_center.y * parallaxSpeed5;
-	float offset6 = view_center.y * parallaxSpeed6;
+	float parallaxSpeed = 0.9;
 
 	// Adjust background positions with parallax effect
-	auto bg1 = m_game->getAssets().getAnimation("background1").getSprite();
-	auto bg2 = m_game->getAssets().getAnimation("background2").getSprite();
-	auto bg3 = m_game->getAssets().getAnimation("background3").getSprite();
-	auto bg4 = m_game->getAssets().getAnimation("background4").getSprite();
-	auto bg5 = m_game->getAssets().getAnimation("background5").getSprite();
-	auto bg6 = m_game->getAssets().getAnimation("background6").getSprite();
-
-	bg1.setPosition(bg1.getPosition().x, offset1- bg1.getGlobalBounds().height/3.5f);
-	bg2.setPosition(bg2.getPosition().x, offset2 - bg2.getGlobalBounds().height / 3.5f);
-	bg3.setPosition(bg3.getPosition().x, offset3 - bg3.getGlobalBounds().height / 3.5f);
-	bg4.setPosition(bg4.getPosition().x, offset4 - bg4.getGlobalBounds().height / 3.5f);
-	bg5.setPosition(bg5.getPosition().x, offset5 - bg5.getGlobalBounds().height / 3.5f);
-	bg6.setPosition(bg6.getPosition().x, offset6 - bg6.getGlobalBounds().height / 3.5f);
-
-	// Draw background layers
-	window.draw(bg1);
-	window.draw(bg2);
-	window.draw(bg3);
-	window.draw(bg4);
-	window.draw(bg5);
-	window.draw(bg6);
+	for (auto bg : m_game->getAssets().getBackground(m_currentBackground).getLayers()) {
+		float offset = view_center.y * parallaxSpeed;
+		bg.setPosition(bg.getPosition().x, offset - bg.getGlobalBounds().height / 3.5f);
+		parallaxSpeed -= 0.1;
+		window.draw(bg);
+	}
 	
 	if (m_drawTextures) {
 		for (auto e : m_entityManager.getEntities()) {

@@ -7,6 +7,7 @@ class Scene_Play : public Scene {
 protected:
 	sf::Text m_score;
 	sf::View m_view;
+	size_t m_currentBackground = 7;
 	size_t m_currentFrame = 0;
 	bool m_drawTextures = true;
 	bool m_drawCollision = false;

@@ -32,6 +32,10 @@ void Assets::addAnimation(const std::string& name, const Animation& animation) {
 	m_animations[name] = animation;
 }
 
+void Assets::addBackground(const int name, const int index2, const sf::Texture & t) {
+    m_backgrounds[name].addLayer(t);
+}
+
 
 sf::Texture& Assets::getTexture(const std::string& name) {
     auto it = m_textures.find(name);
@@ -55,6 +59,10 @@ sf::Font& Assets::getFont(const std::string& name) {
 
 Animation& Assets::getAnimation(const std::string& name) {
 	return m_animations[name];
+}
+
+Background& Assets::getBackground(const int name) {
+    return m_backgrounds[name];
 }
 
 void Assets::loadFromFile(const std::string& path) {
@@ -82,6 +90,12 @@ void Assets::loadFromFile(const std::string& path) {
             int frameCount, animDuration;
             file >> name >> textureName >> frameCount >> animDuration;
             addAnimation(name, Animation(name, getTexture(textureName), frameCount, animDuration));
+        }
+        else if (identifier == "Background") {
+            int index, index2;
+            std::string name;
+            file >> index >> index2 >> name;
+            addBackground(index, index2, getTexture(name));
         }
     }
 }
