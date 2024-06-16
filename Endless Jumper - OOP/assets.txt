@@ -1,12 +1,12 @@
 Texture tile01 Assets\Tiles\Pad_04_1.png
-Texture background01 Assets\Clouds\Clouds8\1.png
-Texture background02 Assets\Clouds\Clouds8\2.png
-Texture background03 Assets\Clouds\Clouds8\3.png
-Texture background04 Assets\Clouds\Clouds8\4.png
-Texture background05 Assets\Clouds\Clouds8\5.png
-Texture background06 Assets\Clouds\Clouds8\6.png
+Texture background01 Assets\Clouds\Clouds6\1.png
+Texture background02 Assets\Clouds\Clouds6\2.png
+Texture background03 Assets\Clouds\Clouds6\3.png
+Texture background04 Assets\Clouds\Clouds6\4.png
+Texture background05 Assets\Clouds\Clouds6\5.png
+Texture background06 Assets\Clouds\Clouds6\6.png
 Texture mainIdle Assets\Player\Idle.png
-Texture mainJump Assets\Player\Double_Jump.png
+Texture mainJump Assets\Player\Jump.png
 Texture mainFall Assets\Player\Fall.png
 Font RETROGAMING Assets\Fonts\Retro_Gaming.ttf
 Animation grass01 tile01 1 0
@@ -17,5 +17,5 @@ Animation background4 background04 1 0
 Animation background5 background05 1 0
 Animation background6 background06 1 0
 Animation playerIdle mainIdle 11 6
-Animation playerJump mainJump 6 4
+Animation playerJump mainJump 1 0
 Animation playerFall mainFall 1 0

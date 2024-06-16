@@ -27,6 +27,13 @@ void Scene_Play::init() {
 	registerAction(sf::Keyboard::D, "RIGHT");
 
 	loadLevel();
+
+	auto& window = m_game->window();
+	auto player_pos = m_player->getComponent<CTransform>().pos;
+
+	m_view = sf::View(sf::Vector2f(window.getSize().x / 2, player_pos.y), sf::Vector2f(1024, 720.f));
+	m_view.setViewport(sf::FloatRect(0.1f, 0, 0.8, 1));
+	window.setView(m_view);
 }
 
 void Scene_Play::sDoAction(const Action& action) {
@@ -129,8 +136,12 @@ void Scene_Play::sRender() {
 	auto& window = m_game->window();
 	window.clear(sf::Color::Black);
 
-	std::cout << m_player->getComponent<CTransform>().pos.y << std::endl;
-	
+
+	window.setView(m_view);
+
+	auto & view_center = m_view.getCenter();
+
+
 	// Define parallax speeds for each background layer
 	float parallaxSpeed1 = 0.8f; // Farthest background
 	float parallaxSpeed2 = 0.7f;
@@ -140,12 +151,12 @@ void Scene_Play::sRender() {
 	float parallaxSpeed6 = 0.1f; // Closest background`
 
 	// Calculate parallax offsets based on player position
-	float offset1 = player_pos.y * parallaxSpeed1;
-	float offset2 = player_pos.y * parallaxSpeed2;
-	float offset3 = player_pos.y * parallaxSpeed3;
-	float offset4 = player_pos.y * parallaxSpeed4;
-	float offset5 = player_pos.y * parallaxSpeed5;
-	float offset6 = player_pos.y * parallaxSpeed6;
+	float offset1 = view_center.y * parallaxSpeed1;
+	float offset2 = view_center.y * parallaxSpeed2;
+	float offset3 = view_center.y * parallaxSpeed3;
+	float offset4 = view_center.y * parallaxSpeed4;
+	float offset5 = view_center.y * parallaxSpeed5;
+	float offset6 = view_center.y * parallaxSpeed6;
 
 	// Adjust background positions with parallax effect
 	auto bg1 = m_game->getAssets().getAnimation("background1").getSprite();
@@ -173,10 +184,8 @@ void Scene_Play::sRender() {
 	m_score.setString(std::to_string(abs(player_pos.y)));
 	window.draw(m_score);
 	
+	
 
-	sf::View view(sf::Vector2f(window.getSize().x/2, player_pos.y), sf::Vector2f(1024, 720.f));
-	view.setViewport(sf::FloatRect(0.1f, 0, 0.8, 1));
-	window.setView(view);
 	if (m_drawTextures) {
 		for (auto e : m_entityManager.getEntities()) {
 			window.draw(e->getComponent<CAnimation>().animation.getSprite());
@@ -252,10 +261,17 @@ void Scene_Play::sCollision() {
 					player.velocity.y = -20;
 					// collision resolution
 					player.pos.y -= overlap.y;
+					m_move = true;
+					m_targetViewPosition = Vec2(m_view.getCenter().x, tile.pos.y - 500);
 				}
 			}
 		}
 	}
+}
+
+
+sf::Vector2f lerp(const sf::Vector2f& start, const sf::Vector2f& end, float t) {
+	return start + t * (end - start);
 }
 
 void Scene_Play::sMovement() {
@@ -265,6 +281,21 @@ void Scene_Play::sMovement() {
 	auto& player_velocity = m_player->getComponent<CTransform>().velocity;
 	player_velocity.x = 0;
 
+	if (m_move) {
+		// Calculate the new position using interpolation
+		float t = 0.05f;  // Adjust t for the desired speed (0 < t < 1)
+		sf::Vector2f currentViewPosition = m_view.getCenter();
+		sf::Vector2f newViewPosition = lerp(currentViewPosition, sf::Vector2f(m_targetViewPosition.x, m_targetViewPosition.y), t);
+
+		// Update the view's position
+		m_view.setCenter(newViewPosition);
+
+		// Check if the camera is close enough to the target position
+		if (std::abs(newViewPosition.y - m_targetViewPosition.y) < 1.0f) {
+			m_view.setCenter(sf::Vector2f(m_targetViewPosition.x, m_targetViewPosition.y));
+			m_move = false;
+		}
+	}
 
 	if (input.left) {
 		player_velocity.x = -5;
@@ -334,11 +365,13 @@ void Scene_Play::sPlatformGeneration() {
 }
 
 void Scene_Play::sRemoveDeadPlatforms() {
-	auto& player_pos = m_player->getComponent<CTransform>().pos;
+	auto& view_center = m_view.getCenter();
+
 	for (auto& tile : m_entityManager.getEntities("tile")) {
 		auto& tile_pos = tile->getComponent<CTransform>().pos;
-		if (tile_pos.y - 700 > player_pos.y) {
+		if (abs(tile_pos.y)+400 < abs(view_center.y)) {
 			tile->destroy();
+			std::cout << m_entityManager.getEntities("tile").size() << std::endl;
 		}
 	}
 }

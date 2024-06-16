@@ -28,11 +28,19 @@ void GameEngine::update() {
 
 void GameEngine::sUserInput() {
 	sf::Event event;
+	sf::View view = m_window.getDefaultView();
 	while (m_window.pollEvent(event)) {
 		if (event.type == sf::Event::Closed) {
 			quit();
 		}
-
+		if (event.type == sf::Event::Resized) {
+			// resize my view
+			view.setSize({
+					static_cast<float>(event.size.width),
+					static_cast<float>(event.size.height)
+				});
+			m_window.setView(view);
+		}
 		if (event.type == sf::Event::KeyPressed) {
 			if (event.key.code == sf::Keyboard::X) {
 				std::cout << "Screenshot saved to " << "test.png" << std::endl;
