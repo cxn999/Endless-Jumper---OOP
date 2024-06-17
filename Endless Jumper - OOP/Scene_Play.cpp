@@ -310,7 +310,7 @@ void Scene_Play::sMovement() {
 		m_player->getComponent<CState>().state = "idle";
 	}
 
-	if (player_pos.y < player.prevPos.y) {
+	if (m_score < abs(player.pos.y)) {
 		m_score = abs((int)player_pos.y);
 		m_scoreText.setString(std::to_string(m_score));
 	}

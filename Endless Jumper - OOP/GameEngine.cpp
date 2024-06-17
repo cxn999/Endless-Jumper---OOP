@@ -17,7 +17,8 @@ void GameEngine::init(const std::string& path) {
 	// Create a window with the specified resolution
 	m_window.create(sf::VideoMode(1280, 720), "ENDLESS JUMPER");
 	// Set vertical sync for better performance
-	m_window.setVerticalSyncEnabled(true);
+	//m_window.setVerticalSyncEnabled(true);
+	m_window.setFramerateLimit(60);
 	changeScene("MENU", std::make_shared<Scene_Menu>(this), false);
 }
 
