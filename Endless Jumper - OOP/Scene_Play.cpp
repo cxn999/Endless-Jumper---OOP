@@ -40,6 +40,7 @@ void Scene_Play::init() {
 	auto& f = m_game->getAssets().getFont("RETROGAMING");
 	m_scoreText = sf::Text("0", f, 50);
 	m_scoreText.setColor(sf::Color::White);
+	m_score = 0;
 }
 
 void Scene_Play::sDoAction(const Action& action) {
@@ -153,7 +154,7 @@ void Scene_Play::sRender() {
 
 	for (auto& bg : m_game->getAssets().getBackground(m_currentBackground).getLayers()) {
 		float offset = (view_center.y+(m_score/9000)*9000) * parallaxSpeed;
-		std::cout << "layer " << i << "\n offset: " << offset;
+		std::cout << m_score << std::endl;
 		// bg.setPosition(bg.getPosition().x, offset - bg.getGlobalBounds().height / 3.5f);
 		bg.setPosition(bg.getPosition().x, offset-300 - (m_score / 9000) * 9000);
 		parallaxSpeed -= 0.1;
