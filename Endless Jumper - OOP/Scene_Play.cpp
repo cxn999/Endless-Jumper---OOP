@@ -133,7 +133,6 @@ void Scene_Play::loadLevel() {
 }
 
 void Scene_Play::sRender() {
-	//m_currentBackground = m_scoreTe / 11500;
 
 	auto & player_pos = m_player->getComponent<CTransform>().pos;
 	auto& window = m_game->window();
@@ -144,21 +143,19 @@ void Scene_Play::sRender() {
 
 	auto & view_center = m_view.getCenter();
 	
-	std::cout << view_center.y << std::endl;
-
 	// Define parallax speeds for each background layer
 	float parallaxSpeed = 0.9;
 
-	if (m_score % 50 == 0) {
-		m_currentBackground = (m_currentBackground + 1) % 8;
-
-	}
 	// Adjust background positions with parallax effect
 	size_t i = 0;
-	for (auto bg : m_game->getAssets().getBackground(m_currentBackground).getLayers()) {
-		float offset = view_center.y * parallaxSpeed;
-		bg.setPosition(bg.getPosition().x, offset - bg.getGlobalBounds().height / 3.5f);
-		std::cout << "LAYER " << i << " Y: " << bg.getPosition().y << std::endl;
+
+	m_currentBackground = (m_score / 9000)%8;
+
+	for (auto& bg : m_game->getAssets().getBackground(m_currentBackground).getLayers()) {
+		float offset = (view_center.y+(m_score/9000)*9000) * parallaxSpeed;
+		std::cout << "layer " << i << "\n offset: " << offset;
+		// bg.setPosition(bg.getPosition().x, offset - bg.getGlobalBounds().height / 3.5f);
+		bg.setPosition(bg.getPosition().x, offset-300 - (m_score / 9000) * 9000);
 		parallaxSpeed -= 0.1;
 		window.draw(bg);
 		i++;

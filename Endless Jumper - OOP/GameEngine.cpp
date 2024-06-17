@@ -33,14 +33,14 @@ void GameEngine::sUserInput() {
 		if (event.type == sf::Event::Closed) {
 			quit();
 		}
-		if (event.type == sf::Event::Resized) {
-			// resize my view
-			view.setSize({
-					static_cast<float>(event.size.width),
-					static_cast<float>(event.size.height)
-				});
-			m_window.setView(view);
+
+		if (event.type == sf::Event::Resized)
+		{
+			// update the view to the new size of the window
+			sf::FloatRect visibleArea(0.f, 0.f, event.size.width, event.size.height);
+			m_window.setView(sf::View(visibleArea));
 		}
+
 		if (event.type == sf::Event::KeyPressed) {
 			if (event.key.code == sf::Keyboard::X) {
 				sf::Texture texture;

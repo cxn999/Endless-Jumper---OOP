@@ -45,7 +45,7 @@ void Scene_Shop::init() {
 	m_texts[3].setColor(sf::Color::Black);
 
 	for (int i = 0; i < 3; i++) {
-		m_texts[i].setPosition(mx - m_texts[i].getGlobalBounds().width / 2.f, 250 + 100 * i);
+		m_texts[i].setPosition(mx - m_texts[i].getGlobalBounds().width / 2.f, 250.f + 100.f * i);
 	}
 }
 

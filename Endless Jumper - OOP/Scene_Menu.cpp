@@ -27,13 +27,17 @@ void Scene_Menu::init() {
 	// Extract the font from the assets
 	auto& f = m_game->getAssets().getFont("RETROGAMING");
 	// Calculate middle of the screen in X axis
-	auto mx = m_window.getSize().x / 2;
+	auto mx = m_window.getView().getCenter().x;
 	// Set the titleText
 	m_titleText = sf::Text(m_title, f, 80);
 	// Set it's position and it's color
-	m_titleText.setPosition(mx - m_titleText.getLocalBounds().width / 2.f, 50);
+
+
+	sf::FloatRect textBounds = m_titleText.getLocalBounds();
+	m_titleText.setOrigin(textBounds.left + textBounds.width / 2.0f, textBounds.top + textBounds.height / 2.0f);
+	m_titleText.setPosition(m_window.getSize().x / 2.0f, 100);
+
 	m_titleText.setColor(sf::Color::Black);
-	
 	// Constant for the fontSize of the levels
 	int levels_fontSize = 50;
 
