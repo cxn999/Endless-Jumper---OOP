@@ -38,8 +38,8 @@ void Scene_Play::init() {
 	window.setView(m_view);
 
 	auto& f = m_game->getAssets().getFont("RETROGAMING");
-	m_score = sf::Text("0", f, 50);
-	m_score.setColor(sf::Color::White);
+	m_scoreText = sf::Text("0", f, 50);
+	m_scoreText.setColor(sf::Color::White);
 }
 
 void Scene_Play::sDoAction(const Action& action) {
@@ -133,6 +133,8 @@ void Scene_Play::loadLevel() {
 }
 
 void Scene_Play::sRender() {
+	//m_currentBackground = m_scoreTe / 11500;
+
 	auto & player_pos = m_player->getComponent<CTransform>().pos;
 	auto& window = m_game->window();
 	window.clear(sf::Color::Black);
@@ -141,17 +143,25 @@ void Scene_Play::sRender() {
 	window.setView(m_view);
 
 	auto & view_center = m_view.getCenter();
-
+	
+	std::cout << view_center.y << std::endl;
 
 	// Define parallax speeds for each background layer
 	float parallaxSpeed = 0.9;
 
+	if (m_score % 50 == 0) {
+		m_currentBackground = (m_currentBackground + 1) % 8;
+
+	}
 	// Adjust background positions with parallax effect
+	size_t i = 0;
 	for (auto bg : m_game->getAssets().getBackground(m_currentBackground).getLayers()) {
 		float offset = view_center.y * parallaxSpeed;
 		bg.setPosition(bg.getPosition().x, offset - bg.getGlobalBounds().height / 3.5f);
+		std::cout << "LAYER " << i << " Y: " << bg.getPosition().y << std::endl;
 		parallaxSpeed -= 0.1;
 		window.draw(bg);
+		i++;
 	}
 	
 	if (m_drawTextures) {
@@ -174,7 +184,7 @@ void Scene_Play::sRender() {
 		}
 	}
 
-	window.draw(m_score);
+	window.draw(m_scoreText);
 
 	window.display();
 }
@@ -303,9 +313,10 @@ void Scene_Play::sMovement() {
 	}
 
 	if (player_pos.y < player.prevPos.y) {
-		m_score.setString(std::to_string(abs((int)player_pos.y)));
+		m_score = abs((int)player_pos.y);
+		m_scoreText.setString(std::to_string(m_score));
 	}
-	m_score.setPosition(m_view.getCenter().x-m_score.getGlobalBounds().width/2.f, m_view.getCenter().y - 350);
+	m_scoreText.setPosition(m_view.getCenter().x-m_scoreText.getGlobalBounds().width/2.f, m_view.getCenter().y - 350);
 }
 
 void Scene_Play::onEnd() {
