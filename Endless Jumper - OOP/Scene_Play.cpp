@@ -141,9 +141,21 @@ void Scene_Play::loadLevel() {
 				tile->addComponent<CTransform>(m_player->getComponent<CTransform>().pos+Vec2(0,60));
 			}
 			else {
-				int size_x = tile->getComponent<CBoundingBox>().size.x;
-				auto x_pos = (rand() % (win_width-size_x) + x_spawn_min+(size_x/2.f));
-				tile->addComponent<CTransform>(Vec2(x_pos, y_pos));
+				if (type == 2) {
+					// Crear una distribución de Bernoulli con probabilidad de 0.8 para obtener true (lo que representará 1)
+					std::bernoulli_distribution d(0.7);
+					// Generar el número basado en la distribución
+					int side = d(gen) ? 0 : 1;
+					auto pos_x = x_spawn_min + win_width / 4.f + side * win_width / 2.f;
+					tile->addComponent<CTransform>(Vec2(pos_x, y_pos));
+					tile->addComponent<CMove>();
+					tile->getComponent<CTransform>().velocity.x = rand() % 3 + 1;
+				}
+				else {
+					int size_x = tile->getComponent<CBoundingBox>().size.x;
+					auto x_pos = (rand() % (win_width - size_x) + x_spawn_min + (size_x / 2.f));
+					tile->addComponent<CTransform>(Vec2(x_pos, y_pos));
+				}
 			}
 			auto pos = tile->getComponent<CTransform>().pos;
 			tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
@@ -268,6 +280,12 @@ void Scene_Play::sAnimation() {
 
 void Scene_Play::sCollision() {
 	auto& player = m_player->getComponent<CTransform>();
+
+	if (player.pos.y > m_view.getCenter().y + 350) {
+		m_player->destroy();
+		m_end = true;
+	}
+
 	for (auto& e : m_entityManager.getEntities("tile")) {
 		if (player.pos.y > player.prevPos.y) {
 			auto& tile = e->getComponent<CTransform>();
@@ -309,6 +327,8 @@ void Scene_Play::sMovement() {
 	auto& player = m_player->getComponent<CTransform>();
 	auto& player_velocity = m_player->getComponent<CTransform>().velocity;
 	player_velocity.x = 0;
+
+	auto& window = m_game->window();
 
 	if (m_move) {
 		// Calculate the new position using interpolation
@@ -365,6 +385,32 @@ void Scene_Play::sMovement() {
 		m_scoreText.setString(std::to_string(m_score));
 	}
 	m_scoreText.setPosition(m_view.getCenter().x-m_scoreText.getGlobalBounds().width/2.f, m_view.getCenter().y - 350);
+
+
+	auto x_spawn_min = window.getView().getViewport().getPosition().x * window.getSize().x;
+	int win_width = window.getView().getSize().x;
+
+	for (auto& e : m_entityManager.getEntities("tile")) {
+		if (e->hasComponent<CMove>()) {
+			auto & movingTile = e->getComponent<CTransform>();
+			movingTile.pos += movingTile.velocity;
+			e->getComponent<CAnimation>().animation.getSprite().setPosition(movingTile.pos.x, movingTile.pos.y);
+			if (movingTile.pos.x < x_spawn_min + win_width / 2) {
+				if (movingTile.pos.x < x_spawn_min + 100 ||
+					movingTile.pos.x > x_spawn_min + 400)
+				{
+					movingTile.velocity.x *= -1;
+				}
+			}
+			else {
+				if (movingTile.pos.x > x_spawn_min + win_width - 100 ||
+					movingTile.pos.x < x_spawn_min + win_width/2.f + 100)
+				{
+					movingTile.velocity.x *= -1;
+				}
+			}
+		}
+	}
 }
 
 void Scene_Play::onEnd() {
@@ -404,6 +450,7 @@ void Scene_Play::sPlatformGeneration() {
 		}
 		else if (type == 3) {
 			tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("log01"), false);
+
 		}
 		else if (type == 4) {
 			tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("log02"), false);
@@ -413,8 +460,22 @@ void Scene_Play::sPlatformGeneration() {
 		auto size = tile->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 		tile->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
 		int size_x = tile->getComponent<CBoundingBox>().size.x;
-		auto pos_x = (rand() % (win_width - size_x*2)) + x_spawn_min + size_x;
-		tile->addComponent<CTransform>(Vec2(pos_x, highestPlatformY - m_platformSpacing));
+
+		if (type == 3 || type == 4) {
+			// Crear una distribución de Bernoulli con probabilidad de 0.8 para obtener true (lo que representará 1)
+			std::bernoulli_distribution d(0.7);
+			// Generar el número basado en la distribución
+			int side = d(gen) ? 0 : 1;
+			auto pos_x = x_spawn_min + win_width / 4.f + side * win_width / 2.f;
+			tile->addComponent<CTransform>(Vec2(pos_x, highestPlatformY - m_platformSpacing));
+			tile->addComponent<CMove>();
+			tile->getComponent<CTransform>().velocity.x = rand() % 3 + 1;
+		}
+		else {
+			auto pos_x = (rand() % (win_width - size_x * 2)) + x_spawn_min + size_x;
+			tile->addComponent<CTransform>(Vec2(pos_x, highestPlatformY - m_platformSpacing));
+		}
+
 		auto pos = tile->getComponent<CTransform>().pos;
 		tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
 	}

@@ -75,3 +75,7 @@ public:
 class CKill : public Component {
 	
 };
+
+class CMove : public Component {
+
+};

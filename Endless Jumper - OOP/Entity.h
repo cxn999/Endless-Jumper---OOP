@@ -11,7 +11,8 @@ typedef std::tuple <
 	CInput,
 	CLifeSpan,
 	CTransform,
-	CKill
+	CKill,
+	CMove
 	> ComponentTuple;
 
 class Entity { 
