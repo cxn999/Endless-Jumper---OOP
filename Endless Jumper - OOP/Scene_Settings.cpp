@@ -23,7 +23,7 @@ void Scene_Settings::updateVolumeSlider() {
 
 	float newWidth = (m_volume / 100.0f) * 200.0f; 
 	m_volumeSlider.setSize(sf::Vector2f(newWidth, 20));
-	m_volumeSlider.setPosition(mx - m_volumeSlider.getSize().x / 2, 320); 
+	m_volumeSlider.setPosition(mx - m_volumeSlider.getSize().x / 2, 220); 
 }
 
 Scene_Settings::Scene_Settings(GameEngine* gameEngine)
@@ -70,7 +70,7 @@ void Scene_Settings::init() {
 	m_texts[3].setColor(sf::Color::Black);
 
 	for (int i = 0; i < 3; i++) {
-		m_texts[i].setPosition(mx - m_texts[i].getGlobalBounds().width / 2.f, 250 + 100 * i);
+		m_texts[i].setPosition(mx - m_texts[i].getGlobalBounds().width / 2.f, 150 + 150 * i);
 	}
 
 	// Volume slider
@@ -81,14 +81,14 @@ void Scene_Settings::init() {
 	m_volumeText.setString(std::to_string(static_cast<int>(m_volume)));
 	m_volumeText.setCharacterSize(30);
 	m_volumeText.setFillColor(sf::Color::Black);
-	m_volumeText.setPosition(mx + m_volumeSlider.getSize().x / 2 + 60, 310);
+	m_volumeText.setPosition(mx + m_volumeSlider.getSize().x / 2 + 60, 210);
 
 	// Music toggle
 	m_musicToggleText.setFont(f);
 	m_musicToggleText.setString(m_musicOn ? "Music: On" : "Music: Off");
 	m_musicToggleText.setCharacterSize(30);
 	m_musicToggleText.setFillColor(sf::Color::Black);
-	m_musicToggleText.setPosition(mx - m_musicToggleText.getGlobalBounds().width / 2, 400);
+	m_musicToggleText.setPosition(mx - m_musicToggleText.getGlobalBounds().width / 2, 350);
 
 	// Control scheme toggle
 	m_controlSchemeText.setFont(f);
