@@ -9,10 +9,13 @@ protected:
 	size_t m_score;
 	sf::View m_view;
 	size_t m_currentBackground = 0;
+	size_t m_pastBackground;
 	size_t m_currentFrame = 0;
+	int m_alpha = 255;
 	bool m_drawTextures = true;
 	bool m_drawCollision = false;
 	bool m_move = false;
+	bool m_transition = false;
 	Vec2 m_gridSize = { 32,32 };
 	Vec2 m_targetViewPosition;
 

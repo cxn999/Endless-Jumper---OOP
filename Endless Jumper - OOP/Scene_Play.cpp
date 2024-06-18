@@ -137,7 +137,7 @@ void Scene_Play::sRender() {
 
 	auto & player_pos = m_player->getComponent<CTransform>().pos;
 	auto& window = m_game->window();
-	window.clear(sf::Color::Black);
+	window.clear(sf::Color::Transparent);
 
 
 	window.setView(m_view);
@@ -148,18 +148,44 @@ void Scene_Play::sRender() {
 	float parallaxSpeed = 0.9;
 
 	// Adjust background positions with parallax effect
-	size_t i = 0;
-
-	m_currentBackground = (m_score / 9000)%8;
-
+	
+	if ((m_score / 9000) % 8 > m_currentBackground) {
+		m_transition = true;
+		m_pastBackground = m_currentBackground;
+		m_currentBackground++;
+	}
+	
 	for (auto& bg : m_game->getAssets().getBackground(m_currentBackground).getLayers()) {
-		float offset = (view_center.y+(m_score/9000)*9000) * parallaxSpeed;
-		std::cout << m_score << std::endl;
-		// bg.setPosition(bg.getPosition().x, offset - bg.getGlobalBounds().height / 3.5f);
-		bg.setPosition(bg.getPosition().x, offset-300 - (m_score / 9000) * 9000);
+		float offset = (view_center.y + (m_score / 9000) * 9000) * parallaxSpeed;
+		bg.setPosition(bg.getPosition().x, offset - 300 - (m_score / 9000) * 9000);
 		parallaxSpeed -= 0.1;
+		if (m_transition) {
+			bg.setColor(sf::Color(255, 255, 255, (255 - m_alpha)));
+		}
+		else {
+			bg.setColor(sf::Color(255, 255, 255, 255));
+		}
 		window.draw(bg);
-		i++;
+	}
+
+	float parallaxSpeed2 = 0.9;
+
+	if (m_transition) {
+		if (m_alpha > 0) {
+			for (auto& bg2 : m_game->getAssets().getBackground(m_pastBackground).getLayers()) {
+				float offset2 = (view_center.y + (m_pastBackground * 9000 / 9000) * 9000) * parallaxSpeed2;
+				bg2.setPosition(bg2.getPosition().x, offset2 - 300 - (m_pastBackground*9000 / 9000) * 9000);
+				bg2.setColor(sf::Color(255, 255, 255, m_alpha));
+				parallaxSpeed2 -= 0.1;
+				window.draw(bg2);
+			}
+			m_alpha -= 5;
+		}
+		else {
+			m_alpha = 255;
+			m_transition = false;
+		}
+
 	}
 	
 	if (m_drawTextures) {
