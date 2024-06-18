@@ -5,6 +5,7 @@
 
 GameEngine::GameEngine(const std::string& path) {
 	// Calling the init function
+	srand(time(NULL));
 	init(path);
 }
 

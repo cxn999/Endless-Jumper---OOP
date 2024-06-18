@@ -13,8 +13,15 @@
 #include <iostream>
 #include <random>
 
-Scene_Play::Scene_Play(GameEngine* gameEngine) 
+Scene_Play::Scene_Play(GameEngine* gameEngine)
 	: Scene(gameEngine)
+{
+	srand(time(NULL));
+	init();
+}
+
+Scene_Play::Scene_Play(GameEngine* gameEngine, size_t highestScore)
+	: Scene(gameEngine), m_highestScore(highestScore)
 {
 	srand(time(NULL));
 	init();
@@ -172,27 +179,27 @@ void Scene_Play::loadLevel() {
 
 void Scene_Play::sRender() {
 
-	auto & player_pos = m_player->getComponent<CTransform>().pos;
+	auto& player_pos = m_player->getComponent<CTransform>().pos;
 	auto& window = m_game->window();
 	window.clear(sf::Color::Transparent);
 
 
 	window.setView(m_view);
 
-	auto & view_center = m_view.getCenter();
-	
+	auto& view_center = m_view.getCenter();
+
 	// Define parallax speeds for each background layer
 	float parallaxSpeed = 0.9;
 
 	// Adjust background positions with parallax effect
-	
+
 	if ((m_score / 5000) % 8 != m_currentBackground) {
 		m_transition = true;
 		m_pastBackground = m_currentBackground;
 		m_currentBackground = (m_score / 5000) % 8;
 		m_platformSpacing += 5;
 	}
-	
+
 	for (auto& bg : m_game->getAssets().getBackground(m_currentBackground).getLayers()) {
 		float offset = (view_center.y + (m_score / 5000) * 5000) * parallaxSpeed;
 		bg.setPosition(bg.getPosition().x, offset - 300 - (m_score / 5000) * 5000);
@@ -212,7 +219,7 @@ void Scene_Play::sRender() {
 		if (m_alpha > 0) {
 			for (auto& bg2 : m_game->getAssets().getBackground(m_pastBackground).getLayers()) {
 				float offset2 = (view_center.y + (m_pastBackground * 5000 / 5000) * 5000) * parallaxSpeed2;
-				bg2.setPosition(bg2.getPosition().x, offset2 - 300 - (m_pastBackground*5000 / 5000) * 5000);
+				bg2.setPosition(bg2.getPosition().x, offset2 - 300 - (m_pastBackground * 5000 / 5000) * 5000);
 				bg2.setColor(sf::Color(255, 255, 255, m_alpha));
 				parallaxSpeed2 -= 0.1;
 				window.draw(bg2);
@@ -225,6 +232,25 @@ void Scene_Play::sRender() {
 		}
 
 	}
+
+
+	if ((m_score - m_highestScore) < 1000 || (m_score - m_highestScore) > -1000) {
+
+		sf::RectangleShape HighLine(sf::Vector2f(window.getSize().x, 4.f));
+		HighLine.setOrigin(HighLine.getSize().x / 2.f, HighLine.getSize().y / 2.f);
+		HighLine.setPosition(window.getSize().x/2.f, -(int)m_highestScore);
+		HighLine.setFillColor(sf::Color::White);
+		std::string text = "Highest Score: " + std::to_string(m_highestScore);
+		auto HighText = sf::Text(text, m_game->getAssets().getFont("RETROGAMING"), 20);
+		HighText.setFillColor(sf::Color::White);
+		auto x_spawn_min = window.getView().getViewport().getPosition().x * window.getSize().x;
+		HighText.setPosition(x_spawn_min+50, -(int)m_highestScore - 30);
+		HighText.setOutlineThickness(1.f);
+		HighText.setOutlineColor(sf::Color::Black);
+		window.draw(HighLine);
+		window.draw(HighText);
+	}
+
 	
 	if (m_drawTextures) {
 		for (auto e : m_entityManager.getEntities()) {
@@ -464,9 +490,10 @@ void Scene_Play::sPlatformGeneration() {
 	std::random_device rd;
 	std::mt19937 gen(rd());
 
-	// Crear una distribución discreta con las probabilidades específicas
-	// 40% para 1, 10% para 2, 40% para 3, 10% para 4
-	std::discrete_distribution<> dist({ 50, 10, 30, 10 });
+
+	double percent = m_score / 9000;
+
+	std::discrete_distribution<> dist({ 60-percent, 5 + percent, 30-percent, 5 + percent});
 
 
 	auto & window = m_game->window();
@@ -481,7 +508,7 @@ void Scene_Play::sPlatformGeneration() {
 	if (abs(player_pos.y) > abs(highestPlatformY)-300) {
 		auto tile = m_entityManager.addEntity("tile");
 
-		size_t type = dist(gen) + 1; ;
+		size_t type = dist(gen) + 1;
 
 		if (type == 1) {
 			tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
@@ -534,5 +561,8 @@ void Scene_Play::sRemoveDeadPlatforms() {
 }
 
 void Scene_Play::replay() {
-	m_game->changeScene("PLAY", std::make_shared<Scene_Play>(m_game), true);
+	if (m_score > m_highestScore) {
+		m_highestScore = m_score;
+	}
+	m_game->changeScene("PLAY", std::make_shared<Scene_Play>(m_game,m_highestScore), true);
 }
