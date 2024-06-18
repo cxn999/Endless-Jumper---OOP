@@ -71,3 +71,7 @@ public:
 	CState() {}
 	CState(std::string s) : state(s) {}
 };
+
+class CKill : public Component {
+	
+};

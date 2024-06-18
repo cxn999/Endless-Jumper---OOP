@@ -16,8 +16,10 @@ protected:
 	bool m_drawCollision = false;
 	bool m_move = false;
 	bool m_transition = false;
-	Vec2 m_gridSize = { 32,32 };
+	bool m_end = false;
+	Vec2 m_gridSize = { 64,64 };
 	Vec2 m_targetViewPosition;
+	size_t m_platformSpacing = 100;
 
 	std::shared_ptr<Entity> m_player;
 public:

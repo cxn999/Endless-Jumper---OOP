@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <time.h>
 #include <iostream>
+#include <random>
 
 Scene_Play::Scene_Play(GameEngine* gameEngine) 
 	: Scene(gameEngine)
@@ -115,7 +116,23 @@ void Scene_Play::loadLevel() {
 	for (int i = 0; i < initialPlatformCount; ++i) {
 			auto tile = m_entityManager.addEntity("tile");
 			y_pos -= 100.0f;  // Adjust spacing between tiles
-			tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
+
+			// Crear un generador de números aleatorios basado en el tiempo del sistema
+			std::random_device rd;
+			std::mt19937 gen(rd());
+
+			// Crear una distribución de Bernoulli con probabilidad de 0.8 para obtener true (lo que representará 1)
+			std::bernoulli_distribution d(0.7);
+
+			// Generar el número basado en la distribución
+			int type = d(gen) ? 1 : 2;
+
+			if (type == 1) {
+				tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
+			}
+			else if (type == 2) {
+				tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("log01"), false);
+			}
 			tile->getComponent<CAnimation>().animation.getSprite().setScale(0.15, 0.15);
 			auto size = tile->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 			tile->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
@@ -153,6 +170,7 @@ void Scene_Play::sRender() {
 		m_transition = true;
 		m_pastBackground = m_currentBackground;
 		m_currentBackground = (m_score / 9000) % 8;
+		m_platformSpacing += 5;
 	}
 	
 	for (auto& bg : m_game->getAssets().getBackground(m_currentBackground).getLayers()) {
@@ -261,13 +279,19 @@ void Scene_Play::sCollision() {
 			if (0 < overlap.x && -m_gridSize.y < overlap.x && dy > 0) {
 				if (0 <= overlap.y && prevOverlap.y <= 0) {
 					// stand on tile
-					m_player->getComponent<CInput>().canJump = true;
-					m_player->getComponent<CGravity>().gravity = 0;
-					player.velocity.y = -20;
-					// collision resolution
-					player.pos.y -= overlap.y;
-					m_move = true;
-					m_targetViewPosition = Vec2(m_view.getCenter().x, tile.pos.y - 500);
+					if (e->hasComponent<CKill>()) {
+						m_player->destroy();
+						m_end = true;
+					}
+					else {
+						m_player->getComponent<CInput>().canJump = true;
+						m_player->getComponent<CGravity>().gravity = 0;
+						player.velocity.y = -20;
+						// collision resolution
+						player.pos.y -= overlap.y;
+						m_move = true;
+						m_targetViewPosition = Vec2(m_view.getCenter().x, tile.pos.y - 500);
+					}
 				}
 			}
 		}
@@ -348,6 +372,15 @@ void Scene_Play::onEnd() {
 }
 
 void Scene_Play::sPlatformGeneration() {
+	// Crear un generador de números aleatorios basado en el tiempo del sistema
+	std::random_device rd;
+	std::mt19937 gen(rd());
+
+	// Crear una distribución discreta con las probabilidades específicas
+	// 40% para 1, 10% para 2, 40% para 3, 10% para 4
+	std::discrete_distribution<> dist({ 50, 10, 30, 10 });
+
+
 	auto & window = m_game->window();
 	float highestPlatformY = m_entityManager.getEntities("tile").back()->getComponent<CTransform>().pos.y;
 
@@ -359,13 +392,29 @@ void Scene_Play::sPlatformGeneration() {
 	// Generate new platforms above the highest one if the player is nearing the top
 	if (abs(player_pos.y) > abs(highestPlatformY)-300) {
 		auto tile = m_entityManager.addEntity("tile");
-		tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
+
+		size_t type = dist(gen) + 1; ;
+
+		if (type == 1) {
+			tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass01"), false);
+		}
+		else if (type == 2) {
+			tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("grass02"), false);
+			tile->addComponent<CKill>();
+		}
+		else if (type == 3) {
+			tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("log01"), false);
+		}
+		else if (type == 4) {
+			tile->addComponent<CAnimation>(m_game->getAssets().getAnimation("log02"), false);
+			tile->addComponent<CKill>();
+		}
 		tile->getComponent<CAnimation>().animation.getSprite().setScale(0.15, 0.15);
 		auto size = tile->getComponent<CAnimation>().animation.getSprite().getGlobalBounds();
 		tile->addComponent<CBoundingBox>(Vec2(size.getSize().x, size.getSize().y));
 		int size_x = tile->getComponent<CBoundingBox>().size.x;
 		auto pos_x = (rand() % (win_width - size_x*2)) + x_spawn_min + size_x;
-		tile->addComponent<CTransform>(Vec2(pos_x, highestPlatformY - 100));
+		tile->addComponent<CTransform>(Vec2(pos_x, highestPlatformY - m_platformSpacing));
 		auto pos = tile->getComponent<CTransform>().pos;
 		tile->getComponent<CAnimation>().animation.getSprite().setPosition(pos.x, pos.y);
 	}

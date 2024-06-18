@@ -10,7 +10,8 @@ typedef std::tuple <
 	CBoundingBox,
 	CInput,
 	CLifeSpan,
-	CTransform
+	CTransform,
+	CKill
 	> ComponentTuple;
 
 class Entity { 

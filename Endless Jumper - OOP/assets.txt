@@ -1,4 +1,7 @@
-Texture tile01 Assets\Tiles\Pad_04_1.png
+Texture tile1_01 Assets\Tiles\Pad_04_1.png
+Texture tile1_02 Assets\Tiles\Pad_04_2.png
+Texture tile2_01 Assets\Tiles\Pad_02_1.png
+Texture tile2_02 Assets\Tiles\Pad_02_2.png
 Texture mainIdle Assets\Player\Idle.png
 Texture mainJump Assets\Player\Jump.png
 Texture mainFall Assets\Player\Fall.png
@@ -77,7 +80,10 @@ Background 7 2 layer72
 Background 7 3 layer73
 Background 7 4 layer74
 Background 7 5 layer75
-Animation grass01 tile01 1 0
+Animation grass01 tile1_01 1 0
+Animation grass02 tile1_02 1 0
+Animation log01 tile2_01 1 0
+Animation log02 tile2_02 1 0
 Animation playerIdle mainIdle 11 6
 Animation playerJump mainJump 1 0
 Animation playerFall mainFall 1 0
