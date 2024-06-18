@@ -121,10 +121,8 @@ void Scene_Play::loadLevel() {
 			std::random_device rd;
 			std::mt19937 gen(rd());
 
-			// Crear una distribución de Bernoulli con probabilidad de 0.8 para obtener true (lo que representará 1)
-			std::bernoulli_distribution d(0.7);
+			std::bernoulli_distribution d(0.5);
 
-			// Generar el número basado en la distribución
 			int type = d(gen) ? 1 : 2;
 
 			if (type == 1) {
@@ -146,7 +144,7 @@ void Scene_Play::loadLevel() {
 					std::bernoulli_distribution d(0.7);
 					// Generar el número basado en la distribución
 					int side = d(gen) ? 0 : 1;
-					auto pos_x = x_spawn_min + win_width / 4.f + side * win_width / 2.f;
+					auto pos_x = x_spawn_min + 100 + rand() % 300 + side * win_width / 2.f;
 					tile->addComponent<CTransform>(Vec2(pos_x, y_pos));
 					tile->addComponent<CMove>();
 					tile->getComponent<CTransform>().velocity.x = rand() % 3 + 1;
@@ -244,71 +242,75 @@ void Scene_Play::sRender() {
 }
 
 void Scene_Play::sAnimation() {
-	auto& player = m_player->getComponent<CTransform>();
-	auto player_state = m_player->getComponent<CState>().state;
-	auto& animation = m_player->getComponent<CAnimation>().animation;
+	if (m_player->isActive()) {
+		auto& player = m_player->getComponent<CTransform>();
+		auto player_state = m_player->getComponent<CState>().state;
+		auto& animation = m_player->getComponent<CAnimation>().animation;
 
-	if (player_state == "jump") {
-		if (animation.getName() != "playerJump") {
-			animation = m_game->getAssets().getAnimation("playerJump");
+		if (player_state == "jump") {
+			if (animation.getName() != "playerJump") {
+				animation = m_game->getAssets().getAnimation("playerJump");
+			}
 		}
-	}
-	else if (player_state == "fall") {
-		if (animation.getName() != "playerFall") {
-			animation = m_game->getAssets().getAnimation("playerFall");
+		else if (player_state == "fall") {
+			if (animation.getName() != "playerFall") {
+				animation = m_game->getAssets().getAnimation("playerFall");
+			}
 		}
-	}
 
-	animation.getSprite().setScale(2, 2);
+		animation.getSprite().setScale(2, 2);
 
-	if (player.pos.x < player.prevPos.x) {
-		if (animation.getSprite().getScale().x != -2) {
-			animation.getSprite().scale(-1, 1);
+		if (player.pos.x < player.prevPos.x) {
+			if (animation.getSprite().getScale().x != -2) {
+				animation.getSprite().scale(-1, 1);
+			}
 		}
-	}
-	else if (player.pos.x > player.prevPos.x) {
-		if (animation.getSprite().getScale().x != 2) {
-			animation.getSprite().scale(-1, 1);
+		else if (player.pos.x > player.prevPos.x) {
+			if (animation.getSprite().getScale().x != 2) {
+				animation.getSprite().scale(-1, 1);
+			}
 		}
+
+		m_player->getComponent<CAnimation>().animation.getSprite().setPosition(player.pos.x, player.pos.y);
+		m_player->getComponent<CAnimation>().animation.update();
 	}
-	
-	m_player->getComponent<CAnimation>().animation.getSprite().setPosition(player.pos.x, player.pos.y);
-	m_player->getComponent<CAnimation>().animation.update();
 }
 
 // OLD COLLISION SYSTEM
 
 void Scene_Play::sCollision() {
-	auto& player = m_player->getComponent<CTransform>();
+	if (m_player->isActive()) {
+		auto& player = m_player->getComponent<CTransform>();
 
-	if (player.pos.y > m_view.getCenter().y + 350) {
-		m_player->destroy();
-		m_end = true;
-	}
+		if (player.pos.y > m_view.getCenter().y + 350) {
+			m_player->destroy();
+			m_end = true;
+		}
 
-	for (auto& e : m_entityManager.getEntities("tile")) {
-		if (player.pos.y > player.prevPos.y) {
-			auto& tile = e->getComponent<CTransform>();
-			Vec2 overlap = GetOverlap(m_player, e);
-			Vec2 prevOverlap = GetPreviousOverlap(m_player, e);
+		for (auto& e : m_entityManager.getEntities("tile")) {
+			if (player.pos.y > player.prevPos.y) {
+				auto& tile = e->getComponent<CTransform>();
+				Vec2 overlap = GetOverlap(m_player, e);
+				Vec2 prevOverlap = GetPreviousOverlap(m_player, e);
 
-			float dy = tile.pos.y - player.pos.y;
+				float dy = tile.pos.y - player.pos.y;
 
-			if (0 < overlap.x && -m_gridSize.y < overlap.x && dy > 0) {
-				if (0 <= overlap.y && prevOverlap.y <= 0) {
-					// stand on tile
-					if (e->hasComponent<CKill>()) {
-						m_player->destroy();
-						m_end = true;
-					}
-					else {
-						m_player->getComponent<CInput>().canJump = true;
-						m_player->getComponent<CGravity>().gravity = 0;
-						player.velocity.y = -20;
-						// collision resolution
-						player.pos.y -= overlap.y;
-						m_move = true;
-						m_targetViewPosition = Vec2(m_view.getCenter().x, tile.pos.y - 500);
+				if (0 < overlap.x && -m_gridSize.y < overlap.x && dy > 0) {
+					if (0 <= overlap.y && prevOverlap.y <= 0) {
+						// stand on tile
+						if (e->hasComponent<CKill>()) {
+							m_player->destroy();
+							m_end = true;
+						}
+						else {
+							m_player->getComponent<CInput>().canJump = true;
+							m_player->getComponent<CGravity>().gravity = 0;
+							player.velocity.y = -20;
+							// collision resolution
+							player.pos.y -= overlap.y;
+							m_move = true;
+							m_targetViewPosition = Vec2(m_view.getCenter().x, tile.pos.y - 500);
+						}
 					}
 				}
 			}
@@ -346,44 +348,45 @@ void Scene_Play::sMovement() {
 		}
 	}
 
-	if (input.left) {
-		player_velocity.x = -5;
-		m_player->getComponent<CState>().state = "run";
-	}
-	if (input.right) {
-		player_velocity.x = 5;
-		m_player->getComponent<CState>().state = "run";
- 	}
-	if (input.up) {
-		player_velocity.y = -50;
-		m_player->getComponent<CState>().state = "jump";
-	}
-	if (player_pos.y > player.prevPos.y) {
-		m_player->getComponent<CState>().state = "fall";
-	}
-	if (player_pos.y < player.prevPos.y) {
-		m_player->getComponent<CState>().state = "jump";
+	if (m_player->isActive()) {
+		if (input.left) {
+			player_velocity.x = -5;
+			m_player->getComponent<CState>().state = "run";
+		}
+		if (input.right) {
+			player_velocity.x = 5;
+			m_player->getComponent<CState>().state = "run";
+		}
+		if (input.up) {
+			player_velocity.y = -50;
+			m_player->getComponent<CState>().state = "jump";
+		}
+		if (player_pos.y > player.prevPos.y) {
+			m_player->getComponent<CState>().state = "fall";
+		}
+		if (player_pos.y < player.prevPos.y) {
+			m_player->getComponent<CState>().state = "jump";
+		}
+		m_player->getComponent<CTransform>().prevPos = player_pos;
+
+		player_velocity.y += m_player->getComponent<CGravity>().gravity;
+		player_pos += player_velocity;
+
+		if (player_velocity.y > 20) {
+			player_velocity.y = 20;
+		}
+		m_player->getComponent<CGravity>().gravity = 0.4;
+
+		if (player.pos == player.prevPos) {
+			m_player->getComponent<CState>().state = "idle";
+		}
+
+		if (m_score < abs(player.pos.y) && player.pos.y < 0) {
+			m_score = abs((int)player_pos.y);
+			m_scoreText.setString(std::to_string(m_score));
+		}
 	}
 
-	m_player->getComponent<CTransform>().prevPos = player_pos;
-
-
-	player_velocity.y += m_player->getComponent<CGravity>().gravity;
-	player_pos += player_velocity;
-
-	if (player_velocity.y > 20) {
-		player_velocity.y = 20;
-    }
-	m_player->getComponent<CGravity>().gravity = 0.4;
-
-	if (player.pos == player.prevPos) {
-		m_player->getComponent<CState>().state = "idle";
-	}
-
-	if (m_score < abs(player.pos.y) && player.pos.y<0) {
-		m_score = abs((int)player_pos.y);
-		m_scoreText.setString(std::to_string(m_score));
-	}
 	m_scoreText.setPosition(m_view.getCenter().x-m_scoreText.getGlobalBounds().width/2.f, m_view.getCenter().y - 350);
 
 
@@ -462,11 +465,24 @@ void Scene_Play::sPlatformGeneration() {
 		int size_x = tile->getComponent<CBoundingBox>().size.x;
 
 		if (type == 3 || type == 4) {
-			// Crear una distribución de Bernoulli con probabilidad de 0.8 para obtener true (lo que representará 1)
-			std::bernoulli_distribution d(0.7);
-			// Generar el número basado en la distribución
+			std::bernoulli_distribution d(0.5);
 			int side = d(gen) ? 0 : 1;
-			auto pos_x = x_spawn_min + win_width / 4.f + side * win_width / 2.f;
+			/*
+			if (movingTile.pos.x < x_spawn_min + win_width / 2) {
+				if (movingTile.pos.x < x_spawn_min + 100 ||
+					movingTile.pos.x > x_spawn_min + 400)
+				{
+					movingTile.velocity.x *= -1;
+				}
+			}
+			else {
+				if (movingTile.pos.x > x_spawn_min + win_width - 100 ||
+					movingTile.pos.x < x_spawn_min + win_width / 2.f + 100)
+				{
+					movingTile.velocity.x *= -1;
+				}
+			*/
+			auto pos_x = x_spawn_min + 100 + rand()%300 + side * win_width / 2.f;
 			tile->addComponent<CTransform>(Vec2(pos_x, highestPlatformY - m_platformSpacing));
 			tile->addComponent<CMove>();
 			tile->getComponent<CTransform>().velocity.x = rand() % 3 + 1;
