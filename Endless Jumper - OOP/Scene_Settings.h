@@ -17,10 +17,23 @@ protected:
 	sf::Text m_menuText;
 	int m_selectedMenuIndex = 0;
 
+	// New UI elements
+	sf::RectangleShape m_volumeSlider;
+	sf::Text m_volumeText;
+	sf::Text m_musicToggleText;
+	sf::Text m_controlSchemeText;
+
+	// State variables
+	float m_volume = 50.0f; // Initial volume level
+	bool m_musicOn = true; // Initial music state
+	bool m_useWASD = true; // Initial control scheme
+
 	void init();
 	void update();
 	void onEnd();
 	void sDoAction(const Action& action);
+	sf::Color getVolumeColor(float volume);
+	void updateVolumeSlider();
 
 public:
 	Scene_Settings(GameEngine* gameEngine = nullptr);
