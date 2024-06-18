@@ -92,7 +92,7 @@ void Scene_Settings::init() {
 
 	// Control scheme toggle
 	m_controlSchemeText.setFont(f);
-	m_controlSchemeText.setString(m_useWASD ? "Controls: WASD" : "Controls: Arrow Keys");
+	m_controlSchemeText.setString(m_game->m_wasd ? "Controls: WASD" : "Controls: Arrow Keys");
 	m_controlSchemeText.setCharacterSize(30);
 	m_controlSchemeText.setFillColor(sf::Color::Black);
 	m_controlSchemeText.setPosition(mx - m_controlSchemeText.getGlobalBounds().width / 2, 500);
@@ -120,8 +120,8 @@ void Scene_Settings::sDoAction(const Action& action) {
 				m_musicToggleText.setString(m_musicOn ? "Music: On" : "Music: Off");
 			}
 			else if (m_selectedMenuIndex == 2) { // Toggle control scheme
-				m_useWASD = !m_useWASD;
-				m_controlSchemeText.setString(m_useWASD ? "Controls: WASD" : "Controls: Arrow Keys");
+				m_game->m_wasd = !m_game->m_wasd;
+				m_controlSchemeText.setString(m_game->m_wasd ? "Controls: WASD" : "Controls: Arrow Keys");
 			}
 		}
 		else if (action.name() == "DOWN") { m_selectedMenuIndex = (m_selectedMenuIndex + 1) % 3; }

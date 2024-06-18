@@ -28,6 +28,7 @@ protected:
 	std::shared_ptr<Scene> currentScene();
 
 public:
+	bool m_wasd = true;
 	GameEngine(const std::string& path);
 
 	// Change scene  

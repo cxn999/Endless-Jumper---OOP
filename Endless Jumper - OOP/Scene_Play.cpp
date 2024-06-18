@@ -25,9 +25,17 @@ void Scene_Play::init() {
 	registerAction(sf::Keyboard::Escape, "QUIT");
 	registerAction(sf::Keyboard::T, "TOGGLE_TEXTURE"); // Toggle drawing textures
 	registerAction(sf::Keyboard::C, "TOGGLE_COLLISION"); // Toggle drawing collision boxes
-	registerAction(sf::Keyboard::W, "UP"); //POSSIBLE DOUBLE JUMP LATER
-	registerAction(sf::Keyboard::A, "LEFT");
-	registerAction(sf::Keyboard::D, "RIGHT");
+	if (m_game->m_wasd) {
+		registerAction(sf::Keyboard::W, "UP"); //POSSIBLE DOUBLE JUMP LATER
+		registerAction(sf::Keyboard::A, "LEFT");
+		registerAction(sf::Keyboard::D, "RIGHT");
+	}
+	else {
+		registerAction(sf::Keyboard::Up, "UP"); //POSSIBLE DOUBLE JUMP LATER
+		registerAction(sf::Keyboard::Left, "LEFT");
+		registerAction(sf::Keyboard::Right, "RIGHT");
+	}
+
 
 	loadLevel();
 
