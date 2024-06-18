@@ -149,10 +149,10 @@ void Scene_Play::sRender() {
 
 	// Adjust background positions with parallax effect
 	
-	if ((m_score / 9000) % 8 > m_currentBackground) {
+	if ((m_score / 9000) % 8 != m_currentBackground) {
 		m_transition = true;
 		m_pastBackground = m_currentBackground;
-		m_currentBackground++;
+		m_currentBackground = (m_score / 9000) % 8;
 	}
 	
 	for (auto& bg : m_game->getAssets().getBackground(m_currentBackground).getLayers()) {
