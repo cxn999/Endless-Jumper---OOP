@@ -11,6 +11,7 @@ protected:
 	size_t m_currentBackground = 0;
 	size_t m_pastBackground;
 	size_t m_currentFrame = 0;
+	size_t m_highestScore;
 	int m_alpha = 255;
 	bool m_drawTextures = true;
 	bool m_drawCollision = false;
@@ -30,6 +31,7 @@ public:
 	void update();
 
 	void onEnd();
+	void replay();
 
 	// Systems
 	void sRemoveDeadPlatforms();

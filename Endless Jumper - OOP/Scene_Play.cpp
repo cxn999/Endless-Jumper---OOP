@@ -25,6 +25,7 @@ void Scene_Play::init() {
 	registerAction(sf::Keyboard::Escape, "QUIT");
 	registerAction(sf::Keyboard::T, "TOGGLE_TEXTURE"); // Toggle drawing textures
 	registerAction(sf::Keyboard::C, "TOGGLE_COLLISION"); // Toggle drawing collision boxes
+	registerAction(sf::Keyboard::R, "REPLAY");
 	if (m_game->m_wasd) {
 		registerAction(sf::Keyboard::W, "UP"); //POSSIBLE DOUBLE JUMP LATER
 		registerAction(sf::Keyboard::A, "LEFT");
@@ -58,6 +59,8 @@ void Scene_Play::sDoAction(const Action& action) {
 		else if (action.name() == "TOGGLE_COLLISION") { m_drawCollision = !m_drawCollision; }
 		else if (action.name() == "PAUSE") { setPaused(!m_paused); }
 		else if (action.name() == "QUIT") { onEnd(); }
+		else if (action.name() == "REPLAY") { if (!m_player->isActive() || m_paused) { replay(); }
+		}//CHANGE SCENE }
 		if (action.name() == "RIGHT") {
 			m_player->getComponent<CInput>().right = true;	
 		}
@@ -67,7 +70,6 @@ void Scene_Play::sDoAction(const Action& action) {
 		if (action.name() == "UP") {
 			m_player->getComponent<CInput>().up = true;
 		}
-		// ADD REMAINING ACTIONS
 	}
 	else if (action.type() == "END") {
 		if (action.name() == "RIGHT") {
@@ -184,16 +186,16 @@ void Scene_Play::sRender() {
 
 	// Adjust background positions with parallax effect
 	
-	if ((m_score / 9000) % 8 != m_currentBackground) {
+	if ((m_score / 5000) % 8 != m_currentBackground) {
 		m_transition = true;
 		m_pastBackground = m_currentBackground;
-		m_currentBackground = (m_score / 9000) % 8;
+		m_currentBackground = (m_score / 5000) % 8;
 		m_platformSpacing += 5;
 	}
 	
 	for (auto& bg : m_game->getAssets().getBackground(m_currentBackground).getLayers()) {
-		float offset = (view_center.y + (m_score / 9000) * 9000) * parallaxSpeed;
-		bg.setPosition(bg.getPosition().x, offset - 300 - (m_score / 9000) * 9000);
+		float offset = (view_center.y + (m_score / 5000) * 5000) * parallaxSpeed;
+		bg.setPosition(bg.getPosition().x, offset - 300 - (m_score / 5000) * 5000);
 		parallaxSpeed -= 0.1;
 		if (m_transition) {
 			bg.setColor(sf::Color(255, 255, 255, (255 - m_alpha)));
@@ -209,8 +211,8 @@ void Scene_Play::sRender() {
 	if (m_transition) {
 		if (m_alpha > 0) {
 			for (auto& bg2 : m_game->getAssets().getBackground(m_pastBackground).getLayers()) {
-				float offset2 = (view_center.y + (m_pastBackground * 9000 / 9000) * 9000) * parallaxSpeed2;
-				bg2.setPosition(bg2.getPosition().x, offset2 - 300 - (m_pastBackground*9000 / 9000) * 9000);
+				float offset2 = (view_center.y + (m_pastBackground * 5000 / 5000) * 5000) * parallaxSpeed2;
+				bg2.setPosition(bg2.getPosition().x, offset2 - 300 - (m_pastBackground*5000 / 5000) * 5000);
 				bg2.setColor(sf::Color(255, 255, 255, m_alpha));
 				parallaxSpeed2 -= 0.1;
 				window.draw(bg2);
@@ -242,6 +244,35 @@ void Scene_Play::sRender() {
 			BoundingBox.setOutlineThickness(1);
 			window.draw(BoundingBox);
 		}
+	}
+	if (!m_player->isActive() || m_paused) {
+		auto replay = sf::Text("Replay: R", m_game->getAssets().getFont("RETROGAMING"), 50);
+		auto quit = sf::Text("Quit: ESC", m_game->getAssets().getFont("RETROGAMING"), 50);
+
+		auto rect = sf::RectangleShape(sf::Vector2f(400, 250));
+		rect.setFillColor(sf::Color::Yellow);
+		rect.setOrigin(rect.getSize().x / 2.f, rect.getSize().y / 2.f);
+		rect.setPosition(m_view.getCenter().x, m_view.getCenter().y-40);
+		rect.setOutlineColor(sf::Color::White);
+		rect.setOutlineThickness(6.f);
+
+		replay.setOrigin(replay.getGlobalBounds().width / 2.f, replay.getGlobalBounds().height / 2.f);
+		quit.setOrigin(quit.getGlobalBounds().width / 2.f, quit.getGlobalBounds().height / 2.f);
+
+		replay.setPosition(m_view.getCenter().x, m_view.getCenter().y-100);
+		quit.setPosition(m_view.getCenter().x, m_view.getCenter().y);
+
+		replay.setColor(sf::Color::Black);
+		quit.setColor(sf::Color::Black);
+
+		replay.setOutlineThickness(3.f);
+		quit.setOutlineThickness(3.f);
+		replay.setOutlineColor(sf::Color::White);
+		quit.setOutlineColor(sf::Color::White);
+
+		window.draw(rect);
+		window.draw(replay);
+		window.draw(quit);
 	}
 
 	window.draw(m_scoreText);
@@ -475,21 +506,7 @@ void Scene_Play::sPlatformGeneration() {
 		if (type == 3 || type == 4) {
 			std::bernoulli_distribution d(0.5);
 			int side = d(gen) ? 0 : 1;
-			/*
-			if (movingTile.pos.x < x_spawn_min + win_width / 2) {
-				if (movingTile.pos.x < x_spawn_min + 100 ||
-					movingTile.pos.x > x_spawn_min + 400)
-				{
-					movingTile.velocity.x *= -1;
-				}
-			}
-			else {
-				if (movingTile.pos.x > x_spawn_min + win_width - 100 ||
-					movingTile.pos.x < x_spawn_min + win_width / 2.f + 100)
-				{
-					movingTile.velocity.x *= -1;
-				}
-			*/
+
 			auto pos_x = x_spawn_min + 100 + rand()%300 + side * win_width / 2.f;
 			tile->addComponent<CTransform>(Vec2(pos_x, highestPlatformY - m_platformSpacing));
 			tile->addComponent<CMove>();
@@ -514,4 +531,8 @@ void Scene_Play::sRemoveDeadPlatforms() {
 			tile->destroy();
 		}
 	}
+}
+
+void Scene_Play::replay() {
+	m_game->changeScene("PLAY", std::make_shared<Scene_Play>(m_game), true);
 }
