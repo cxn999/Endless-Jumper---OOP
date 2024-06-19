@@ -41,7 +41,9 @@ void Scene_Settings::init() {
 	registerAction(sf::Keyboard::Up, "UP");
 	registerAction(sf::Keyboard::Down, "DOWN");
 	registerAction(sf::Keyboard::Left, "LEFT");
+	registerAction(sf::Keyboard::A, "LEFT");
 	registerAction(sf::Keyboard::Right, "RIGHT");
+	registerAction(sf::Keyboard::D, "RIGHT");
 
 	// sdjgksdjgksjdgks
 
