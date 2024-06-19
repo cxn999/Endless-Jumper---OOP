@@ -20,20 +20,15 @@ Scene_Play::Scene_Play(GameEngine* gameEngine)
 	init();
 }
 
-Scene_Play::Scene_Play(GameEngine* gameEngine, size_t highestScore)
-	: Scene(gameEngine), m_highestScore(highestScore)
-{
-	srand(time(NULL));
-	init();
-}
-
 void Scene_Play::init() {
+	m_highestScore = m_game->getHighestScore();
+
 	registerAction(sf::Keyboard::P, "PAUSE");
 	registerAction(sf::Keyboard::Escape, "QUIT");
 	registerAction(sf::Keyboard::T, "TOGGLE_TEXTURE"); // Toggle drawing textures
 	registerAction(sf::Keyboard::C, "TOGGLE_COLLISION"); // Toggle drawing collision boxes
 	registerAction(sf::Keyboard::R, "REPLAY");
-	if (m_game->m_wasd) {
+	if (m_game->getWASD()) {
 		registerAction(sf::Keyboard::W, "UP"); //POSSIBLE DOUBLE JUMP LATER
 		registerAction(sf::Keyboard::A, "LEFT");
 		registerAction(sf::Keyboard::D, "RIGHT");
@@ -562,7 +557,8 @@ void Scene_Play::sRemoveDeadPlatforms() {
 
 void Scene_Play::replay() {
 	if (m_score > m_highestScore) {
-		m_highestScore = m_score;
+		m_game->setHighestScore(m_score);
+
 	}
-	m_game->changeScene("PLAY", std::make_shared<Scene_Play>(m_game,m_highestScore), true);
+	m_game->changeScene("PLAY", std::make_shared<Scene_Play>(m_game), true);
 }

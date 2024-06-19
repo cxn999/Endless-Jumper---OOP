@@ -11,7 +11,7 @@ protected:
 	size_t m_currentBackground = 0;
 	size_t m_pastBackground;
 	size_t m_currentFrame = 0;
-	size_t m_highestScore = 1000;
+	size_t m_highestScore;
 	int m_alpha = 255;
 	bool m_drawTextures = true;
 	bool m_drawCollision = false;
@@ -25,7 +25,6 @@ protected:
 	std::shared_ptr<Entity> m_player;
 public:
 	Scene_Play(GameEngine* gameEngine);
-	Scene_Play(GameEngine* gameEngine, size_t highestScore);
 
 	// Check which is public or private smh
 	void init();
