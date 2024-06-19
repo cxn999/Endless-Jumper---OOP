@@ -87,14 +87,14 @@ void Scene_Settings::init() {
 
 	// Music toggle
 	m_musicToggleText.setFont(f);
-	m_musicToggleText.setString(m_musicOn ? "Music: On" : "Music: Off");
+	m_musicToggleText.setString(m_game->getMusic() ? "Music: On" : "Music: Off");
 	m_musicToggleText.setCharacterSize(30);
 	m_musicToggleText.setFillColor(sf::Color::Black);
 	m_musicToggleText.setPosition(mx - m_musicToggleText.getGlobalBounds().width / 2, 350);
 
 	// Control scheme toggle
 	m_controlSchemeText.setFont(f);
-	m_controlSchemeText.setString(m_game->m_wasd ? "Controls: WASD" : "Controls: Arrow Keys");
+	m_controlSchemeText.setString(m_game->getWASD() ? "Controls: WASD" : "Controls: Arrow Keys");
 	m_controlSchemeText.setCharacterSize(30);
 	m_controlSchemeText.setFillColor(sf::Color::Black);
 	m_controlSchemeText.setPosition(mx - m_controlSchemeText.getGlobalBounds().width / 2, 500);
@@ -118,12 +118,12 @@ void Scene_Settings::sDoAction(const Action& action) {
 		else if (action.name() == "ENTER") { 
 			std::cout << "ENTER PRESSED" << std::endl; 
 			if (m_selectedMenuIndex == 1) { // Toggle music on/off
-				m_musicOn = !m_musicOn;
-				m_musicToggleText.setString(m_musicOn ? "Music: On" : "Music: Off");
+				m_game->setMusic(!m_game->getMusic());
+				m_musicToggleText.setString(m_game->getMusic() ? "Music: On" : "Music: Off");
 			}
 			else if (m_selectedMenuIndex == 2) { // Toggle control scheme
-				m_game->m_wasd = !m_game->m_wasd;
-				m_controlSchemeText.setString(m_game->m_wasd ? "Controls: WASD" : "Controls: Arrow Keys");
+				m_game->setWASD(!m_game->getWASD());
+				m_controlSchemeText.setString(m_game->getWASD() ? "Controls: WASD" : "Controls: Arrow Keys");
 			}
 		}
 		else if (action.name() == "DOWN") { m_selectedMenuIndex = (m_selectedMenuIndex + 1) % 3; }

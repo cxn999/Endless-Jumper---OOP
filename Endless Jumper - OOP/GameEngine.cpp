@@ -2,15 +2,45 @@
 #include "Scene_Menu.h"
 #include "GameEngine.h"
 #include "Scene_Play.h"
+#include <fstream>
 
-GameEngine::GameEngine(const std::string& path) {
+GameEngine::GameEngine(const std::string& path, const std::string& path2) {
 	// Calling the init function
+	srand(time(NULL));
+
+	std::ifstream file(path2);
+	std::string identifier;
+
+	if (!file.is_open()) {
+		std::cerr << "Error opening file...\n";
+		exit(EXIT_FAILURE);
+	}
+
+	while (file >> identifier) {
+		size_t n;
+		file >> n;
+		if (identifier == "coins") {
+			setCoins(n);
+		}
+		else if (identifier == "highestScore") {
+			setHighestScore(n);
+		}
+		else if (identifier == "wasd") {
+			setWASD(n);
+		}
+		else if (identifier == "volume") {
+			setVolume(n);
+		}
+		else if (identifier == "music") {
+			setMusic(n);
+		}
+	}
+
 	init(path);
 }
 
 void GameEngine::init(const std::string& path) {
-	//std::ifstream fin(path);
-	// TO DO: READ CONFIG FILE
+
 	
 	m_assets.loadFromFile(path);
 
@@ -100,4 +130,40 @@ sf::RenderWindow& GameEngine::window() {
 // const Assets & assets() const;
 bool GameEngine::isRunning() {
 	return m_running && m_window.isOpen();
+}
+
+size_t GameEngine::getCoins() {
+	return m_coins;
+}
+
+size_t GameEngine::getVolume() {
+	return m_volume;
+}
+
+size_t GameEngine::getHighestScore() {
+	return m_highestScore;
+}
+bool GameEngine::getMusic() {
+	return m_music;
+}
+bool GameEngine::getWASD() {
+	return m_wasd;
+}
+
+void GameEngine::setCoins(size_t coins) {
+	m_coins = coins;
+}
+
+void GameEngine::setVolume(size_t volume) {
+	m_volume = volume;
+}
+
+void GameEngine::setHighestScore(size_t highestScore) {
+	m_highestScore = highestScore;
+}
+void GameEngine::setMusic(bool music) {
+	m_music = music;
+}
+void GameEngine::setWASD(bool wasd) {
+	m_wasd = wasd;
 }
