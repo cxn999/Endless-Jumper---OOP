@@ -99,7 +99,7 @@ void Scene_Menu::sRender() {
 	// Calculate middle of the screen in X axis
 	auto mx = m_window.getSize().x / 2;
 	// Clear the window with blue
-	m_window.clear(sf::Color::Yellow);
+	m_window.clear(sf::Color::Transparent);
 
 	for (auto& bg : m_game->getAssets().getBackground(m_index).getLayers()) {
 		bg.setPosition(m_game->window().getView().getCenter().x/2.f, m_game->window().getView().getCenter().y / 2.f);
