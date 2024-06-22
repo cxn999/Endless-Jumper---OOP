@@ -39,6 +39,8 @@ void Scene_Menu::init() {
 	m_titleText.setPosition(m_window.getSize().x / 2.0f, 100);
 
 	m_titleText.setColor(sf::Color::Black);
+	m_titleText.setOutlineColor(sf::Color::White);
+	m_titleText.setOutlineThickness(1.f);
 	// Constant for the fontSize of the levels
 	int levels_fontSize = 50;
 
@@ -51,9 +53,13 @@ void Scene_Menu::init() {
 	m_texts.push_back(sf::Text(helpText, f, 30));
 	m_texts[3].setPosition(20, m_window.getSize().y - 50);
 	m_texts[3].setColor(sf::Color::Black);
+	m_texts[3].setOutlineColor(sf::Color::White);
+	m_texts[3].setOutlineThickness(1.f);
 
 	for (int i = 0; i < 3; i++) {
 		m_texts[i].setPosition(mx - m_texts[i].getGlobalBounds().width / 2.f, 250 + 100 * i);
+		m_texts[i].setOutlineColor(sf::Color::White);
+		m_texts[i].setOutlineThickness(1.f);
 	}
 }
 
