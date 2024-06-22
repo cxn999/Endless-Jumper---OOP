@@ -1,0 +1,13 @@
+<map id="GameEngine::setHighestScore" name="GameEngine::setHighestScore">
+<area shape="rect" id="Node000001" title=" " alt="" coords="626,31,827,57"/>
+<area shape="rect" id="Node000002" href="$class_game_engine.html#abe812095783a1aa3ddcbee5480daef74" title=" " alt="" coords="399,5,578,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="610,34,579,31,579,26,611,29"/>
+<area shape="rect" id="Node000003" href="$class_scene___play.html#a130605feff19608e5eeff9306c05b5c5" title=" " alt="" coords="422,56,556,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="611,59,557,65,556,60,611,54"/>
+<area shape="rect" id="Node000004" href="$class_scene___play.html#a34a74b594e4c984c13462c71cc5d9962" title=" " alt="" coords="192,31,351,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="406,62,351,56,352,51,407,57"/>
+<area shape="rect" id="Node000005" href="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2" title=" " alt="" coords="198,81,345,108"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="406,82,346,89,345,83,406,76"/>
+<area shape="rect" id="Node000006" href="$class_scene___play.html#a416e630ef10fac7e34855babea499700" title=" " alt="" coords="5,81,144,108"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="182,97,144,97,144,92,182,92"/>
+</map>

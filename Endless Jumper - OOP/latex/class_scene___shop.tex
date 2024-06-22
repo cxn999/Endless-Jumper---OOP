@@ -1,0 +1,263 @@
+\doxysection{Scene\+\_\+\+Shop Class Reference}
+\hypertarget{class_scene___shop}{}\label{class_scene___shop}\index{Scene\_Shop@{Scene\_Shop}}
+
+
+{\ttfamily \#include $<$Scene\+\_\+\+Shop.\+h$>$}
+
+
+
+Inheritance diagram for Scene\+\_\+\+Shop\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_scene___shop__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scene\+\_\+\+Shop\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___shop__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene___shop_a41611157caf81bc8f9a4b05df4742449}{Scene\+\_\+\+Shop}} (\mbox{\hyperlink{class_game_engine}{Game\+Engine}} \texorpdfstring{$\ast$}{*}game\+Engine=nullptr)
+\item 
+void \mbox{\hyperlink{class_scene___shop_a97f628fd17e0581cc242acc186f9b804}{s\+Render}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scene_abad71a081e3b76cff376c954d3b6c3cb}{set\+Paused}} (bool)
+\item 
+\mbox{\hyperlink{class_scene_ad10176d75a9cc0da56626f682d083507}{Scene}} ()
+\item 
+\mbox{\hyperlink{class_scene_a413d692c235f90a9b0aaa33196e87384}{Scene}} (\mbox{\hyperlink{class_game_engine}{Game\+Engine}} \texorpdfstring{$\ast$}{*}game\+Engine)
+\item 
+virtual void \mbox{\hyperlink{class_scene_af69ab1aeb2b5d8c084aa02444e1f65d4}{do\+Action}} (const \mbox{\hyperlink{class_action}{Action}} \&action)
+\item 
+void \mbox{\hyperlink{class_scene_a670b58a8e14e222d9a75afe3eb1e35bc}{register\+Action}} (int input\+Key, const std\+::string \&action\+Name)
+\item 
+size\+\_\+t \mbox{\hyperlink{class_scene_a440f3cd29cc9d73ca0d579a828d80c27}{width}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_scene_a9ca07b0a912e89b57193d14ca68564d3}{height}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{class_scene_a9f43c171b6a78154f919cf0b8b3b9c1a}{current\+Frame}} () const
+\item 
+bool \mbox{\hyperlink{class_scene_ac6421c6df8dba50d02fdaf37538dfebf}{has\+Ended}} () const
+\item 
+const \mbox{\hyperlink{_scene_8h_a86ff12d26b739ff16bcff91d715df70e}{Action\+Map}} \& \mbox{\hyperlink{class_scene_a201c6f29c57f78a6af5addb9fa779306}{get\+Action\+Map}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scene___shop_a24a760af748578f3edda5b83a766ff9a}{init}} ()
+\item 
+void \mbox{\hyperlink{class_scene___shop_a27666a0b2a6fd5aec323a22c873a25f0}{update}} ()
+\item 
+void \mbox{\hyperlink{class_scene___shop_a1c1e297ef2b0aaa30d371242936aebae}{on\+End}} ()
+\item 
+void \mbox{\hyperlink{class_scene___shop_a0fc8b233f8270161214ef4721e338db3}{s\+Do\+Action}} (const \mbox{\hyperlink{class_action}{Action}} \&action)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_scene___shop_afd704a836c5fba60c55c6a03271f49c3}{m\+\_\+title\+Text}}
+\item 
+std\+::vector$<$ sf\+::\+Text $>$ \mbox{\hyperlink{class_scene___shop_a6585e571d5fed8a9fdc6a9ff67e77a67}{m\+\_\+texts}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_scene___shop_ab443cd21d9a335477f3d96728c978afb}{m\+\_\+menu\+Strings}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_scene___shop_a678cf5e23790c895dd122832226c6f13}{m\+\_\+level\+Paths}}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_scene___shop_a7cc0d9ed813ae60b822ee752cc884fda}{m\+\_\+menu\+Text}}
+\item 
+int \mbox{\hyperlink{class_scene___shop_a6da63f098bc0cb194734d3fea45c14a6}{m\+\_\+selected\+Menu\+Index}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_scene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_engine}{Game\+Engine}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_scene_a055a2a35151e229504f940dc4a1eff0e}{m\+\_\+game}} = nullptr
+\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \mbox{\hyperlink{class_scene_a9607716b0ac72569b450f7e8aa1ac161}{m\+\_\+entity\+Manager}}
+\item 
+\mbox{\hyperlink{_scene_8h_a86ff12d26b739ff16bcff91d715df70e}{Action\+Map}} \mbox{\hyperlink{class_scene_a4221f1cd9c7ed1b714cfee64b0391da2}{m\+\_\+action\+Map}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_scene_a7bae804882b015014c71c017f7df0b1e}{m\+\_\+current\+Frame}}
+\item 
+bool \mbox{\hyperlink{class_scene_a9831c81afc52aeaac474275fcaa5bf95}{m\+\_\+paused}} = false
+\item 
+bool \mbox{\hyperlink{class_scene_ac4ef25d90a952ae5f93e80e5fd939d03}{m\+\_\+has\+Ended}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_scene___shop_a41611157caf81bc8f9a4b05df4742449}\index{Scene\_Shop@{Scene\_Shop}!Scene\_Shop@{Scene\_Shop}}
+\index{Scene\_Shop@{Scene\_Shop}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{Scene\_Shop()}{Scene\_Shop()}}
+{\footnotesize\ttfamily \label{class_scene___shop_a41611157caf81bc8f9a4b05df4742449} 
+Scene\+\_\+\+Shop\+::\+Scene\+\_\+\+Shop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_engine}{Game\+Engine}} \texorpdfstring{$\ast$}{*}}]{game\+Engine}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___shop_a41611157caf81bc8f9a4b05df4742449_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_scene___shop_a24a760af748578f3edda5b83a766ff9a}\index{Scene\_Shop@{Scene\_Shop}!init@{init}}
+\index{init@{init}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_scene___shop_a24a760af748578f3edda5b83a766ff9a} 
+void Scene\+\_\+\+Shop\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___shop_a24a760af748578f3edda5b83a766ff9a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_scene___shop_a24a760af748578f3edda5b83a766ff9a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___shop_a1c1e297ef2b0aaa30d371242936aebae}\index{Scene\_Shop@{Scene\_Shop}!onEnd@{onEnd}}
+\index{onEnd@{onEnd}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{onEnd()}{onEnd()}}
+{\footnotesize\ttfamily \label{class_scene___shop_a1c1e297ef2b0aaa30d371242936aebae} 
+void Scene\+\_\+\+Shop\+::on\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_scene_af53e066bb222802c6287eb9d749ef0b4}{Scene}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___shop_a1c1e297ef2b0aaa30d371242936aebae_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_scene___shop_a1c1e297ef2b0aaa30d371242936aebae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___shop_a0fc8b233f8270161214ef4721e338db3}\index{Scene\_Shop@{Scene\_Shop}!sDoAction@{sDoAction}}
+\index{sDoAction@{sDoAction}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{sDoAction()}{sDoAction()}}
+{\footnotesize\ttfamily \label{class_scene___shop_a0fc8b233f8270161214ef4721e338db3} 
+void Scene\+\_\+\+Shop\+::s\+Do\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_action}{Action}} \&}]{action}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_scene_aa445449fc0befdff76d7228aaf5a90e4}{Scene}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___shop_a0fc8b233f8270161214ef4721e338db3_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___shop_a97f628fd17e0581cc242acc186f9b804}\index{Scene\_Shop@{Scene\_Shop}!sRender@{sRender}}
+\index{sRender@{sRender}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{sRender()}{sRender()}}
+{\footnotesize\ttfamily \label{class_scene___shop_a97f628fd17e0581cc242acc186f9b804} 
+void Scene\+\_\+\+Shop\+::s\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_scene_a081ddb41b1f3c25080308dd0d21ebb5b}{Scene}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_scene___shop_a97f628fd17e0581cc242acc186f9b804_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_scene___shop_a97f628fd17e0581cc242acc186f9b804_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___shop_a27666a0b2a6fd5aec323a22c873a25f0}\index{Scene\_Shop@{Scene\_Shop}!update@{update}}
+\index{update@{update}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_scene___shop_a27666a0b2a6fd5aec323a22c873a25f0} 
+void Scene\+\_\+\+Shop\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_scene_a7faff47f5c1b1ebc986f768c9b9732ec}{Scene}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___shop_a27666a0b2a6fd5aec323a22c873a25f0_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_scene___shop_a678cf5e23790c895dd122832226c6f13}\index{Scene\_Shop@{Scene\_Shop}!m\_levelPaths@{m\_levelPaths}}
+\index{m\_levelPaths@{m\_levelPaths}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{m\_levelPaths}{m\_levelPaths}}
+{\footnotesize\ttfamily \label{class_scene___shop_a678cf5e23790c895dd122832226c6f13} 
+std\+::vector$<$std\+::string$>$ Scene\+\_\+\+Shop\+::m\+\_\+level\+Paths\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_ab443cd21d9a335477f3d96728c978afb}\index{Scene\_Shop@{Scene\_Shop}!m\_menuStrings@{m\_menuStrings}}
+\index{m\_menuStrings@{m\_menuStrings}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{m\_menuStrings}{m\_menuStrings}}
+{\footnotesize\ttfamily \label{class_scene___shop_ab443cd21d9a335477f3d96728c978afb} 
+std\+::vector$<$std\+::string$>$ Scene\+\_\+\+Shop\+::m\+\_\+menu\+Strings\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_a7cc0d9ed813ae60b822ee752cc884fda}\index{Scene\_Shop@{Scene\_Shop}!m\_menuText@{m\_menuText}}
+\index{m\_menuText@{m\_menuText}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{m\_menuText}{m\_menuText}}
+{\footnotesize\ttfamily \label{class_scene___shop_a7cc0d9ed813ae60b822ee752cc884fda} 
+sf\+::\+Text Scene\+\_\+\+Shop\+::m\+\_\+menu\+Text\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_a6da63f098bc0cb194734d3fea45c14a6}\index{Scene\_Shop@{Scene\_Shop}!m\_selectedMenuIndex@{m\_selectedMenuIndex}}
+\index{m\_selectedMenuIndex@{m\_selectedMenuIndex}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{m\_selectedMenuIndex}{m\_selectedMenuIndex}}
+{\footnotesize\ttfamily \label{class_scene___shop_a6da63f098bc0cb194734d3fea45c14a6} 
+int Scene\+\_\+\+Shop\+::m\+\_\+selected\+Menu\+Index = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_a6585e571d5fed8a9fdc6a9ff67e77a67}\index{Scene\_Shop@{Scene\_Shop}!m\_texts@{m\_texts}}
+\index{m\_texts@{m\_texts}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{m\_texts}{m\_texts}}
+{\footnotesize\ttfamily \label{class_scene___shop_a6585e571d5fed8a9fdc6a9ff67e77a67} 
+std\+::vector$<$sf\+::\+Text$>$ Scene\+\_\+\+Shop\+::m\+\_\+texts\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_afd704a836c5fba60c55c6a03271f49c3}\index{Scene\_Shop@{Scene\_Shop}!m\_titleText@{m\_titleText}}
+\index{m\_titleText@{m\_titleText}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{m\_titleText}{m\_titleText}}
+{\footnotesize\ttfamily \label{class_scene___shop_afd704a836c5fba60c55c6a03271f49c3} 
+sf\+::\+Text Scene\+\_\+\+Shop\+::m\+\_\+title\+Text\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_scene___shop_8h}{Scene\+\_\+\+Shop.\+h}}\item 
+\mbox{\hyperlink{_scene___shop_8cpp}{Scene\+\_\+\+Shop.\+cpp}}\end{DoxyCompactItemize}

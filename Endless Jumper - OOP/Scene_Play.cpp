@@ -178,7 +178,6 @@ void Scene_Play::sRender() {
 	auto& window = m_game->window();
 	window.clear(sf::Color::Transparent);
 
-
 	window.setView(m_view);
 
 	auto& view_center = m_view.getCenter();

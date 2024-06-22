@@ -1,0 +1,13 @@
+<map id="GameEngine::getWASD" name="GameEngine::getWASD">
+<area shape="rect" id="Node000001" title=" " alt="" coords="452,61,614,88"/>
+<area shape="rect" id="Node000002" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title=" " alt="" coords="255,9,372,36"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="458,60,371,39,373,34,459,55"/>
+<area shape="rect" id="Node000004" href="$class_scene___settings.html#a76b13e5709a76c73b7768859555f83bc" title=" " alt="" coords="244,61,383,88"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="437,77,383,77,383,72,437,72"/>
+<area shape="rect" id="Node000006" href="$class_scene___settings.html#a4da6738ad070d4fb99ce3675e636b160" title=" " alt="" coords="223,112,404,139"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="458,95,375,114,374,109,457,89"/>
+<area shape="rect" id="Node000003" href="$class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c" title=" " alt="" coords="5,5,175,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="239,24,175,23,175,18,239,19"/>
+<area shape="rect" id="Node000005" href="$class_scene___settings.html#aed9876c261637e7aa4f25c1c39261033" title=" " alt="" coords="11,56,169,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="229,78,170,79,170,74,229,73"/>
+</map>

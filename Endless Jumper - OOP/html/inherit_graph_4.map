@@ -1,0 +1,21 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$class_component.html" title=" " alt="" coords="5,208,93,235"/>
+<area shape="rect" id="Node000001" href="$class_c_animation.html" title=" " alt="" coords="150,5,239,32"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="56,192,85,119,109,78,139,42,155,30,158,35,142,46,113,81,90,121,61,194"/>
+<area shape="rect" id="Node000002" href="$class_c_bounding_box.html" title=" " alt="" coords="141,56,248,83"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="62,193,94,143,115,116,139,93,157,81,160,85,142,97,119,120,98,146,67,195"/>
+<area shape="rect" id="Node000003" href="$class_c_gravity.html" title=" " alt="" coords="159,107,230,133"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="73,196,104,169,139,143,160,131,163,136,142,148,107,173,77,200"/>
+<area shape="rect" id="Node000004" href="$class_c_input.html" title=" " alt="" coords="165,157,224,184"/>
+<area shape="poly" id="edge4_Node000000_Node000004" title=" " alt="" coords="103,200,164,178,166,183,104,205"/>
+<area shape="rect" id="Node000005" href="$class_c_kill.html" title=" " alt="" coords="170,208,219,235"/>
+<area shape="poly" id="edge5_Node000000_Node000005" title=" " alt="" coords="108,219,170,219,170,224,108,224"/>
+<area shape="rect" id="Node000006" href="$class_c_life_span.html" title=" " alt="" coords="154,259,235,285"/>
+<area shape="poly" id="edge6_Node000000_Node000006" title=" " alt="" coords="105,238,155,256,153,261,103,243"/>
+<area shape="rect" id="Node000007" href="$class_c_move.html" title=" " alt="" coords="164,309,225,336"/>
+<area shape="poly" id="edge7_Node000000_Node000007" title=" " alt="" coords="77,243,107,269,142,295,165,308,162,312,139,300,104,273,73,247"/>
+<area shape="rect" id="Node000008" href="$class_c_state.html" title=" " alt="" coords="164,360,225,387"/>
+<area shape="poly" id="edge8_Node000000_Node000008" title=" " alt="" coords="67,247,98,297,119,323,142,346,165,360,162,364,139,350,115,326,94,300,62,250"/>
+<area shape="rect" id="Node000009" href="$class_c_transform.html" title=" " alt="" coords="151,411,238,437"/>
+<area shape="poly" id="edge9_Node000000_Node000009" title=" " alt="" coords="61,249,90,321,113,361,142,397,158,408,155,412,139,401,109,364,85,324,56,251"/>
+</map>

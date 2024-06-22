@@ -1,0 +1,5 @@
+<map id="CInput" name="CInput">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,112,320"/>
+<area shape="rect" id="Node000002" href="$class_component.html" title=" " alt="" coords="19,5,98,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="61,90,61,123,56,123,56,90"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="Scene_Settings::update" name="Scene_Settings::update">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,166,57"/>
+<area shape="rect" id="Node000002" href="$class_scene___settings.html#adef765b0de1cab51176913b143c6f0bc" title=" " alt="" coords="214,5,383,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,32,198,28,199,33,167,37"/>
+<area shape="rect" id="Node000004" href="$class_entity_manager.html#abc6a2cc5077501f4b06d88f4ed3e7e31" title=" " alt="" coords="222,56,375,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,51,207,56,206,61,166,56"/>
+<area shape="rect" id="Node000003" href="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5" title=" " alt="" coords="431,5,577,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,16,416,16,416,21,383,21"/>
+</map>
