@@ -97,5 +97,9 @@ void Assets::loadFromFile(const std::string& path) {
             file >> index >> index2 >> name;
             addBackground(index, index2, getTexture(name));
         }
+        else if (identifier == "Music") {
+            // add code
+            // addMusic(blabla,blabla);
+        }
     }
 }

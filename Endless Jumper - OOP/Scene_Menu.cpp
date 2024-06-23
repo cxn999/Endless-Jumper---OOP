@@ -61,6 +61,10 @@ void Scene_Menu::init() {
 		m_texts[i].setOutlineColor(sf::Color::White);
 		m_texts[i].setOutlineThickness(1.f);
 	}
+
+	// Music to add
+	// auto & menuMusic = m_game->getAssets().getMusic("menuMusic", PATH);
+	// menuMusic.play() or whatever
 }
 
 void Scene_Menu::update() {

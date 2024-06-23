@@ -53,6 +53,10 @@ void Scene_Play::init() {
 	m_scoreText = sf::Text("0", f, 50);
 	m_scoreText.setColor(sf::Color::White);
 	m_score = 0;
+
+	// Music to add
+	// auto & playMusic = m_game->getAssets().getMusic("playMusic", PATH);
+	// playMusic.play() or whatever
 }
 
 void Scene_Play::sDoAction(const Action& action) {
