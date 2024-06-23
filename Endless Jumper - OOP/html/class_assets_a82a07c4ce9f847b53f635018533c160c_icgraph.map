@@ -8,11 +8,11 @@
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="838,60,783,54,783,48,838,55"/>
 <area shape="rect" id="Node000008" href="$class_scene___play.html#a847a279015aea29bee3860e7ffd509ce" title=" " alt="" coords="587,130,805,156"/>
 <area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="883,90,806,120,765,132,764,126,804,115,881,85"/>
-<area shape="rect" id="Node000003" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title=" " alt="" coords="223,16,339,43"/>
+<area shape="rect" id="Node000003" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title="definition of pure virtual method from the base class" alt="" coords="223,16,339,43"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="371,32,340,32,340,27,371,27"/>
-<area shape="rect" id="Node000004" href="$class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c" title=" " alt="" coords="5,16,175,43"/>
+<area shape="rect" id="Node000004" href="$class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c" title="shared pointer to the player" alt="" coords="5,16,175,43"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="207,32,175,32,175,27,207,27"/>
-<area shape="rect" id="Node000006" href="$class_scene___play.html#a416e630ef10fac7e34855babea499700" title=" " alt="" coords="394,92,532,119"/>
+<area shape="rect" id="Node000006" href="$class_scene___play.html#a416e630ef10fac7e34855babea499700" title="constructor that receives a pointer to the game engine" alt="" coords="394,92,532,119"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="599,100,533,104,533,99,598,95"/>
 <area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="594,39,540,36,540,31,594,34"/>
 <area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="594,129,532,119,533,114,594,124"/>

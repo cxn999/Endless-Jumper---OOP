@@ -2,6 +2,11 @@
 \hypertarget{class_entity}{}\label{class_entity}\index{Entity@{Entity}}
 
 
+Class to define and entity and what it has.  
+
+
+
+
 {\ttfamily \#include $<$Entity.\+h$>$}
 
 
@@ -20,27 +25,30 @@ Collaboration diagram for Entity\+:
 size\+\_\+t \mbox{\hyperlink{class_entity_a33ea809110fb8fdad11196403ecb495c}{id}} ()
 \item 
 bool \mbox{\hyperlink{class_entity_a00a0f5a9e9f39be9b9db28d5dbccd20e}{is\+Active}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em returns the id of the entity \end{DoxyCompactList}\item 
 const std\+::string \& \mbox{\hyperlink{class_entity_a5b92e79c2f8dff009caec96048630cad}{tag}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em returns whether the entity is active or not \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_entity_a691dbe5f9ec930c27af2af0b97907a9e}{destroy}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em returns the tag of the entity \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T , typename... TArgs$>$ }\\T \& \mbox{\hyperlink{class_entity_aafe23d7d7ea7f427ca40454edcae460e}{add\+Component}} (TArgs \&\&... m\+Args)
-\item 
+\begin{DoxyCompactList}\small\item\em destroys the entity \end{DoxyCompactList}\item 
 {\footnotesize template$<$class T $>$ }\\bool \mbox{\hyperlink{class_entity_ad42785721cb226a1bea8025aeb1d9e8d}{has\+Component}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em template method to determine if the entity has an specific component or not \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\T \& \mbox{\hyperlink{class_entity_af378c2ea70fa68a8433f19500261393d}{get\+Component}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em template method to get an specific component of an entity \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename T $>$ }\\const T \& \mbox{\hyperlink{class_entity_a67794319327b8c2889b44587e8174e98}{get\+Component}} () const
 \item 
 {\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{class_entity_a590ddbda675cf9b188977d553e396a0f}{remove\+Component}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em template method to remove an specicic component of an entity \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_entity_a6f579cda6059d102e9074e11a27e0282}{Entity\+Manager}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em make \doxylink{class_entity_manager}{Entity\+Manager} class friend of the \doxylink{class_entity}{Entity} class to use its constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class to define and entity and what it has. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_entity_aafe23d7d7ea7f427ca40454edcae460e}\index{Entity@{Entity}!addComponent@{addComponent}}
@@ -50,7 +58,12 @@ class \mbox{\hyperlink{class_entity_a6f579cda6059d102e9074e11a27e0282}{Entity\+M
 template$<$typename T , typename... TArgs$>$ \\
 T \& Entity\+::add\+Component (\begin{DoxyParamCaption}\item[{TArgs \&\&...}]{m\+Args}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+destroys the entity 
+
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -63,6 +76,10 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_entity_a691dbe5f9ec930c27af2af0b97907a9e} 
 void Entity\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+returns the tag of the entity 
+
 \Hypertarget{class_entity_af378c2ea70fa68a8433f19500261393d}\index{Entity@{Entity}!getComponent@{getComponent}}
 \index{getComponent@{getComponent}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -70,7 +87,12 @@ void Entity\+::destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 template$<$typename T $>$ \\
 T \& Entity\+::get\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+template method to get an specific component of an entity 
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -91,7 +113,12 @@ const T \& Entity\+::get\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamC
 template$<$class T $>$ \\
 bool Entity\+::has\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+template method to determine if the entity has an specific component or not 
+
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -110,6 +137,10 @@ size\+\_\+t Entity\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 {\footnotesize\ttfamily \label{class_entity_a00a0f5a9e9f39be9b9db28d5dbccd20e} 
 bool Entity\+::is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+returns the id of the entity 
+
 \Hypertarget{class_entity_a590ddbda675cf9b188977d553e396a0f}\index{Entity@{Entity}!removeComponent@{removeComponent}}
 \index{removeComponent@{removeComponent}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{removeComponent()}{removeComponent()}}
@@ -117,7 +148,12 @@ bool Entity\+::is\+Active (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 template$<$class T $>$ \\
 void Entity\+::remove\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+template method to remove an specicic component of an entity 
+
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -132,12 +168,20 @@ const std\+::string \& Entity\+::tag (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 
 
+returns whether the entity is active or not 
+
+
+
 \doxysubsection{Friends And Related Symbol Documentation}
 \Hypertarget{class_entity_a6f579cda6059d102e9074e11a27e0282}\index{Entity@{Entity}!EntityManager@{EntityManager}}
 \index{EntityManager@{EntityManager}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{EntityManager}{EntityManager}}
 {\footnotesize\ttfamily \label{class_entity_a6f579cda6059d102e9074e11a27e0282} 
 friend class \mbox{\hyperlink{class_entity_manager}{Entity\+Manager}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+make \doxylink{class_entity_manager}{Entity\+Manager} class friend of the \doxylink{class_entity}{Entity} class to use its constructor 
 
 
 

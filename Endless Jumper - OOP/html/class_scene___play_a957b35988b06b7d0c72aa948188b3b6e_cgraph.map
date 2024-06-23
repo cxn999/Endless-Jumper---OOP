@@ -1,6 +1,6 @@
 <map id="Scene_Play::loadLevel" name="Scene_Play::loadLevel">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,100,158,127"/>
-<area shape="rect" id="Node000002" href="$class_entity_manager.html#a85c22d45c0bde41cd2b82336b6f32046" title=" " alt="" coords="427,5,595,32"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#a85c22d45c0bde41cd2b82336b6f32046" title="adds or deletes the entities at the start of every frame" alt="" coords="427,5,595,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,97,155,78,205,61,311,39,412,25,412,30,312,44,206,67,157,83,113,102"/>
 <area shape="rect" id="Node000003" href="$class_assets.html#a82a07c4ce9f847b53f635018533c160c" title=" " alt="" coords="438,63,584,89"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,97,205,85,318,76,423,73,423,78,319,81,206,91,141,102"/>
@@ -8,7 +8,7 @@
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="139,125,206,136,313,142,414,141,414,146,313,147,205,141,138,130"/>
 <area shape="rect" id="Node000005" href="$class_scene___play.html#aa4fb330c856093ee8dbb0589852fbcfb" title=" " alt="" coords="206,100,379,127"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="158,111,190,111,190,116,158,116"/>
-<area shape="rect" id="Node000006" href="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5" title=" " alt="" coords="438,188,584,215"/>
+<area shape="rect" id="Node000006" href="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5" title="returns a reference to the assets object" alt="" coords="438,188,584,215"/>
 <area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="125,125,206,148,319,171,423,187,422,192,318,176,205,153,123,130"/>
 <area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="320,97,426,48,457,36,459,41,428,53,323,102"/>
 <area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="374,97,422,88,423,94,375,102"/>

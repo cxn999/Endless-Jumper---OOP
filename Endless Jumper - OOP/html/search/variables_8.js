@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pos_0',['pos',['../class_c_transform.html#a0f66ce679335e059ffb4670f511e802b',1,'CTransform']]],
-  ['prevpos_1',['prevPos',['../class_c_transform.html#abe5cfc85e3d702e326c1edac2a897c05',1,'CTransform']]]
+  ['size_0',['size',['../class_c_bounding_box.html#a9b50ebd6b45f4d142db3ff5227b0f675',1,'CBoundingBox']]],
+  ['state_1',['state',['../class_c_state.html#ae0859ede1f90393aa32a18dfb3bc184f',1,'CState']]]
 ];

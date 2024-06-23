@@ -18,6 +18,5 @@ var searchData=
   ['spawnplayer_15',['spawnPlayer',['../class_scene___play.html#aa4fb330c856093ee8dbb0589852fbcfb',1,'Scene_Play']]],
   ['splatformgeneration_16',['sPlatformGeneration',['../class_scene___play.html#a847a279015aea29bee3860e7ffd509ce',1,'Scene_Play']]],
   ['sremovedeadplatforms_17',['sRemoveDeadPlatforms',['../class_scene___play.html#a0e84bcf37aa08a9f6abd7c3cddf65f40',1,'Scene_Play']]],
-  ['srender_18',['sRender',['../class_scene.html#a081ddb41b1f3c25080308dd0d21ebb5b',1,'Scene::sRender()'],['../class_scene___menu.html#a4aa2a808fcf50c6767998657d3f4657e',1,'Scene_Menu::sRender()'],['../class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2',1,'Scene_Play::sRender()'],['../class_scene___settings.html#adef765b0de1cab51176913b143c6f0bc',1,'Scene_Settings::sRender()'],['../class_scene___shop.html#a97f628fd17e0581cc242acc186f9b804',1,'Scene_Shop::sRender()']]],
-  ['suserinput_19',['sUserInput',['../class_game_engine.html#a63ad889c82b4a58806e7edb4979144f5',1,'GameEngine']]]
+  ['srender_18',['sRender',['../class_scene.html#a081ddb41b1f3c25080308dd0d21ebb5b',1,'Scene::sRender()'],['../class_scene___menu.html#a4aa2a808fcf50c6767998657d3f4657e',1,'Scene_Menu::sRender()'],['../class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2',1,'Scene_Play::sRender()'],['../class_scene___settings.html#adef765b0de1cab51176913b143c6f0bc',1,'Scene_Settings::sRender()'],['../class_scene___shop.html#a97f628fd17e0581cc242acc186f9b804',1,'Scene_Shop::sRender()']]]
 ];

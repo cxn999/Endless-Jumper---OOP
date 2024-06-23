@@ -1,5 +1,5 @@
 <map id="Scene_Shop::sRender" name="Scene_Shop::sRender">
-<area shape="rect" id="Node000001" title=" " alt="" coords="196,5,347,32"/>
-<area shape="rect" id="Node000002" href="$class_scene___shop.html#a27666a0b2a6fd5aec323a22c873a25f0" title=" " alt="" coords="5,5,148,32"/>
+<area shape="rect" id="Node000001" title="pure virtual method to render everything in the window in every frame=" alt="" coords="196,5,347,32"/>
+<area shape="rect" id="Node000002" href="$class_scene___shop.html#a27666a0b2a6fd5aec323a22c873a25f0" title="constructor that receives a pointer to the game engine" alt="" coords="5,5,148,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,21,148,21,148,16,180,16"/>
 </map>

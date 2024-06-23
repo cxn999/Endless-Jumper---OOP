@@ -7,13 +7,13 @@ digraph "GameEngine::setHighestScore"
   rankdir="RL";
   Node1 [id="Node000001",label="GameEngine::setHighestScore",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="GameEngine::GameEngine",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#abe812095783a1aa3ddcbee5480daef74",tooltip=" "];
+  Node2 [id="Node000002",label="GameEngine::GameEngine",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#abe812095783a1aa3ddcbee5480daef74",tooltip="method that returns the actual scene"];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="Scene_Play::replay",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a130605feff19608e5eeff9306c05b5c5",tooltip=" "];
+  Node3 [id="Node000003",label="Scene_Play::replay",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a130605feff19608e5eeff9306c05b5c5",tooltip="replay method"];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="Scene_Play::sDoAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a34a74b594e4c984c13462c71cc5d9962",tooltip=" "];
+  Node4 [id="Node000004",label="Scene_Play::sDoAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a34a74b594e4c984c13462c71cc5d9962",tooltip="pure virtual method for the system of actions depending on the scene (Jump, move right,..."];
   Node3 -> Node5 [id="edge4_Node000003_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="Scene_Play::sRender",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2",tooltip=" "];
+  Node5 [id="Node000005",label="Scene_Play::sRender",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2",tooltip="pure virtual method to render everything in the window in every frame="];
   Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="Scene_Play::update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a416e630ef10fac7e34855babea499700",tooltip=" "];
+  Node6 [id="Node000006",label="Scene_Play::update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a416e630ef10fac7e34855babea499700",tooltip="constructor that receives a pointer to the game engine"];
 }

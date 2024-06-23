@@ -2,6 +2,11 @@
 \hypertarget{class_action}{}\label{class_action}\index{Action@{Action}}
 
 
+SFML takes our keyboard input as code, each keycap has a code number. \doxylink{class_action}{Action} class takes every "{}action"{} and stores the name of the action, like "{}\+Move right"{} and it also stores if they are beggining or ending.  
+
+
+
+
 {\ttfamily \#include $<$Action.\+h$>$}
 
 
@@ -18,14 +23,17 @@ Collaboration diagram for Action\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_action_a4f457ccfc8336b565cadca56b36e0271}{Action}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em member that stores if the action is beggining or ending \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_action_a84f8de5de28dede64e64259377eeaba5}{Action}} (const std\+::string \&\mbox{\hyperlink{class_action_a23800f6ef38781f10e6823f09ad6d62c}{name}}, const std\+::string \&\mbox{\hyperlink{class_action_a17c7beb7eb4055b45fbc4587f61ec933}{type}})
-\item 
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
 const std\+::string \& \mbox{\hyperlink{class_action_a23800f6ef38781f10e6823f09ad6d62c}{name}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em constructor that sets the name and type of the action \end{DoxyCompactList}\item 
 const std\+::string \& \mbox{\hyperlink{class_action_a17c7beb7eb4055b45fbc4587f61ec933}{type}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em method to get the name of the action \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+SFML takes our keyboard input as code, each keycap has a code number. \doxylink{class_action}{Action} class takes every "{}action"{} and stores the name of the action, like "{}\+Move right"{} and it also stores if they are beggining or ending. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_action_a4f457ccfc8336b565cadca56b36e0271}\index{Action@{Action}!Action@{Action}}
@@ -34,11 +42,19 @@ const std\+::string \& \mbox{\hyperlink{class_action_a17c7beb7eb4055b45fbc4587f6
 {\footnotesize\ttfamily \label{class_action_a4f457ccfc8336b565cadca56b36e0271} 
 Action\+::\+Action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+member that stores if the action is beggining or ending 
+
 \Hypertarget{class_action_a84f8de5de28dede64e64259377eeaba5}\index{Action@{Action}!Action@{Action}}
 \index{Action@{Action}!Action@{Action}}
 \doxysubsubsection{\texorpdfstring{Action()}{Action()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \label{class_action_a84f8de5de28dede64e64259377eeaba5} 
 Action\+::\+Action (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{type}{}\end{DoxyParamCaption})}
+
+
+
+default constructor 
 
 
 
@@ -49,7 +65,12 @@ Action\+::\+Action (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name
 {\footnotesize\ttfamily \label{class_action_a23800f6ef38781f10e6823f09ad6d62c} 
 const std\+::string \& Action\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+constructor that sets the name and type of the action 
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -62,7 +83,12 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_action_a17c7beb7eb4055b45fbc4587f61ec933} 
 const std\+::string \& Action\+::type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+method to get the name of the action 
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

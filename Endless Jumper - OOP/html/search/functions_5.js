@@ -12,7 +12,7 @@ var searchData=
   ['gethighestscore_9',['getHighestScore',['../class_game_engine.html#a433221049ae96fe05e841973905fd038',1,'GameEngine']]],
   ['getlayers_10',['getLayers',['../class_background.html#ab51f31c3689e3d5e0fea1dfdde9decf4',1,'Background']]],
   ['getlength_11',['getLength',['../class_background.html#a80aed965d15d8095580aae9f67a4757b',1,'Background']]],
-  ['getmusic_12',['getMusic',['../class_game_engine.html#a216acb74cf052d361aaa825a00e4c03a',1,'GameEngine']]],
+  ['getmusic_12',['getMusic',['../class_assets.html#acb94d51cba0779d8757c9d8d0d93f12c',1,'Assets::getMusic()'],['../class_game_engine.html#a216acb74cf052d361aaa825a00e4c03a',1,'GameEngine::getMusic()']]],
   ['getname_13',['getName',['../class_animation.html#a2aa5b53680fc42d16712b111bb8b356d',1,'Animation']]],
   ['getoverlap_14',['GetOverlap',['../_physics_8cpp.html#aa87f1b530a7104e4aa0d2b7e5f719934',1,'GetOverlap(std::shared_ptr&lt; Entity &gt; a, std::shared_ptr&lt; Entity &gt; b):&#160;Physics.cpp'],['../_physics_8h.html#aa87f1b530a7104e4aa0d2b7e5f719934',1,'GetOverlap(std::shared_ptr&lt; Entity &gt; a, std::shared_ptr&lt; Entity &gt; b):&#160;Physics.cpp']]],
   ['getpreviousoverlap_15',['GetPreviousOverlap',['../_physics_8cpp.html#a81596138051998bc8d891720baaa59bc',1,'GetPreviousOverlap(std::shared_ptr&lt; Entity &gt; a, std::shared_ptr&lt; Entity &gt; b):&#160;Physics.cpp'],['../_physics_8h.html#a81596138051998bc8d891720baaa59bc',1,'GetPreviousOverlap(std::shared_ptr&lt; Entity &gt; a, std::shared_ptr&lt; Entity &gt; b):&#160;Physics.cpp']]],

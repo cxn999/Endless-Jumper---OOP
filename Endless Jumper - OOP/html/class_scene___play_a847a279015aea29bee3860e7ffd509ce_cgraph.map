@@ -1,13 +1,13 @@
 <map id="Scene_Play::sPlatformGeneration" name="Scene_Play::sPlatformGeneration">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,107,223,133"/>
-<area shape="rect" id="Node000002" href="$class_entity_manager.html#a85c22d45c0bde41cd2b82336b6f32046" title=" " alt="" coords="274,5,443,32"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#a85c22d45c0bde41cd2b82336b6f32046" title="adds or deletes the entities at the start of every frame" alt="" coords="274,5,443,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,104,198,74,270,42,289,35,291,40,272,46,200,78,141,109"/>
 <area shape="rect" id="Node000003" href="$class_assets.html#a82a07c4ce9f847b53f635018533c160c" title=" " alt="" coords="285,56,432,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,103,275,84,276,89,183,109"/>
 <area shape="rect" id="Node000004" href="$class_game_engine.html#a2db9a2dd6d6cc9879ec988690837f09e" title=" " alt="" coords="277,107,440,133"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="223,117,261,117,261,123,223,123"/>
-<area shape="rect" id="Node000005" href="$class_entity_manager.html#ad718816dd5307c5f90bf25dd8e9b750b" title=" " alt="" coords="271,157,446,184"/>
+<area shape="rect" id="Node000005" href="$class_entity_manager.html#ad718816dd5307c5f90bf25dd8e9b750b" title="adds a reference to a new entity into the entity vector" alt="" coords="271,157,446,184"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="183,131,276,151,275,156,181,137"/>
-<area shape="rect" id="Node000006" href="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5" title=" " alt="" coords="285,208,432,235"/>
+<area shape="rect" id="Node000006" href="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5" title="returns a reference to the assets object" alt="" coords="285,208,432,235"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="141,131,200,162,272,194,291,200,289,205,270,198,198,166,139,136"/>
 </map>

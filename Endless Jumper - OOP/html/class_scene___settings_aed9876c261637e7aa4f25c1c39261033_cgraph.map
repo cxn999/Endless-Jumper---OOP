@@ -1,25 +1,22 @@
 <map id="Scene_Settings::Scene_Settings" name="Scene_Settings::Scene_Settings">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,216,164,259"/>
-<area shape="rect" id="Node000002" href="$class_scene___settings.html#a76b13e5709a76c73b7768859555f83bc" title=" " alt="" coords="212,224,350,251"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,235,197,235,197,240,164,240"/>
+<area shape="rect" id="Node000001" title="constructor for play scene that receives the pointer to the game engine" alt="" coords="5,187,164,229"/>
+<area shape="rect" id="Node000002" href="$class_scene___settings.html#a76b13e5709a76c73b7768859555f83bc" title="Initial control scheme." alt="" coords="212,195,350,221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,205,197,205,197,211,164,211"/>
 <area shape="rect" id="Node000003" href="$class_game_engine.html#a2db9a2dd6d6cc9879ec988690837f09e" title=" " alt="" coords="419,5,582,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="284,223,297,186,320,137,353,86,373,62,396,42,404,37,407,41,400,46,377,66,357,89,324,140,302,188,289,224"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="285,193,300,161,324,120,356,78,396,42,405,37,408,41,400,46,360,81,329,123,305,164,290,195"/>
 <area shape="rect" id="Node000004" href="$class_assets.html#a044201d3a5016c7ac2785181cec15b50" title=" " alt="" coords="443,56,557,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="287,222,328,159,359,123,397,92,427,79,429,83,399,97,363,127,332,163,292,225"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="290,192,333,143,363,116,397,92,427,80,429,85,399,97,366,120,337,147,294,196"/>
 <area shape="rect" id="Node000005" href="$class_game_engine.html#a216acb74cf052d361aaa825a00e4c03a" title=" " alt="" coords="422,107,579,133"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="294,222,337,183,366,161,397,143,412,136,414,141,399,148,369,166,340,187,297,226"/>
-<area shape="rect" id="Node000006" href="$class_scene___settings.html#a7ab9de3dc8e935feeb5e637690adeb6b" title=" " alt="" coords="409,157,592,200"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="333,221,402,202,404,207,334,226"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="303,192,345,167,397,143,418,136,420,141,399,148,348,172,305,196"/>
+<area shape="rect" id="Node000006" href="$class_scene___settings.html#a7ab9de3dc8e935feeb5e637690adeb6b" title="CARLOS COMENTA ACA." alt="" coords="409,157,592,200"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="350,196,393,190,393,196,350,201"/>
 <area shape="rect" id="Node000007" href="$class_game_engine.html#aad9033218861ffe7bb06c5af64902672" title=" " alt="" coords="419,224,581,251"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="350,235,404,235,404,240,350,240"/>
-<area shape="rect" id="Node000008" href="$class_scene.html#a670b58a8e14e222d9a75afe3eb1e35bc" title=" " alt="" coords="427,275,573,301"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="343,249,425,268,424,273,341,254"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="350,215,404,222,403,227,350,220"/>
+<area shape="rect" id="Node000008" href="$class_scene.html#a670b58a8e14e222d9a75afe3eb1e35bc" title="method that registers every action in the scene" alt="" coords="427,275,573,301"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="309,219,351,240,399,260,421,267,420,272,397,265,348,245,307,224"/>
 <area shape="rect" id="Node000009" href="$class_scene___settings.html#a2b9b180644b36c931eb7c47888ede9c4" title=" " alt="" coords="398,325,602,368"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="302,249,345,280,399,311,412,317,410,322,397,316,342,284,299,253"/>
-<area shape="rect" id="Node000010" href="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5" title=" " alt="" coords="650,392,797,419"/>
-<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="291,250,306,278,330,314,361,350,399,378,457,400,519,412,580,416,635,414,635,419,579,421,518,417,456,405,397,382,357,354,325,317,302,281,286,252"/>
-<area shape="rect" id="Node000011" href="$class_scene.html#a440f3cd29cc9d73ca0d579a828d80c27" title=" " alt="" coords="452,443,548,469"/>
-<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="289,250,303,285,326,331,358,380,400,422,418,433,438,441,436,446,415,438,396,426,354,383,322,334,298,287,284,252"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="584,366,656,385,655,390,583,371"/>
-<area shape="poly" id="edge11_Node000011_Node000010" title=" " alt="" coords="548,443,646,420,647,425,549,448"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="296,220,339,265,368,289,399,311,409,316,406,321,397,316,365,294,335,268,292,224"/>
+<area shape="rect" id="Node000010" href="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5" title="returns a reference to the assets object" alt="" coords="650,363,797,389"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="289,221,302,255,324,299,357,344,377,363,399,378,431,391,464,400,534,406,601,402,660,391,661,396,602,407,534,412,464,405,429,396,397,382,373,367,353,347,320,302,297,257,284,223"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="603,357,635,362,634,367,602,363"/>
 </map>

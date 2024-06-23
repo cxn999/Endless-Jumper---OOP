@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['framecreated_0',['frameCreated',['../class_c_life_span.html#a9454b45ae4394af09ce2050f92ee5db3',1,'CLifeSpan']]]
+  ['halfsize_0',['halfSize',['../class_c_bounding_box.html#a7fe2c3602ea41ea08ec965051b99dd2e',1,'CBoundingBox']]],
+  ['has_1',['has',['../class_component.html#a33a6710553e6f237069317d228d271cd',1,'Component']]]
 ];

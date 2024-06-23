@@ -2,6 +2,11 @@
 \hypertarget{class_vec2}{}\label{class_vec2}\index{Vec2@{Vec2}}
 
 
+Class to define a vector of 2 dimensions.  
+
+
+
+
 {\ttfamily \#include $<$Vec2.\+h$>$}
 
 
@@ -18,11 +23,11 @@ Collaboration diagram for Vec2\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_vec2_ab44c734ac1b44d99cd27e6e5e9068f4f}{Vec2}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_vec2_a048e32eec43247969589ae5661e35b13}{Vec2}} (float xin, float yin)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor that takes x and y parameters. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_vec2_a1b51577bde6009f5e1d8f7cf91efd5f4}{operator==}} (const \mbox{\hyperlink{class_vec2}{Vec2}} \&rhs) const
-\item 
+\begin{DoxyCompactList}\small\item\em Multiple operator overloading methods Implementation defined at \doxylink{_vec2_8cpp}{Vec2.\+cpp}. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_vec2_ad171adeadd5b58c431687cec6837d68d}{operator!=}} (const \mbox{\hyperlink{class_vec2}{Vec2}} \&rhs) const
 \item 
 \mbox{\hyperlink{class_vec2}{Vec2}} \mbox{\hyperlink{class_vec2_acc8d06b96e3f84cd0cb11e5a17fd046b}{operator+}} (const \mbox{\hyperlink{class_vec2}{Vec2}} \&rhs) const
@@ -42,15 +47,18 @@ void \mbox{\hyperlink{class_vec2_a1f15c9ade68b07ef08a422b3049283d4}{operator\tex
 void \mbox{\hyperlink{class_vec2_a1cf7a1a01a17844172697eb3a70a67b7}{operator/=}} (const float c)
 \item 
 float \mbox{\hyperlink{class_vec2_a90df8336e6f00771697efab750757a73}{dist}} (const \mbox{\hyperlink{class_vec2}{Vec2}} \&rhs) const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Distance between 2 vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 float \mbox{\hyperlink{class_vec2_adf8ee322d4b4bcc04146762c018d731f}{x}}
-\item 
+\begin{DoxyCompactList}\small\item\em Fields are x and y coordinates. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{class_vec2_a30543787e62f6d915543cf1dfb04c094}{y}}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class to define a vector of 2 dimensions. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_vec2_ab44c734ac1b44d99cd27e6e5e9068f4f}\index{Vec2@{Vec2}!Vec2@{Vec2}}
@@ -59,7 +67,12 @@ float \mbox{\hyperlink{class_vec2_a30543787e62f6d915543cf1dfb04c094}{y}}
 {\footnotesize\ttfamily \label{class_vec2_ab44c734ac1b44d99cd27e6e5e9068f4f} 
 Vec2\+::\+Vec2 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+Default constructor. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -74,12 +87,20 @@ Vec2\+::\+Vec2 (\begin{DoxyParamCaption}\item[{float}]{xin}{, }\item[{float}]{yi
 
 
 
+Constructor that takes x and y parameters. 
+
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_vec2_a90df8336e6f00771697efab750757a73}\index{Vec2@{Vec2}!dist@{dist}}
 \index{dist@{dist}!Vec2@{Vec2}}
 \doxysubsubsection{\texorpdfstring{dist()}{dist()}}
 {\footnotesize\ttfamily \label{class_vec2_a90df8336e6f00771697efab750757a73} 
 float Vec2\+::dist (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vec2}{Vec2}} \&}]{rhs}{}\end{DoxyParamCaption}) const}
+
+
+
+Distance between 2 vectors. 
 
 \Hypertarget{class_vec2_ad171adeadd5b58c431687cec6837d68d}\index{Vec2@{Vec2}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!Vec2@{Vec2}}
@@ -93,7 +114,8 @@ bool Vec2\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{c
 {\footnotesize\ttfamily \label{class_vec2_ad574bfce5c7dad58b80b364f517ffb37} 
 \mbox{\hyperlink{class_vec2}{Vec2}} Vec2\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const float}]{c}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -112,7 +134,8 @@ void Vec2\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[
 {\footnotesize\ttfamily \label{class_vec2_acc8d06b96e3f84cd0cb11e5a17fd046b} 
 \mbox{\hyperlink{class_vec2}{Vec2}} Vec2\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vec2}{Vec2}} \&}]{rhs}{}\end{DoxyParamCaption}) const}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -131,7 +154,8 @@ void Vec2\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{c
 {\footnotesize\ttfamily \label{class_vec2_a6c757ff81021ae3ffabf06a6afcdb6bd} 
 \mbox{\hyperlink{class_vec2}{Vec2}} Vec2\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_vec2}{Vec2}} \&}]{rhs}{}\end{DoxyParamCaption}) const}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -150,7 +174,8 @@ void Vec2\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink
 {\footnotesize\ttfamily \label{class_vec2_a17836876b83302a02b29d13283a5f1fa} 
 \mbox{\hyperlink{class_vec2}{Vec2}} Vec2\+::operator/ (\begin{DoxyParamCaption}\item[{const float}]{c}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -171,12 +196,28 @@ bool Vec2\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{c
 
 
 
+Multiple operator overloading methods Implementation defined at \doxylink{_vec2_8cpp}{Vec2.\+cpp}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
 \doxysubsection{Member Data Documentation}
 \Hypertarget{class_vec2_adf8ee322d4b4bcc04146762c018d731f}\index{Vec2@{Vec2}!x@{x}}
 \index{x@{x}!Vec2@{Vec2}}
 \doxysubsubsection{\texorpdfstring{x}{x}}
 {\footnotesize\ttfamily \label{class_vec2_adf8ee322d4b4bcc04146762c018d731f} 
 float Vec2\+::x}
+
+
+
+Fields are x and y coordinates. 
 
 \Hypertarget{class_vec2_a30543787e62f6d915543cf1dfb04c094}\index{Vec2@{Vec2}!y@{y}}
 \index{y@{y}!Vec2@{Vec2}}

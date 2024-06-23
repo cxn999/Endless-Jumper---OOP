@@ -2,6 +2,11 @@
 \hypertarget{class_background}{}\label{class_background}\index{Background@{Background}}
 
 
+Class that defines the backgrounds and their different layers.  
+
+
+
+
 {\ttfamily \#include $<$Background.\+h$>$}
 
 
@@ -18,14 +23,19 @@ Collaboration diagram for Background\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_background_a276716b31b5fe4231c0aa2655cd5b8ee}{add\+Layer}} (const sf\+::\+Texture \&t)
-\item 
+\begin{DoxyCompactList}\small\item\em the quantity of layers in a background \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_background_a05b686e4ce0cbdb3b1fa14a93fdf98a1}{Background}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em method to add the layers together to form the background \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{class_background_a80aed965d15d8095580aae9f67a4757b}{get\+Length}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
 std\+::vector$<$ sf\+::\+Sprite $>$ \& \mbox{\hyperlink{class_background_ab51f31c3689e3d5e0fea1dfdde9decf4}{get\+Layers}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em method to get the quantity of layers \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class that defines the backgrounds and their different layers. 
+
+include graphics library include vec2 class include vector library 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_background_a05b686e4ce0cbdb3b1fa14a93fdf98a1}\index{Background@{Background}!Background@{Background}}
@@ -36,6 +46,10 @@ Background\+::\+Background (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\
 
 
 
+method to add the layers together to form the background 
+
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_background_a276716b31b5fe4231c0aa2655cd5b8ee}\index{Background@{Background}!addLayer@{addLayer}}
 \index{addLayer@{addLayer}!Background@{Background}}
@@ -43,13 +57,22 @@ Background\+::\+Background (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\
 {\footnotesize\ttfamily \label{class_background_a276716b31b5fe4231c0aa2655cd5b8ee} 
 void Background\+::add\+Layer (\begin{DoxyParamCaption}\item[{const sf\+::\+Texture \&}]{t}{}\end{DoxyParamCaption})}
 
+
+
+the quantity of layers in a background 
+
 \Hypertarget{class_background_ab51f31c3689e3d5e0fea1dfdde9decf4}\index{Background@{Background}!getLayers@{getLayers}}
 \index{getLayers@{getLayers}!Background@{Background}}
 \doxysubsubsection{\texorpdfstring{getLayers()}{getLayers()}}
 {\footnotesize\ttfamily \label{class_background_ab51f31c3689e3d5e0fea1dfdde9decf4} 
 std\+::vector$<$ sf\+::\+Sprite $>$ \& Background\+::get\+Layers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+method to get the quantity of layers 
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -61,6 +84,10 @@ Here is the caller graph for this function\+:\nopagebreak
 \doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
 {\footnotesize\ttfamily \label{class_background_a80aed965d15d8095580aae9f67a4757b} 
 size\+\_\+t Background\+::get\+Length (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+default constructor 
 
 
 

@@ -13,5 +13,5 @@ digraph "Action"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">const std::string &amp;<BR ALIGN="LEFT"/> name() const<BR ALIGN="LEFT"/></TD></TR>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">const std::string &amp;<BR ALIGN="LEFT"/> type() const<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
-,height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+,height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="SFML takes our keyboard input as code, each keycap has a code number. Action class takes every \"actio..."];
 }

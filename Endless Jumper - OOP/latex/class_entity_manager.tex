@@ -2,6 +2,11 @@
 \hypertarget{class_entity_manager}{}\label{class_entity_manager}\index{EntityManager@{EntityManager}}
 
 
+Class that handles all the entities in the game (creates them, deletes them, modifies them, etc.)  
+
+
+
+
 {\ttfamily \#include $<$Entity\+Manager.\+h$>$}
 
 
@@ -18,18 +23,21 @@ Collaboration diagram for Entity\+Manager\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_entity_manager_a7555637657d090171be6ceee8451de0a}{Entity\+Manager}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em remove dead entities, it is private because that way only \doxylink{class_entity_manager}{Entity\+Manager} can do it \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_entity_manager_ae0abecb1a8037d6af51d950491115bfb}{init}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_entity_manager_abc6a2cc5077501f4b06d88f4ed3e7e31}{update}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em initializes the entity manager \end{DoxyCompactList}\item 
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_entity}{Entity}} $>$ \mbox{\hyperlink{class_entity_manager_a85c22d45c0bde41cd2b82336b6f32046}{add\+Entity}} (const std\+::string \&tag)
-\item 
+\begin{DoxyCompactList}\small\item\em adds or deletes the entities at the start of every frame \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_entity_manager_8h_a09dfc6fcc286236e5a41fc73b3ecbab7}{Entity\+Vec}} \& \mbox{\hyperlink{class_entity_manager_ad718816dd5307c5f90bf25dd8e9b750b}{get\+Entities}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em adds a reference to a new entity into the entity vector \end{DoxyCompactList}\item 
 \mbox{\hyperlink{_entity_manager_8h_a09dfc6fcc286236e5a41fc73b3ecbab7}{Entity\+Vec}} \& \mbox{\hyperlink{class_entity_manager_a6340a54cdc44ce240a756ebb043991ed}{get\+Entities}} (const std\+::string \&tag)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em returns all entities in the game \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class that handles all the entities in the game (creates them, deletes them, modifies them, etc.) 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_entity_manager_a7555637657d090171be6ceee8451de0a}\index{EntityManager@{EntityManager}!EntityManager@{EntityManager}}
@@ -40,6 +48,10 @@ Entity\+Manager\+::\+Entity\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 
 
 
+remove dead entities, it is private because that way only \doxylink{class_entity_manager}{Entity\+Manager} can do it 
+
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_entity_manager_a85c22d45c0bde41cd2b82336b6f32046}\index{EntityManager@{EntityManager}!addEntity@{addEntity}}
 \index{addEntity@{addEntity}!EntityManager@{EntityManager}}
@@ -47,7 +59,12 @@ Entity\+Manager\+::\+Entity\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParam
 {\footnotesize\ttfamily \label{class_entity_manager_a85c22d45c0bde41cd2b82336b6f32046} 
 std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_entity}{Entity}} $>$ Entity\+Manager\+::add\+Entity (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+adds or deletes the entities at the start of every frame 
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -60,7 +77,12 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_entity_manager_ad718816dd5307c5f90bf25dd8e9b750b} 
 \mbox{\hyperlink{_entity_manager_8h_a09dfc6fcc286236e5a41fc73b3ecbab7}{Entity\+Vec}} \& Entity\+Manager\+::get\+Entities (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+adds a reference to a new entity into the entity vector 
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -73,11 +95,19 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_entity_manager_a6340a54cdc44ce240a756ebb043991ed} 
 \mbox{\hyperlink{_entity_manager_8h_a09dfc6fcc286236e5a41fc73b3ecbab7}{Entity\+Vec}} \& Entity\+Manager\+::get\+Entities (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{tag}{}\end{DoxyParamCaption})}
 
+
+
+returns all entities in the game 
+
 \Hypertarget{class_entity_manager_ae0abecb1a8037d6af51d950491115bfb}\index{EntityManager@{EntityManager}!init@{init}}
 \index{init@{init}!EntityManager@{EntityManager}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily \label{class_entity_manager_ae0abecb1a8037d6af51d950491115bfb} 
 void Entity\+Manager\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+default constructor 
 
 \Hypertarget{class_entity_manager_abc6a2cc5077501f4b06d88f4ed3e7e31}\index{EntityManager@{EntityManager}!update@{update}}
 \index{update@{update}!EntityManager@{EntityManager}}
@@ -85,7 +115,12 @@ void Entity\+Manager\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}
 {\footnotesize\ttfamily \label{class_entity_manager_abc6a2cc5077501f4b06d88f4ed3e7e31} 
 void Entity\+Manager\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+
+
+initializes the entity manager 
+
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

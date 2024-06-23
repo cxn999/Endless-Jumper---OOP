@@ -7,7 +7,7 @@ digraph "GameEngine::setMusic"
   rankdir="RL";
   Node1 [id="Node000001",label="GameEngine::setMusic",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge3_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="GameEngine::GameEngine",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#abe812095783a1aa3ddcbee5480daef74",tooltip=" "];
+  Node2 [id="Node000002",label="GameEngine::GameEngine",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#abe812095783a1aa3ddcbee5480daef74",tooltip="method that returns the actual scene"];
   Node1 -> Node3 [id="edge4_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="Scene_Settings::sDoAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#a4da6738ad070d4fb99ce3675e636b160",tooltip=" "];
+  Node3 [id="Node000003",label="Scene_Settings::sDoAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#a4da6738ad070d4fb99ce3675e636b160",tooltip="pure virtual method for the system of actions depending on the scene (Jump, move right,..."];
 }

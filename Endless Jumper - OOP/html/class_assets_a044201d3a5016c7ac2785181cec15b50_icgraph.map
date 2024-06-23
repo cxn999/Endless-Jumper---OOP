@@ -1,23 +1,23 @@
 <map id="Assets::getFont" name="Assets::getFont">
 <area shape="rect" id="Node000001" title=" " alt="" coords="430,115,544,141"/>
-<area shape="rect" id="Node000002" href="$class_scene___menu.html#ac333bd8b02726ee6db5706219e70073e" title=" " alt="" coords="247,8,370,35"/>
+<area shape="rect" id="Node000002" href="$class_scene___menu.html#ac333bd8b02726ee6db5706219e70073e" title="index for the backgrounds in the menu" alt="" coords="247,8,370,35"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="458,106,422,78,381,50,353,38,355,33,383,46,426,73,461,102"/>
-<area shape="rect" id="Node000004" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title=" " alt="" coords="250,60,367,87"/>
+<area shape="rect" id="Node000004" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title="definition of pure virtual method from the base class" alt="" coords="250,60,367,87"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="426,112,354,90,355,85,427,107"/>
-<area shape="rect" id="Node000006" href="$class_scene___settings.html#a76b13e5709a76c73b7768859555f83bc" title=" " alt="" coords="239,115,378,141"/>
+<area shape="rect" id="Node000006" href="$class_scene___settings.html#a76b13e5709a76c73b7768859555f83bc" title="Initial control scheme." alt="" coords="239,115,378,141"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="415,131,378,131,378,125,415,125"/>
 <area shape="rect" id="Node000008" href="$class_scene___shop.html#a24a760af748578f3edda5b83a766ff9a" title=" " alt="" coords="248,167,369,193"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="425,149,358,169,356,163,424,144"/>
-<area shape="rect" id="Node000010" href="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2" title=" " alt="" coords="235,221,382,248"/>
+<area shape="rect" id="Node000010" href="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2" title="pure virtual method to render everything in the window in every frame=" alt="" coords="235,221,382,248"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="460,154,425,181,383,208,350,223,348,218,381,203,421,177,457,149"/>
-<area shape="rect" id="Node000003" href="$class_scene___menu.html#a0d71fab24a893ff0b270271180186b65" title=" " alt="" coords="5,5,187,32"/>
+<area shape="rect" id="Node000003" href="$class_scene___menu.html#a0d71fab24a893ff0b270271180186b65" title="constructor of the scene menu that receives a pointer to the game engine" alt="" coords="5,5,187,32"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,23,187,22,187,17,232,18"/>
-<area shape="rect" id="Node000005" href="$class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c" title=" " alt="" coords="11,56,181,83"/>
+<area shape="rect" id="Node000005" href="$class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c" title="shared pointer to the player" alt="" coords="11,56,181,83"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="234,75,181,74,181,68,234,69"/>
-<area shape="rect" id="Node000007" href="$class_scene___settings.html#aed9876c261637e7aa4f25c1c39261033" title=" " alt="" coords="17,107,175,149"/>
+<area shape="rect" id="Node000007" href="$class_scene___settings.html#aed9876c261637e7aa4f25c1c39261033" title="constructor for play scene that receives the pointer to the game engine" alt="" coords="17,107,175,149"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="224,131,176,131,176,125,224,125"/>
 <area shape="rect" id="Node000009" href="$class_scene___shop.html#a41611157caf81bc8f9a4b05df4742449" title=" " alt="" coords="7,173,185,200"/>
 <area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="233,185,185,187,185,181,233,180"/>
-<area shape="rect" id="Node000011" href="$class_scene___play.html#a416e630ef10fac7e34855babea499700" title=" " alt="" coords="27,224,165,251"/>
+<area shape="rect" id="Node000011" href="$class_scene___play.html#a416e630ef10fac7e34855babea499700" title="constructor that receives a pointer to the game engine" alt="" coords="27,224,165,251"/>
 <area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="219,238,166,239,166,234,219,233"/>
 </map>
