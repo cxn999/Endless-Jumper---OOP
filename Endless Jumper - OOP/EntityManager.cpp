@@ -2,7 +2,7 @@
 #include "Entity.h"
 
 void EntityManager::init() {
-    // to do
+
 }
 
 void EntityManager::removeDeadEntities(EntityVec& vec) {

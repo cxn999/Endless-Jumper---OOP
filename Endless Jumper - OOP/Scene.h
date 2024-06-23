@@ -1,13 +1,15 @@
 #pragma once
 
-#include <map>
-#include <string>
-#include "Action.h"
-#include "EntityManager.h"
+#include <map>				//include map library
+#include <string>			//include string library
+#include "Action.h"			//include action class
+#include "EntityManager.h"	//include entity mangaer class
 
-class GameEngine;
+class GameEngine;	//circular dependency
 
+// typedef for convenience
 typedef std::map<int, std::string> ActionMap;
+
 
 class Scene {
 protected:
