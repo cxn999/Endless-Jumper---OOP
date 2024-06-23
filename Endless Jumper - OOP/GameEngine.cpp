@@ -45,7 +45,7 @@ void GameEngine::init(const std::string& path) {
 	m_assets.loadFromFile(path);
 
 	// Create a window with the specified resolution
-	m_window.create(sf::VideoMode(1280, 720), "ENDLESS JUMPER", sf::Style::Close);
+	m_window.create(sf::VideoMode(1280, 720), "SKYLIMIT", sf::Style::Close);
 	// Set vertical sync for better performance
 	m_window.setVerticalSyncEnabled(true);
 	//m_window.setFramerateLimit(60);
