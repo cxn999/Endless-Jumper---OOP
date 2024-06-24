@@ -1,0 +1,58 @@
+digraph "GameEngine::window"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="GameEngine::window",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="returns a reference to the assets object"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Scene_Menu::init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___menu.html#ac333bd8b02726ee6db5706219e70073e",tooltip="index for the backgrounds in the menu"];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Scene_Menu::Scene_Menu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___menu.html#a0d71fab24a893ff0b270271180186b65",tooltip="constructor of the scene menu that receives a pointer to the game engine"];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Scene_Play::init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b",tooltip="definition of pure virtual method from the base class"];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Scene_Play::Scene_Play",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c",tooltip="shared pointer to the player"];
+  Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Scene_Settings::init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#a76b13e5709a76c73b7768859555f83bc",tooltip="Initial control scheme."];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Scene_Settings::Scene\l_Settings",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#aed9876c261637e7aa4f25c1c39261033",tooltip="constructor for play scene that receives the pointer to the game engine"];
+  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Scene_Shop::init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___shop.html#a24a760af748578f3edda5b83a766ff9a",tooltip=" "];
+  Node8 -> Node9 [id="edge8_Node000008_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="Scene_Shop::Scene_Shop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___shop.html#a41611157caf81bc8f9a4b05df4742449",tooltip=" "];
+  Node1 -> Node10 [id="edge9_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="Scene_Play::loadLevel",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a957b35988b06b7d0c72aa948188b3b6e",tooltip=" "];
+  Node10 -> Node4 [id="edge10_Node000010_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node11 [id="edge11_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="Scene_Play::sMovement",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#ae80c24b0bb449025d718c9b6dba8d619",tooltip=" "];
+  Node11 -> Node12 [id="edge12_Node000011_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="Scene_Play::update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a416e630ef10fac7e34855babea499700",tooltip="constructor that receives a pointer to the game engine"];
+  Node1 -> Node13 [id="edge13_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="Scene_Play::spawnPlayer",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#aa4fb330c856093ee8dbb0589852fbcfb",tooltip=" "];
+  Node13 -> Node10 [id="edge14_Node000013_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node14 [id="edge15_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="Scene_Play::sPlatformGeneration",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a847a279015aea29bee3860e7ffd509ce",tooltip=" "];
+  Node14 -> Node12 [id="edge16_Node000014_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node15 [id="edge17_Node000001_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node15 [id="Node000015",label="Scene_Menu::sRender",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___menu.html#a4aa2a808fcf50c6767998657d3f4657e",tooltip="pure virtual method for the rendering system"];
+  Node15 -> Node16 [id="edge18_Node000015_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="Scene_Menu::update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___menu.html#a46cf38bd4128df45b9b11bab2c4484f0",tooltip="constructor that receives a pointer to the game engine"];
+  Node1 -> Node17 [id="edge19_Node000001_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="Scene_Play::sRender",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2",tooltip="pure virtual method to render everything in the window in every frame="];
+  Node17 -> Node12 [id="edge20_Node000017_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node18 [id="edge21_Node000001_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node18 [id="Node000018",label="Scene_Settings::sRender",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#adef765b0de1cab51176913b143c6f0bc",tooltip="virtual method of the base class"];
+  Node18 -> Node19 [id="edge22_Node000018_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="Scene_Settings::update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#a54f6f5a3c647bb750b697ff362af7a76",tooltip="constructor that receives a pointer to the game engine"];
+  Node1 -> Node20 [id="edge23_Node000001_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="Scene_Shop::sRender",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___shop.html#a97f628fd17e0581cc242acc186f9b804",tooltip="pure virtual method to render everything in the window in every frame="];
+  Node20 -> Node21 [id="edge24_Node000020_Node000021",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="Scene_Shop::update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___shop.html#a27666a0b2a6fd5aec323a22c873a25f0",tooltip="constructor that receives a pointer to the game engine"];
+  Node1 -> Node22 [id="edge25_Node000001_Node000022",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="Scene_Settings::updateVolume\lSlider",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#a2b9b180644b36c931eb7c47888ede9c4",tooltip=" "];
+  Node22 -> Node6 [id="edge26_Node000022_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node22 -> Node23 [id="edge27_Node000022_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="Scene_Settings::sDoAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#a4da6738ad070d4fb99ce3675e636b160",tooltip="pure virtual method for the system of actions depending on the scene (Jump, move right,..."];
+}

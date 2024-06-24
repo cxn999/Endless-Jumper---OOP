@@ -1,0 +1,19 @@
+<map id="EntityManager::getEntities" name="EntityManager::getEntities">
+<area shape="rect" id="Node000001" title="adds a reference to a new entity into the entity vector" alt="" coords="477,107,652,133"/>
+<area shape="rect" id="Node000002" href="$class_scene___play.html#aec1850ef08cb92b5c6db6cba02dec399" title=" " alt="" coords="233,5,388,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="529,100,482,72,428,46,388,34,389,29,430,42,485,67,532,96"/>
+<area shape="rect" id="Node000004" href="$class_scene___play.html#ae80c24b0bb449025d718c9b6dba8d619" title=" " alt="" coords="228,56,393,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="479,106,380,86,381,81,480,100"/>
+<area shape="rect" id="Node000005" href="$class_scene___play.html#a847a279015aea29bee3860e7ffd509ce" title=" " alt="" coords="202,107,419,133"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="461,123,420,123,420,117,461,117"/>
+<area shape="rect" id="Node000006" href="$class_scene___play.html#a0e84bcf37aa08a9f6abd7c3cddf65f40" title="Systems of the scene." alt="" coords="192,157,429,184"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="480,140,381,159,380,154,479,134"/>
+<area shape="rect" id="Node000007" href="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2" title="pure virtual method to render everything in the window in every frame=" alt="" coords="237,208,384,235"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="532,144,485,173,430,198,385,212,384,207,428,194,482,168,529,140"/>
+<area shape="rect" id="Node000003" href="$class_scene___play.html#a416e630ef10fac7e34855babea499700" title="constructor that receives a pointer to the game engine" alt="" coords="5,107,144,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="218,38,193,46,137,77,94,108,91,104,134,72,191,42,216,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="230,89,192,97,140,109,139,103,191,92,229,84"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="186,123,144,123,144,117,186,117"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="229,156,191,148,139,137,140,131,192,143,230,151"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="221,209,191,198,134,168,91,136,94,132,137,163,193,194,223,204"/>
+</map>

@@ -1,0 +1,31 @@
+<map id="Scene_Play::Scene_Play" name="Scene_Play::Scene_Play">
+<area shape="rect" id="Node000001" title="shared pointer to the player" alt="" coords="5,309,175,336"/>
+<area shape="rect" id="Node000002" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title="definition of pure virtual method from the base class" alt="" coords="223,309,339,336"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,320,207,320,207,325,175,325"/>
+<area shape="rect" id="Node000003" href="$class_game_engine.html#a2db9a2dd6d6cc9879ec988690837f09e" title=" " alt="" coords="859,5,1023,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,308,294,271,314,220,344,166,363,140,385,118,437,81,494,53,555,32,618,18,680,9,739,5,844,6,844,12,740,11,680,15,619,23,557,37,496,58,440,86,389,122,367,144,348,169,319,222,299,273,288,310"/>
+<area shape="rect" id="Node000004" href="$class_assets.html#a044201d3a5016c7ac2785181cec15b50" title=" " alt="" coords="430,309,544,336"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="339,320,414,320,414,325,339,325"/>
+<area shape="rect" id="Node000005" href="$class_game_engine.html#a433221049ae96fe05e841973905fd038" title=" " alt="" coords="387,360,587,387"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="339,334,416,353,414,358,338,339"/>
+<area shape="rect" id="Node000006" href="$class_game_engine.html#aad9033218861ffe7bb06c5af64902672" title=" " alt="" coords="406,411,568,437"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="299,334,338,366,388,396,404,403,402,408,386,401,335,370,296,339"/>
+<area shape="rect" id="Node000007" href="$class_scene___play.html#a957b35988b06b7d0c72aa948188b3b6e" title=" " alt="" coords="411,132,563,159"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="296,307,457,167,460,171,300,311"/>
+<area shape="rect" id="Node000011" href="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5" title="returns a reference to the assets object" alt="" coords="868,208,1014,235"/>
+<area shape="poly" id="edge17_Node000002_Node000011" title=" " alt="" coords="335,306,387,295,639,254,852,228,852,233,640,260,387,300,336,311"/>
+<area shape="rect" id="Node000012" href="$class_scene.html#a670b58a8e14e222d9a75afe3eb1e35bc" title="method that registers every action in the scene" alt="" coords="414,461,560,488"/>
+<area shape="poly" id="edge16_Node000002_Node000012" title=" " alt="" coords="292,335,329,390,356,421,388,447,401,454,398,458,386,452,352,425,324,393,287,338"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="510,129,565,99,634,69,742,42,843,26,844,31,743,47,636,75,568,104,512,134"/>
+<area shape="rect" id="Node000008" href="$class_entity_manager.html#a85c22d45c0bde41cd2b82336b6f32046" title="adds or deletes the entities at the start of every frame" alt="" coords="857,157,1025,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="564,147,841,162,841,168,564,152"/>
+<area shape="rect" id="Node000009" href="$class_assets.html#a82a07c4ce9f847b53f635018533c160c" title=" " alt="" coords="868,81,1014,108"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="518,129,572,108,635,92,691,85,748,82,852,84,852,90,748,88,691,91,636,97,573,113,520,134"/>
+<area shape="rect" id="Node000010" href="$class_scene___play.html#aa4fb330c856093ee8dbb0589852fbcfb" title=" " alt="" coords="635,107,809,133"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="564,134,620,128,620,134,564,140"/>
+<area shape="poly" id="edge15_Node000007_Node000011" title=" " alt="" coords="564,155,852,204,852,209,564,161"/>
+<area shape="poly" id="edge13_Node000010_Node000003" title=" " alt="" coords="752,104,895,36,898,41,754,109"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="784,131,866,151,865,156,782,137"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="808,107,852,102,852,108,809,113"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="746,132,796,162,858,194,874,200,872,205,856,198,793,167,743,136"/>
+</map>

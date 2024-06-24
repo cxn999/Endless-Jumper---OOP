@@ -5,43 +5,34 @@
 #include "Vec2.h"
 #include <string>
 
+/// base class for a component
 class Component {
 public:
-	bool has = false;
+	bool has = false;	/// it defines if the component exists or not
 };
 
+/// class for modifying everything that its related to transformations and translations (movement for example)
 class CTransform : public Component {
 public:
-	Vec2 pos = { 0.0, 0.0 };
-	Vec2 prevPos = { 0.0, 0.0 };
-	Vec2 scale = { 1.0, 1.0 };
-	Vec2 velocity = { 0.0, 0.0 };
-	float angle = 0;
+	Vec2 pos = { 0.0, 0.0 };		/// vector for position
+	Vec2 prevPos = { 0.0, 0.0 };	/// vector for previous position
+	Vec2 velocity = { 0.0, 0.0 };	/// vector for velocity		
 
-	CTransform() {}
-	CTransform(const Vec2 & p) : pos(p) {}
-	CTransform(const Vec2& p, const Vec2& v, const Vec2& sc, float a) : pos(p), velocity(v), scale(sc), angle(a) {}
+	CTransform() {}					/// default constructor
+	CTransform(const Vec2 & p) : pos(p) {}	/// constructor that set position only (for tiles)
+	CTransform(const Vec2& p, const Vec2& v) : pos(p), velocity(v) {}	///constructor that sets position and velocity
 };
 
-class CLifeSpan : public Component {
-public:
-	int lifespan = 0;
-	int frameCreated = 0;
-	CLifeSpan() {}
-	CLifeSpan(int duration, int frame) : lifespan(duration), frameCreated(frame) {}
-};
-
+/// class for input of the player
 class CInput : public Component {
 public:
 	bool up = false;
-	bool down = false;
 	bool right = false;
 	bool left = false;
-	bool shoot = false;
-	bool canShoot = true;
 	bool canJump = true;
 };
 
+/// class that defines the hitbox of entities
 class CBoundingBox : public Component {
 public:
 	Vec2 size;
@@ -50,6 +41,7 @@ public:
 	CBoundingBox(const Vec2 & s) : size(s), halfSize(s.x/2, s.y/2) {}
 };
 
+/// class that defines the animation of an entity
 class CAnimation : public Component {
 public:
 	Animation animation;
@@ -58,6 +50,7 @@ public:
 	CAnimation(const Animation & animation, bool r) : animation(animation), repeat(r) {}
 };
 
+/// class to define gravity for certain entities
 class CGravity : public Component {
 public:
 	float gravity = 0;
@@ -65,6 +58,7 @@ public:
 	CGravity(float g) : gravity(g) {}
 };
 
+/// class that defines a string for the state of the player, if it is jumping, moving, falling, etc.
 class CState : public Component {
 public:
 	std::string state = "idle";
@@ -72,10 +66,12 @@ public:
 	CState(std::string s) : state(s) {}
 };
 
+/// defines if an entity can kill the player
 class CKill : public Component {
 	
 };
 
+/// defines if an entity moves (logs in this case)
 class CMove : public Component {
 
 };

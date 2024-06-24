@@ -1,0 +1,50 @@
+\doxysection{Scene\+\_\+\+Play.\+h}
+\hypertarget{_scene___play_8h_source}{}\label{_scene___play_8h_source}\mbox{\hyperlink{_scene___play_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_scene_8h}{Scene.h}}"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}\ \ \ \ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene___play}{Scene\_Play}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene}{Scene}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00009\ \ \ \ \ sf::Text\ \mbox{\hyperlink{class_scene___play_a550aeedf55ec0b7f34a35310322e5a93}{m\_scoreText}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_scene___play_a32a3b2d581078688d35413dd2b387359}{m\_score}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00011\ \ \ \ \ sf::View\ \mbox{\hyperlink{class_scene___play_a7e9a314b52063e68beee77d86daf7ef6}{m\_view}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_scene___play_a95ab65289240069e1ba4aa0e7a5be00d}{m\_currentBackground}}\ =\ 0;\ \ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_scene___play_a72fc2c0c3df169d90e59c4a3cb0aadc8}{m\_pastBackground}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_scene___play_a3041ada8a339d26effd474e675bf59e1}{m\_currentFrame}}\ =\ 0;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_scene___play_aa0e843f5f0ce998197940166f02b0887}{m\_highestScore}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_scene___play_a1f81b96f6afa7e94f0e7f03bdc0ddce9}{m\_alpha}}\ =\ 255;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scene___play_a7bdec854756816282a026faf78e8b976}{m\_drawTextures}}\ =\ \textcolor{keyword}{true};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scene___play_a7e636f65e6b5e74ab6a68c612daf8570}{m\_drawCollision}}\ =\ \textcolor{keyword}{false};\ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scene___play_aaae1646cf523d502b89ec11bbfe02780}{m\_move}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scene___play_a317e1ab56b05e6fdcc4a01d4e704f71d}{m\_transition}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scene___play_a5413e4f8b3aa768b6b1c69dcdc24d894}{m\_end}}\ =\ \textcolor{keyword}{false};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_vec2}{Vec2}}\ \mbox{\hyperlink{class_scene___play_afa027d125eab163028537ec58b51baee}{m\_gridSize}}\ =\ \{\ 32,32\ \};\ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_vec2}{Vec2}}\ \mbox{\hyperlink{class_scene___play_a360ef403524e27604883d0bc72ca93ba}{m\_targetViewPosition}};\ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_scene___play_ae73d0166901eb8f88600806dac39b2c9}{m\_platformSpacing}}\ =\ 100;\ \ \ \ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ std::shared\_ptr<Entity>\ \mbox{\hyperlink{class_scene___play_a6b38cd470e93d7a2a459311337a10daa}{m\_player}};\ \ \ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_scene___play_a33169f4694573d31d2b44d192dbd0e5c}{Scene\_Play}}(\mbox{\hyperlink{class_game_engine}{GameEngine}}*\ gameEngine);}
+\DoxyCodeLine{00031\ \ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_a21c4cf4a84b6644e7c82f077c3ed793b}{init}}();}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_a416e630ef10fac7e34855babea499700}{update}}();}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_a608db7a88064f779d2a3a42f47af3958}{onEnd}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_a130605feff19608e5eeff9306c05b5c5}{replay}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_a0e84bcf37aa08a9f6abd7c3cddf65f40}{sRemoveDeadPlatforms}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_a847a279015aea29bee3860e7ffd509ce}{sPlatformGeneration}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_a5b9a11e45810897bedab64740342ef01}{sAnimation}}();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_ae80c24b0bb449025d718c9b6dba8d619}{sMovement}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_aec1850ef08cb92b5c6db6cba02dec399}{sCollision}}();}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_a6ab634d841861b45bb684b6e8ce899a2}{sRender}}();}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_a34a74b594e4c984c13462c71cc5d9962}{sDoAction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_action}{Action}}\&\ a);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_aa4fb330c856093ee8dbb0589852fbcfb}{spawnPlayer}}();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___play_a957b35988b06b7d0c72aa948188b3b6e}{loadLevel}}();}
+\DoxyCodeLine{00050\ \};}
+
+\end{DoxyCode}

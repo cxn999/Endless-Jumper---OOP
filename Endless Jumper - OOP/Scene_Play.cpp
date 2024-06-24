@@ -54,8 +54,6 @@ void Scene_Play::init() {
 	m_scoreText = sf::Text("0", f, 50);
 	m_scoreText.setColor(sf::Color::White);
 	m_score = 0;
-
-	
 }
 
 void Scene_Play::sDoAction(const Action& action) {
@@ -200,7 +198,6 @@ void Scene_Play::sRender() {
 		break;
 	}
 	window.clear(sf::Color::Transparent);
-
 
 	window.setView(m_view);
 
@@ -376,8 +373,6 @@ void Scene_Play::sAnimation() {
 	}
 }
 
-// OLD COLLISION SYSTEM
-
 void Scene_Play::sCollision() {
 	if (m_player->isActive()) {
 		auto& player = m_player->getComponent<CTransform>();
@@ -407,6 +402,8 @@ void Scene_Play::sCollision() {
 							m_player->getComponent<CGravity>().gravity = 0;
 							player.velocity.y = -20;
 							// collision resolution
+							m_game->getAssets().getSound("jumpSound").play();
+
 							player.pos.y -= overlap.y;
 							m_move = true;
 							m_targetViewPosition = Vec2(m_view.getCenter().x, tile.pos.y - 500);
@@ -517,6 +514,10 @@ void Scene_Play::sMovement() {
 }
 
 void Scene_Play::onEnd() {
+	if(m_game->getMusic()){
+		m_backgroundMusic->stop();
+	}
+	
 	m_game->changeScene("MENU", std::make_shared<Scene_Menu>(m_game), true);
 }
 

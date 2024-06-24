@@ -1,0 +1,5 @@
+<map id="CState" name="CState">
+<area shape="rect" id="Node000001" title="class that defines a string for the state of the player, if it is jumping, moving,..." alt="" coords="5,123,145,213"/>
+<area shape="rect" id="Node000002" href="$class_component.html" title="base class for a component" alt="" coords="36,5,115,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,89,78,123,73,123,73,89"/>
+</map>

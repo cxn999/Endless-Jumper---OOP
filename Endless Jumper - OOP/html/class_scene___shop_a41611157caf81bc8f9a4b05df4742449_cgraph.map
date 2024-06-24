@@ -1,0 +1,13 @@
+<map id="Scene_Shop::Scene_Shop" name="Scene_Shop::Scene_Shop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,183,108"/>
+<area shape="rect" id="Node000002" href="$class_scene___shop.html#a24a760af748578f3edda5b83a766ff9a" title=" " alt="" coords="231,81,351,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,92,215,92,215,97,183,97"/>
+<area shape="rect" id="Node000003" href="$class_game_engine.html#a2db9a2dd6d6cc9879ec988690837f09e" title=" " alt="" coords="399,5,562,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="318,78,398,42,416,35,418,40,400,46,320,83"/>
+<area shape="rect" id="Node000004" href="$class_assets.html#a044201d3a5016c7ac2785181cec15b50" title=" " alt="" coords="424,56,538,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="351,84,408,76,409,82,352,89"/>
+<area shape="rect" id="Node000005" href="$class_scene.html#a670b58a8e14e222d9a75afe3eb1e35bc" title="method that registers every action in the scene" alt="" coords="408,107,554,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="352,100,393,106,392,111,351,105"/>
+<area shape="rect" id="Node000006" href="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5" title="returns a reference to the assets object" alt="" coords="408,157,554,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="320,106,400,143,418,149,416,154,398,148,318,111"/>
+</map>

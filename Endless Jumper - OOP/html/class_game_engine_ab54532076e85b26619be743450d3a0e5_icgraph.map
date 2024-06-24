@@ -1,0 +1,52 @@
+<map id="GameEngine::window" name="GameEngine::window">
+<area shape="rect" id="Node000001" title="returns a reference to the assets object" alt="" coords="924,309,1070,336"/>
+<area shape="rect" id="Node000002" href="$class_scene___menu.html#ac333bd8b02726ee6db5706219e70073e" title="index for the backgrounds in the menu" alt="" coords="706,5,828,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="988,295,977,243,955,178,922,110,900,80,874,53,852,39,828,29,830,24,855,34,877,49,904,76,926,107,960,175,982,241,994,294"/>
+<area shape="rect" id="Node000004" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title="definition of pure virtual method from the base class" alt="" coords="244,107,360,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="988,295,975,249,954,193,921,139,899,116,874,97,815,67,761,51,712,47,663,51,559,75,498,87,429,97,360,109,359,103,429,92,497,82,558,69,662,46,712,42,762,46,817,62,877,92,903,112,925,136,959,191,981,247,993,293"/>
+<area shape="rect" id="Node000006" href="$class_scene___settings.html#a76b13e5709a76c73b7768859555f83bc" title="Initial control scheme." alt="" coords="451,415,589,441"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="969,348,927,377,877,401,801,420,724,431,651,435,589,435,589,429,651,429,724,425,800,415,875,396,925,372,966,344"/>
+<area shape="rect" id="Node000008" href="$class_scene___shop.html#a24a760af748578f3edda5b83a766ff9a" title=" " alt="" coords="707,107,827,133"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="982,296,966,262,942,221,912,181,874,148,851,136,827,128,828,123,853,131,877,143,915,177,947,218,971,259,987,294"/>
+<area shape="rect" id="Node000010" href="$class_scene___play.html#a957b35988b06b7d0c72aa948188b3b6e" title=" " alt="" coords="444,157,596,184"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="965,302,923,274,875,249,760,221,592,187,593,182,761,216,877,244,926,270,968,298"/>
+<area shape="rect" id="Node000011" href="$class_scene___play.html#ae80c24b0bb449025d718c9b6dba8d619" title=" " alt="" coords="684,309,850,336"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="908,325,850,325,850,320,908,320"/>
+<area shape="rect" id="Node000013" href="$class_scene___play.html#aa4fb330c856093ee8dbb0589852fbcfb" title=" " alt="" coords="680,157,854,184"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="974,299,932,251,904,226,874,205,833,187,835,182,877,200,908,222,935,247,978,295"/>
+<area shape="rect" id="Node000014" href="$class_scene___play.html#a847a279015aea29bee3860e7ffd509ce" title=" " alt="" coords="658,360,876,387"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="918,343,831,362,830,357,917,337"/>
+<area shape="rect" id="Node000015" href="$class_scene___menu.html#a4aa2a808fcf50c6767998657d3f4657e" title="pure virtual method for the rendering system" alt="" coords="690,528,844,555"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="989,352,973,390,949,435,917,480,877,518,845,534,843,529,874,514,913,477,945,432,968,388,984,350"/>
+<area shape="rect" id="Node000017" href="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2" title="pure virtual method to render everything in the window in every frame=" alt="" coords="693,259,841,285"/>
+<area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="917,308,830,289,831,283,918,303"/>
+<area shape="rect" id="Node000018" href="$class_scene___settings.html#adef765b0de1cab51176913b143c6f0bc" title="virtual method of the base class" alt="" coords="682,579,852,605"/>
+<area shape="poly" id="edge21_Node000001_Node000018" title=" " alt="" coords="992,352,980,399,957,458,924,518,902,545,877,569,853,582,851,578,874,565,898,542,919,515,952,456,974,398,987,350"/>
+<area shape="rect" id="Node000020" href="$class_scene___shop.html#a97f628fd17e0581cc242acc186f9b804" title="pure virtual method to render everything in the window in every frame=" alt="" coords="691,629,843,656"/>
+<area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="995,352,985,409,965,481,949,519,930,556,906,590,877,619,844,637,842,632,874,615,902,586,925,553,944,517,960,479,980,408,990,351"/>
+<area shape="rect" id="Node000022" href="$class_scene___settings.html#a2b9b180644b36c931eb7c47888ede9c4" title=" " alt="" coords="665,461,869,504"/>
+<area shape="poly" id="edge25_Node000001_Node000022" title=" " alt="" coords="978,350,934,398,907,423,877,445,841,463,839,458,874,440,904,419,931,394,974,346"/>
+<area shape="rect" id="Node000003" href="$class_scene___menu.html#a0d71fab24a893ff0b270271180186b65" title="constructor of the scene menu that receives a pointer to the game engine" alt="" coords="429,5,610,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="690,21,611,21,611,16,690,16"/>
+<area shape="rect" id="Node000005" href="$class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c" title="shared pointer to the player" alt="" coords="5,107,175,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="228,123,175,123,175,117,228,117"/>
+<area shape="rect" id="Node000007" href="$class_scene___settings.html#aed9876c261637e7aa4f25c1c39261033" title="constructor for play scene that receives the pointer to the game engine" alt="" coords="223,407,381,449"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="435,431,381,431,381,425,435,425"/>
+<area shape="rect" id="Node000009" href="$class_scene___shop.html#a41611157caf81bc8f9a4b05df4742449" title=" " alt="" coords="431,107,608,133"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="691,123,609,123,609,117,691,117"/>
+<area shape="poly" id="edge10_Node000010_Node000004" title=" " alt="" coords="444,156,360,136,361,131,445,151"/>
+<area shape="rect" id="Node000012" href="$class_scene___play.html#a416e630ef10fac7e34855babea499700" title="constructor that receives a pointer to the game engine" alt="" coords="451,309,589,336"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="669,325,589,325,589,320,669,320"/>
+<area shape="poly" id="edge14_Node000013_Node000010" title=" " alt="" coords="665,173,596,173,596,168,665,168"/>
+<area shape="poly" id="edge16_Node000014_Node000012" title=" " alt="" coords="683,359,588,339,589,334,684,354"/>
+<area shape="rect" id="Node000016" href="$class_scene___menu.html#a46cf38bd4128df45b9b11bab2c4484f0" title="constructor that receives a pointer to the game engine" alt="" coords="448,528,592,555"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="675,544,592,544,592,539,675,539"/>
+<area shape="poly" id="edge20_Node000017_Node000012" title=" " alt="" coords="684,292,589,311,588,306,683,286"/>
+<area shape="rect" id="Node000019" href="$class_scene___settings.html#a54f6f5a3c647bb750b697ff362af7a76" title="constructor that receives a pointer to the game engine" alt="" coords="440,579,600,605"/>
+<area shape="poly" id="edge22_Node000018_Node000019" title=" " alt="" coords="667,595,600,595,600,589,667,589"/>
+<area shape="rect" id="Node000021" href="$class_scene___shop.html#a27666a0b2a6fd5aec323a22c873a25f0" title="constructor that receives a pointer to the game engine" alt="" coords="449,629,591,656"/>
+<area shape="poly" id="edge24_Node000020_Node000021" title=" " alt="" coords="676,645,591,645,591,640,676,640"/>
+<area shape="poly" id="edge26_Node000022_Node000006" title=" " alt="" coords="652,460,583,445,584,439,653,455"/>
+<area shape="rect" id="Node000023" href="$class_scene___settings.html#a4da6738ad070d4fb99ce3675e636b160" title="pure virtual method for the system of actions depending on the scene (Jump, move right,..." alt="" coords="429,469,610,496"/>
+<area shape="poly" id="edge27_Node000022_Node000023" title=" " alt="" coords="649,485,611,485,611,480,649,480"/>
+</map>

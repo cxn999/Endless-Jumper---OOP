@@ -1,0 +1,647 @@
+\doxysection{Scene\+\_\+\+Play Class Reference}
+\hypertarget{class_scene___play}{}\label{class_scene___play}\index{Scene\_Play@{Scene\_Play}}
+
+
+import graphics library  
+
+
+
+
+{\ttfamily \#include $<$Scene\+\_\+\+Play.\+h$>$}
+
+
+
+Inheritance diagram for Scene\+\_\+\+Play\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_scene___play__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scene\+\_\+\+Play\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene___play_a33169f4694573d31d2b44d192dbd0e5c}{Scene\+\_\+\+Play}} (\mbox{\hyperlink{class_game_engine}{Game\+Engine}} \texorpdfstring{$\ast$}{*}game\+Engine)
+\begin{DoxyCompactList}\small\item\em shared pointer to the player \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene___play_a21c4cf4a84b6644e7c82f077c3ed793b}{init}} ()
+\begin{DoxyCompactList}\small\item\em definition of pure virtual method from the base class \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene___play_a416e630ef10fac7e34855babea499700}{update}} ()
+\begin{DoxyCompactList}\small\item\em constructor that receives a pointer to the game engine \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene___play_a608db7a88064f779d2a3a42f47af3958}{on\+End}} ()
+\begin{DoxyCompactList}\small\item\em pause the game \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene___play_a130605feff19608e5eeff9306c05b5c5}{replay}} ()
+\begin{DoxyCompactList}\small\item\em replay method \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene___play_a0e84bcf37aa08a9f6abd7c3cddf65f40}{s\+Remove\+Dead\+Platforms}} ()
+\begin{DoxyCompactList}\small\item\em Systems of the scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene___play_a847a279015aea29bee3860e7ffd509ce}{s\+Platform\+Generation}} ()
+\item 
+void \mbox{\hyperlink{class_scene___play_a5b9a11e45810897bedab64740342ef01}{s\+Animation}} ()
+\item 
+void \mbox{\hyperlink{class_scene___play_ae80c24b0bb449025d718c9b6dba8d619}{s\+Movement}} ()
+\item 
+void \mbox{\hyperlink{class_scene___play_aec1850ef08cb92b5c6db6cba02dec399}{s\+Collision}} ()
+\item 
+void \mbox{\hyperlink{class_scene___play_a6ab634d841861b45bb684b6e8ce899a2}{s\+Render}} ()
+\begin{DoxyCompactList}\small\item\em pure virtual method to render everything in the window in every frame= \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene___play_a34a74b594e4c984c13462c71cc5d9962}{s\+Do\+Action}} (const \mbox{\hyperlink{class_action}{Action}} \&a)
+\begin{DoxyCompactList}\small\item\em pure virtual method for the system of actions depending on the scene (Jump, move right, left, etc) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene___play_aa4fb330c856093ee8dbb0589852fbcfb}{spawn\+Player}} ()
+\item 
+void \mbox{\hyperlink{class_scene___play_a957b35988b06b7d0c72aa948188b3b6e}{load\+Level}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_scene_abad71a081e3b76cff376c954d3b6c3cb}{set\+Paused}} (bool)
+\begin{DoxyCompactList}\small\item\em pure virtual abstract method for quiting a scene \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_ad10176d75a9cc0da56626f682d083507}{Scene}} ()
+\begin{DoxyCompactList}\small\item\em pause the scene \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_scene_a413d692c235f90a9b0aaa33196e87384}{Scene}} (\mbox{\hyperlink{class_game_engine}{Game\+Engine}} \texorpdfstring{$\ast$}{*}game\+Engine)
+\begin{DoxyCompactList}\small\item\em default constructor \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_scene_af69ab1aeb2b5d8c084aa02444e1f65d4}{do\+Action}} (const \mbox{\hyperlink{class_action}{Action}} \&action)
+\begin{DoxyCompactList}\small\item\em virtual method that defines what an action does \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_a670b58a8e14e222d9a75afe3eb1e35bc}{register\+Action}} (int input\+Key, const std\+::string \&action\+Name)
+\begin{DoxyCompactList}\small\item\em method that registers every action in the scene \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_scene_a9f43c171b6a78154f919cf0b8b3b9c1a}{current\+Frame}} () const
+\begin{DoxyCompactList}\small\item\em method to return the current frame \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_scene_8h_a86ff12d26b739ff16bcff91d715df70e}{Action\+Map}} \& \mbox{\hyperlink{class_scene_a201c6f29c57f78a6af5addb9fa779306}{get\+Action\+Map}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Text \mbox{\hyperlink{class_scene___play_a550aeedf55ec0b7f34a35310322e5a93}{m\+\_\+score\+Text}}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_scene___play_a32a3b2d581078688d35413dd2b387359}{m\+\_\+score}}
+\begin{DoxyCompactList}\small\item\em text for the score \end{DoxyCompactList}\item 
+sf\+::\+View \mbox{\hyperlink{class_scene___play_a7e9a314b52063e68beee77d86daf7ef6}{m\+\_\+view}}
+\begin{DoxyCompactList}\small\item\em number for the score \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_scene___play_a95ab65289240069e1ba4aa0e7a5be00d}{m\+\_\+current\+Background}} = 0
+\begin{DoxyCompactList}\small\item\em the view of the scene \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_scene___play_a72fc2c0c3df169d90e59c4a3cb0aadc8}{m\+\_\+past\+Background}}
+\begin{DoxyCompactList}\small\item\em index of the background \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_scene___play_a3041ada8a339d26effd474e675bf59e1}{m\+\_\+current\+Frame}} = 0
+\begin{DoxyCompactList}\small\item\em previous index background \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_scene___play_aa0e843f5f0ce998197940166f02b0887}{m\+\_\+highest\+Score}}
+\begin{DoxyCompactList}\small\item\em index of the current frame \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_scene___play_a1f81b96f6afa7e94f0e7f03bdc0ddce9}{m\+\_\+alpha}} = 255
+\begin{DoxyCompactList}\small\item\em highest score number \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene___play_a7bdec854756816282a026faf78e8b976}{m\+\_\+draw\+Textures}} = true
+\begin{DoxyCompactList}\small\item\em variables to store the opacity of the background (useful for transition) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene___play_a7e636f65e6b5e74ab6a68c612daf8570}{m\+\_\+draw\+Collision}} = false
+\begin{DoxyCompactList}\small\item\em defines if the textures are drawn to the screen or not (PRESS T) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene___play_aaae1646cf523d502b89ec11bbfe02780}{m\+\_\+move}} = false
+\begin{DoxyCompactList}\small\item\em defines if the hitboxes are drawn to the screen or not (PRESS C) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene___play_a317e1ab56b05e6fdcc4a01d4e704f71d}{m\+\_\+transition}} = false
+\begin{DoxyCompactList}\small\item\em defines if the camera is moving or not \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene___play_a5413e4f8b3aa768b6b1c69dcdc24d894}{m\+\_\+end}} = false
+\begin{DoxyCompactList}\small\item\em bool variable to know if the background are transitioning or not \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vec2}{Vec2}} \mbox{\hyperlink{class_scene___play_afa027d125eab163028537ec58b51baee}{m\+\_\+grid\+Size}} = \{ 32,32 \}
+\begin{DoxyCompactList}\small\item\em to know if a scene has ended \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_vec2}{Vec2}} \mbox{\hyperlink{class_scene___play_a360ef403524e27604883d0bc72ca93ba}{m\+\_\+target\+View\+Position}}
+\begin{DoxyCompactList}\small\item\em how many pixels x pixels has the grid \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_scene___play_ae73d0166901eb8f88600806dac39b2c9}{m\+\_\+platform\+Spacing}} = 100
+\begin{DoxyCompactList}\small\item\em it determines where the camera should go \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_entity}{Entity}} $>$ \mbox{\hyperlink{class_scene___play_a6b38cd470e93d7a2a459311337a10daa}{m\+\_\+player}}
+\begin{DoxyCompactList}\small\item\em how many pixels have to be between the platforms \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_scene}{Scene}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_engine}{Game\+Engine}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_scene_a055a2a35151e229504f940dc4a1eff0e}{m\+\_\+game}} = nullptr
+\item 
+\mbox{\hyperlink{class_entity_manager}{Entity\+Manager}} \mbox{\hyperlink{class_scene_a9607716b0ac72569b450f7e8aa1ac161}{m\+\_\+entity\+Manager}}
+\begin{DoxyCompactList}\small\item\em a reference to the game engine \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_scene_8h_a86ff12d26b739ff16bcff91d715df70e}{Action\+Map}} \mbox{\hyperlink{class_scene_a4221f1cd9c7ed1b714cfee64b0391da2}{m\+\_\+action\+Map}}
+\begin{DoxyCompactList}\small\item\em an entity manager for the scene \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{class_scene_a7bae804882b015014c71c017f7df0b1e}{m\+\_\+current\+Frame}}
+\begin{DoxyCompactList}\small\item\em an action map for each scene \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene_a9831c81afc52aeaac474275fcaa5bf95}{m\+\_\+paused}} = false
+\begin{DoxyCompactList}\small\item\em records the current frame \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+import graphics library 
+
+import scene header file import vector library derived class for the Play \doxylink{class_scene}{Scene} that inherits from \doxylink{_scene_8h}{scene.\+h} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_scene___play_a33169f4694573d31d2b44d192dbd0e5c}\index{Scene\_Play@{Scene\_Play}!Scene\_Play@{Scene\_Play}}
+\index{Scene\_Play@{Scene\_Play}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{Scene\_Play()}{Scene\_Play()}}
+{\footnotesize\ttfamily \label{class_scene___play_a33169f4694573d31d2b44d192dbd0e5c} 
+Scene\+\_\+\+Play\+::\+Scene\+\_\+\+Play (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game_engine}{Game\+Engine}} \texorpdfstring{$\ast$}{*}}]{game\+Engine}{}\end{DoxyParamCaption})}
+
+
+
+shared pointer to the player 
+
+constructor for play scene that receives the pointer to the game engine Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a33169f4694573d31d2b44d192dbd0e5c_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_scene___play_a21c4cf4a84b6644e7c82f077c3ed793b}\index{Scene\_Play@{Scene\_Play}!init@{init}}
+\index{init@{init}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \label{class_scene___play_a21c4cf4a84b6644e7c82f077c3ed793b} 
+void Scene\+\_\+\+Play\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+definition of pure virtual method from the base class 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a21c4cf4a84b6644e7c82f077c3ed793b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_scene___play_a21c4cf4a84b6644e7c82f077c3ed793b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_a957b35988b06b7d0c72aa948188b3b6e}\index{Scene\_Play@{Scene\_Play}!loadLevel@{loadLevel}}
+\index{loadLevel@{loadLevel}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{loadLevel()}{loadLevel()}}
+{\footnotesize\ttfamily \label{class_scene___play_a957b35988b06b7d0c72aa948188b3b6e} 
+void Scene\+\_\+\+Play\+::load\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a957b35988b06b7d0c72aa948188b3b6e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a957b35988b06b7d0c72aa948188b3b6e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_a608db7a88064f779d2a3a42f47af3958}\index{Scene\_Play@{Scene\_Play}!onEnd@{onEnd}}
+\index{onEnd@{onEnd}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{onEnd()}{onEnd()}}
+{\footnotesize\ttfamily \label{class_scene___play_a608db7a88064f779d2a3a42f47af3958} 
+void Scene\+\_\+\+Play\+::on\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+pause the game 
+
+
+
+Implements \mbox{\hyperlink{class_scene_af53e066bb222802c6287eb9d749ef0b4}{Scene}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a608db7a88064f779d2a3a42f47af3958_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_scene___play_a608db7a88064f779d2a3a42f47af3958_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_a130605feff19608e5eeff9306c05b5c5}\index{Scene\_Play@{Scene\_Play}!replay@{replay}}
+\index{replay@{replay}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{replay()}{replay()}}
+{\footnotesize\ttfamily \label{class_scene___play_a130605feff19608e5eeff9306c05b5c5} 
+void Scene\+\_\+\+Play\+::replay (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+replay method 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a130605feff19608e5eeff9306c05b5c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a130605feff19608e5eeff9306c05b5c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_a5b9a11e45810897bedab64740342ef01}\index{Scene\_Play@{Scene\_Play}!sAnimation@{sAnimation}}
+\index{sAnimation@{sAnimation}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{sAnimation()}{sAnimation()}}
+{\footnotesize\ttfamily \label{class_scene___play_a5b9a11e45810897bedab64740342ef01} 
+void Scene\+\_\+\+Play\+::s\+Animation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a5b9a11e45810897bedab64740342ef01_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_scene___play_a5b9a11e45810897bedab64740342ef01_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_aec1850ef08cb92b5c6db6cba02dec399}\index{Scene\_Play@{Scene\_Play}!sCollision@{sCollision}}
+\index{sCollision@{sCollision}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{sCollision()}{sCollision()}}
+{\footnotesize\ttfamily \label{class_scene___play_aec1850ef08cb92b5c6db6cba02dec399} 
+void Scene\+\_\+\+Play\+::s\+Collision (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_aec1850ef08cb92b5c6db6cba02dec399_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_scene___play_aec1850ef08cb92b5c6db6cba02dec399_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_a34a74b594e4c984c13462c71cc5d9962}\index{Scene\_Play@{Scene\_Play}!sDoAction@{sDoAction}}
+\index{sDoAction@{sDoAction}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{sDoAction()}{sDoAction()}}
+{\footnotesize\ttfamily \label{class_scene___play_a34a74b594e4c984c13462c71cc5d9962} 
+void Scene\+\_\+\+Play\+::s\+Do\+Action (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_action}{Action}} \&}]{action}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+pure virtual method for the system of actions depending on the scene (Jump, move right, left, etc) 
+
+
+
+Implements \mbox{\hyperlink{class_scene_aa445449fc0befdff76d7228aaf5a90e4}{Scene}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a34a74b594e4c984c13462c71cc5d9962_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_ae80c24b0bb449025d718c9b6dba8d619}\index{Scene\_Play@{Scene\_Play}!sMovement@{sMovement}}
+\index{sMovement@{sMovement}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{sMovement()}{sMovement()}}
+{\footnotesize\ttfamily \label{class_scene___play_ae80c24b0bb449025d718c9b6dba8d619} 
+void Scene\+\_\+\+Play\+::s\+Movement (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_ae80c24b0bb449025d718c9b6dba8d619_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_scene___play_ae80c24b0bb449025d718c9b6dba8d619_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_aa4fb330c856093ee8dbb0589852fbcfb}\index{Scene\_Play@{Scene\_Play}!spawnPlayer@{spawnPlayer}}
+\index{spawnPlayer@{spawnPlayer}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{spawnPlayer()}{spawnPlayer()}}
+{\footnotesize\ttfamily \label{class_scene___play_aa4fb330c856093ee8dbb0589852fbcfb} 
+void Scene\+\_\+\+Play\+::spawn\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_aa4fb330c856093ee8dbb0589852fbcfb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_aa4fb330c856093ee8dbb0589852fbcfb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_a847a279015aea29bee3860e7ffd509ce}\index{Scene\_Play@{Scene\_Play}!sPlatformGeneration@{sPlatformGeneration}}
+\index{sPlatformGeneration@{sPlatformGeneration}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{sPlatformGeneration()}{sPlatformGeneration()}}
+{\footnotesize\ttfamily \label{class_scene___play_a847a279015aea29bee3860e7ffd509ce} 
+void Scene\+\_\+\+Play\+::s\+Platform\+Generation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a847a279015aea29bee3860e7ffd509ce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a847a279015aea29bee3860e7ffd509ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_a0e84bcf37aa08a9f6abd7c3cddf65f40}\index{Scene\_Play@{Scene\_Play}!sRemoveDeadPlatforms@{sRemoveDeadPlatforms}}
+\index{sRemoveDeadPlatforms@{sRemoveDeadPlatforms}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{sRemoveDeadPlatforms()}{sRemoveDeadPlatforms()}}
+{\footnotesize\ttfamily \label{class_scene___play_a0e84bcf37aa08a9f6abd7c3cddf65f40} 
+void Scene\+\_\+\+Play\+::s\+Remove\+Dead\+Platforms (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Systems of the scene. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a0e84bcf37aa08a9f6abd7c3cddf65f40_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a0e84bcf37aa08a9f6abd7c3cddf65f40_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_a6ab634d841861b45bb684b6e8ce899a2}\index{Scene\_Play@{Scene\_Play}!sRender@{sRender}}
+\index{sRender@{sRender}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{sRender()}{sRender()}}
+{\footnotesize\ttfamily \label{class_scene___play_a6ab634d841861b45bb684b6e8ce899a2} 
+void Scene\+\_\+\+Play\+::s\+Render (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+pure virtual method to render everything in the window in every frame= 
+
+
+
+Implements \mbox{\hyperlink{class_scene_a081ddb41b1f3c25080308dd0d21ebb5b}{Scene}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a6ab634d841861b45bb684b6e8ce899a2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{class_scene___play_a6ab634d841861b45bb684b6e8ce899a2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___play_a416e630ef10fac7e34855babea499700}\index{Scene\_Play@{Scene\_Play}!update@{update}}
+\index{update@{update}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_scene___play_a416e630ef10fac7e34855babea499700} 
+void Scene\+\_\+\+Play\+::update (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+constructor that receives a pointer to the game engine 
+
+pure virtual method to update the frame depending on the scene 
+
+Implements \mbox{\hyperlink{class_scene_a7faff47f5c1b1ebc986f768c9b9732ec}{Scene}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___play_a416e630ef10fac7e34855babea499700_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_scene___play_a1f81b96f6afa7e94f0e7f03bdc0ddce9}\index{Scene\_Play@{Scene\_Play}!m\_alpha@{m\_alpha}}
+\index{m\_alpha@{m\_alpha}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_alpha}{m\_alpha}}
+{\footnotesize\ttfamily \label{class_scene___play_a1f81b96f6afa7e94f0e7f03bdc0ddce9} 
+int Scene\+\_\+\+Play\+::m\+\_\+alpha = 255\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+highest score number 
+
+\Hypertarget{class_scene___play_a95ab65289240069e1ba4aa0e7a5be00d}\index{Scene\_Play@{Scene\_Play}!m\_currentBackground@{m\_currentBackground}}
+\index{m\_currentBackground@{m\_currentBackground}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_currentBackground}{m\_currentBackground}}
+{\footnotesize\ttfamily \label{class_scene___play_a95ab65289240069e1ba4aa0e7a5be00d} 
+size\+\_\+t Scene\+\_\+\+Play\+::m\+\_\+current\+Background = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+the view of the scene 
+
+\Hypertarget{class_scene___play_a3041ada8a339d26effd474e675bf59e1}\index{Scene\_Play@{Scene\_Play}!m\_currentFrame@{m\_currentFrame}}
+\index{m\_currentFrame@{m\_currentFrame}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_currentFrame}{m\_currentFrame}}
+{\footnotesize\ttfamily \label{class_scene___play_a3041ada8a339d26effd474e675bf59e1} 
+size\+\_\+t Scene\+\_\+\+Play\+::m\+\_\+current\+Frame = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+previous index background 
+
+\Hypertarget{class_scene___play_a7e636f65e6b5e74ab6a68c612daf8570}\index{Scene\_Play@{Scene\_Play}!m\_drawCollision@{m\_drawCollision}}
+\index{m\_drawCollision@{m\_drawCollision}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_drawCollision}{m\_drawCollision}}
+{\footnotesize\ttfamily \label{class_scene___play_a7e636f65e6b5e74ab6a68c612daf8570} 
+bool Scene\+\_\+\+Play\+::m\+\_\+draw\+Collision = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+defines if the textures are drawn to the screen or not (PRESS T) 
+
+\Hypertarget{class_scene___play_a7bdec854756816282a026faf78e8b976}\index{Scene\_Play@{Scene\_Play}!m\_drawTextures@{m\_drawTextures}}
+\index{m\_drawTextures@{m\_drawTextures}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_drawTextures}{m\_drawTextures}}
+{\footnotesize\ttfamily \label{class_scene___play_a7bdec854756816282a026faf78e8b976} 
+bool Scene\+\_\+\+Play\+::m\+\_\+draw\+Textures = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+variables to store the opacity of the background (useful for transition) 
+
+\Hypertarget{class_scene___play_a5413e4f8b3aa768b6b1c69dcdc24d894}\index{Scene\_Play@{Scene\_Play}!m\_end@{m\_end}}
+\index{m\_end@{m\_end}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_end}{m\_end}}
+{\footnotesize\ttfamily \label{class_scene___play_a5413e4f8b3aa768b6b1c69dcdc24d894} 
+bool Scene\+\_\+\+Play\+::m\+\_\+end = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+bool variable to know if the background are transitioning or not 
+
+\Hypertarget{class_scene___play_afa027d125eab163028537ec58b51baee}\index{Scene\_Play@{Scene\_Play}!m\_gridSize@{m\_gridSize}}
+\index{m\_gridSize@{m\_gridSize}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_gridSize}{m\_gridSize}}
+{\footnotesize\ttfamily \label{class_scene___play_afa027d125eab163028537ec58b51baee} 
+\mbox{\hyperlink{class_vec2}{Vec2}} Scene\+\_\+\+Play\+::m\+\_\+grid\+Size = \{ 32,32 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+to know if a scene has ended 
+
+\Hypertarget{class_scene___play_aa0e843f5f0ce998197940166f02b0887}\index{Scene\_Play@{Scene\_Play}!m\_highestScore@{m\_highestScore}}
+\index{m\_highestScore@{m\_highestScore}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_highestScore}{m\_highestScore}}
+{\footnotesize\ttfamily \label{class_scene___play_aa0e843f5f0ce998197940166f02b0887} 
+size\+\_\+t Scene\+\_\+\+Play\+::m\+\_\+highest\+Score\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+index of the current frame 
+
+\Hypertarget{class_scene___play_aaae1646cf523d502b89ec11bbfe02780}\index{Scene\_Play@{Scene\_Play}!m\_move@{m\_move}}
+\index{m\_move@{m\_move}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_move}{m\_move}}
+{\footnotesize\ttfamily \label{class_scene___play_aaae1646cf523d502b89ec11bbfe02780} 
+bool Scene\+\_\+\+Play\+::m\+\_\+move = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+defines if the hitboxes are drawn to the screen or not (PRESS C) 
+
+\Hypertarget{class_scene___play_a72fc2c0c3df169d90e59c4a3cb0aadc8}\index{Scene\_Play@{Scene\_Play}!m\_pastBackground@{m\_pastBackground}}
+\index{m\_pastBackground@{m\_pastBackground}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_pastBackground}{m\_pastBackground}}
+{\footnotesize\ttfamily \label{class_scene___play_a72fc2c0c3df169d90e59c4a3cb0aadc8} 
+size\+\_\+t Scene\+\_\+\+Play\+::m\+\_\+past\+Background\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+index of the background 
+
+\Hypertarget{class_scene___play_ae73d0166901eb8f88600806dac39b2c9}\index{Scene\_Play@{Scene\_Play}!m\_platformSpacing@{m\_platformSpacing}}
+\index{m\_platformSpacing@{m\_platformSpacing}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_platformSpacing}{m\_platformSpacing}}
+{\footnotesize\ttfamily \label{class_scene___play_ae73d0166901eb8f88600806dac39b2c9} 
+size\+\_\+t Scene\+\_\+\+Play\+::m\+\_\+platform\+Spacing = 100\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+it determines where the camera should go 
+
+\Hypertarget{class_scene___play_a6b38cd470e93d7a2a459311337a10daa}\index{Scene\_Play@{Scene\_Play}!m\_player@{m\_player}}
+\index{m\_player@{m\_player}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_player}{m\_player}}
+{\footnotesize\ttfamily \label{class_scene___play_a6b38cd470e93d7a2a459311337a10daa} 
+std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_entity}{Entity}}$>$ Scene\+\_\+\+Play\+::m\+\_\+player\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+how many pixels have to be between the platforms 
+
+\Hypertarget{class_scene___play_a32a3b2d581078688d35413dd2b387359}\index{Scene\_Play@{Scene\_Play}!m\_score@{m\_score}}
+\index{m\_score@{m\_score}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_score}{m\_score}}
+{\footnotesize\ttfamily \label{class_scene___play_a32a3b2d581078688d35413dd2b387359} 
+size\+\_\+t Scene\+\_\+\+Play\+::m\+\_\+score\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+text for the score 
+
+\Hypertarget{class_scene___play_a550aeedf55ec0b7f34a35310322e5a93}\index{Scene\_Play@{Scene\_Play}!m\_scoreText@{m\_scoreText}}
+\index{m\_scoreText@{m\_scoreText}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_scoreText}{m\_scoreText}}
+{\footnotesize\ttfamily \label{class_scene___play_a550aeedf55ec0b7f34a35310322e5a93} 
+sf\+::\+Text Scene\+\_\+\+Play\+::m\+\_\+score\+Text\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___play_a360ef403524e27604883d0bc72ca93ba}\index{Scene\_Play@{Scene\_Play}!m\_targetViewPosition@{m\_targetViewPosition}}
+\index{m\_targetViewPosition@{m\_targetViewPosition}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_targetViewPosition}{m\_targetViewPosition}}
+{\footnotesize\ttfamily \label{class_scene___play_a360ef403524e27604883d0bc72ca93ba} 
+\mbox{\hyperlink{class_vec2}{Vec2}} Scene\+\_\+\+Play\+::m\+\_\+target\+View\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+how many pixels x pixels has the grid 
+
+\Hypertarget{class_scene___play_a317e1ab56b05e6fdcc4a01d4e704f71d}\index{Scene\_Play@{Scene\_Play}!m\_transition@{m\_transition}}
+\index{m\_transition@{m\_transition}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_transition}{m\_transition}}
+{\footnotesize\ttfamily \label{class_scene___play_a317e1ab56b05e6fdcc4a01d4e704f71d} 
+bool Scene\+\_\+\+Play\+::m\+\_\+transition = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+defines if the camera is moving or not 
+
+\Hypertarget{class_scene___play_a7e9a314b52063e68beee77d86daf7ef6}\index{Scene\_Play@{Scene\_Play}!m\_view@{m\_view}}
+\index{m\_view@{m\_view}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_view}{m\_view}}
+{\footnotesize\ttfamily \label{class_scene___play_a7e9a314b52063e68beee77d86daf7ef6} 
+sf\+::\+View Scene\+\_\+\+Play\+::m\+\_\+view\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+number for the score 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_scene___play_8h}{Scene\+\_\+\+Play.\+h}}\item 
+\mbox{\hyperlink{_scene___play_8cpp}{Scene\+\_\+\+Play.\+cpp}}\end{DoxyCompactItemize}

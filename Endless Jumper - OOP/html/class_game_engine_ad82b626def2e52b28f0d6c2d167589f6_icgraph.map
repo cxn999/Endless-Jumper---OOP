@@ -1,0 +1,7 @@
+<map id="GameEngine::quit" name="GameEngine::quit">
+<area shape="rect" id="Node000001" title="quits the game" alt="" coords="409,5,534,32"/>
+<area shape="rect" id="Node000002" href="$class_scene___menu.html#a6f9695c142fe978a98aa94649d3f966e" title="pause the game" alt="" coords="219,5,361,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="393,21,362,21,362,16,393,16"/>
+<area shape="rect" id="Node000003" href="$class_scene___menu.html#a1293fb9b99a662d7fa6416fbcf857541" title="pure virtual method for the system of actions depending on the scene (Jump, move right,..." alt="" coords="5,5,171,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="203,21,171,21,171,16,203,16"/>
+</map>

@@ -1,0 +1,23 @@
+<map id="Scene_Shop" name="Scene_Shop">
+<area shape="rect" id="Node000001" title=" " alt="" coords="653,1099,829,1307"/>
+<area shape="rect" id="Node000002" href="$class_scene.html" title="base class that has all the basic functionalities for a scene" alt="" coords="357,640,581,1019"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="591,1019,631,1073,655,1103,651,1106,627,1076,587,1022"/>
+<area shape="rect" id="Node000003" href="$class_game_engine.html" title="Game Engine class." alt="" coords="5,5,183,576"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,554,198,575,230,618,267,660,346,733,342,737,263,664,226,622,193,577,180,557"/>
+<area shape="rect" id="Node000004" href="$class_entity_manager.html" title="Class that handles all the entities in the game (creates them, deletes them, modifies them,..." alt="" coords="207,179,375,403"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="307,402,326,507,356,615,359,623,354,625,351,617,321,508,301,403"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="399,256,541,325"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="473,325,472,623,467,623,467,325"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="565,256,613,325"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="592,325,587,454,578,536,562,617,560,624,555,623,557,615,572,535,581,454,586,325"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="707,256,745,325"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="734,325,739,386,736,464,729,505,717,546,700,584,676,618,658,630,639,634,619,636,595,643,594,638,618,630,639,628,656,625,672,614,695,581,712,544,724,504,730,463,733,386,729,325"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="605,795,642,864"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="623,864,624,960,632,1018,648,1074,651,1082,647,1085,643,1076,627,1019,619,961,618,864"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="675,795,788,864"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="735,863,740,1082,735,1082,729,864"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="812,795,941,864"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="870,865,843,960,803,1076,800,1084,795,1082,798,1074,838,959,865,863"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="979,795,1006,864"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="993,864,982,937,971,979,956,1020,935,1057,908,1091,877,1120,844,1145,841,1141,873,1116,904,1087,931,1054,952,1018,966,977,976,936,987,863"/>
+</map>

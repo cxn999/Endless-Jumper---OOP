@@ -1,0 +1,5 @@
+<map id="Scene_Play::sRemoveDeadPlatforms" name="Scene_Play::sRemoveDeadPlatforms">
+<area shape="rect" id="Node000001" title="Systems of the scene." alt="" coords="5,5,243,32"/>
+<area shape="rect" id="Node000002" href="$class_entity_manager.html#ad718816dd5307c5f90bf25dd8e9b750b" title="adds a reference to a new entity into the entity vector" alt="" coords="291,5,466,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="243,16,275,16,275,21,243,21"/>
+</map>

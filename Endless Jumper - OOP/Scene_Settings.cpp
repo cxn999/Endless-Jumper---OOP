@@ -21,7 +21,7 @@ void Scene_Settings::updateVolumeSlider() {
 	auto& m_window = m_game->window();
 	auto mx = m_window.getSize().x / 2;
 
-	float newWidth = (m_volume / 100.0f) * 200.0f; 
+	float newWidth = (m_game->getVolume() / 100.0f) * 200.0f; 
 	m_volumeSlider.setSize(sf::Vector2f(newWidth, 20));
 	m_volumeSlider.setPosition(mx - m_volumeSlider.getSize().x / 2, 220); 
 }
@@ -44,8 +44,6 @@ void Scene_Settings::init() {
 	registerAction(sf::Keyboard::A, "LEFT");
 	registerAction(sf::Keyboard::Right, "RIGHT");
 	registerAction(sf::Keyboard::D, "RIGHT");
-
-	// sdjgksdjgksjdgks
 
 	// Set the sf::window in a more convenient variable
 	auto& m_window = m_game->window();
@@ -76,11 +74,11 @@ void Scene_Settings::init() {
 	}
 
 	// Volume slider
-	m_volumeSlider.setFillColor(getVolumeColor(m_volume));
+	m_volumeSlider.setFillColor(getVolumeColor(m_game->getVolume()));
 	updateVolumeSlider();
 
 	m_volumeText.setFont(f);
-	m_volumeText.setString(std::to_string(static_cast<int>(m_volume)));
+	m_volumeText.setString(std::to_string(static_cast<int>(m_game->getVolume())));
 	m_volumeText.setCharacterSize(30);
 	m_volumeText.setFillColor(sf::Color::Black);
 	m_volumeText.setPosition(mx + m_volumeSlider.getSize().x / 2 + 60, 210);
@@ -129,15 +127,15 @@ void Scene_Settings::sDoAction(const Action& action) {
 		else if (action.name() == "DOWN") { m_selectedMenuIndex = (m_selectedMenuIndex + 1) % 3; }
 		else if (action.name() == "UP") { m_selectedMenuIndex = (m_selectedMenuIndex + 2) % 3; }
 		else if (action.name() == "LEFT" && m_selectedMenuIndex == 0) { // Adjust volume down
-			m_volume = std::max(0.0f, m_volume - 10.0f);
-			m_volumeText.setString(std::to_string(static_cast<int>(m_volume)));
-			m_volumeSlider.setFillColor(getVolumeColor(m_volume));
+			m_game->setVolume(std::max(0.0f, m_game->getVolume() - 10.0f));
+			m_volumeText.setString(std::to_string(static_cast<int>(m_game->getVolume())));
+			m_volumeSlider.setFillColor(getVolumeColor(m_game->getVolume()));
 			updateVolumeSlider();
 		}
 		else if (action.name() == "RIGHT" && m_selectedMenuIndex == 0) { // Adjust volume up
-			m_volume = std::min(100.0f, m_volume + 10.0f);
-			m_volumeText.setString(std::to_string(static_cast<int>(m_volume)));
-			m_volumeSlider.setFillColor(getVolumeColor(m_volume));
+			m_game->setVolume(std::min(100.0f, m_game->getVolume() + 10.0f));
+			m_volumeText.setString(std::to_string(static_cast<int>(m_game->getVolume())));
+			m_volumeSlider.setFillColor(getVolumeColor(m_game->getVolume()));
 			updateVolumeSlider();
 		}
 	}

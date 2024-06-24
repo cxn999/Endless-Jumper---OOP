@@ -1,0 +1,11 @@
+<map id="Scene" name="Scene">
+<area shape="rect" id="Node000001" title="base class that has all the basic functionalities for a scene" alt="" coords="305,5,529,469"/>
+<area shape="rect" id="Node000002" href="$class_scene___menu.html" title="import entity manager header file" alt="" coords="5,701,184,1069"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="298,371,244,442,198,519,160,609,132,702,127,701,155,607,194,516,240,439,294,368"/>
+<area shape="rect" id="Node000003" href="$class_scene___play.html" title="import graphics library" alt="" coords="209,517,405,1253"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="378,484,372,518,367,517,373,483"/>
+<area shape="rect" id="Node000004" href="$class_scene___settings.html" title="include graphics library" alt="" coords="429,611,629,1160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="462,483,485,610,479,611,457,484"/>
+<area shape="rect" id="Node000005" href="$class_scene___shop.html" title=" " alt="" coords="653,704,829,1067"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="541,365,596,437,644,516,682,609,710,703,705,705,677,610,639,519,592,440,536,368"/>
+</map>

@@ -21,7 +21,7 @@ void Scene_Menu::init() {
 	registerAction(sf::Keyboard::Up, "UP");
 	registerAction(sf::Keyboard::Down, "DOWN");
 
-	m_index = rand() % 8;
+	m_backgroundIndex = rand() % 8;
 
 	// Set the sf::window in a more convenient variable
 	auto& m_window = m_game->window();
@@ -39,6 +39,8 @@ void Scene_Menu::init() {
 	m_titleText.setPosition(m_window.getSize().x / 2.0f, 100);
 
 	m_titleText.setColor(sf::Color::Black);
+	m_titleText.setOutlineColor(sf::Color::White);
+	m_titleText.setOutlineThickness(1.f);
 	// Constant for the fontSize of the levels
 	int levels_fontSize = 50;
 
@@ -51,10 +53,18 @@ void Scene_Menu::init() {
 	m_texts.push_back(sf::Text(helpText, f, 30));
 	m_texts[3].setPosition(20, m_window.getSize().y - 50);
 	m_texts[3].setColor(sf::Color::Black);
+	m_texts[3].setOutlineColor(sf::Color::White);
+	m_texts[3].setOutlineThickness(1.f);
 
 	for (int i = 0; i < 3; i++) {
 		m_texts[i].setPosition(mx - m_texts[i].getGlobalBounds().width / 2.f, 250 + 100 * i);
+		m_texts[i].setOutlineColor(sf::Color::White);
+		m_texts[i].setOutlineThickness(1.f);
 	}
+
+	// Music to add
+	// auto & menuMusic = m_game->getAssets().getMusic("menuMusic", PATH);
+	// menuMusic.play() or whatever
 }
 
 void Scene_Menu::update() {
@@ -93,9 +103,9 @@ void Scene_Menu::sRender() {
 	// Calculate middle of the screen in X axis
 	auto mx = m_window.getSize().x / 2;
 	// Clear the window with blue
-	m_window.clear(sf::Color::Yellow);
+	m_window.clear(sf::Color::Transparent);
 
-	for (auto& bg : m_game->getAssets().getBackground(m_index).getLayers()) {
+	for (auto& bg : m_game->getAssets().getBackground(m_backgroundIndex).getLayers()) {
 		bg.setPosition(m_game->window().getView().getCenter().x/2.f, m_game->window().getView().getCenter().y / 2.f);
 		m_game->window().draw(bg);
 	}

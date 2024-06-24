@@ -1,0 +1,15 @@
+<map id="Scene_Menu::update" name="Scene_Menu::update">
+<area shape="rect" id="Node000001" title="constructor that receives a pointer to the game engine" alt="" coords="5,107,150,133"/>
+<area shape="rect" id="Node000002" href="$class_scene___menu.html#a4aa2a808fcf50c6767998657d3f4657e" title="pure virtual method for the rendering system" alt="" coords="198,81,351,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,108,182,104,182,109,150,113"/>
+<area shape="rect" id="Node000007" href="$class_entity_manager.html#abc6a2cc5077501f4b06d88f4ed3e7e31" title="initializes the entity manager" alt="" coords="198,132,351,159"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="150,127,183,131,183,136,150,132"/>
+<area shape="rect" id="Node000003" href="$class_game_engine.html#a2db9a2dd6d6cc9879ec988690837f09e" title=" " alt="" coords="399,5,562,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="306,78,398,42,418,35,419,40,400,46,308,83"/>
+<area shape="rect" id="Node000004" href="$class_assets.html#a66aa9b131494334e56c6da9955ea1b4c" title=" " alt="" coords="402,56,559,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="351,83,386,78,387,84,352,88"/>
+<area shape="rect" id="Node000005" href="$class_background.html#ab51f31c3689e3d5e0fea1dfdde9decf4" title="method to get the quantity of layers" alt="" coords="403,107,558,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="352,101,388,106,387,111,351,107"/>
+<area shape="rect" id="Node000006" href="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5" title="returns a reference to the assets object" alt="" coords="408,157,554,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="322,106,352,118,400,143,417,149,415,154,398,148,350,122,320,111"/>
+</map>

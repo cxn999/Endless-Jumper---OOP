@@ -35,10 +35,7 @@ void Animation::update() {
 	//		 2) set the texture rectangle properly (see constructor for sample)
 }
 
-bool Animation::hasEnded() {
-	// TODO: detect when animation has ended (last frame was played) and return true
-	return false;
-}
+
 std::string& Animation::getName() {
 	return m_name;
 }

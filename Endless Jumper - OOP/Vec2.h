@@ -1,18 +1,23 @@
 #pragma once
 
-// Class to define a vector of 2 dimensions
+/// Class to define a vector of 2 dimensions
 class Vec2 {
 public:
-	// Fields are x and y coordinates
+	/// Fields are x and y coordinates
 	float x, y;
 
-	// Default constructor
+	/// Default constructor
 	Vec2() = default;
-	// Constructor that takes x and y parameters
+	/// Constructor that takes x and y parameters
 	Vec2(float xin, float yin) : x(xin), y(yin) {}
 
-	// Multiple operator overloading methods
-	// Implementation defined at Vec2.cpp
+	
+	/// <summary>
+	/// Multiple operator overloading methods
+	/// Implementation defined at Vec2.cpp
+	/// </summary>
+	/// <param name="rhs"></param>
+	/// <returns></returns>
 	bool operator == (const Vec2& rhs) const;
 	bool operator != (const Vec2& rhs) const;
 
@@ -26,6 +31,6 @@ public:
 	void operator *= (const float c);
 	void operator /= (const float c);
 
-	// Distance between 2 vectors
+	/// Distance between 2 vectors
 	float dist(const Vec2& rhs) const;
 };

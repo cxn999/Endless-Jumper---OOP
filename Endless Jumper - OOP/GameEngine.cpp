@@ -45,7 +45,7 @@ void GameEngine::init(const std::string& path) {
 	m_assets.loadFromFile(path);
 
 	// Create a window with the specified resolution
-	m_window.create(sf::VideoMode(1280, 720), "ENDLESS JUMPER");
+	m_window.create(sf::VideoMode(1280, 720), "SKYLIMIT", sf::Style::Close);
 	// Set vertical sync for better performance
 	m_window.setVerticalSyncEnabled(true);
 	//m_window.setFramerateLimit(60);
@@ -136,7 +136,7 @@ size_t GameEngine::getCoins() {
 	return m_coins;
 }
 
-size_t GameEngine::getVolume() {
+float GameEngine::getVolume() {
 	return m_volume;
 }
 
@@ -154,7 +154,7 @@ void GameEngine::setCoins(size_t coins) {
 	m_coins = coins;
 }
 
-void GameEngine::setVolume(size_t volume) {
+void GameEngine::setVolume(float volume) {
 	m_volume = volume;
 }
 

@@ -2,4 +2,4 @@ coins 70
 highestScore 700
 wasd 0
 volume 50
-music 0
+music 1

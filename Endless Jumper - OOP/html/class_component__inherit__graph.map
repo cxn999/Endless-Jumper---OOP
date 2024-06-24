@@ -1,0 +1,19 @@
+<map id="Component" name="Component">
+<area shape="rect" id="Node000001" title="base class for a component" alt="" coords="607,5,685,75"/>
+<area shape="rect" id="Node000002" href="$class_c_animation.html" title="class that defines the animation of an entity" alt="" coords="5,144,193,272"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="592,46,514,51,416,65,309,88,256,105,206,125,170,146,167,142,203,120,254,100,307,83,415,59,513,46,592,40"/>
+<area shape="rect" id="Node000003" href="$class_c_bounding_box.html" title="class that defines the hitbox of entities" alt="" coords="217,144,381,272"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="593,54,497,80,444,100,394,125,363,146,360,142,391,120,442,95,496,75,591,49"/>
+<area shape="rect" id="Node000004" href="$class_c_gravity.html" title="class to define gravity for certain entities" alt="" coords="405,163,521,253"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="596,77,536,125,499,165,495,161,532,121,593,73"/>
+<area shape="rect" id="Node000005" href="$class_c_input.html" title="class for input of the player" alt="" coords="546,141,650,275"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="635,89,619,142,614,141,630,88"/>
+<area shape="rect" id="Node000006" href="$class_c_kill.html" title="defines if an entity can kill the player" alt="" coords="674,173,714,243"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="662,88,687,173,682,174,657,90"/>
+<area shape="rect" id="Node000007" href="$class_c_move.html" title="defines if an entity moves (logs in this case)" alt="" coords="739,173,791,243"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="697,83,728,121,755,172,750,175,724,124,693,87"/>
+<area shape="rect" id="Node000008" href="$class_c_state.html" title="class that defines a string for the state of the player, if it is jumping, moving,..." alt="" coords="815,163,955,253"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="700,61,752,87,805,121,849,161,846,165,802,125,750,92,698,66"/>
+<area shape="rect" id="Node000009" href="$class_c_transform.html" title="class for modifying everything that its related to transformations and translations (movement for exa..." alt="" coords="979,123,1163,293"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="700,45,758,55,826,70,899,91,968,120,981,127,978,132,966,125,897,96,825,75,757,60,699,50"/>
+</map>
