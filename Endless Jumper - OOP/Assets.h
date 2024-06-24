@@ -11,6 +11,7 @@
 typedef std::map<std::string, sf::Texture> Textures;	
 typedef std::map<std::string, Animation> AnimationsMap;
 typedef std::map<std::string, sf::SoundBuffer> SoundBuffers;
+typedef std::map<std::string, sf::Sound> Sounds;
 typedef std::map<std::string, sf::Music*> Musics;
 typedef std::map<std::string, sf::Font> Fonts;
 typedef std::map<int, Background> Backgrounds;
@@ -26,6 +27,8 @@ class Assets {
 	SoundBuffers m_soundBuffers;
 	Fonts m_fonts;
 	Musics m_musics;
+	Sounds m_sounds;
+
 public:
 	//destructor
 	~Assets();
@@ -41,6 +44,7 @@ public:
 	/// method to get different types of assets to ther respective assets's maps
 	sf::Texture & getTexture(const std::string & name);
 	sf::SoundBuffer & getSoundBuffer(const std::string& name);
+	sf::Sound& getSound(const std::string& name);
 	sf::Font & getFont(const std::string& name);
 	Animation & getAnimation(const std::string& name);
 	Background& getBackground(const int name);

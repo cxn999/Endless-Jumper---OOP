@@ -23,6 +23,7 @@ void Assets::addSoundBuffer(const std::string& name, const std::string& path) {
     sf::SoundBuffer buffer;
     if (buffer.loadFromFile(path)) {
         m_soundBuffers[name] = buffer;
+        m_sounds[name].setBuffer(m_soundBuffers[name]);
         std::cout << "Loaded buffer: " << name << std::endl;
     }
     else {
@@ -75,6 +76,10 @@ sf::Texture& Assets::getTexture(const std::string& name) {
 
 sf::SoundBuffer& Assets::getSoundBuffer(const std::string& name) {
 	return m_soundBuffers.at(name);
+}
+
+sf::Sound& Assets::getSound(const std::string& name) {
+    return m_sounds.at(name);
 }
 
 sf::Music& Assets::getMusic(const std::string& name) {

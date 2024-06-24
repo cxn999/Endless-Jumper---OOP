@@ -340,8 +340,6 @@ void Scene_Play::sAnimation() {
 	}
 }
 
-// OLD COLLISION SYSTEM
-
 void Scene_Play::sCollision() {
 	if (m_player->isActive()) {
 		auto& player = m_player->getComponent<CTransform>();
@@ -371,6 +369,8 @@ void Scene_Play::sCollision() {
 							m_player->getComponent<CGravity>().gravity = 0;
 							player.velocity.y = -20;
 							// collision resolution
+							m_game->getAssets().getSound("jumpSound").play();
+
 							player.pos.y -= overlap.y;
 							m_move = true;
 							m_targetViewPosition = Vec2(m_view.getCenter().x, tile.pos.y - 500);
