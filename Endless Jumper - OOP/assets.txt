@@ -93,3 +93,7 @@ Animation playerJump mainJump 1 0
 Animation playerFall mainFall 1 0
 SoundEffects jumpSound Assets\SoundEffects\cartoon_jump.ogg
 Music play Assets\Musics\super_monkey_ball_w1_ost.ogg
+Animation shopBackground shopBG 1 0
+Animation venom_Idle venomIdle 1 0
+Animation venom_Jump venomJump 1 0
+Animation venom_Fall venomFall 1 0

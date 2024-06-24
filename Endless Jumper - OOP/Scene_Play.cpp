@@ -44,7 +44,7 @@ void Scene_Play::init() {
 	loadLevel();
 
 	auto& window = m_game->window();
-	auto player_pos = m_player->getComponent<CTransform>().pos;
+	auto player_pos = m_player->getComponent<CTransform>().pos;  
 
 	m_view = sf::View(sf::Vector2f(window.getSize().x / 2, player_pos.y), sf::Vector2f(1024, 720.f));
 	m_view.setViewport(sf::FloatRect(0.1f, 0, 0.8, 1));
