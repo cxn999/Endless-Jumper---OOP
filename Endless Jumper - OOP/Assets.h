@@ -25,15 +25,12 @@ class Assets {
 	Textures m_textures;
 	SoundBuffers m_soundBuffers;
 	Fonts m_fonts;
-<<<<<<< HEAD
 	Musics m_musics;
 public:
+	//destructor
 	~Assets();
-=======
-public:
 
 	/// methods to add different types of assets to their respective assets's maps
->>>>>>> ba9d1b560533411aef85babcd72febd7163cb16b
 	void addTexture(const std::string& name, const std::string& path);
 	void addSoundBuffer(const std::string& name, const std::string& path);
 	void addFont(const std::string& name, const std::string& path);
