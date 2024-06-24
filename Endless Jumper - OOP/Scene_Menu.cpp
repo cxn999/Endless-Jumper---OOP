@@ -21,7 +21,7 @@ void Scene_Menu::init() {
 	registerAction(sf::Keyboard::Up, "UP");
 	registerAction(sf::Keyboard::Down, "DOWN");
 
-	m_backgroundIndex = rand() % 8;
+	m_backgroundIndex = rand()%8;
 
 	// Set the sf::window in a more convenient variable
 	auto& m_window = m_game->window();
@@ -106,6 +106,7 @@ void Scene_Menu::sRender() {
 	m_window.clear(sf::Color::Transparent);
 
 	for (auto& bg : m_game->getAssets().getBackground(m_backgroundIndex).getLayers()) {
+		bg.setColor(sf::Color(255, 255, 255));
 		bg.setPosition(m_game->window().getView().getCenter().x/2.f, m_game->window().getView().getCenter().y / 2.f);
 		m_game->window().draw(bg);
 	}
