@@ -23,7 +23,7 @@ protected:
 	sf::Text m_controlSchemeText;
 
 	/// State variables
-	float m_volume = 50.0f; /// Initial volume level
+	float m_volume = 50.0f; /// Initial volume level     deprecated doesnt function anymore
 	bool m_musicOn = true; /// Initial music state
 	bool m_useWASD = true; /// Initial control scheme
 

@@ -136,7 +136,7 @@ size_t GameEngine::getCoins() {
 	return m_coins;
 }
 
-size_t GameEngine::getVolume() {
+float GameEngine::getVolume() {
 	return m_volume;
 }
 
@@ -154,7 +154,7 @@ void GameEngine::setCoins(size_t coins) {
 	m_coins = coins;
 }
 
-void GameEngine::setVolume(size_t volume) {
+void GameEngine::setVolume(float volume) {
 	m_volume = volume;
 }
 

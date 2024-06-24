@@ -19,7 +19,7 @@ class GameEngine {
 	SceneMap m_sceneMap;			/// map for the scenes
 
 	size_t m_coins;					/// variable for coins
-	size_t m_volume;				/// variable for volume
+	float m_volume;					/// variable for volume
 	size_t m_highestScore;			/// variable for highest score
 	bool m_music;					/// variable for music (on or off)
 	bool m_wasd;					/// variable for controls (WASD or KEYS)
@@ -54,14 +54,14 @@ public:
 
 	/// methods to get configurations
 	size_t getCoins();
-	size_t getVolume();
+	float getVolume();
 	size_t getHighestScore();
 	bool getMusic();
 	bool getWASD();
 
 	/// methods to set configurations
 	void setCoins(size_t coins);
-	void setVolume(size_t volume);
+	void setVolume(float volume);
 	void setHighestScore(size_t highestScore);
 	void setMusic(bool music);
 	void setWASD(bool wasd);
