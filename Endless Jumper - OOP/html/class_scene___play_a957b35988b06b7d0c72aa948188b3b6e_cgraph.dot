@@ -7,7 +7,7 @@ digraph "Scene_Play::loadLevel"
   rankdir="LR";
   Node1 [id="Node000001",label="Scene_Play::loadLevel",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="EntityManager::addEntity",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_entity_manager.html#a85c22d45c0bde41cd2b82336b6f32046",tooltip=" "];
+  Node2 [id="Node000002",label="EntityManager::addEntity",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_entity_manager.html#a85c22d45c0bde41cd2b82336b6f32046",tooltip="adds or deletes the entities at the start of every frame"];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="Assets::getAnimation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_assets.html#a82a07c4ce9f847b53f635018533c160c",tooltip=" "];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
@@ -18,6 +18,6 @@ digraph "Scene_Play::loadLevel"
   Node5 -> Node3 [id="edge6_Node000005_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node5 -> Node4 [id="edge7_Node000005_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node5 -> Node6 [id="edge8_Node000005_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="GameEngine::window",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5",tooltip=" "];
+  Node6 [id="Node000006",label="GameEngine::window",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5",tooltip="returns a reference to the assets object"];
   Node1 -> Node6 [id="edge9_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
 }

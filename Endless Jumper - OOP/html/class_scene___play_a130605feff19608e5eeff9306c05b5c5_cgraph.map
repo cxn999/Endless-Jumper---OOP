@@ -1,6 +1,6 @@
 <map id="Scene_Play::replay" name="Scene_Play::replay">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,140,57"/>
-<area shape="rect" id="Node000002" href="$class_game_engine.html#a41a16489bd3b05403545a700f7f9e88e" title=" " alt="" coords="196,5,380,32"/>
+<area shape="rect" id="Node000001" title="replay method" alt="" coords="5,31,140,57"/>
+<area shape="rect" id="Node000002" href="$class_game_engine.html#a41a16489bd3b05403545a700f7f9e88e" title="Change scene" alt="" coords="196,5,380,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,33,180,29,181,34,140,39"/>
 <area shape="rect" id="Node000003" href="$class_game_engine.html#ab55de5ef7f5768ec7b821ef6e7102a9d" title=" " alt="" coords="188,56,388,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,49,173,53,172,58,140,55"/>

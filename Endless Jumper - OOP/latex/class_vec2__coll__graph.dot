@@ -22,7 +22,7 @@ digraph "Vec2"
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">void operator/=(const<BR ALIGN="LEFT"/> float c)<BR ALIGN="LEFT"/></TD></TR>
 <TR><TD VALIGN="top" CELLPADDING="1" CELLSPACING="0">+</TD><TD VALIGN="top" ALIGN="LEFT" CELLPADDING="1" CELLSPACING="0">float dist(const Vec2<BR ALIGN="LEFT"/> &amp;rhs) const<BR ALIGN="LEFT"/></TD></TR>
 </TABLE>>
-,height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+,height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Class to define a vector of 2 dimensions."];
   Node2 -> Node1 [id="edge2_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" ",label=" +x\n+y",fontcolor="grey" ,arrowhead="odiamond"];
   Node2 [id="Node000002",shape=plain,label=<<TABLE CELLBORDER="0" BORDER="1"><TR><TD COLSPAN="2" CELLPADDING="1" CELLSPACING="0">float</TD></TR>
 <HR/>

@@ -1,5 +1,5 @@
 <map id="Scene_Play" name="Scene_Play">
-<area shape="rect" id="Node000001" title=" " alt="" coords="19,603,215,1339"/>
-<area shape="rect" id="Node000002" href="$class_scene.html" title=" " alt="" coords="5,5,229,555"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,569,120,603,115,603,115,569"/>
+<area shape="rect" id="Node000001" title="import graphics library" alt="" coords="19,517,215,1253"/>
+<area shape="rect" id="Node000002" href="$class_scene.html" title="base class that has all the basic functionalities for a scene" alt="" coords="5,5,229,469"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,484,120,518,115,518,115,484"/>
 </map>

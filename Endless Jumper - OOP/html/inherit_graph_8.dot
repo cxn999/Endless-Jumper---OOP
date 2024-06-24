@@ -5,13 +5,13 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="Scene",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene.html",tooltip=" "];
-  Node0 -> Node1 [id="edge10_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="Scene_Menu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___menu.html",tooltip=" "];
-  Node0 -> Node2 [id="edge11_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="Scene_Play",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html",tooltip=" "];
-  Node0 -> Node3 [id="edge12_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="Scene_Settings",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html",tooltip=" "];
-  Node0 -> Node4 [id="edge13_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node0 [id="Node000000",label="Scene",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene.html",tooltip="base class that has all the basic functionalities for a scene"];
+  Node0 -> Node1 [id="edge9_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="Scene_Menu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___menu.html",tooltip="import entity manager header file"];
+  Node0 -> Node2 [id="edge10_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Scene_Play",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html",tooltip="import graphics library"];
+  Node0 -> Node3 [id="edge11_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Scene_Settings",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html",tooltip="include graphics library"];
+  Node0 -> Node4 [id="edge12_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="Scene_Shop",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___shop.html",tooltip=" "];
 }

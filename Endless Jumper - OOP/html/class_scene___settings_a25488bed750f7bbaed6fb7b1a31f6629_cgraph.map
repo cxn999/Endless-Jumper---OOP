@@ -1,5 +1,5 @@
 <map id="Scene_Settings::onEnd" name="Scene_Settings::onEnd">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,164,32"/>
-<area shape="rect" id="Node000002" href="$class_game_engine.html#a41a16489bd3b05403545a700f7f9e88e" title=" " alt="" coords="212,5,395,32"/>
+<area shape="rect" id="Node000001" title="pause the game" alt="" coords="5,5,164,32"/>
+<area shape="rect" id="Node000002" href="$class_game_engine.html#a41a16489bd3b05403545a700f7f9e88e" title="Change scene" alt="" coords="212,5,395,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,16,196,16,196,21,164,21"/>
 </map>

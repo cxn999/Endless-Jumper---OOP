@@ -1,10 +1,10 @@
 <map id="CAnimation" name="CAnimation">
-<area shape="rect" id="Node000001" title=" " alt="" coords="37,501,225,608"/>
-<area shape="rect" id="Node000002" href="$class_component.html" title=" " alt="" coords="91,253,170,323"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,338,133,501,128,501,128,338"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="21,5,59,75"/>
-<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="34,75,20,143,9,235,8,285,11,337,19,388,33,436,46,463,63,487,59,490,41,465,28,438,14,389,6,337,3,285,4,234,15,142,28,74"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="55,73,115,237,110,239,50,75"/>
-<area shape="rect" id="Node000004" href="$class_animation.html" title=" " alt="" coords="194,139,385,437"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="203,439,173,488,168,485,198,436"/>
+<area shape="rect" id="Node000001" title="class that defines the animation of an entity" alt="" coords="35,480,223,587"/>
+<area shape="rect" id="Node000002" href="$class_component.html" title="base class for a component" alt="" coords="90,243,168,312"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,327,132,480,126,480,126,327"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="20,5,57,75"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="32,75,19,140,9,226,8,273,11,321,18,369,32,415,44,441,62,466,57,469,40,444,27,417,13,370,6,322,3,273,4,225,14,139,27,74"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="54,73,113,226,108,228,49,75"/>
+<area shape="rect" id="Node000004" href="$class_animation.html" title="defines vectors and things like distance or angles" alt="" coords="192,139,383,416"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="204,417,173,467,168,465,200,414"/>
 </map>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['repeat_0',['repeat',['../class_c_animation.html#a041fb9073bf09a103a6925aab5d28809',1,'CAnimation']]],
-  ['right_1',['right',['../class_c_input.html#a578806529dc33bc9d80029e0d17e9231',1,'CInput']]]
+  ['up_0',['up',['../class_c_input.html#ad6f668e269277cbe6388331cef5b469f',1,'CInput']]]
 ];

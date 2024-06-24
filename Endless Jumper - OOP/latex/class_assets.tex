@@ -2,6 +2,11 @@
 \hypertarget{class_assets}{}\label{class_assets}\index{Assets@{Assets}}
 
 
+Class that stores every asset in the game (fonts, backgrounds, textures, sounds, animations, etc.)  
+
+
+
+
 {\ttfamily \#include $<$Assets.\+h$>$}
 
 
@@ -18,7 +23,7 @@ Collaboration diagram for Assets\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_assets_ab02c9f34cbb12ec541e2fc94b828df14}{add\+Texture}} (const std\+::string \&name, const std\+::string \&path)
-\item 
+\begin{DoxyCompactList}\small\item\em methods to add different types of assets to their respective assets\textquotesingle{}s maps \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_assets_a79d190daa7958650f5e982aadf3a678a}{add\+Sound}} (std\+::string \&name, std\+::string \&path)
 \item 
 void \mbox{\hyperlink{class_assets_a3378e3ae3e66e6395b05869df9dd5262}{add\+Font}} (const std\+::string \&name, const std\+::string \&path)
@@ -27,8 +32,10 @@ void \mbox{\hyperlink{class_assets_a84caed537de59ad01d5d7061b9b2aa06}{add\+Anima
 \item 
 void \mbox{\hyperlink{class_assets_aa06e54c74c183ce6e577b86dab8fb06f}{add\+Background}} (const int name, const int index2, const sf\+::\+Texture \&)
 \item 
-sf\+::\+Texture \& \mbox{\hyperlink{class_assets_a181004ad24f0fe14ec4d10a284c578c3}{get\+Texture}} (const std\+::string \&name)
+void \mbox{\hyperlink{class_assets_ad1af5c3803869008c86f3dadf3957909}{add\+Music}} ()
 \item 
+sf\+::\+Texture \& \mbox{\hyperlink{class_assets_a181004ad24f0fe14ec4d10a284c578c3}{get\+Texture}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em method to get different types of assets to ther respective assets\textquotesingle{}s maps \end{DoxyCompactList}\item 
 sf\+::\+Sound \& \mbox{\hyperlink{class_assets_ad0299fb05e9fb276b6ba5192a79376a9}{get\+Sound}} (std\+::string \&name)
 \item 
 sf\+::\+Font \& \mbox{\hyperlink{class_assets_a044201d3a5016c7ac2785181cec15b50}{get\+Font}} (const std\+::string \&name)
@@ -37,9 +44,14 @@ sf\+::\+Font \& \mbox{\hyperlink{class_assets_a044201d3a5016c7ac2785181cec15b50}
 \item 
 \mbox{\hyperlink{class_background}{Background}} \& \mbox{\hyperlink{class_assets_a66aa9b131494334e56c6da9955ea1b4c}{get\+Background}} (const int name)
 \item 
+void \mbox{\hyperlink{class_assets_acb94d51cba0779d8757c9d8d0d93f12c}{get\+Music}} ()
+\item 
 void \mbox{\hyperlink{class_assets_a0bc45e2fee19dfd8e7fd75599d232a30}{load\+From\+File}} (const std\+::string \&path)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em method to retrieve all the assets of the game and store them in their respective maps \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class that stores every asset in the game (fonts, backgrounds, textures, sounds, animations, etc.) 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_assets_a84caed537de59ad01d5d7061b9b2aa06}\index{Assets@{Assets}!addAnimation@{addAnimation}}
@@ -52,7 +64,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_assets_a84caed537de59ad01d5d7061b9b2aa06_icgraph}
+\includegraphics[width=337pt]{class_assets_a84caed537de59ad01d5d7061b9b2aa06_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_assets_aa06e54c74c183ce6e577b86dab8fb06f}\index{Assets@{Assets}!addBackground@{addBackground}}
@@ -65,7 +77,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_assets_aa06e54c74c183ce6e577b86dab8fb06f_icgraph}
+\includegraphics[width=345pt]{class_assets_aa06e54c74c183ce6e577b86dab8fb06f_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_assets_a3378e3ae3e66e6395b05869df9dd5262}\index{Assets@{Assets}!addFont@{addFont}}
@@ -78,9 +90,15 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_assets_a3378e3ae3e66e6395b05869df9dd5262_icgraph}
+\includegraphics[width=313pt]{class_assets_a3378e3ae3e66e6395b05869df9dd5262_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_assets_ad1af5c3803869008c86f3dadf3957909}\index{Assets@{Assets}!addMusic@{addMusic}}
+\index{addMusic@{addMusic}!Assets@{Assets}}
+\doxysubsubsection{\texorpdfstring{addMusic()}{addMusic()}}
+{\footnotesize\ttfamily \label{class_assets_ad1af5c3803869008c86f3dadf3957909} 
+void Assets\+::add\+Music (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
 \Hypertarget{class_assets_a79d190daa7958650f5e982aadf3a678a}\index{Assets@{Assets}!addSound@{addSound}}
 \index{addSound@{addSound}!Assets@{Assets}}
 \doxysubsubsection{\texorpdfstring{addSound()}{addSound()}}
@@ -93,11 +111,15 @@ void Assets\+::add\+Sound (\begin{DoxyParamCaption}\item[{std\+::string \&}]{nam
 {\footnotesize\ttfamily \label{class_assets_ab02c9f34cbb12ec541e2fc94b828df14} 
 void Assets\+::add\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
 
+
+
+methods to add different types of assets to their respective assets\textquotesingle{}s maps 
+
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_assets_ab02c9f34cbb12ec541e2fc94b828df14_icgraph}
+\includegraphics[width=326pt]{class_assets_ab02c9f34cbb12ec541e2fc94b828df14_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_assets_a82a07c4ce9f847b53f635018533c160c}\index{Assets@{Assets}!getAnimation@{getAnimation}}
@@ -106,7 +128,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_assets_a82a07c4ce9f847b53f635018533c160c} 
 \mbox{\hyperlink{class_animation}{Animation}} \& Assets\+::get\+Animation (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -119,7 +142,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_assets_a66aa9b131494334e56c6da9955ea1b4c} 
 \mbox{\hyperlink{class_background}{Background}} \& Assets\+::get\+Background (\begin{DoxyParamCaption}\item[{const int}]{name}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -132,13 +156,20 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_assets_a044201d3a5016c7ac2785181cec15b50} 
 sf\+::\+Font \& Assets\+::get\+Font (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_assets_a044201d3a5016c7ac2785181cec15b50_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_assets_acb94d51cba0779d8757c9d8d0d93f12c}\index{Assets@{Assets}!getMusic@{getMusic}}
+\index{getMusic@{getMusic}!Assets@{Assets}}
+\doxysubsubsection{\texorpdfstring{getMusic()}{getMusic()}}
+{\footnotesize\ttfamily \label{class_assets_acb94d51cba0779d8757c9d8d0d93f12c} 
+void Assets\+::get\+Music (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
 \Hypertarget{class_assets_ad0299fb05e9fb276b6ba5192a79376a9}\index{Assets@{Assets}!getSound@{getSound}}
 \index{getSound@{getSound}!Assets@{Assets}}
 \doxysubsubsection{\texorpdfstring{getSound()}{getSound()}}
@@ -151,11 +182,15 @@ sf\+::\+Sound \& Assets\+::get\+Sound (\begin{DoxyParamCaption}\item[{std\+::str
 {\footnotesize\ttfamily \label{class_assets_a181004ad24f0fe14ec4d10a284c578c3} 
 sf\+::\+Texture \& Assets\+::get\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})}
 
+
+
+method to get different types of assets to ther respective assets\textquotesingle{}s maps 
+
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_assets_a181004ad24f0fe14ec4d10a284c578c3_icgraph}
+\includegraphics[width=324pt]{class_assets_a181004ad24f0fe14ec4d10a284c578c3_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_assets_a0bc45e2fee19dfd8e7fd75599d232a30}\index{Assets@{Assets}!loadFromFile@{loadFromFile}}
@@ -164,18 +199,15 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_assets_a0bc45e2fee19dfd8e7fd75599d232a30} 
 void Assets\+::load\+From\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path}{}\end{DoxyParamCaption})}
 
+
+
+method to retrieve all the assets of the game and store them in their respective maps 
+
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=345pt]{class_assets_a0bc45e2fee19dfd8e7fd75599d232a30_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_assets_a0bc45e2fee19dfd8e7fd75599d232a30_icgraph}
 \end{center}
 \end{figure}
 

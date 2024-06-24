@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['up_0',['up',['../class_c_input.html#ad6f668e269277cbe6388331cef5b469f',1,'CInput']]]
+  ['x_0',['x',['../class_vec2.html#adf8ee322d4b4bcc04146762c018d731f',1,'Vec2']]]
 ];

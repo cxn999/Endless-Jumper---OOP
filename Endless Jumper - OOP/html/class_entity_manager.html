@@ -91,32 +91,43 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 
+<p>Class that handles all the entities in the game (creates them, deletes them, modifies them, etc.)  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_entity_manager_8h_source.html">EntityManager.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for EntityManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_entity_manager__coll__graph.png" border="0" usemap="#a_entity_manager_coll__map" alt="Collaboration graph"/></div>
 <map name="a_entity_manager_coll__map" id="a_entity_manager_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,173,229"/>
+<area shape="rect" title="Class that handles all the entities in the game (creates them, deletes them, modifies them,..." alt="" coords="5,5,173,229"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7555637657d090171be6ceee8451de0a" id="r_a7555637657d090171be6ceee8451de0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7555637657d090171be6ceee8451de0a">EntityManager</a> ()</td></tr>
+<tr class="memdesc:a7555637657d090171be6ceee8451de0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove dead entities, it is private because that way only <a class="el" href="class_entity_manager.html" title="Class that handles all the entities in the game (creates them, deletes them, modifies them,...">EntityManager</a> can do it  <br /></td></tr>
 <tr class="separator:a7555637657d090171be6ceee8451de0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0abecb1a8037d6af51d950491115bfb" id="r_ae0abecb1a8037d6af51d950491115bfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0abecb1a8037d6af51d950491115bfb">init</a> ()</td></tr>
+<tr class="memdesc:ae0abecb1a8037d6af51d950491115bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor  <br /></td></tr>
 <tr class="separator:ae0abecb1a8037d6af51d950491115bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc6a2cc5077501f4b06d88f4ed3e7e31" id="r_abc6a2cc5077501f4b06d88f4ed3e7e31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc6a2cc5077501f4b06d88f4ed3e7e31">update</a> ()</td></tr>
+<tr class="memdesc:abc6a2cc5077501f4b06d88f4ed3e7e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the entity manager  <br /></td></tr>
 <tr class="separator:abc6a2cc5077501f4b06d88f4ed3e7e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85c22d45c0bde41cd2b82336b6f32046" id="r_a85c22d45c0bde41cd2b82336b6f32046"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_entity.html">Entity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85c22d45c0bde41cd2b82336b6f32046">addEntity</a> (const std::string &amp;tag)</td></tr>
+<tr class="memdesc:a85c22d45c0bde41cd2b82336b6f32046"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds or deletes the entities at the start of every frame  <br /></td></tr>
 <tr class="separator:a85c22d45c0bde41cd2b82336b6f32046"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad718816dd5307c5f90bf25dd8e9b750b" id="r_ad718816dd5307c5f90bf25dd8e9b750b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entity_manager_8h.html#a09dfc6fcc286236e5a41fc73b3ecbab7">EntityVec</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad718816dd5307c5f90bf25dd8e9b750b">getEntities</a> ()</td></tr>
+<tr class="memdesc:ad718816dd5307c5f90bf25dd8e9b750b"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds a reference to a new entity into the entity vector  <br /></td></tr>
 <tr class="separator:ad718816dd5307c5f90bf25dd8e9b750b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6340a54cdc44ce240a756ebb043991ed" id="r_a6340a54cdc44ce240a756ebb043991ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_entity_manager_8h.html#a09dfc6fcc286236e5a41fc73b3ecbab7">EntityVec</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6340a54cdc44ce240a756ebb043991ed">getEntities</a> (const std::string &amp;tag)</td></tr>
+<tr class="memdesc:a6340a54cdc44ce240a756ebb043991ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns all entities in the game  <br /></td></tr>
 <tr class="separator:a6340a54cdc44ce240a756ebb043991ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class that handles all the entities in the game (creates them, deletes them, modifies them, etc.) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7555637657d090171be6ceee8451de0a" name="a7555637657d090171be6ceee8451de0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7555637657d090171be6ceee8451de0a">&#9670;&#160;</a></span>EntityManager()</h2>
 
@@ -140,6 +151,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>remove dead entities, it is private because that way only <a class="el" href="class_entity_manager.html" title="Class that handles all the entities in the game (creates them, deletes them, modifies them,...">EntityManager</a> can do it </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -157,24 +170,26 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>adds or deletes the entities at the start of every frame </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_entity_manager_a85c22d45c0bde41cd2b82336b6f32046_icgraph.png" border="0" usemap="#aclass_entity_manager_a85c22d45c0bde41cd2b82336b6f32046_icgraph" alt=""/></div>
 <map name="aclass_entity_manager_a85c22d45c0bde41cd2b82336b6f32046_icgraph" id="aclass_entity_manager_a85c22d45c0bde41cd2b82336b6f32046_icgraph">
-<area shape="rect" title=" " alt="" coords="853,31,1021,57"/>
+<area shape="rect" title="adds or deletes the entities at the start of every frame" alt="" coords="853,31,1021,57"/>
 <area shape="rect" href="class_scene___play.html#a957b35988b06b7d0c72aa948188b3b6e" title=" " alt="" coords="387,5,539,32"/>
 <area shape="poly" title=" " alt="" coords="862,30,804,21,664,15,540,17,540,12,664,10,805,16,862,25"/>
 <area shape="rect" href="class_scene___play.html#aa4fb330c856093ee8dbb0589852fbcfb" title=" " alt="" coords="609,31,783,57"/>
 <area shape="poly" title=" " alt="" coords="837,47,783,47,783,41,837,41"/>
 <area shape="rect" href="class_scene___play.html#a847a279015aea29bee3860e7ffd509ce" title=" " alt="" coords="587,81,805,108"/>
 <area shape="poly" title=" " alt="" coords="855,64,763,83,762,78,854,59"/>
-<area shape="rect" href="class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title=" " alt="" coords="223,5,339,32"/>
+<area shape="rect" href="class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title="definition of pure virtual method from the base class" alt="" coords="223,5,339,32"/>
 <area shape="poly" title=" " alt="" coords="371,21,340,21,340,16,371,16"/>
-<area shape="rect" href="class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c" title=" " alt="" coords="5,5,175,32"/>
+<area shape="rect" href="class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c" title="shared pointer to the player" alt="" coords="5,5,175,32"/>
 <area shape="poly" title=" " alt="" coords="207,21,175,21,175,16,207,16"/>
 <area shape="poly" title=" " alt="" coords="594,36,539,30,540,24,594,30"/>
-<area shape="rect" href="class_scene___play.html#a416e630ef10fac7e34855babea499700" title=" " alt="" coords="394,81,532,108"/>
+<area shape="rect" href="class_scene___play.html#a416e630ef10fac7e34855babea499700" title="constructor that receives a pointer to the game engine" alt="" coords="394,81,532,108"/>
 <area shape="poly" title=" " alt="" coords="572,97,533,97,533,92,572,92"/>
 </map>
 </div>
@@ -195,23 +210,25 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>adds a reference to a new entity into the entity vector </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_entity_manager_ad718816dd5307c5f90bf25dd8e9b750b_icgraph.png" border="0" usemap="#aclass_entity_manager_ad718816dd5307c5f90bf25dd8e9b750b_icgraph" alt=""/></div>
 <map name="aclass_entity_manager_ad718816dd5307c5f90bf25dd8e9b750b_icgraph" id="aclass_entity_manager_ad718816dd5307c5f90bf25dd8e9b750b_icgraph">
-<area shape="rect" title=" " alt="" coords="477,107,652,133"/>
+<area shape="rect" title="adds a reference to a new entity into the entity vector" alt="" coords="477,107,652,133"/>
 <area shape="rect" href="class_scene___play.html#aec1850ef08cb92b5c6db6cba02dec399" title=" " alt="" coords="233,5,388,32"/>
 <area shape="poly" title=" " alt="" coords="529,100,482,72,428,46,388,34,389,29,430,42,485,67,532,96"/>
 <area shape="rect" href="class_scene___play.html#ae80c24b0bb449025d718c9b6dba8d619" title=" " alt="" coords="228,56,393,83"/>
 <area shape="poly" title=" " alt="" coords="479,106,380,86,381,81,480,100"/>
 <area shape="rect" href="class_scene___play.html#a847a279015aea29bee3860e7ffd509ce" title=" " alt="" coords="202,107,419,133"/>
 <area shape="poly" title=" " alt="" coords="461,123,420,123,420,117,461,117"/>
-<area shape="rect" href="class_scene___play.html#a0e84bcf37aa08a9f6abd7c3cddf65f40" title=" " alt="" coords="192,157,429,184"/>
+<area shape="rect" href="class_scene___play.html#a0e84bcf37aa08a9f6abd7c3cddf65f40" title="Systems of the scene." alt="" coords="192,157,429,184"/>
 <area shape="poly" title=" " alt="" coords="480,140,381,159,380,154,479,134"/>
-<area shape="rect" href="class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2" title=" " alt="" coords="237,208,384,235"/>
+<area shape="rect" href="class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2" title="pure virtual method to render everything in the window in every frame=" alt="" coords="237,208,384,235"/>
 <area shape="poly" title=" " alt="" coords="532,144,485,173,430,198,385,212,384,207,428,194,482,168,529,140"/>
-<area shape="rect" href="class_scene___play.html#a416e630ef10fac7e34855babea499700" title=" " alt="" coords="5,107,144,133"/>
+<area shape="rect" href="class_scene___play.html#a416e630ef10fac7e34855babea499700" title="constructor that receives a pointer to the game engine" alt="" coords="5,107,144,133"/>
 <area shape="poly" title=" " alt="" coords="218,38,193,46,137,77,94,108,91,104,134,72,191,42,216,33"/>
 <area shape="poly" title=" " alt="" coords="230,89,192,97,140,109,139,103,191,92,229,84"/>
 <area shape="poly" title=" " alt="" coords="186,123,144,123,144,117,186,117"/>
@@ -237,6 +254,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>returns all entities in the game </p>
+
 </div>
 </div>
 <a id="ae0abecb1a8037d6af51d950491115bfb" name="ae0abecb1a8037d6af51d950491115bfb"></a>
@@ -254,6 +273,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>default constructor </p>
+
 </div>
 </div>
 <a id="abc6a2cc5077501f4b06d88f4ed3e7e31" name="abc6a2cc5077501f4b06d88f4ed3e7e31"></a>
@@ -270,19 +291,21 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>initializes the entity manager </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_entity_manager_abc6a2cc5077501f4b06d88f4ed3e7e31_icgraph.png" border="0" usemap="#aclass_entity_manager_abc6a2cc5077501f4b06d88f4ed3e7e31_icgraph" alt=""/></div>
 <map name="aclass_entity_manager_abc6a2cc5077501f4b06d88f4ed3e7e31_icgraph" id="aclass_entity_manager_abc6a2cc5077501f4b06d88f4ed3e7e31_icgraph">
-<area shape="rect" title=" " alt="" coords="214,81,366,108"/>
-<area shape="rect" href="class_scene___menu.html#a46cf38bd4128df45b9b11bab2c4484f0" title=" " alt="" coords="13,5,158,32"/>
+<area shape="rect" title="initializes the entity manager" alt="" coords="214,81,366,108"/>
+<area shape="rect" href="class_scene___menu.html#a46cf38bd4128df45b9b11bab2c4484f0" title="constructor that receives a pointer to the game engine" alt="" coords="13,5,158,32"/>
 <area shape="poly" title=" " alt="" coords="242,78,165,47,132,35,133,30,167,41,244,73"/>
-<area shape="rect" href="class_scene___play.html#a416e630ef10fac7e34855babea499700" title=" " alt="" coords="16,56,155,83"/>
+<area shape="rect" href="class_scene___play.html#a416e630ef10fac7e34855babea499700" title="constructor that receives a pointer to the game engine" alt="" coords="16,56,155,83"/>
 <area shape="poly" title=" " alt="" coords="198,86,155,81,156,75,199,81"/>
-<area shape="rect" href="class_scene___settings.html#a54f6f5a3c647bb750b697ff362af7a76" title=" " alt="" coords="5,107,166,133"/>
+<area shape="rect" href="class_scene___settings.html#a54f6f5a3c647bb750b697ff362af7a76" title="constructor that receives a pointer to the game engine" alt="" coords="5,107,166,133"/>
 <area shape="poly" title=" " alt="" coords="199,109,166,113,166,107,198,103"/>
-<area shape="rect" href="class_scene___shop.html#a27666a0b2a6fd5aec323a22c873a25f0" title=" " alt="" coords="14,157,157,184"/>
+<area shape="rect" href="class_scene___shop.html#a27666a0b2a6fd5aec323a22c873a25f0" title="constructor that receives a pointer to the game engine" alt="" coords="14,157,157,184"/>
 <area shape="poly" title=" " alt="" coords="244,117,167,148,133,159,132,154,165,143,242,112"/>
 </map>
 </div>
