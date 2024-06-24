@@ -69,4 +69,6 @@ public:
 	void setHighestScore(size_t highestScore);
 	void setMusic(bool music);
 	void setWASD(bool wasd);
+
+	int m_equippedSkin = 0; 
 };

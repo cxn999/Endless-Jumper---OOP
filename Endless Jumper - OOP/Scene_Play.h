@@ -3,6 +3,7 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 
+
 class Scene_Play : public Scene {
 protected:
 	sf::Text m_scoreText;
@@ -23,6 +24,8 @@ protected:
 	size_t m_platformSpacing = 100;
 
 	std::shared_ptr<Entity> m_player;
+
+
 public:
 	Scene_Play(GameEngine* gameEngine);
 

@@ -20,9 +20,10 @@ Scene_Play::Scene_Play(GameEngine* gameEngine)
 	init();
 }
 
+
 void Scene_Play::init() {
 	m_highestScore = m_game->getHighestScore();
-
+	
 	registerAction(sf::Keyboard::P, "PAUSE");
 	registerAction(sf::Keyboard::Escape, "QUIT");
 	registerAction(sf::Keyboard::T, "TOGGLE_TEXTURE"); // Toggle drawing textures
@@ -53,6 +54,8 @@ void Scene_Play::init() {
 	m_scoreText = sf::Text("0", f, 50);
 	m_scoreText.setColor(sf::Color::White);
 	m_score = 0;
+
+	
 }
 
 void Scene_Play::sDoAction(const Action& action) {
@@ -176,6 +179,26 @@ void Scene_Play::sRender() {
 
 	auto& player_pos = m_player->getComponent<CTransform>().pos;
 	auto& window = m_game->window();
+	auto& animation = m_player->getComponent<CAnimation>().animation;
+	auto& equippedSkin = m_game->m_equippedSkin;
+	//Verifies the player skin
+	switch (equippedSkin)
+	{
+	case 1:
+		animation.getSprite().setColor(sf::Color(10, 10, 255, 255));
+		break;
+	case 2:
+		animation.getSprite().setColor(sf::Color(255, 255, 0, 255));
+		break;
+	case 3:
+		animation.getSprite().setColor(sf::Color(255, 0, 155, 255));
+		break;
+	case 4:
+		animation.getSprite().setColor(sf::Color(0, 255, 255, 255));
+		break;
+	default:
+		break;
+	}
 	window.clear(sf::Color::Transparent);
 
 
@@ -306,17 +329,34 @@ void Scene_Play::sAnimation() {
 		auto& player = m_player->getComponent<CTransform>();
 		auto player_state = m_player->getComponent<CState>().state;
 		auto& animation = m_player->getComponent<CAnimation>().animation;
+		auto& equippedSkin = m_game->m_equippedSkin;
 
-		if (player_state == "jump") {
-			if (animation.getName() != "playerJump") {
-				animation = m_game->getAssets().getAnimation("playerJump");
+		if(equippedSkin != 5)
+		{
+			if (player_state == "jump") {
+				if (animation.getName() != "playerJump") {
+					animation = m_game->getAssets().getAnimation("playerJump");
+				}
+			}
+			else if (player_state == "fall") {
+				if (animation.getName() != "playerFall") {
+					animation = m_game->getAssets().getAnimation("playerFall");
+				}
 			}
 		}
-		else if (player_state == "fall") {
-			if (animation.getName() != "playerFall") {
-				animation = m_game->getAssets().getAnimation("playerFall");
+		else if (equippedSkin == 5) {
+			if (player_state == "jump") {
+				if (animation.getName() != "venom_Jump") {
+					animation = m_game->getAssets().getAnimation("venom_Jump");
+				}
+			}
+			else if (player_state == "fall") {
+				if (animation.getName() != "venom_Fall") {
+					animation = m_game->getAssets().getAnimation("venom_Fall");
+				}
 			}
 		}
+		
 
 		animation.getSprite().setScale(2, 2);
 
