@@ -2,6 +2,12 @@
 #include <fstream>
 #include <iostream>
 
+Assets::~Assets() {
+    for (auto& pair : m_musics) {
+        delete pair.second;
+    }
+}
+
 void Assets::addTexture(const std::string& name, const std::string& path) {
     sf::Texture texture;
     if (texture.loadFromFile(path)) {
@@ -13,8 +19,15 @@ void Assets::addTexture(const std::string& name, const std::string& path) {
     }
 }
 
-void Assets::addSound(std::string& name, std::string& path) {
-
+void Assets::addSoundBuffer(const std::string& name, const std::string& path) {
+    sf::SoundBuffer buffer;
+    if (buffer.loadFromFile(path)) {
+        m_soundBuffers[name] = buffer;
+        std::cout << "Loaded buffer: " << name << std::endl;
+    }
+    else {
+        std::cerr << "Error loading buffer from: " << path << std::endl;
+    }
 }
 
 void Assets::addFont(const std::string& name, const std::string& path) {
@@ -36,6 +49,17 @@ void Assets::addBackground(const int name, const int index2, const sf::Texture &
     m_backgrounds[name].addLayer(t);
 }
 
+void Assets::addMusic(const std::string& name, const std::string& path) {
+    sf::Music* music = new sf::Music();
+    if (music->openFromFile(path)) {
+        m_musics[name] = music;
+        std::cout << "Loaded music: " << name << std::endl;
+    }
+    else {
+        std::cerr << "Error loading music from: " << path << std::endl;
+    }
+}
+
 
 sf::Texture& Assets::getTexture(const std::string& name) {
     auto it = m_textures.find(name);
@@ -49,8 +73,12 @@ sf::Texture& Assets::getTexture(const std::string& name) {
     }
 }
 
-sf::Sound& Assets::getSound(std::string& name) {
-	return m_sounds[name];
+sf::SoundBuffer& Assets::getSoundBuffer(const std::string& name) {
+	return m_soundBuffers.at(name);
+}
+
+sf::Music& Assets::getMusic(const std::string& name) {
+    return *m_musics.at(name);
 }
 
 sf::Font& Assets::getFont(const std::string& name) {
@@ -97,9 +125,17 @@ void Assets::loadFromFile(const std::string& path) {
             file >> index >> index2 >> name;
             addBackground(index, index2, getTexture(name));
         }
+        
         else if (identifier == "Music") {
-            // add code
-            // addMusic(blabla,blabla);
+            file >> name >> filePath;
+            addMusic(name, filePath);
         }
+        
+        else if (identifier == "SoundEffects") {
+            file >> name >> filePath;
+            addSoundBuffer(name, filePath);
+        }
+        
     }
 }
+

@@ -87,3 +87,5 @@ Animation log02 tile2_02 1 0
 Animation playerIdle mainIdle 11 6
 Animation playerJump mainJump 1 0
 Animation playerFall mainFall 1 0
+SoundEffects jumpSound Assets\SoundEffects\cartoon_jump.ogg
+Music play Assets\Musics\super_monkey_ball_w1_ost.ogg

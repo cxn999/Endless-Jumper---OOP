@@ -55,8 +55,9 @@ void Scene_Play::init() {
 	m_score = 0;
 
 	// Music to add
-	// auto & playMusic = m_game->getAssets().getMusic("playMusic", PATH);
-	// playMusic.play() or whatever
+	m_backgroundMusic = &m_game->getAssets().getMusic("play");
+	m_backgroundMusic->setLoop(true);
+	m_backgroundMusic->play();
 }
 
 void Scene_Play::sDoAction(const Action& action) {
@@ -480,6 +481,7 @@ void Scene_Play::sMovement() {
 }
 
 void Scene_Play::onEnd() {
+	m_backgroundMusic->stop();
 	m_game->changeScene("MENU", std::make_shared<Scene_Menu>(m_game), true);
 }
 
