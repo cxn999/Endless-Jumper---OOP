@@ -5,7 +5,6 @@
 
 class Scene_Play : public Scene {
 protected:
-	sf::Music* m_backgroundMusic = nullptr;
 	sf::Text m_scoreText;
 	size_t m_score;
 	sf::View m_view;
