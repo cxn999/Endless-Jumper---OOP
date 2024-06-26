@@ -33,9 +33,11 @@ protected:
 	void onEnd();
 	void sDoAction(const Action& action);
 
-	/// CARLOS COMENTA ACA
+	/// method for getting the color of the volume slider depending on the volume
 	sf::Color getVolumeColor(float volume);
+	/// method for updating the volume slider width
 	void updateVolumeSlider();
+
 
 public:
 

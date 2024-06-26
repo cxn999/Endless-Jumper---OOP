@@ -7,7 +7,7 @@
 class Scene_Play : public Scene {
 protected:
 
-	sf::Music* m_backgroundMusic = nullptr; //background music for the play scene
+	sf::Music* m_backgroundMusic = nullptr; ///background music for the play scene
 	sf::Text m_scoreText;		/// text for the score
 	size_t m_score;				/// number for the score
 	sf::View m_view;			/// the view of the scene

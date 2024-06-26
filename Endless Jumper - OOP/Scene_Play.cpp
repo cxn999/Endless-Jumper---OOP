@@ -409,7 +409,9 @@ void Scene_Play::sCollision() {
 							m_player->getComponent<CGravity>().gravity = 0;
 							player.velocity.y = -20;
 							// collision resolution
-							m_game->getAssets().getSound("jumpSound").play();
+							auto& jumpSound = m_game->getAssets().getSound("jumpSound");
+							jumpSound.setVolume(m_game->getVolume());
+							jumpSound.play();
 
 							player.pos.y -= overlap.y;
 							m_move = true;
