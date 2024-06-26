@@ -116,7 +116,7 @@ void Scene_Settings::sDoAction(const Action& action) {
 		else if (action.name() == "ENTER") { 
 			std::cout << "ENTER PRESSED" << std::endl; 
 			if (m_selectedMenuIndex == 1) { // Toggle music on/off
-				m_game->setMusic(!m_game->getMusic());
+				m_game->setMusicState(!m_game->getMusic());
 				m_musicToggleText.setString(m_game->getMusic() ? "Music: On" : "Music: Off");
 			}
 			else if (m_selectedMenuIndex == 2) { // Toggle control scheme

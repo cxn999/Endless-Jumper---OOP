@@ -82,8 +82,8 @@ sf::Sound& Assets::getSound(const std::string& name) {
     return m_sounds.at(name);
 }
 
-sf::Music& Assets::getMusic(const std::string& name) {
-    return *m_musics.at(name);
+sf::Music* Assets::getMusic(const std::string& name) {
+    return m_musics.at(name);
 }
 
 sf::Font& Assets::getFont(const std::string& name) {

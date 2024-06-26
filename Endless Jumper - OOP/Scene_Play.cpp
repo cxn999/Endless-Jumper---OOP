@@ -55,12 +55,6 @@ void Scene_Play::init() {
 	m_scoreText.setColor(sf::Color::White);
 	m_score = 0;
 
-	if (m_game->getMusic()) {
-		m_backgroundMusic = &m_game->getAssets().getMusic("play");
-		m_backgroundMusic->setLoop(true);
-		m_backgroundMusic->setVolume(m_game->getVolume());
-		m_backgroundMusic->play();
-	}
 }
 
 void Scene_Play::sDoAction(const Action& action) {
@@ -523,9 +517,6 @@ void Scene_Play::sMovement() {
 }
 
 void Scene_Play::onEnd() {
-	if(m_game->getMusic()){
-		m_backgroundMusic->stop();
-	}
 	
 	m_game->changeScene("MENU", std::make_shared<Scene_Menu>(m_game), true);
 }

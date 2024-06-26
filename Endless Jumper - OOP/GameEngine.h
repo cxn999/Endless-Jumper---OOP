@@ -33,6 +33,10 @@ class GameEngine {
 	void sUserInput();					/// registers all the input in the game and checks if they have a corresponding action on the scene
 	std::shared_ptr<Scene> currentScene();	/// method that returns the actual scene
 
+	sf::Music* m_currentMusic; // Pointer to the current music track
+
+	
+
 public:
 
 	/// constructor that receives the path of the config and the assets
@@ -65,6 +69,12 @@ public:
 	void setHighestScore(size_t highestScore);
 	void setMusic(bool music);
 	void setWASD(bool wasd);
+
+	// Add these methods
+	void startMusic(const std::string& musicName);
+	void stopMusic();
+	void setMusicState(bool musicOn);
+	void switchToMusic(const std::string& musicName);
 
 	int m_equippedSkin = 0; 
 };

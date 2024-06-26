@@ -48,7 +48,7 @@ public:
 	sf::Font & getFont(const std::string& name);
 	Animation & getAnimation(const std::string& name);
 	Background& getBackground(const int name);
-	sf::Music& getMusic(const std::string& name);
+	sf::Music* getMusic(const std::string& name);
 
 	/// method to retrieve all the assets of the game and store them in their respective maps
 	void loadFromFile(const std::string& path);
