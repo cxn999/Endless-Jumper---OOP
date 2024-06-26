@@ -30,12 +30,12 @@ void Scene_Play::init() {
 	registerAction(sf::Keyboard::C, "TOGGLE_COLLISION"); // Toggle drawing collision boxes
 	registerAction(sf::Keyboard::R, "REPLAY");
 	if (m_game->getWASD()) {
-		registerAction(sf::Keyboard::W, "UP"); //POSSIBLE DOUBLE JUMP LATER
+		//registerAction(sf::Keyboard::W, "UP"); //POSSIBLE DOUBLE JUMP LATER
 		registerAction(sf::Keyboard::A, "LEFT");
 		registerAction(sf::Keyboard::D, "RIGHT");
 	}
 	else {
-		registerAction(sf::Keyboard::Up, "UP"); //POSSIBLE DOUBLE JUMP LATER
+		//registerAction(sf::Keyboard::Up, "UP"); //POSSIBLE DOUBLE JUMP LATER
 		registerAction(sf::Keyboard::Left, "LEFT");
 		registerAction(sf::Keyboard::Right, "RIGHT");
 	}
