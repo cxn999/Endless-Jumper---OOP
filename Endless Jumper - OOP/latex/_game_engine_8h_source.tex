@@ -20,7 +20,7 @@
 \DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{_game_engine_8h_a30a44bde9f6d41838c12dc8ed3eb61d6}{SceneMap}}\ m\_sceneMap;\ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00020\ }
 \DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_coins;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_volume;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{float}\ m\_volume;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_highestScore;\ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_music;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_wasd;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
@@ -33,31 +33,43 @@
 \DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ sUserInput();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00034\ \ \ \ \ std::shared\_ptr<Scene>\ currentScene();\ \ }
 \DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ sf::Music*\ m\_currentMusic;\ \textcolor{comment}{//\ Pointer\ to\ the\ current\ music\ track}}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_game_engine_abe812095783a1aa3ddcbee5480daef74}{GameEngine}}(\textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keyword}{const}\ std::string\&\ path2);}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_a41a16489bd3b05403545a700f7f9e88e}{changeScene}}(\textcolor{keyword}{const}\ std::string\ \&,\ std::shared\_ptr<Scene>\ scene,\ \textcolor{keywordtype}{bool}\ endCurrentScene);}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_ab01970da2c68fefbf48b98c59d5627ae}{run}}();}
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_ad82b626def2e52b28f0d6c2d167589f6}{quit}}();}
-\DoxyCodeLine{00048\ \ \ \ \ }
-\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_assets}{Assets}}\&\ \mbox{\hyperlink{class_game_engine_a2db9a2dd6d6cc9879ec988690837f09e}{getAssets}}();\ \ \ \ \ }
-\DoxyCodeLine{00050\ \ \ \ \ sf::RenderWindow\&\ \mbox{\hyperlink{class_game_engine_ab54532076e85b26619be743450d3a0e5}{window}}();\ \ \ }
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_engine_ac7fe66907626424cd391f7b4692ba68e}{isRunning}}();}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_game_engine_aeacf043728816076bbaaa613aacc021d}{getCoins}}();}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_game_engine_a41381081263770bbed844f00edcfc943}{getVolume}}();}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_game_engine_a433221049ae96fe05e841973905fd038}{getHighestScore}}();}
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_engine_a216acb74cf052d361aaa825a00e4c03a}{getMusic}}();}
-\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_engine_aad9033218861ffe7bb06c5af64902672}{getWASD}}();}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_abdaf7c3ddaee8435fd78e8e4203f3936}{setCoins}}(\textcolor{keywordtype}{size\_t}\ coins);}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_a2a392af0578de7c0eab09af1c50d87ec}{setVolume}}(\textcolor{keywordtype}{size\_t}\ volume);}
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_ab55de5ef7f5768ec7b821ef6e7102a9d}{setHighestScore}}(\textcolor{keywordtype}{size\_t}\ highestScore);}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_a8d23b73726b14ad7edff796fb64537d6}{setMusic}}(\textcolor{keywordtype}{bool}\ music);}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_a1ffe94a332a94d0ecea7a1c291758580}{setWASD}}(\textcolor{keywordtype}{bool}\ wasd);}
-\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_game_engine_abe812095783a1aa3ddcbee5480daef74}{GameEngine}}(\textcolor{keyword}{const}\ std::string\&\ path,\ \textcolor{keyword}{const}\ std::string\&\ path2);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_a41a16489bd3b05403545a700f7f9e88e}{changeScene}}(\textcolor{keyword}{const}\ std::string\ \&,\ std::shared\_ptr<Scene>\ scene,\ \textcolor{keywordtype}{bool}\ endCurrentScene);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_ab01970da2c68fefbf48b98c59d5627ae}{run}}();}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_ad82b626def2e52b28f0d6c2d167589f6}{quit}}();}
+\DoxyCodeLine{00052\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_assets}{Assets}}\&\ \mbox{\hyperlink{class_game_engine_a2db9a2dd6d6cc9879ec988690837f09e}{getAssets}}();\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ sf::RenderWindow\&\ \mbox{\hyperlink{class_game_engine_ab54532076e85b26619be743450d3a0e5}{window}}();\ \ \ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_engine_ac7fe66907626424cd391f7b4692ba68e}{isRunning}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_game_engine_aeacf043728816076bbaaa613aacc021d}{getCoins}}();}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_game_engine_a4a66ca783b02c25efcf98f8222f8b97c}{getVolume}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_game_engine_a433221049ae96fe05e841973905fd038}{getHighestScore}}();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_engine_a216acb74cf052d361aaa825a00e4c03a}{getMusic}}();}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_game_engine_aad9033218861ffe7bb06c5af64902672}{getWASD}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_abdaf7c3ddaee8435fd78e8e4203f3936}{setCoins}}(\textcolor{keywordtype}{size\_t}\ coins);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_ae8ea35acaa9ae03251d58faf9d5b3908}{setVolume}}(\textcolor{keywordtype}{float}\ volume);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_ab55de5ef7f5768ec7b821ef6e7102a9d}{setHighestScore}}(\textcolor{keywordtype}{size\_t}\ highestScore);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_a8d23b73726b14ad7edff796fb64537d6}{setMusic}}(\textcolor{keywordtype}{bool}\ music);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_a1ffe94a332a94d0ecea7a1c291758580}{setWASD}}(\textcolor{keywordtype}{bool}\ wasd);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ Add\ these\ methods}}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_abb8d3e7650d045550956e4d5c2573458}{startMusic}}(\textcolor{keyword}{const}\ std::string\&\ musicName);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_ae6cae07b810c3a0cd859885ac2ecacb5}{stopMusic}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_a70f4192da66e8f2a8fb084e363fdb5c3}{setMusicState}}(\textcolor{keywordtype}{bool}\ musicOn);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_aba79db1d04e0133ad1273ce885434117}{switchToMusic}}(\textcolor{keyword}{const}\ std::string\&\ musicName);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_game_engine_a746e23b664ae433a0b3898611e748a79}{m\_equippedSkin}}\ =\ 0;\ }
+\DoxyCodeLine{00080\ \};}
 
 \end{DoxyCode}

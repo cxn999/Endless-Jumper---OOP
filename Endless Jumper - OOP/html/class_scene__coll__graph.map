@@ -1,13 +1,15 @@
 <map id="Scene" name="Scene">
-<area shape="rect" id="Node000001" title="base class that has all the basic functionalities for a scene" alt="" coords="357,640,581,1019"/>
-<area shape="rect" id="Node000002" href="$class_game_engine.html" title="Game Engine class." alt="" coords="5,5,183,576"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,554,198,575,230,618,267,660,346,733,342,737,263,664,226,622,193,577,180,557"/>
-<area shape="rect" id="Node000003" href="$class_entity_manager.html" title="Class that handles all the entities in the game (creates them, deletes them, modifies them,..." alt="" coords="207,179,375,403"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="306,402,325,507,355,615,358,623,353,625,350,617,319,508,301,403"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="399,256,541,325"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="473,325,472,623,467,623,467,325"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="565,256,613,325"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="592,325,587,454,578,536,562,617,560,624,555,623,557,615,572,535,581,454,586,325"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="707,256,745,325"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="730,325,728,383,721,457,704,539,692,579,675,617,639,675,594,726,590,722,635,671,670,615,687,577,699,537,716,457,723,383,724,325"/>
+<area shape="rect" id="Node000001" title="base class that has all the basic functionalities for a scene" alt="" coords="387,907,611,1285"/>
+<area shape="rect" id="Node000002" href="$class_game_engine.html" title="Game Engine class." alt="" coords="5,139,213,843"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,821,228,841,260,886,297,927,376,1001,372,1005,293,931,256,889,223,844,211,824"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="96,5,123,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="112,75,112,122,107,122,107,75"/>
+<area shape="rect" id="Node000004" href="$class_entity_manager.html" title="Class that handles all the entities in the game (creates them, deletes them, modifies them,..." alt="" coords="237,379,405,603"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="331,602,349,738,364,811,385,882,388,890,383,892,380,883,359,812,344,739,326,603"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="429,456,571,525"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="503,525,502,890,496,890,497,525"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="595,456,643,525"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="622,525,623,591,620,681,610,782,592,883,590,891,585,890,587,882,605,781,614,681,617,591,617,525"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="737,456,775,525"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="761,525,762,593,756,685,739,786,725,836,705,884,669,942,624,994,620,990,665,939,700,881,720,834,734,785,751,684,756,593,755,525"/>
 </map>

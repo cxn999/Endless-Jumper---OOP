@@ -19,7 +19,7 @@ digraph "GameEngine::changeScene"
   Node6 -> Node7 [id="edge17_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="Scene_Shop::sDoAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___shop.html#a0fc8b233f8270161214ef4721e338db3",tooltip="pure virtual method for the system of actions depending on the scene (Jump, move right,..."];
   Node1 -> Node8 [id="edge18_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="Scene_Play::replay",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a130605feff19608e5eeff9306c05b5c5",tooltip="replay method"];
+  Node8 [id="Node000008",label="Scene_Play::replay",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a130605feff19608e5eeff9306c05b5c5",tooltip=" "];
   Node8 -> Node3 [id="edge19_Node000008_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 -> Node9 [id="edge20_Node000008_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node9 [id="Node000009",label="Scene_Play::sRender",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2",tooltip="pure virtual method to render everything in the window in every frame="];

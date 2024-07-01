@@ -7,27 +7,46 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <map>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <memory>}}
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <deque>}}
-\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
 \DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_entity_manager_8h}{EntityManager.h}}"{}}}
 \DoxyCodeLine{00010\ }
 \DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene___shop}{Scene\_Shop}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene}{Scene}}\ \{}
 \DoxyCodeLine{00012\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00013\ \ \ \ \ sf::Text\ \mbox{\hyperlink{class_scene___shop_afd704a836c5fba60c55c6a03271f49c3}{m\_titleText}};}
-\DoxyCodeLine{00014\ \ \ \ \ std::vector<sf::Text>\ \mbox{\hyperlink{class_scene___shop_a6585e571d5fed8a9fdc6a9ff67e77a67}{m\_texts}};}
-\DoxyCodeLine{00015\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{class_scene___shop_ab443cd21d9a335477f3d96728c978afb}{m\_menuStrings}};}
-\DoxyCodeLine{00016\ \ \ \ \ std::vector\ <std::string>\ \mbox{\hyperlink{class_scene___shop_a678cf5e23790c895dd122832226c6f13}{m\_levelPaths}};}
-\DoxyCodeLine{00017\ \ \ \ \ sf::Text\ \mbox{\hyperlink{class_scene___shop_a7cc0d9ed813ae60b822ee752cc884fda}{m\_menuText}};}
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_scene___shop_a6da63f098bc0cb194734d3fea45c14a6}{m\_selectedMenuIndex}}\ =\ 0;}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___shop_a24a760af748578f3edda5b83a766ff9a}{init}}();}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___shop_a27666a0b2a6fd5aec323a22c873a25f0}{update}}();}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___shop_a1c1e297ef2b0aaa30d371242936aebae}{onEnd}}();}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___shop_a0fc8b233f8270161214ef4721e338db3}{sDoAction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_action}{Action}}\&\ action);}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_scene___shop_a41611157caf81bc8f9a4b05df4742449}{Scene\_Shop}}(\mbox{\hyperlink{class_game_engine}{GameEngine}}*\ gameEngine\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___shop_a97f628fd17e0581cc242acc186f9b804}{sRender}}();}
-\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___shop_a24a760af748578f3edda5b83a766ff9a}{init}}();}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___shop_a27666a0b2a6fd5aec323a22c873a25f0}{update}}();}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___shop_a1c1e297ef2b0aaa30d371242936aebae}{onEnd}}();}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___shop_a0fc8b233f8270161214ef4721e338db3}{sDoAction}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_action}{Action}}\&\ action);}
+\DoxyCodeLine{00017\ \ \ \ \ sf::Text\ \mbox{\hyperlink{class_scene___shop_a38b0e6f7abe0771885d5b231014e4a8b}{textConfig}}(\textcolor{keyword}{const}\ std::string\&\ stringForText,\ sf::Vector2f\ position,\ \textcolor{keywordtype}{int}\ size,\ sf::Font\&\ font);}
+\DoxyCodeLine{00018\ \ \ \ \ sf::Color\ \mbox{\hyperlink{class_scene___shop_a2ce90055fcb59814fecd3f77c9a3d476}{getDynamicColor}}(\textcolor{keywordtype}{float}\ time);}
+\DoxyCodeLine{00019\ \ \ \ \ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ sf::View\ \mbox{\hyperlink{class_scene___shop_ae6f72dc485fc956f1e7aeaa7e1fda2e6}{backgroundView}};}
+\DoxyCodeLine{00022\ \ \ \ \ sf::View\ \mbox{\hyperlink{class_scene___shop_a9c74c1af42f7cae541a329f2d0040648}{textView}};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ sf::Texture\ \mbox{\hyperlink{class_scene___shop_a3c12fef843fe77209d3f2b720309e7cc}{backgroundTexture}};\ }
+\DoxyCodeLine{00025\ \ \ \ \ sf::Texture\ \mbox{\hyperlink{class_scene___shop_ac70b929b442c9d6d3494547da6455bb8}{idleTexture}};}
+\DoxyCodeLine{00026\ \ \ \ \ sf::Texture\ \mbox{\hyperlink{class_scene___shop_af5cb17bfdd84f3c9cb484233579653e2}{venom}};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ sf::Sprite\ \mbox{\hyperlink{class_scene___shop_ac06c1b659881af456079802d7211cc28}{background}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ sf::RectangleShape\ \mbox{\hyperlink{class_scene___shop_ac5001986ff46d97465c930c864e5a816}{playerIdle}}[6];}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ std::vector<sf::Vector2f>\ \mbox{\hyperlink{class_scene___shop_a730b93ad684b7b364fb49b16f0053d73}{selectPosition}};\ \ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ std::vector<sf::Text>\ \mbox{\hyperlink{class_scene___shop_accf64edda6186806b3d6cf4318d7e929}{texts}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_scene___shop_a13a9221bb473d6427a653da2c30e32fe}{selectPositionIndex}}\ =\ 0;}
+\DoxyCodeLine{00038\ \ \ \ \ sf::RectangleShape\ \mbox{\hyperlink{class_scene___shop_a5fea6a742bcff40626502c4f5b1695ad}{select}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scene___shop_a6a05f3d720242daa36572483e3102e31}{skinPurchased}}[5]\ =\ \{\ \textcolor{keyword}{false},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_scene___shop_a2ccbd6ac9b1d91102710dd9abb263b1b}{isEquipped}}[6]\ =\ \{\ \textcolor{keyword}{true},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ sf::Clock\ \mbox{\hyperlink{class_scene___shop_aff493a623052645f6a3b4dfee01502ad}{clock}};}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_scene___shop_a41611157caf81bc8f9a4b05df4742449}{Scene\_Shop}}(\mbox{\hyperlink{class_game_engine}{GameEngine}}*\ gameEngine\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_scene___shop_a97f628fd17e0581cc242acc186f9b804}{sRender}}();}
+\DoxyCodeLine{00047\ \};}
 
 \end{DoxyCode}

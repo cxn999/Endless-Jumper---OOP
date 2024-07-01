@@ -1,5 +1,5 @@
 <map id="Scene_Play::init" name="Scene_Play::init">
-<area shape="rect" id="Node000001" title="definition of pure virtual method from the base class" alt="" coords="5,309,122,336"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,309,122,336"/>
 <area shape="rect" id="Node000002" href="$class_game_engine.html#a2db9a2dd6d6cc9879ec988690837f09e" title=" " alt="" coords="642,5,805,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="66,308,77,271,97,220,127,166,146,140,168,118,220,81,277,53,338,32,400,18,462,9,522,5,627,6,627,12,522,11,463,15,401,23,339,37,279,58,222,86,171,122,150,144,131,169,101,222,82,273,71,310"/>
 <area shape="rect" id="Node000003" href="$class_assets.html#a044201d3a5016c7ac2785181cec15b50" title=" " alt="" coords="213,309,327,336"/>

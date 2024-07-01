@@ -1,5 +1,16 @@
 <map id="Scene_Shop::onEnd" name="Scene_Shop::onEnd">
-<area shape="rect" id="Node000001" title="pause the game" alt="" coords="5,5,146,32"/>
-<area shape="rect" id="Node000002" href="$class_game_engine.html#a41a16489bd3b05403545a700f7f9e88e" title="Change scene" alt="" coords="194,5,377,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,16,178,16,178,21,146,21"/>
+<area shape="rect" id="Node000001" title="pause the game" alt="" coords="5,52,146,78"/>
+<area shape="rect" id="Node000002" href="$class_game_engine.html#a41a16489bd3b05403545a700f7f9e88e" title="Change scene" alt="" coords="194,52,377,78"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,62,178,62,178,68,146,68"/>
+<area shape="rect" id="Node000003" href="$class_assets.html#a8351d230cad9bc777061b69c839c5116" title=" " alt="" coords="683,26,807,53"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="315,49,365,28,424,12,478,4,520,3,616,12,671,20,671,25,615,17,520,8,478,10,426,17,367,33,317,54"/>
+<area shape="rect" id="Node000004" href="$class_game_engine.html#a216acb74cf052d361aaa825a00e4c03a" title=" " alt="" coords="442,26,599,53"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="377,53,426,47,426,52,377,58"/>
+<area shape="rect" id="Node000005" href="$class_game_engine.html#ae6cae07b810c3a0cd859885ac2ecacb5" title=" " alt="" coords="438,77,602,104"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="377,72,423,77,422,83,377,78"/>
+<area shape="rect" id="Node000006" href="$class_game_engine.html#aba79db1d04e0133ad1273ce885434117" title=" " alt="" coords="425,128,615,154"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="323,77,426,113,450,120,449,126,424,118,321,82"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="582,125,614,113,666,87,710,60,713,64,668,92,616,118,584,130"/>
+<area shape="rect" id="Node000007" href="$class_game_engine.html#a2db9a2dd6d6cc9879ec988690837f09e" title=" " alt="" coords="663,128,827,154"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="616,138,648,138,648,144,616,144"/>
 </map>

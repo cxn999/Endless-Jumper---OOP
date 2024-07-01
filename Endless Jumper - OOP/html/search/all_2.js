@@ -7,11 +7,12 @@ var searchData=
   ['changescene_4',['changeScene',['../class_game_engine.html#a41a16489bd3b05403545a700f7f9e88e',1,'GameEngine']]],
   ['cinput_5',['CInput',['../class_c_input.html',1,'']]],
   ['ckill_6',['CKill',['../class_c_kill.html',1,'']]],
-  ['cmove_7',['CMove',['../class_c_move.html',1,'']]],
-  ['component_8',['Component',['../class_component.html',1,'']]],
-  ['components_2eh_9',['Components.h',['../_components_8h.html',1,'']]],
-  ['componenttuple_10',['ComponentTuple',['../_entity_8h.html#acb26fdc225355f871698e9b659de7d93',1,'Entity.h']]],
-  ['cstate_11',['CState',['../class_c_state.html',1,'CState'],['../class_c_state.html#a4c69964988ca8925a07ff564d2c199d7',1,'CState::CState()'],['../class_c_state.html#a68fa732fa4b07077d5afabda48e773d6',1,'CState::CState(std::string s)']]],
-  ['ctransform_12',['CTransform',['../class_c_transform.html',1,'CTransform'],['../class_c_transform.html#a6cc4e6c97dbb86326341aa1a468986d4',1,'CTransform::CTransform()'],['../class_c_transform.html#a824847a832eadaffd32abe4199e63c0e',1,'CTransform::CTransform(const Vec2 &amp;p)'],['../class_c_transform.html#a5ee0d2bc813e08897641a205368500f5',1,'CTransform::CTransform(const Vec2 &amp;p, const Vec2 &amp;v)']]],
-  ['currentframe_13',['currentFrame',['../class_scene.html#a9f43c171b6a78154f919cf0b8b3b9c1a',1,'Scene']]]
+  ['clock_7',['clock',['../class_scene___shop.html#aff493a623052645f6a3b4dfee01502ad',1,'Scene_Shop']]],
+  ['cmove_8',['CMove',['../class_c_move.html',1,'']]],
+  ['component_9',['Component',['../class_component.html',1,'']]],
+  ['components_2eh_10',['Components.h',['../_components_8h.html',1,'']]],
+  ['componenttuple_11',['ComponentTuple',['../_entity_8h.html#acb26fdc225355f871698e9b659de7d93',1,'Entity.h']]],
+  ['cstate_12',['CState',['../class_c_state.html',1,'CState'],['../class_c_state.html#a4c69964988ca8925a07ff564d2c199d7',1,'CState::CState()'],['../class_c_state.html#a68fa732fa4b07077d5afabda48e773d6',1,'CState::CState(std::string s)']]],
+  ['ctransform_13',['CTransform',['../class_c_transform.html',1,'CTransform'],['../class_c_transform.html#a6cc4e6c97dbb86326341aa1a468986d4',1,'CTransform::CTransform()'],['../class_c_transform.html#a824847a832eadaffd32abe4199e63c0e',1,'CTransform::CTransform(const Vec2 &amp;p)'],['../class_c_transform.html#a5ee0d2bc813e08897641a205368500f5',1,'CTransform::CTransform(const Vec2 &amp;p, const Vec2 &amp;v)']]],
+  ['currentframe_14',['currentFrame',['../class_scene.html#a9f43c171b6a78154f919cf0b8b3b9c1a',1,'Scene']]]
 ];

@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="method that registers every action in the scene" alt="" coords="421,85,567,112"/>
 <area shape="rect" id="Node000002" href="$class_scene___menu.html#ac333bd8b02726ee6db5706219e70073e" title="index for the backgrounds in the menu" alt="" coords="243,7,365,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="446,81,372,49,340,36,342,31,374,44,449,76"/>
-<area shape="rect" id="Node000004" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title="definition of pure virtual method from the base class" alt="" coords="246,59,362,85"/>
+<area shape="rect" id="Node000004" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title=" " alt="" coords="246,59,362,85"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="406,89,362,83,363,77,406,84"/>
 <area shape="rect" id="Node000006" href="$class_scene___settings.html#a76b13e5709a76c73b7768859555f83bc" title="Initial control scheme." alt="" coords="235,111,373,137"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="406,113,374,117,373,112,405,108"/>

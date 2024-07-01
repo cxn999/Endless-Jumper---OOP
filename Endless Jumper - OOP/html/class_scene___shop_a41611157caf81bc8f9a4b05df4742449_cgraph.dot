@@ -15,5 +15,7 @@ digraph "Scene_Shop::Scene_Shop"
   Node2 -> Node5 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="Scene::registerAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene.html#a670b58a8e14e222d9a75afe3eb1e35bc",tooltip="method that registers every action in the scene"];
   Node2 -> Node6 [id="edge5_Node000002_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="GameEngine::window",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5",tooltip="returns a reference to the assets object"];
+  Node6 [id="Node000006",label="Scene_Shop::textConfig",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___shop.html#a38b0e6f7abe0771885d5b231014e4a8b",tooltip=" "];
+  Node2 -> Node7 [id="edge6_Node000002_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="GameEngine::window",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5",tooltip="returns a reference to the assets object"];
 }

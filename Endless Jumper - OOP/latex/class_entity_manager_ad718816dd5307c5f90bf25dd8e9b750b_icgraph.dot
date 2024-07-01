@@ -17,7 +17,7 @@ digraph "EntityManager::getEntities"
   Node5 [id="Node000005",label="Scene_Play::sPlatformGeneration",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a847a279015aea29bee3860e7ffd509ce",tooltip=" "];
   Node5 -> Node3 [id="edge16_Node000005_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node6 [id="edge17_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="Scene_Play::sRemoveDeadPlatforms",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a0e84bcf37aa08a9f6abd7c3cddf65f40",tooltip="Systems of the scene."];
+  Node6 [id="Node000006",label="Scene_Play::sRemoveDeadPlatforms",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a0e84bcf37aa08a9f6abd7c3cddf65f40",tooltip=" "];
   Node6 -> Node3 [id="edge18_Node000006_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node7 [id="edge19_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node7 [id="Node000007",label="Scene_Play::sRender",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2",tooltip="pure virtual method to render everything in the window in every frame="];

@@ -2,11 +2,6 @@
 \hypertarget{class_scene___play}{}\label{class_scene___play}\index{Scene\_Play@{Scene\_Play}}
 
 
-import graphics library  
-
-
-
-
 {\ttfamily \#include $<$Scene\+\_\+\+Play.\+h$>$}
 
 
@@ -35,15 +30,15 @@ Collaboration diagram for Scene\+\_\+\+Play\+:
 \mbox{\hyperlink{class_scene___play_a33169f4694573d31d2b44d192dbd0e5c}{Scene\+\_\+\+Play}} (\mbox{\hyperlink{class_game_engine}{Game\+Engine}} \texorpdfstring{$\ast$}{*}game\+Engine)
 \begin{DoxyCompactList}\small\item\em shared pointer to the player \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene___play_a21c4cf4a84b6644e7c82f077c3ed793b}{init}} ()
-\begin{DoxyCompactList}\small\item\em definition of pure virtual method from the base class \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{class_scene___play_a416e630ef10fac7e34855babea499700}{update}} ()
 \begin{DoxyCompactList}\small\item\em constructor that receives a pointer to the game engine \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene___play_a608db7a88064f779d2a3a42f47af3958}{on\+End}} ()
 \begin{DoxyCompactList}\small\item\em pause the game \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene___play_a130605feff19608e5eeff9306c05b5c5}{replay}} ()
-\begin{DoxyCompactList}\small\item\em replay method \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{class_scene___play_a0e84bcf37aa08a9f6abd7c3cddf65f40}{s\+Remove\+Dead\+Platforms}} ()
-\begin{DoxyCompactList}\small\item\em Systems of the scene. \end{DoxyCompactList}\item 
+\item 
 void \mbox{\hyperlink{class_scene___play_a847a279015aea29bee3860e7ffd509ce}{s\+Platform\+Generation}} ()
 \item 
 void \mbox{\hyperlink{class_scene___play_a5b9a11e45810897bedab64740342ef01}{s\+Animation}} ()
@@ -80,8 +75,10 @@ const \mbox{\hyperlink{_scene_8h_a86ff12d26b739ff16bcff91d715df70e}{Action\+Map}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-sf\+::\+Text \mbox{\hyperlink{class_scene___play_a550aeedf55ec0b7f34a35310322e5a93}{m\+\_\+score\+Text}}
+sf\+::\+Music \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_scene___play_a0b6a035ef11ef7ef0feb9d7ace1cd77c}{m\+\_\+background\+Music}} = nullptr
 \item 
+sf\+::\+Text \mbox{\hyperlink{class_scene___play_a550aeedf55ec0b7f34a35310322e5a93}{m\+\_\+score\+Text}}
+\begin{DoxyCompactList}\small\item\em background music for the play scene \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{class_scene___play_a32a3b2d581078688d35413dd2b387359}{m\+\_\+score}}
 \begin{DoxyCompactList}\small\item\em text for the score \end{DoxyCompactList}\item 
 sf\+::\+View \mbox{\hyperlink{class_scene___play_a7e9a314b52063e68beee77d86daf7ef6}{m\+\_\+view}}
@@ -130,11 +127,6 @@ bool \mbox{\hyperlink{class_scene_a9831c81afc52aeaac474275fcaa5bf95}{m\+\_\+paus
 \doxysubsubsection*{Additional Inherited Members}
 
 
-\doxysubsection{Detailed Description}
-import graphics library 
-
-import scene header file import vector library derived class for the Play \doxylink{class_scene}{Scene} that inherits from \doxylink{_scene_8h}{scene.\+h} 
-
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_scene___play_a33169f4694573d31d2b44d192dbd0e5c}\index{Scene\_Play@{Scene\_Play}!Scene\_Play@{Scene\_Play}}
 \index{Scene\_Play@{Scene\_Play}!Scene\_Play@{Scene\_Play}}
@@ -146,7 +138,7 @@ Scene\+\_\+\+Play\+::\+Scene\+\_\+\+Play (\begin{DoxyParamCaption}\item[{\mbox{\
 
 shared pointer to the player 
 
-constructor for play scene that receives the pointer to the game engine Here is the call graph for this function\+:
+Here is the call graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -162,10 +154,6 @@ constructor for play scene that receives the pointer to the game engine Here is 
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily \label{class_scene___play_a21c4cf4a84b6644e7c82f077c3ed793b} 
 void Scene\+\_\+\+Play\+::init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-definition of pure virtual method from the base class 
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -189,8 +177,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_scene___play_a957b35988b06b7d0c72aa948188b3b6e} 
 void Scene\+\_\+\+Play\+::load\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -227,8 +214,7 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{class_scene___play_a608db7a88064f779d2a3a42f47af3958_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -240,10 +226,6 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{replay()}{replay()}}
 {\footnotesize\ttfamily \label{class_scene___play_a130605feff19608e5eeff9306c05b5c5} 
 void Scene\+\_\+\+Play\+::replay (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-replay method 
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -274,8 +256,7 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_scene___play_a5b9a11e45810897bedab64740342ef01_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -296,8 +277,7 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{class_scene___play_aec1850ef08cb92b5c6db6cba02dec399_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -332,16 +312,14 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_scene___play_ae80c24b0bb449025d718c9b6dba8d619} 
 void Scene\+\_\+\+Play\+::s\+Movement (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_scene___play_ae80c24b0bb449025d718c9b6dba8d619_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -354,8 +332,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_scene___play_aa4fb330c856093ee8dbb0589852fbcfb} 
 void Scene\+\_\+\+Play\+::spawn\+Player (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -376,16 +353,14 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_scene___play_a847a279015aea29bee3860e7ffd509ce} 
 void Scene\+\_\+\+Play\+::s\+Platform\+Generation (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_scene___play_a847a279015aea29bee3860e7ffd509ce_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -397,10 +372,6 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{sRemoveDeadPlatforms()}{sRemoveDeadPlatforms()}}
 {\footnotesize\ttfamily \label{class_scene___play_a0e84bcf37aa08a9f6abd7c3cddf65f40} 
 void Scene\+\_\+\+Play\+::s\+Remove\+Dead\+Platforms (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Systems of the scene. 
 
 Here is the call graph for this function\+:
 \nopagebreak
@@ -440,8 +411,7 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{class_scene___play_a6ab634d841861b45bb684b6e8ce899a2_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -482,6 +452,12 @@ int Scene\+\_\+\+Play\+::m\+\_\+alpha = 255\hspace{0.3cm}{\ttfamily [protected]}
 
 
 highest score number 
+
+\Hypertarget{class_scene___play_a0b6a035ef11ef7ef0feb9d7ace1cd77c}\index{Scene\_Play@{Scene\_Play}!m\_backgroundMusic@{m\_backgroundMusic}}
+\index{m\_backgroundMusic@{m\_backgroundMusic}!Scene\_Play@{Scene\_Play}}
+\doxysubsubsection{\texorpdfstring{m\_backgroundMusic}{m\_backgroundMusic}}
+{\footnotesize\ttfamily \label{class_scene___play_a0b6a035ef11ef7ef0feb9d7ace1cd77c} 
+sf\+::\+Music\texorpdfstring{$\ast$}{*} Scene\+\_\+\+Play\+::m\+\_\+background\+Music = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
 
 \Hypertarget{class_scene___play_a95ab65289240069e1ba4aa0e7a5be00d}\index{Scene\_Play@{Scene\_Play}!m\_currentBackground@{m\_currentBackground}}
 \index{m\_currentBackground@{m\_currentBackground}!Scene\_Play@{Scene\_Play}}
@@ -608,6 +584,10 @@ text for the score
 \doxysubsubsection{\texorpdfstring{m\_scoreText}{m\_scoreText}}
 {\footnotesize\ttfamily \label{class_scene___play_a550aeedf55ec0b7f34a35310322e5a93} 
 sf\+::\+Text Scene\+\_\+\+Play\+::m\+\_\+score\+Text\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+background music for the play scene 
 
 \Hypertarget{class_scene___play_a360ef403524e27604883d0bc72ca93ba}\index{Scene\_Play@{Scene\_Play}!m\_targetViewPosition@{m\_targetViewPosition}}
 \index{m\_targetViewPosition@{m\_targetViewPosition}!Scene\_Play@{Scene\_Play}}

@@ -16,14 +16,14 @@ Collaboration diagram for Game\+Engine\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=213pt]{class_game_engine__coll__graph}
+\includegraphics[height=550pt]{class_game_engine__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_game_engine_abe812095783a1aa3ddcbee5480daef74}{Game\+Engine}} (const std\+::string \&path, const std\+::string \&path2)
-\begin{DoxyCompactList}\small\item\em method that returns the actual scene \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em constructor that receives the path of the config and the assets \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_game_engine_a41a16489bd3b05403545a700f7f9e88e}{change\+Scene}} (const std\+::string \&, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_scene}{Scene}} $>$ scene, bool end\+Current\+Scene)
 \begin{DoxyCompactList}\small\item\em Change scene ~\newline
  \end{DoxyCompactList}\item 
@@ -39,7 +39,7 @@ bool \mbox{\hyperlink{class_game_engine_ac7fe66907626424cd391f7b4692ba68e}{is\+R
 \begin{DoxyCompactList}\small\item\em returns a reference to the window \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{class_game_engine_aeacf043728816076bbaaa613aacc021d}{get\+Coins}} ()
 \begin{DoxyCompactList}\small\item\em methods to get configurations \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{class_game_engine_a41381081263770bbed844f00edcfc943}{get\+Volume}} ()
+float \mbox{\hyperlink{class_game_engine_a4a66ca783b02c25efcf98f8222f8b97c}{get\+Volume}} ()
 \item 
 size\+\_\+t \mbox{\hyperlink{class_game_engine_a433221049ae96fe05e841973905fd038}{get\+Highest\+Score}} ()
 \item 
@@ -49,13 +49,26 @@ bool \mbox{\hyperlink{class_game_engine_aad9033218861ffe7bb06c5af64902672}{get\+
 \item 
 void \mbox{\hyperlink{class_game_engine_abdaf7c3ddaee8435fd78e8e4203f3936}{set\+Coins}} (size\+\_\+t coins)
 \begin{DoxyCompactList}\small\item\em methods to set configurations \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_game_engine_a2a392af0578de7c0eab09af1c50d87ec}{set\+Volume}} (size\+\_\+t volume)
+void \mbox{\hyperlink{class_game_engine_ae8ea35acaa9ae03251d58faf9d5b3908}{set\+Volume}} (float volume)
 \item 
 void \mbox{\hyperlink{class_game_engine_ab55de5ef7f5768ec7b821ef6e7102a9d}{set\+Highest\+Score}} (size\+\_\+t highest\+Score)
 \item 
 void \mbox{\hyperlink{class_game_engine_a8d23b73726b14ad7edff796fb64537d6}{set\+Music}} (bool music)
 \item 
 void \mbox{\hyperlink{class_game_engine_a1ffe94a332a94d0ecea7a1c291758580}{set\+WASD}} (bool wasd)
+\item 
+void \mbox{\hyperlink{class_game_engine_abb8d3e7650d045550956e4d5c2573458}{start\+Music}} (const std\+::string \&music\+Name)
+\item 
+void \mbox{\hyperlink{class_game_engine_ae6cae07b810c3a0cd859885ac2ecacb5}{stop\+Music}} ()
+\item 
+void \mbox{\hyperlink{class_game_engine_a70f4192da66e8f2a8fb084e363fdb5c3}{set\+Music\+State}} (bool music\+On)
+\item 
+void \mbox{\hyperlink{class_game_engine_aba79db1d04e0133ad1273ce885434117}{switch\+To\+Music}} (const std\+::string \&music\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_game_engine_a746e23b664ae433a0b3898611e748a79}{m\+\_\+equipped\+Skin}} = 0
 \end{DoxyCompactItemize}
 
 
@@ -71,9 +84,10 @@ Game\+Engine\+::\+Game\+Engine (\begin{DoxyParamCaption}\item[{const std\+::stri
 
 
 
-method that returns the actual scene 
+constructor that receives the path of the config and the assets 
 
-constructor that receives the path of the config and the assets Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -94,6 +108,14 @@ void Game\+Engine\+::change\+Scene (\begin{DoxyParamCaption}\item[{const std\+::
 Change scene ~\newline
  
 
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_a41a16489bd3b05403545a700f7f9e88e_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
@@ -154,12 +176,20 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{class_game_engine_a216acb74cf052d361aaa825a00e4c03a_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_game_engine_a41381081263770bbed844f00edcfc943}\index{GameEngine@{GameEngine}!getVolume@{getVolume}}
+\Hypertarget{class_game_engine_a4a66ca783b02c25efcf98f8222f8b97c}\index{GameEngine@{GameEngine}!getVolume@{getVolume}}
 \index{getVolume@{getVolume}!GameEngine@{GameEngine}}
 \doxysubsubsection{\texorpdfstring{getVolume()}{getVolume()}}
-{\footnotesize\ttfamily \label{class_game_engine_a41381081263770bbed844f00edcfc943} 
-size\+\_\+t Game\+Engine\+::get\+Volume (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_game_engine_a4a66ca783b02c25efcf98f8222f8b97c} 
+float Game\+Engine\+::get\+Volume (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_a4a66ca783b02c25efcf98f8222f8b97c_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_game_engine_aad9033218861ffe7bb06c5af64902672}\index{GameEngine@{GameEngine}!getWASD@{getWASD}}
 \index{getWASD@{getWASD}!GameEngine@{GameEngine}}
 \doxysubsubsection{\texorpdfstring{getWASD()}{getWASD()}}
@@ -201,8 +231,7 @@ void Game\+Engine\+::quit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
 quits the game 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -243,7 +272,8 @@ void Game\+Engine\+::set\+Coins (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{co
 
 methods to set configurations 
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -278,17 +308,32 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{class_game_engine_a8d23b73726b14ad7edff796fb64537d6_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_game_engine_a2a392af0578de7c0eab09af1c50d87ec}\index{GameEngine@{GameEngine}!setVolume@{setVolume}}
-\index{setVolume@{setVolume}!GameEngine@{GameEngine}}
-\doxysubsubsection{\texorpdfstring{setVolume()}{setVolume()}}
-{\footnotesize\ttfamily \label{class_game_engine_a2a392af0578de7c0eab09af1c50d87ec} 
-void Game\+Engine\+::set\+Volume (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{volume}{}\end{DoxyParamCaption})}
+\Hypertarget{class_game_engine_a70f4192da66e8f2a8fb084e363fdb5c3}\index{GameEngine@{GameEngine}!setMusicState@{setMusicState}}
+\index{setMusicState@{setMusicState}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{setMusicState()}{setMusicState()}}
+{\footnotesize\ttfamily \label{class_game_engine_a70f4192da66e8f2a8fb084e363fdb5c3} 
+void Game\+Engine\+::set\+Music\+State (\begin{DoxyParamCaption}\item[{bool}]{music\+On}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_game_engine_a2a392af0578de7c0eab09af1c50d87ec_icgraph}
+\includegraphics[width=350pt]{class_game_engine_a70f4192da66e8f2a8fb084e363fdb5c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_engine_ae8ea35acaa9ae03251d58faf9d5b3908}\index{GameEngine@{GameEngine}!setVolume@{setVolume}}
+\index{setVolume@{setVolume}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{setVolume()}{setVolume()}}
+{\footnotesize\ttfamily \label{class_game_engine_ae8ea35acaa9ae03251d58faf9d5b3908} 
+void Game\+Engine\+::set\+Volume (\begin{DoxyParamCaption}\item[{float}]{volume}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_ae8ea35acaa9ae03251d58faf9d5b3908_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_game_engine_a1ffe94a332a94d0ecea7a1c291758580}\index{GameEngine@{GameEngine}!setWASD@{setWASD}}
@@ -303,6 +348,56 @@ Here is the caller graph for this function\+:
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_game_engine_a1ffe94a332a94d0ecea7a1c291758580_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_engine_abb8d3e7650d045550956e4d5c2573458}\index{GameEngine@{GameEngine}!startMusic@{startMusic}}
+\index{startMusic@{startMusic}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{startMusic()}{startMusic()}}
+{\footnotesize\ttfamily \label{class_game_engine_abb8d3e7650d045550956e4d5c2573458} 
+void Game\+Engine\+::start\+Music (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{music\+Name}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_abb8d3e7650d045550956e4d5c2573458_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_engine_ae6cae07b810c3a0cd859885ac2ecacb5}\index{GameEngine@{GameEngine}!stopMusic@{stopMusic}}
+\index{stopMusic@{stopMusic}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{stopMusic()}{stopMusic()}}
+{\footnotesize\ttfamily \label{class_game_engine_ae6cae07b810c3a0cd859885ac2ecacb5} 
+void Game\+Engine\+::stop\+Music (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_ae6cae07b810c3a0cd859885ac2ecacb5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_game_engine_aba79db1d04e0133ad1273ce885434117}\index{GameEngine@{GameEngine}!switchToMusic@{switchToMusic}}
+\index{switchToMusic@{switchToMusic}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{switchToMusic()}{switchToMusic()}}
+{\footnotesize\ttfamily \label{class_game_engine_aba79db1d04e0133ad1273ce885434117} 
+void Game\+Engine\+::switch\+To\+Music (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{music\+Name}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_aba79db1d04e0133ad1273ce885434117_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_engine_aba79db1d04e0133ad1273ce885434117_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_game_engine_ab54532076e85b26619be743450d3a0e5}\index{GameEngine@{GameEngine}!window@{window}}
@@ -323,6 +418,15 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{class_game_engine_ab54532076e85b26619be743450d3a0e5_icgraph}
 \end{center}
 \end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_game_engine_a746e23b664ae433a0b3898611e748a79}\index{GameEngine@{GameEngine}!m\_equippedSkin@{m\_equippedSkin}}
+\index{m\_equippedSkin@{m\_equippedSkin}!GameEngine@{GameEngine}}
+\doxysubsubsection{\texorpdfstring{m\_equippedSkin}{m\_equippedSkin}}
+{\footnotesize\ttfamily \label{class_game_engine_a746e23b664ae433a0b3898611e748a79} 
+int Game\+Engine\+::m\+\_\+equipped\+Skin = 0}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

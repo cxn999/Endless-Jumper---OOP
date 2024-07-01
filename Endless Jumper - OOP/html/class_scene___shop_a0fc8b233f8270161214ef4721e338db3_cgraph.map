@@ -4,10 +4,21 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,78,216,42,232,35,234,40,218,46,124,83"/>
 <area shape="rect" id="Node000003" href="$class_scene___shop.html#a1c1e297ef2b0aaa30d371242936aebae" title="pause the game" alt="" coords="217,56,357,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,82,201,77,202,83,169,87"/>
-<area shape="rect" id="Node000005" href="$class_scene.html#abad71a081e3b76cff376c954d3b6c3cb" title="pure virtual abstract method for quiting a scene" alt="" coords="223,107,351,133"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="169,102,207,107,207,113,169,108"/>
-<area shape="rect" id="Node000006" href="$class_action.html#a17c7beb7eb4055b45fbc4587f61ec933" title="method to get the name of the action" alt="" coords="241,157,333,184"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="124,106,218,143,234,149,232,154,216,148,122,111"/>
+<area shape="rect" id="Node000010" href="$class_scene.html#abad71a081e3b76cff376c954d3b6c3cb" title="pure virtual abstract method for quiting a scene" alt="" coords="223,107,351,133"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="169,102,207,107,207,113,169,108"/>
+<area shape="rect" id="Node000011" href="$class_action.html#a17c7beb7eb4055b45fbc4587f61ec933" title="method to get the name of the action" alt="" coords="241,157,333,184"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="124,106,218,143,234,149,232,154,216,148,122,111"/>
 <area shape="rect" id="Node000004" href="$class_game_engine.html#a41a16489bd3b05403545a700f7f9e88e" title="Change scene" alt="" coords="405,56,588,83"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="357,67,389,67,389,72,357,72"/>
+<area shape="rect" id="Node000005" href="$class_assets.html#a8351d230cad9bc777061b69c839c5116" title=" " alt="" coords="895,31,1018,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="526,53,576,32,636,16,689,9,731,7,827,16,883,24,882,30,826,21,731,13,690,14,637,21,578,37,528,58"/>
+<area shape="rect" id="Node000006" href="$class_game_engine.html#a216acb74cf052d361aaa825a00e4c03a" title=" " alt="" coords="653,31,810,57"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="588,57,637,51,638,57,589,62"/>
+<area shape="rect" id="Node000007" href="$class_game_engine.html#ae6cae07b810c3a0cd859885ac2ecacb5" title=" " alt="" coords="649,81,814,108"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="589,77,634,82,634,87,588,82"/>
+<area shape="rect" id="Node000008" href="$class_game_engine.html#aba79db1d04e0133ad1273ce885434117" title=" " alt="" coords="636,132,827,159"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="534,81,637,117,661,125,660,130,636,123,533,86"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="793,129,826,118,877,92,922,64,924,69,880,96,828,122,795,134"/>
+<area shape="rect" id="Node000009" href="$class_game_engine.html#a2db9a2dd6d6cc9879ec988690837f09e" title=" " alt="" coords="875,132,1038,159"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="827,143,859,143,859,148,827,148"/>
 </map>

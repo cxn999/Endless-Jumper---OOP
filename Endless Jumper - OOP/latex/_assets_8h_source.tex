@@ -12,34 +12,41 @@
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00011\ \textcolor{keyword}{typedef}\ std::map<std::string,\ sf::Texture>\ \mbox{\hyperlink{_assets_8h_ae2229dd04a5728977c6b40db37987710}{Textures}};\ \ \ \ }
 \DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ std::map<std::string,\ Animation>\ \mbox{\hyperlink{_assets_8h_abc2e3e1d092238e070424856718437cc}{AnimationsMap}};}
-\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ std::map<std::string,\ sf::Sound>\ \mbox{\hyperlink{_assets_8h_a57e7fcee4f8bf217028c89110240ba48}{Sounds}};}
-\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ std::map<std::string,\ sf::Music>\ \mbox{\hyperlink{_assets_8h_aa1ce648ae8639d259f091e75a1e155d6}{Music}};}
-\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ std::map<std::string,\ sf::Font>\ \mbox{\hyperlink{_assets_8h_a3506c9e94c0494c60e039a1f978f5f58}{Fonts}};}
-\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ std::map<int,\ Background>\ \mbox{\hyperlink{_assets_8h_affb58ef74740d57f6fc1c7e3b8b38e2e}{Backgrounds}};}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_assets}{Assets}}\ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{_assets_8h_abc2e3e1d092238e070424856718437cc}{AnimationsMap}}\ m\_animations;}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{_assets_8h_affb58ef74740d57f6fc1c7e3b8b38e2e}{Backgrounds}}\ m\_backgrounds;}
-\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{_assets_8h_ae2229dd04a5728977c6b40db37987710}{Textures}}\ m\_textures;}
-\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{_assets_8h_a57e7fcee4f8bf217028c89110240ba48}{Sounds}}\ m\_sounds;}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{_assets_8h_a3506c9e94c0494c60e039a1f978f5f58}{Fonts}}\ m\_fonts;}
-\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_ab02c9f34cbb12ec541e2fc94b828df14}{addTexture}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ path);}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_a79d190daa7958650f5e982aadf3a678a}{addSound}}(std::string\&\ name,\ std::string\&\ path);}
-\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_a3378e3ae3e66e6395b05869df9dd5262}{addFont}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ path);}
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_a84caed537de59ad01d5d7061b9b2aa06}{addAnimation}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_animation}{Animation}}\ \&\ animation);}
-\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_aa06e54c74c183ce6e577b86dab8fb06f}{addBackground}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index2,\ \textcolor{keyword}{const}\ sf::Texture\&);}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_ad1af5c3803869008c86f3dadf3957909}{addMusic}}();\ \textcolor{comment}{//\ Add\ corresponding\ parameters\ and\ definition\ in\ assets.cpp}}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00039\ \ \ \ \ sf::Texture\ \&\ \mbox{\hyperlink{class_assets_a181004ad24f0fe14ec4d10a284c578c3}{getTexture}}(\textcolor{keyword}{const}\ std::string\ \&\ name);}
-\DoxyCodeLine{00040\ \ \ \ \ sf::Sound\ \&\ \mbox{\hyperlink{class_assets_ad0299fb05e9fb276b6ba5192a79376a9}{getSound}}(std::string\&\ name);}
-\DoxyCodeLine{00041\ \ \ \ \ sf::Font\ \&\ \mbox{\hyperlink{class_assets_a044201d3a5016c7ac2785181cec15b50}{getFont}}(\textcolor{keyword}{const}\ std::string\&\ name);}
-\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_animation}{Animation}}\ \&\ \mbox{\hyperlink{class_assets_a82a07c4ce9f847b53f635018533c160c}{getAnimation}}(\textcolor{keyword}{const}\ std::string\&\ name);}
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_background}{Background}}\&\ \mbox{\hyperlink{class_assets_a66aa9b131494334e56c6da9955ea1b4c}{getBackground}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ name);}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_acb94d51cba0779d8757c9d8d0d93f12c}{getMusic}}();\ \textcolor{comment}{//\ Add\ corresponding\ parameters\ and\ definition\ in\ assets.cpp}}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_a0bc45e2fee19dfd8e7fd75599d232a30}{loadFromFile}}(\textcolor{keyword}{const}\ std::string\&\ path);}
-\DoxyCodeLine{00048\ \};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{typedef}\ std::map<std::string,\ sf::SoundBuffer>\ \mbox{\hyperlink{_assets_8h_a5e6cda5621c72fdd0e65b5cf797b96be}{SoundBuffers}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{typedef}\ std::map<std::string,\ sf::Sound>\ \mbox{\hyperlink{_assets_8h_a57e7fcee4f8bf217028c89110240ba48}{Sounds}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{typedef}\ std::map<std::string,\ sf::Music*>\ \mbox{\hyperlink{_assets_8h_ae3ea3e0d810ea9bb88fc0c39438b5701}{Musics}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ std::map<std::string,\ sf::Font>\ \mbox{\hyperlink{_assets_8h_a3506c9e94c0494c60e039a1f978f5f58}{Fonts}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ std::map<int,\ Background>\ \mbox{\hyperlink{_assets_8h_affb58ef74740d57f6fc1c7e3b8b38e2e}{Backgrounds}};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_assets}{Assets}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{_assets_8h_abc2e3e1d092238e070424856718437cc}{AnimationsMap}}\ m\_animations;}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{_assets_8h_affb58ef74740d57f6fc1c7e3b8b38e2e}{Backgrounds}}\ m\_backgrounds;}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{_assets_8h_ae2229dd04a5728977c6b40db37987710}{Textures}}\ m\_textures;}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{_assets_8h_a5e6cda5621c72fdd0e65b5cf797b96be}{SoundBuffers}}\ m\_soundBuffers;}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{_assets_8h_a3506c9e94c0494c60e039a1f978f5f58}{Fonts}}\ m\_fonts;}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{_assets_8h_ae3ea3e0d810ea9bb88fc0c39438b5701}{Musics}}\ m\_musics;}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{_assets_8h_a57e7fcee4f8bf217028c89110240ba48}{Sounds}}\ m\_sounds;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//destructor}}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_assets_ae47d41f4f674807c271f64ffc1771b7f}{\string~Assets}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_ab02c9f34cbb12ec541e2fc94b828df14}{addTexture}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_a11cd15f30f4d1c68cc17e254eba69a16}{addSoundBuffer}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_a3378e3ae3e66e6395b05869df9dd5262}{addFont}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_a84caed537de59ad01d5d7061b9b2aa06}{addAnimation}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_animation}{Animation}}\ \&\ animation);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_aa06e54c74c183ce6e577b86dab8fb06f}{addBackground}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ index2,\ \textcolor{keyword}{const}\ sf::Texture\&);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_a314c5e6b15285a50cc1debe298887f92}{addMusic}}(\textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ sf::Texture\ \&\ \mbox{\hyperlink{class_assets_a181004ad24f0fe14ec4d10a284c578c3}{getTexture}}(\textcolor{keyword}{const}\ std::string\ \&\ name);}
+\DoxyCodeLine{00046\ \ \ \ \ sf::SoundBuffer\ \&\ \mbox{\hyperlink{class_assets_a174951069666f735f0c263841dcc52e5}{getSoundBuffer}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00047\ \ \ \ \ sf::Sound\&\ \mbox{\hyperlink{class_assets_a1de9cf301a26102e74cd009f2fe14c64}{getSound}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00048\ \ \ \ \ sf::Font\ \&\ \mbox{\hyperlink{class_assets_a044201d3a5016c7ac2785181cec15b50}{getFont}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_animation}{Animation}}\ \&\ \mbox{\hyperlink{class_assets_a82a07c4ce9f847b53f635018533c160c}{getAnimation}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_background}{Background}}\&\ \mbox{\hyperlink{class_assets_a66aa9b131494334e56c6da9955ea1b4c}{getBackground}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ name);}
+\DoxyCodeLine{00051\ \ \ \ \ sf::Music*\ \mbox{\hyperlink{class_assets_a8351d230cad9bc777061b69c839c5116}{getMusic}}(\textcolor{keyword}{const}\ std::string\&\ name);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_assets_a0bc45e2fee19dfd8e7fd75599d232a30}{loadFromFile}}(\textcolor{keyword}{const}\ std::string\&\ path);}
+\DoxyCodeLine{00055\ \};}
 
 \end{DoxyCode}
