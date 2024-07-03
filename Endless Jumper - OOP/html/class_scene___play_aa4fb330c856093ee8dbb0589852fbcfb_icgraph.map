@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="587,5,761,32"/>
 <area shape="rect" id="Node000002" href="$class_scene___play.html#a957b35988b06b7d0c72aa948188b3b6e" title=" " alt="" coords="387,5,539,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="572,21,540,21,540,16,572,16"/>
-<area shape="rect" id="Node000003" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title="definition of pure virtual method from the base class" alt="" coords="223,5,339,32"/>
+<area shape="rect" id="Node000003" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title=" " alt="" coords="223,5,339,32"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="371,21,340,21,340,16,371,16"/>
 <area shape="rect" id="Node000004" href="$class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c" title="shared pointer to the player" alt="" coords="5,5,175,32"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="207,21,175,21,175,16,207,16"/>

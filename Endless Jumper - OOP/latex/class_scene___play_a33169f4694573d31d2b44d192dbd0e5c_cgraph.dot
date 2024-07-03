@@ -7,7 +7,7 @@ digraph "Scene_Play::Scene_Play"
   rankdir="LR";
   Node1 [id="Node000001",label="Scene_Play::Scene_Play",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="shared pointer to the player"];
   Node1 -> Node2 [id="edge18_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="Scene_Play::init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b",tooltip="definition of pure virtual method from the base class"];
+  Node2 [id="Node000002",label="Scene_Play::init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b",tooltip=" "];
   Node2 -> Node3 [id="edge19_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="GameEngine::getAssets",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#a2db9a2dd6d6cc9879ec988690837f09e",tooltip=" "];
   Node2 -> Node4 [id="edge20_Node000002_Node000004",color="steelblue1",style="solid",tooltip=" "];

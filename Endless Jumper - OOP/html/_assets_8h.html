@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Endless Jumper - OOP: Assets.h File Reference</title>
+<title>Skylimit - OOP: Assets.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Endless Jumper - OOP
+   <div id="projectname">Skylimit - OOP
    </div>
   </td>
  </tr>
@@ -212,10 +212,12 @@ Typedefs</h2></td></tr>
 <tr class="separator:ae2229dd04a5728977c6b40db37987710"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc2e3e1d092238e070424856718437cc" id="r_abc2e3e1d092238e070424856718437cc"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, <a class="el" href="class_animation.html">Animation</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc2e3e1d092238e070424856718437cc">AnimationsMap</a></td></tr>
 <tr class="separator:abc2e3e1d092238e070424856718437cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6cda5621c72fdd0e65b5cf797b96be" id="r_a5e6cda5621c72fdd0e65b5cf797b96be"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, sf::SoundBuffer &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e6cda5621c72fdd0e65b5cf797b96be">SoundBuffers</a></td></tr>
+<tr class="separator:a5e6cda5621c72fdd0e65b5cf797b96be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57e7fcee4f8bf217028c89110240ba48" id="r_a57e7fcee4f8bf217028c89110240ba48"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, sf::Sound &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57e7fcee4f8bf217028c89110240ba48">Sounds</a></td></tr>
 <tr class="separator:a57e7fcee4f8bf217028c89110240ba48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1ce648ae8639d259f091e75a1e155d6" id="r_aa1ce648ae8639d259f091e75a1e155d6"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, sf::Music &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1ce648ae8639d259f091e75a1e155d6">Music</a></td></tr>
-<tr class="separator:aa1ce648ae8639d259f091e75a1e155d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3ea3e0d810ea9bb88fc0c39438b5701" id="r_ae3ea3e0d810ea9bb88fc0c39438b5701"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, sf::Music * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3ea3e0d810ea9bb88fc0c39438b5701">Musics</a></td></tr>
+<tr class="separator:ae3ea3e0d810ea9bb88fc0c39438b5701"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3506c9e94c0494c60e039a1f978f5f58" id="r_a3506c9e94c0494c60e039a1f978f5f58"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; std::string, sf::Font &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3506c9e94c0494c60e039a1f978f5f58">Fonts</a></td></tr>
 <tr class="separator:a3506c9e94c0494c60e039a1f978f5f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affb58ef74740d57f6fc1c7e3b8b38e2e" id="r_affb58ef74740d57f6fc1c7e3b8b38e2e"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; int, <a class="el" href="class_background.html">Background</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#affb58ef74740d57f6fc1c7e3b8b38e2e">Backgrounds</a></td></tr>
@@ -264,14 +266,28 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a id="aa1ce648ae8639d259f091e75a1e155d6" name="aa1ce648ae8639d259f091e75a1e155d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1ce648ae8639d259f091e75a1e155d6">&#9670;&#160;</a></span>Music</h2>
+<a id="ae3ea3e0d810ea9bb88fc0c39438b5701" name="ae3ea3e0d810ea9bb88fc0c39438b5701"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3ea3e0d810ea9bb88fc0c39438b5701">&#9670;&#160;</a></span>Musics</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef std::map&lt;std::string, sf::Music&gt; <a class="el" href="#aa1ce648ae8639d259f091e75a1e155d6">Music</a></td>
+          <td class="memname">typedef std::map&lt;std::string, sf::Music*&gt; <a class="el" href="#ae3ea3e0d810ea9bb88fc0c39438b5701">Musics</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e6cda5621c72fdd0e65b5cf797b96be" name="a5e6cda5621c72fdd0e65b5cf797b96be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e6cda5621c72fdd0e65b5cf797b96be">&#9670;&#160;</a></span>SoundBuffers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;std::string, sf::SoundBuffer&gt; <a class="el" href="#a5e6cda5621c72fdd0e65b5cf797b96be">SoundBuffers</a></td>
         </tr>
       </table>
 </div><div class="memdoc">

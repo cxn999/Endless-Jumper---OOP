@@ -15,14 +15,17 @@ digraph "Scene_Settings::Scene_Settings"
   Node2 -> Node5 [id="edge4_Node000002_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="GameEngine::getMusic",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#a216acb74cf052d361aaa825a00e4c03a",tooltip=" "];
   Node2 -> Node6 [id="edge5_Node000002_Node000006",color="steelblue1",style="solid",tooltip=" "];
-  Node6 [id="Node000006",label="Scene_Settings::getVolume\lColor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#a7ab9de3dc8e935feeb5e637690adeb6b",tooltip="CARLOS COMENTA ACA."];
+  Node6 [id="Node000006",label="GameEngine::getVolume",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#a4a66ca783b02c25efcf98f8222f8b97c",tooltip=" "];
   Node2 -> Node7 [id="edge6_Node000002_Node000007",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="GameEngine::getWASD",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#aad9033218861ffe7bb06c5af64902672",tooltip=" "];
+  Node7 [id="Node000007",label="Scene_Settings::getVolume\lColor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#a7ab9de3dc8e935feeb5e637690adeb6b",tooltip="method for getting the color of the volume slider depending on the volume"];
   Node2 -> Node8 [id="edge7_Node000002_Node000008",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="Scene::registerAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene.html#a670b58a8e14e222d9a75afe3eb1e35bc",tooltip="method that registers every action in the scene"];
+  Node8 [id="Node000008",label="GameEngine::getWASD",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#aad9033218861ffe7bb06c5af64902672",tooltip=" "];
   Node2 -> Node9 [id="edge8_Node000002_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="Scene_Settings::updateVolume\lSlider",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#a2b9b180644b36c931eb7c47888ede9c4",tooltip=" "];
-  Node9 -> Node10 [id="edge9_Node000009_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="GameEngine::window",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5",tooltip="returns a reference to the assets object"];
-  Node2 -> Node10 [id="edge10_Node000002_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="Scene::registerAction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene.html#a670b58a8e14e222d9a75afe3eb1e35bc",tooltip="method that registers every action in the scene"];
+  Node2 -> Node10 [id="edge9_Node000002_Node000010",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="Scene_Settings::updateVolume\lSlider",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___settings.html#a2b9b180644b36c931eb7c47888ede9c4",tooltip="method for updating the volume slider width"];
+  Node10 -> Node6 [id="edge10_Node000010_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node11 [id="edge11_Node000010_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="GameEngine::window",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_engine.html#ab54532076e85b26619be743450d3a0e5",tooltip="returns a reference to the assets object"];
+  Node2 -> Node11 [id="edge12_Node000002_Node000011",color="steelblue1",style="solid",tooltip=" "];
 }

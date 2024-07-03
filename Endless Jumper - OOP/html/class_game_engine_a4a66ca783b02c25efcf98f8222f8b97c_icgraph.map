@@ -1,0 +1,17 @@
+<map id="GameEngine::getVolume" name="GameEngine::getVolume">
+<area shape="rect" id="Node000001" title=" " alt="" coords="693,85,860,112"/>
+<area shape="rect" id="Node000002" href="$class_scene___settings.html#a76b13e5709a76c73b7768859555f83bc" title="Initial control scheme." alt="" coords="233,85,372,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="677,98,645,97,441,97,372,99,372,94,441,92,645,92,678,93"/>
+<area shape="rect" id="Node000004" href="$class_scene___play.html#aec1850ef08cb92b5c6db6cba02dec399" title=" " alt="" coords="466,5,621,32"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="724,82,644,53,589,35,591,30,646,48,726,77"/>
+<area shape="rect" id="Node000006" href="$class_scene___settings.html#a4da6738ad070d4fb99ce3675e636b160" title="pure virtual method for the system of actions depending on the scene (Jump, move right,..." alt="" coords="212,169,393,196"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="741,122,697,145,646,164,581,177,515,185,394,189,394,184,514,180,580,172,645,159,695,140,739,118"/>
+<area shape="rect" id="Node000007" href="$class_scene___settings.html#a2b9b180644b36c931eb7c47888ede9c4" title="method for updating the volume slider width" alt="" coords="441,107,645,149"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="679,114,646,118,646,112,678,108"/>
+<area shape="rect" id="Node000003" href="$class_scene___settings.html#aed9876c261637e7aa4f25c1c39261033" title="constructor for play scene that receives the pointer to the game engine" alt="" coords="5,77,164,120"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="218,101,164,101,164,96,218,96"/>
+<area shape="rect" id="Node000005" href="$class_scene___play.html#a416e630ef10fac7e34855babea499700" title="constructor that receives a pointer to the game engine" alt="" coords="233,5,372,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="450,21,372,21,372,16,450,16"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="425,116,372,110,372,104,426,111"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="432,156,365,171,364,166,431,151"/>
+</map>

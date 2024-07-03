@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="returns a reference to the assets object" alt="" coords="924,309,1070,336"/>
 <area shape="rect" id="Node000002" href="$class_scene___menu.html#ac333bd8b02726ee6db5706219e70073e" title="index for the backgrounds in the menu" alt="" coords="706,5,828,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="988,295,977,243,955,178,922,110,900,80,874,53,852,39,828,29,830,24,855,34,877,49,904,76,926,107,960,175,982,241,994,294"/>
-<area shape="rect" id="Node000004" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title="definition of pure virtual method from the base class" alt="" coords="244,107,360,133"/>
+<area shape="rect" id="Node000004" href="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b" title=" " alt="" coords="244,107,360,133"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="988,295,975,249,954,193,921,139,899,116,874,97,815,67,761,51,712,47,663,51,559,75,498,87,429,97,360,109,359,103,429,92,497,82,558,69,662,46,712,42,762,46,817,62,877,92,903,112,925,136,959,191,981,247,993,293"/>
 <area shape="rect" id="Node000006" href="$class_scene___settings.html#a76b13e5709a76c73b7768859555f83bc" title="Initial control scheme." alt="" coords="451,415,589,441"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="969,348,927,377,877,401,801,420,724,431,651,435,589,435,589,429,651,429,724,425,800,415,875,396,925,372,966,344"/>
@@ -24,7 +24,7 @@
 <area shape="poly" id="edge21_Node000001_Node000018" title=" " alt="" coords="992,352,980,399,957,458,924,518,902,545,877,569,853,582,851,578,874,565,898,542,919,515,952,456,974,398,987,350"/>
 <area shape="rect" id="Node000020" href="$class_scene___shop.html#a97f628fd17e0581cc242acc186f9b804" title="pure virtual method to render everything in the window in every frame=" alt="" coords="691,629,843,656"/>
 <area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="995,352,985,409,965,481,949,519,930,556,906,590,877,619,844,637,842,632,874,615,902,586,925,553,944,517,960,479,980,408,990,351"/>
-<area shape="rect" id="Node000022" href="$class_scene___settings.html#a2b9b180644b36c931eb7c47888ede9c4" title=" " alt="" coords="665,461,869,504"/>
+<area shape="rect" id="Node000022" href="$class_scene___settings.html#a2b9b180644b36c931eb7c47888ede9c4" title="method for updating the volume slider width" alt="" coords="665,461,869,504"/>
 <area shape="poly" id="edge25_Node000001_Node000022" title=" " alt="" coords="978,350,934,398,907,423,877,445,841,463,839,458,874,440,904,419,931,394,974,346"/>
 <area shape="rect" id="Node000003" href="$class_scene___menu.html#a0d71fab24a893ff0b270271180186b65" title="constructor of the scene menu that receives a pointer to the game engine" alt="" coords="429,5,610,32"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="690,21,611,21,611,16,690,16"/>

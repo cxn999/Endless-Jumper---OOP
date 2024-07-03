@@ -11,8 +11,7 @@ include graphics library
 
 
 
-Inheritance diagram for Scene\+\_\+\+Settings\+:
-\nopagebreak
+Inheritance diagram for Scene\+\_\+\+Settings\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -65,9 +64,9 @@ void \mbox{\hyperlink{class_scene___settings_a25488bed750f7bbaed6fb7b1a31f6629}{
 void \mbox{\hyperlink{class_scene___settings_a4da6738ad070d4fb99ce3675e636b160}{s\+Do\+Action}} (const \mbox{\hyperlink{class_action}{Action}} \&action)
 \begin{DoxyCompactList}\small\item\em pure virtual method for the system of actions depending on the scene (Jump, move right, left, etc) \end{DoxyCompactList}\item 
 sf\+::\+Color \mbox{\hyperlink{class_scene___settings_a7ab9de3dc8e935feeb5e637690adeb6b}{get\+Volume\+Color}} (float volume)
-\begin{DoxyCompactList}\small\item\em CARLOS COMENTA ACA. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em method for getting the color of the volume slider depending on the volume \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene___settings_a2b9b180644b36c931eb7c47888ede9c4}{update\+Volume\+Slider}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em method for updating the volume slider width \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -92,7 +91,7 @@ sf\+::\+Text \mbox{\hyperlink{class_scene___settings_a1631f8bf55af3b9ffbe97461e0
 float \mbox{\hyperlink{class_scene___settings_ae13515467449a7bbd64a961f1883dbf3}{m\+\_\+volume}} = 50.\+0f
 \begin{DoxyCompactList}\small\item\em State variables. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_scene___settings_a618a2b69200b84d4f52ecc69058abaf3}{m\+\_\+music\+On}} = true
-\begin{DoxyCompactList}\small\item\em Initial volume level. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Initial volume level deprecated doesnt function anymore. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_scene___settings_a07693a7981f51be5eb4f6994adcbb8a0}{m\+\_\+use\+WASD}} = true
 \begin{DoxyCompactList}\small\item\em Initial music state. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_scene}{Scene}}}
@@ -145,7 +144,7 @@ sf\+::\+Color Scene\+\_\+\+Settings\+::get\+Volume\+Color (\begin{DoxyParamCapti
 
 
 
-CARLOS COMENTA ACA. 
+method for getting the color of the volume slider depending on the volume 
 
 Here is the caller graph for this function\+:
 \nopagebreak
@@ -173,8 +172,7 @@ pure virtual method of the base class Here is the call graph for this function\+
 \includegraphics[width=350pt]{class_scene___settings_a76b13e5709a76c73b7768859555f83bc_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -203,8 +201,7 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{class_scene___settings_a25488bed750f7bbaed6fb7b1a31f6629_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -247,16 +244,14 @@ virtual method of the base class
 
 Implements \mbox{\hyperlink{class_scene_a081ddb41b1f3c25080308dd0d21ebb5b}{Scene}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_scene___settings_adef765b0de1cab51176913b143c6f0bc_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -277,8 +272,7 @@ pure virtual method to update the frame depending on the scene
 
 Implements \mbox{\hyperlink{class_scene_a7faff47f5c1b1ebc986f768c9b9732ec}{Scene}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -291,7 +285,12 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_scene___settings_a2b9b180644b36c931eb7c47888ede9c4} 
 void Scene\+\_\+\+Settings\+::update\+Volume\+Slider (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-Here is the call graph for this function\+:\nopagebreak
+
+
+method for updating the volume slider width 
+
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -343,7 +342,7 @@ bool Scene\+\_\+\+Settings\+::m\+\_\+music\+On = true\hspace{0.3cm}{\ttfamily [p
 
 
 
-Initial volume level. 
+Initial volume level deprecated doesnt function anymore. 
 
 \Hypertarget{class_scene___settings_a65ff5084d877df0b33af4b1ef05f33f1}\index{Scene\_Settings@{Scene\_Settings}!m\_musicToggleText@{m\_musicToggleText}}
 \index{m\_musicToggleText@{m\_musicToggleText}!Scene\_Settings@{Scene\_Settings}}

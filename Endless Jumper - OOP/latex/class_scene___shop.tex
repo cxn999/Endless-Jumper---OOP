@@ -58,21 +58,41 @@ void \mbox{\hyperlink{class_scene___shop_a27666a0b2a6fd5aec323a22c873a25f0}{upda
 void \mbox{\hyperlink{class_scene___shop_a1c1e297ef2b0aaa30d371242936aebae}{on\+End}} ()
 \begin{DoxyCompactList}\small\item\em pause the game \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_scene___shop_a0fc8b233f8270161214ef4721e338db3}{s\+Do\+Action}} (const \mbox{\hyperlink{class_action}{Action}} \&action)
-\begin{DoxyCompactList}\small\item\em pure virtual method for the system of actions depending on the scene (Jump, move right, left, etc) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em pure virtual method for the system of actions depending on the scene (Jump, move right, left, etc) \end{DoxyCompactList}\item 
+sf\+::\+Text \mbox{\hyperlink{class_scene___shop_a38b0e6f7abe0771885d5b231014e4a8b}{text\+Config}} (const std\+::string \&string\+For\+Text, sf\+::\+Vector2f position, int size, sf\+::\+Font \&font)
+\item 
+sf\+::\+Color \mbox{\hyperlink{class_scene___shop_a2ce90055fcb59814fecd3f77c9a3d476}{get\+Dynamic\+Color}} (float time)
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-sf\+::\+Text \mbox{\hyperlink{class_scene___shop_afd704a836c5fba60c55c6a03271f49c3}{m\+\_\+title\+Text}}
+sf\+::\+View \mbox{\hyperlink{class_scene___shop_ae6f72dc485fc956f1e7aeaa7e1fda2e6}{background\+View}}
 \item 
-std\+::vector$<$ sf\+::\+Text $>$ \mbox{\hyperlink{class_scene___shop_a6585e571d5fed8a9fdc6a9ff67e77a67}{m\+\_\+texts}}
+sf\+::\+View \mbox{\hyperlink{class_scene___shop_a9c74c1af42f7cae541a329f2d0040648}{text\+View}}
 \item 
-std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_scene___shop_ab443cd21d9a335477f3d96728c978afb}{m\+\_\+menu\+Strings}}
+sf\+::\+Texture \mbox{\hyperlink{class_scene___shop_a3c12fef843fe77209d3f2b720309e7cc}{background\+Texture}}
 \item 
-std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_scene___shop_a678cf5e23790c895dd122832226c6f13}{m\+\_\+level\+Paths}}
+sf\+::\+Texture \mbox{\hyperlink{class_scene___shop_ac70b929b442c9d6d3494547da6455bb8}{idle\+Texture}}
 \item 
-sf\+::\+Text \mbox{\hyperlink{class_scene___shop_a7cc0d9ed813ae60b822ee752cc884fda}{m\+\_\+menu\+Text}}
+sf\+::\+Texture \mbox{\hyperlink{class_scene___shop_af5cb17bfdd84f3c9cb484233579653e2}{venom}}
 \item 
-int \mbox{\hyperlink{class_scene___shop_a6da63f098bc0cb194734d3fea45c14a6}{m\+\_\+selected\+Menu\+Index}} = 0
+sf\+::\+Sprite \mbox{\hyperlink{class_scene___shop_ac06c1b659881af456079802d7211cc28}{background}}
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_scene___shop_ac5001986ff46d97465c930c864e5a816}{player\+Idle}} \mbox{[}6\mbox{]}
+\item 
+std\+::vector$<$ sf\+::\+Vector2f $>$ \mbox{\hyperlink{class_scene___shop_a730b93ad684b7b364fb49b16f0053d73}{select\+Position}}
+\item 
+std\+::vector$<$ sf\+::\+Text $>$ \mbox{\hyperlink{class_scene___shop_accf64edda6186806b3d6cf4318d7e929}{texts}}
+\item 
+int \mbox{\hyperlink{class_scene___shop_a13a9221bb473d6427a653da2c30e32fe}{select\+Position\+Index}} = 0
+\item 
+sf\+::\+Rectangle\+Shape \mbox{\hyperlink{class_scene___shop_a5fea6a742bcff40626502c4f5b1695ad}{select}}
+\item 
+bool \mbox{\hyperlink{class_scene___shop_a6a05f3d720242daa36572483e3102e31}{skin\+Purchased}} \mbox{[}5\mbox{]} = \{ false, false, false, false, false \}
+\item 
+bool \mbox{\hyperlink{class_scene___shop_a2ccbd6ac9b1d91102710dd9abb263b1b}{is\+Equipped}} \mbox{[}6\mbox{]} = \{ true, false, false, false, false, false \}
+\item 
+sf\+::\+Clock \mbox{\hyperlink{class_scene___shop_aff493a623052645f6a3b4dfee01502ad}{clock}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_scene}{Scene}}}
 \begin{DoxyCompactItemize}
@@ -107,6 +127,20 @@ Here is the call graph for this function\+:
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_scene___shop_a2ce90055fcb59814fecd3f77c9a3d476}\index{Scene\_Shop@{Scene\_Shop}!getDynamicColor@{getDynamicColor}}
+\index{getDynamicColor@{getDynamicColor}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{getDynamicColor()}{getDynamicColor()}}
+{\footnotesize\ttfamily \label{class_scene___shop_a2ce90055fcb59814fecd3f77c9a3d476} 
+sf\+::\+Color Scene\+\_\+\+Shop\+::get\+Dynamic\+Color (\begin{DoxyParamCaption}\item[{float}]{time}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene___shop_a2ce90055fcb59814fecd3f77c9a3d476_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_scene___shop_a24a760af748578f3edda5b83a766ff9a}\index{Scene\_Shop@{Scene\_Shop}!init@{init}}
 \index{init@{init}!Scene\_Shop@{Scene\_Shop}}
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
@@ -150,8 +184,7 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{class_scene___shop_a1c1e297ef2b0aaa30d371242936aebae_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -199,15 +232,28 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=339pt]{class_scene___shop_a97f628fd17e0581cc242acc186f9b804_cgraph}
+\includegraphics[width=350pt]{class_scene___shop_a97f628fd17e0581cc242acc186f9b804_cgraph}
 \end{center}
 \end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_scene___shop_a97f628fd17e0581cc242acc186f9b804_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_scene___shop_a38b0e6f7abe0771885d5b231014e4a8b}\index{Scene\_Shop@{Scene\_Shop}!textConfig@{textConfig}}
+\index{textConfig@{textConfig}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{textConfig()}{textConfig()}}
+{\footnotesize\ttfamily \label{class_scene___shop_a38b0e6f7abe0771885d5b231014e4a8b} 
+sf\+::\+Text Scene\+\_\+\+Shop\+::text\+Config (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{string\+For\+Text}{, }\item[{sf\+::\+Vector2f}]{position}{, }\item[{int}]{size}{, }\item[{sf\+::\+Font \&}]{font}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
 Here is the caller graph for this function\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_scene___shop_a97f628fd17e0581cc242acc186f9b804_icgraph}
+\includegraphics[width=350pt]{class_scene___shop_a38b0e6f7abe0771885d5b231014e4a8b_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_scene___shop_a27666a0b2a6fd5aec323a22c873a25f0}\index{Scene\_Shop@{Scene\_Shop}!update@{update}}
@@ -235,41 +281,89 @@ Here is the call graph for this function\+:
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{class_scene___shop_a678cf5e23790c895dd122832226c6f13}\index{Scene\_Shop@{Scene\_Shop}!m\_levelPaths@{m\_levelPaths}}
-\index{m\_levelPaths@{m\_levelPaths}!Scene\_Shop@{Scene\_Shop}}
-\doxysubsubsection{\texorpdfstring{m\_levelPaths}{m\_levelPaths}}
-{\footnotesize\ttfamily \label{class_scene___shop_a678cf5e23790c895dd122832226c6f13} 
-std\+::vector$<$std\+::string$>$ Scene\+\_\+\+Shop\+::m\+\_\+level\+Paths\hspace{0.3cm}{\ttfamily [protected]}}
+\Hypertarget{class_scene___shop_ac06c1b659881af456079802d7211cc28}\index{Scene\_Shop@{Scene\_Shop}!background@{background}}
+\index{background@{background}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{background}{background}}
+{\footnotesize\ttfamily \label{class_scene___shop_ac06c1b659881af456079802d7211cc28} 
+sf\+::\+Sprite Scene\+\_\+\+Shop\+::background\hspace{0.3cm}{\ttfamily [protected]}}
 
-\Hypertarget{class_scene___shop_ab443cd21d9a335477f3d96728c978afb}\index{Scene\_Shop@{Scene\_Shop}!m\_menuStrings@{m\_menuStrings}}
-\index{m\_menuStrings@{m\_menuStrings}!Scene\_Shop@{Scene\_Shop}}
-\doxysubsubsection{\texorpdfstring{m\_menuStrings}{m\_menuStrings}}
-{\footnotesize\ttfamily \label{class_scene___shop_ab443cd21d9a335477f3d96728c978afb} 
-std\+::vector$<$std\+::string$>$ Scene\+\_\+\+Shop\+::m\+\_\+menu\+Strings\hspace{0.3cm}{\ttfamily [protected]}}
+\Hypertarget{class_scene___shop_a3c12fef843fe77209d3f2b720309e7cc}\index{Scene\_Shop@{Scene\_Shop}!backgroundTexture@{backgroundTexture}}
+\index{backgroundTexture@{backgroundTexture}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{backgroundTexture}{backgroundTexture}}
+{\footnotesize\ttfamily \label{class_scene___shop_a3c12fef843fe77209d3f2b720309e7cc} 
+sf\+::\+Texture Scene\+\_\+\+Shop\+::background\+Texture\hspace{0.3cm}{\ttfamily [protected]}}
 
-\Hypertarget{class_scene___shop_a7cc0d9ed813ae60b822ee752cc884fda}\index{Scene\_Shop@{Scene\_Shop}!m\_menuText@{m\_menuText}}
-\index{m\_menuText@{m\_menuText}!Scene\_Shop@{Scene\_Shop}}
-\doxysubsubsection{\texorpdfstring{m\_menuText}{m\_menuText}}
-{\footnotesize\ttfamily \label{class_scene___shop_a7cc0d9ed813ae60b822ee752cc884fda} 
-sf\+::\+Text Scene\+\_\+\+Shop\+::m\+\_\+menu\+Text\hspace{0.3cm}{\ttfamily [protected]}}
+\Hypertarget{class_scene___shop_ae6f72dc485fc956f1e7aeaa7e1fda2e6}\index{Scene\_Shop@{Scene\_Shop}!backgroundView@{backgroundView}}
+\index{backgroundView@{backgroundView}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{backgroundView}{backgroundView}}
+{\footnotesize\ttfamily \label{class_scene___shop_ae6f72dc485fc956f1e7aeaa7e1fda2e6} 
+sf\+::\+View Scene\+\_\+\+Shop\+::background\+View\hspace{0.3cm}{\ttfamily [protected]}}
 
-\Hypertarget{class_scene___shop_a6da63f098bc0cb194734d3fea45c14a6}\index{Scene\_Shop@{Scene\_Shop}!m\_selectedMenuIndex@{m\_selectedMenuIndex}}
-\index{m\_selectedMenuIndex@{m\_selectedMenuIndex}!Scene\_Shop@{Scene\_Shop}}
-\doxysubsubsection{\texorpdfstring{m\_selectedMenuIndex}{m\_selectedMenuIndex}}
-{\footnotesize\ttfamily \label{class_scene___shop_a6da63f098bc0cb194734d3fea45c14a6} 
-int Scene\+\_\+\+Shop\+::m\+\_\+selected\+Menu\+Index = 0\hspace{0.3cm}{\ttfamily [protected]}}
+\Hypertarget{class_scene___shop_aff493a623052645f6a3b4dfee01502ad}\index{Scene\_Shop@{Scene\_Shop}!clock@{clock}}
+\index{clock@{clock}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{clock}{clock}}
+{\footnotesize\ttfamily \label{class_scene___shop_aff493a623052645f6a3b4dfee01502ad} 
+sf\+::\+Clock Scene\+\_\+\+Shop\+::clock\hspace{0.3cm}{\ttfamily [protected]}}
 
-\Hypertarget{class_scene___shop_a6585e571d5fed8a9fdc6a9ff67e77a67}\index{Scene\_Shop@{Scene\_Shop}!m\_texts@{m\_texts}}
-\index{m\_texts@{m\_texts}!Scene\_Shop@{Scene\_Shop}}
-\doxysubsubsection{\texorpdfstring{m\_texts}{m\_texts}}
-{\footnotesize\ttfamily \label{class_scene___shop_a6585e571d5fed8a9fdc6a9ff67e77a67} 
-std\+::vector$<$sf\+::\+Text$>$ Scene\+\_\+\+Shop\+::m\+\_\+texts\hspace{0.3cm}{\ttfamily [protected]}}
+\Hypertarget{class_scene___shop_ac70b929b442c9d6d3494547da6455bb8}\index{Scene\_Shop@{Scene\_Shop}!idleTexture@{idleTexture}}
+\index{idleTexture@{idleTexture}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{idleTexture}{idleTexture}}
+{\footnotesize\ttfamily \label{class_scene___shop_ac70b929b442c9d6d3494547da6455bb8} 
+sf\+::\+Texture Scene\+\_\+\+Shop\+::idle\+Texture\hspace{0.3cm}{\ttfamily [protected]}}
 
-\Hypertarget{class_scene___shop_afd704a836c5fba60c55c6a03271f49c3}\index{Scene\_Shop@{Scene\_Shop}!m\_titleText@{m\_titleText}}
-\index{m\_titleText@{m\_titleText}!Scene\_Shop@{Scene\_Shop}}
-\doxysubsubsection{\texorpdfstring{m\_titleText}{m\_titleText}}
-{\footnotesize\ttfamily \label{class_scene___shop_afd704a836c5fba60c55c6a03271f49c3} 
-sf\+::\+Text Scene\+\_\+\+Shop\+::m\+\_\+title\+Text\hspace{0.3cm}{\ttfamily [protected]}}
+\Hypertarget{class_scene___shop_a2ccbd6ac9b1d91102710dd9abb263b1b}\index{Scene\_Shop@{Scene\_Shop}!isEquipped@{isEquipped}}
+\index{isEquipped@{isEquipped}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{isEquipped}{isEquipped}}
+{\footnotesize\ttfamily \label{class_scene___shop_a2ccbd6ac9b1d91102710dd9abb263b1b} 
+bool Scene\+\_\+\+Shop\+::is\+Equipped\mbox{[}6\mbox{]} = \{ true, false, false, false, false, false \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_ac5001986ff46d97465c930c864e5a816}\index{Scene\_Shop@{Scene\_Shop}!playerIdle@{playerIdle}}
+\index{playerIdle@{playerIdle}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{playerIdle}{playerIdle}}
+{\footnotesize\ttfamily \label{class_scene___shop_ac5001986ff46d97465c930c864e5a816} 
+sf\+::\+Rectangle\+Shape Scene\+\_\+\+Shop\+::player\+Idle\mbox{[}6\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_a5fea6a742bcff40626502c4f5b1695ad}\index{Scene\_Shop@{Scene\_Shop}!select@{select}}
+\index{select@{select}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{select}{select}}
+{\footnotesize\ttfamily \label{class_scene___shop_a5fea6a742bcff40626502c4f5b1695ad} 
+sf\+::\+Rectangle\+Shape Scene\+\_\+\+Shop\+::select\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_a730b93ad684b7b364fb49b16f0053d73}\index{Scene\_Shop@{Scene\_Shop}!selectPosition@{selectPosition}}
+\index{selectPosition@{selectPosition}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{selectPosition}{selectPosition}}
+{\footnotesize\ttfamily \label{class_scene___shop_a730b93ad684b7b364fb49b16f0053d73} 
+std\+::vector$<$sf\+::\+Vector2f$>$ Scene\+\_\+\+Shop\+::select\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_a13a9221bb473d6427a653da2c30e32fe}\index{Scene\_Shop@{Scene\_Shop}!selectPositionIndex@{selectPositionIndex}}
+\index{selectPositionIndex@{selectPositionIndex}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{selectPositionIndex}{selectPositionIndex}}
+{\footnotesize\ttfamily \label{class_scene___shop_a13a9221bb473d6427a653da2c30e32fe} 
+int Scene\+\_\+\+Shop\+::select\+Position\+Index = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_a6a05f3d720242daa36572483e3102e31}\index{Scene\_Shop@{Scene\_Shop}!skinPurchased@{skinPurchased}}
+\index{skinPurchased@{skinPurchased}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{skinPurchased}{skinPurchased}}
+{\footnotesize\ttfamily \label{class_scene___shop_a6a05f3d720242daa36572483e3102e31} 
+bool Scene\+\_\+\+Shop\+::skin\+Purchased\mbox{[}5\mbox{]} = \{ false, false, false, false, false \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_accf64edda6186806b3d6cf4318d7e929}\index{Scene\_Shop@{Scene\_Shop}!texts@{texts}}
+\index{texts@{texts}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{texts}{texts}}
+{\footnotesize\ttfamily \label{class_scene___shop_accf64edda6186806b3d6cf4318d7e929} 
+std\+::vector$<$sf\+::\+Text$>$ Scene\+\_\+\+Shop\+::texts\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_a9c74c1af42f7cae541a329f2d0040648}\index{Scene\_Shop@{Scene\_Shop}!textView@{textView}}
+\index{textView@{textView}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{textView}{textView}}
+{\footnotesize\ttfamily \label{class_scene___shop_a9c74c1af42f7cae541a329f2d0040648} 
+sf\+::\+View Scene\+\_\+\+Shop\+::text\+View\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_scene___shop_af5cb17bfdd84f3c9cb484233579653e2}\index{Scene\_Shop@{Scene\_Shop}!venom@{venom}}
+\index{venom@{venom}!Scene\_Shop@{Scene\_Shop}}
+\doxysubsubsection{\texorpdfstring{venom}{venom}}
+{\footnotesize\ttfamily \label{class_scene___shop_af5cb17bfdd84f3c9cb484233579653e2} 
+sf\+::\+Texture Scene\+\_\+\+Shop\+::venom\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

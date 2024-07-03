@@ -11,7 +11,7 @@ digraph "Assets::getFont"
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="Scene_Menu::Scene_Menu",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___menu.html#a0d71fab24a893ff0b270271180186b65",tooltip="constructor of the scene menu that receives a pointer to the game engine"];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="Scene_Play::init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b",tooltip="definition of pure virtual method from the base class"];
+  Node4 [id="Node000004",label="Scene_Play::init",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a21c4cf4a84b6644e7c82f077c3ed793b",tooltip=" "];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="Scene_Play::Scene_Play",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a33169f4694573d31d2b44d192dbd0e5c",tooltip="shared pointer to the player"];
   Node1 -> Node6 [id="edge5_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -26,4 +26,8 @@ digraph "Assets::getFont"
   Node10 [id="Node000010",label="Scene_Play::sRender",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2",tooltip="pure virtual method to render everything in the window in every frame="];
   Node10 -> Node11 [id="edge10_Node000010_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node11 [id="Node000011",label="Scene_Play::update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___play.html#a416e630ef10fac7e34855babea499700",tooltip="constructor that receives a pointer to the game engine"];
+  Node1 -> Node12 [id="edge11_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="Scene_Shop::sRender",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___shop.html#a97f628fd17e0581cc242acc186f9b804",tooltip="pure virtual method to render everything in the window in every frame="];
+  Node12 -> Node13 [id="edge12_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="Scene_Shop::update",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_scene___shop.html#a27666a0b2a6fd5aec323a22c873a25f0",tooltip="constructor that receives a pointer to the game engine"];
 }

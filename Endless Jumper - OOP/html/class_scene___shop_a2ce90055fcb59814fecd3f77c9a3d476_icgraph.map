@@ -1,0 +1,7 @@
+<map id="Scene_Shop::getDynamicColor" name="Scene_Shop::getDynamicColor">
+<area shape="rect" id="Node000001" title=" " alt="" coords="395,5,597,32"/>
+<area shape="rect" id="Node000002" href="$class_scene___shop.html#a97f628fd17e0581cc242acc186f9b804" title="pure virtual method to render everything in the window in every frame=" alt="" coords="196,5,347,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="379,21,348,21,348,16,379,16"/>
+<area shape="rect" id="Node000003" href="$class_scene___shop.html#a27666a0b2a6fd5aec323a22c873a25f0" title="constructor that receives a pointer to the game engine" alt="" coords="5,5,148,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="180,21,148,21,148,16,180,16"/>
+</map>

@@ -1,0 +1,26 @@
+<map id="GameEngine::stopMusic" name="GameEngine::stopMusic">
+<area shape="rect" id="Node000001" title=" " alt="" coords="866,107,1030,133"/>
+<area shape="rect" id="Node000002" href="$class_game_engine.html#a41a16489bd3b05403545a700f7f9e88e" title="Change scene" alt="" coords="634,107,818,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="850,123,818,123,818,117,850,117"/>
+<area shape="rect" id="Node000003" href="$class_scene___play.html#a608db7a88064f779d2a3a42f47af3958" title="pause the game" alt="" coords="436,56,572,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="649,105,565,86,566,81,650,100"/>
+<area shape="rect" id="Node000005" href="$class_scene___settings.html#a25488bed750f7bbaed6fb7b1a31f6629" title="pause the game" alt="" coords="425,5,583,32"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="689,101,640,73,585,46,555,35,556,30,587,42,643,69,691,96"/>
+<area shape="rect" id="Node000007" href="$class_scene___shop.html#a1c1e297ef2b0aaa30d371242936aebae" title="pause the game" alt="" coords="434,157,574,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="650,140,566,159,565,154,649,135"/>
+<area shape="rect" id="Node000009" href="$class_scene___play.html#a130605feff19608e5eeff9306c05b5c5" title=" " alt="" coords="437,107,571,133"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="619,123,571,123,571,117,619,117"/>
+<area shape="rect" id="Node000012" href="$class_scene___menu.html#a1293fb9b99a662d7fa6416fbcf857541" title="pure virtual method for the system of actions depending on the scene (Jump, move right,..." alt="" coords="421,208,586,235"/>
+<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="691,144,643,171,587,198,556,210,555,205,585,194,640,167,689,139"/>
+<area shape="rect" id="Node000004" href="$class_scene___play.html#a34a74b594e4c984c13462c71cc5d9962" title="pure virtual method for the system of actions depending on the scene (Jump, move right,..." alt="" coords="203,56,362,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="420,72,362,72,362,67,420,67"/>
+<area shape="rect" id="Node000006" href="$class_scene___settings.html#a4da6738ad070d4fb99ce3675e636b160" title="pure virtual method for the system of actions depending on the scene (Jump, move right,..." alt="" coords="192,5,373,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="409,21,373,21,373,16,409,16"/>
+<area shape="rect" id="Node000008" href="$class_scene___shop.html#a0fc8b233f8270161214ef4721e338db3" title="pure virtual method for the system of actions depending on the scene (Jump, move right,..." alt="" coords="201,157,364,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="418,173,365,173,365,168,418,168"/>
+<area shape="poly" id="edge9_Node000009_Node000004" title=" " alt="" coords="427,105,343,86,344,81,428,100"/>
+<area shape="rect" id="Node000010" href="$class_scene___play.html#a6ab634d841861b45bb684b6e8ce899a2" title="pure virtual method to render everything in the window in every frame=" alt="" coords="209,107,356,133"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="421,123,357,123,357,117,421,117"/>
+<area shape="rect" id="Node000011" href="$class_scene___play.html#a416e630ef10fac7e34855babea499700" title="constructor that receives a pointer to the game engine" alt="" coords="5,107,144,133"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="193,123,144,123,144,117,193,117"/>
+</map>

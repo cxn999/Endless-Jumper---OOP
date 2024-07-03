@@ -6,7 +6,7 @@
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="689,101,640,73,585,46,555,35,556,30,587,42,643,69,691,96"/>
 <area shape="rect" id="Node000006" href="$class_scene___shop.html#a1c1e297ef2b0aaa30d371242936aebae" title="pause the game" alt="" coords="434,157,574,184"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="650,140,566,159,565,154,649,135"/>
-<area shape="rect" id="Node000008" href="$class_scene___play.html#a130605feff19608e5eeff9306c05b5c5" title="replay method" alt="" coords="437,107,571,133"/>
+<area shape="rect" id="Node000008" href="$class_scene___play.html#a130605feff19608e5eeff9306c05b5c5" title=" " alt="" coords="437,107,571,133"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="619,123,571,123,571,117,619,117"/>
 <area shape="rect" id="Node000011" href="$class_scene___menu.html#a1293fb9b99a662d7fa6416fbcf857541" title="pure virtual method for the system of actions depending on the scene (Jump, move right,..." alt="" coords="421,208,586,235"/>
 <area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="691,144,643,171,587,198,556,210,555,205,585,194,640,167,689,139"/>
