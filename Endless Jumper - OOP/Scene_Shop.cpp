@@ -148,6 +148,8 @@ void Scene_Shop::sRender() { //VISUAL
 	const float keyCooldown = 0.1f; // 200 milliseconds
 
 	//Handling input block
+	auto& moveSound = m_game->getAssets().getSound("clickSound");
+	auto& enterSound = m_game->getAssets().getSound("enterSound");
 
 	if (keyCooldownClock.getElapsedTime().asSeconds() >= keyCooldown) {
 		switch (selectPositionIndex)
@@ -155,12 +157,20 @@ void Scene_Shop::sRender() { //VISUAL
 		case 0:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
+				
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
+
+
 				select.setPosition(selectPosition[1]);
 				selectPositionIndex = 1;
 				keyCooldownClock.restart();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 			{
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
+
 				select.setPosition(selectPosition[3]);
 				selectPositionIndex = 3;
 				keyCooldownClock.restart();
@@ -176,12 +186,15 @@ void Scene_Shop::sRender() { //VISUAL
 					isEquipped[0] = true;
 					m_game->m_equippedSkin = 0;
 				}
-				
+				enterSound.setVolume(m_game->getVolume());
+				enterSound.play();
 			}
 			break;
 		case 1:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[2]);
 				selectPositionIndex = 2;
 				keyCooldownClock.restart();
@@ -193,7 +206,9 @@ void Scene_Shop::sRender() { //VISUAL
 				keyCooldownClock.restart();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-			{
+			{	
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[0]);
 				selectPositionIndex = 0;
 				keyCooldownClock.restart();
@@ -219,18 +234,24 @@ void Scene_Shop::sRender() { //VISUAL
 					isEquipped[1] = true;
 					m_game->m_equippedSkin = 1;
 				}
+				enterSound.setVolume(m_game->getVolume());
+				enterSound.play();
 
 			}
 			break;
 		case 2:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-			{
+			{	
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[1]);
 				selectPositionIndex = 1;
 				keyCooldownClock.restart();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-			{
+			{	
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[5]);
 				selectPositionIndex = 5;
 				keyCooldownClock.restart();
@@ -256,17 +277,23 @@ void Scene_Shop::sRender() { //VISUAL
 					isEquipped[2] = true;
 					m_game->m_equippedSkin = 2;
 				}
+				enterSound.setVolume(m_game->getVolume());
+				enterSound.play();
 			}
 			break;
 		case 3:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[4]);
 				selectPositionIndex = 4;
 				keyCooldownClock.restart();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-			{
+			{	
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[0]);
 				selectPositionIndex = 0;
 				keyCooldownClock.restart();
@@ -292,23 +319,31 @@ void Scene_Shop::sRender() { //VISUAL
 					isEquipped[3] = true;
 					m_game->m_equippedSkin = 3;
 				}
+				enterSound.setVolume(m_game->getVolume());
+				enterSound.play();
 			}
 			break;
 		case 4:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 			{
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[5]);
 				selectPositionIndex = 5;
 				keyCooldownClock.restart();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[1]);
 				selectPositionIndex = 1;
 				keyCooldownClock.restart();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[3]);
 				selectPositionIndex = 3;
 				keyCooldownClock.restart();
@@ -334,17 +369,23 @@ void Scene_Shop::sRender() { //VISUAL
 					isEquipped[4] = true;
 					m_game->m_equippedSkin = 4;
 				}
+				enterSound.setVolume(m_game->getVolume());
+				enterSound.play();
 			}
 			break;
 		case 5:
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 			{
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[4]);
 				selectPositionIndex = 4;
 				keyCooldownClock.restart();
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 			{
+				moveSound.setVolume(m_game->getVolume());
+				moveSound.play();
 				select.setPosition(selectPosition[2]);
 				selectPositionIndex = 2;
 				keyCooldownClock.restart();
@@ -370,6 +411,8 @@ void Scene_Shop::sRender() { //VISUAL
 					isEquipped[5] = true;
 					m_game->m_equippedSkin = 5;
 				}
+				enterSound.setVolume(m_game->getVolume());
+				enterSound.play();
 			}
 			break;
 		}
