@@ -78,21 +78,32 @@ void Scene_Menu::onEnd() {
 
 void Scene_Menu::sDoAction(const Action& action) {
 	if (action.type() == "START") {
+		auto& clickSound = m_game->getAssets().getSound("clickSound");
+		auto& enterSound = m_game->getAssets().getSound("enterSound");
 		if (action.name() == "PAUSE") { setPaused(!m_paused); }
 		else if (action.name() == "QUIT") { onEnd(); }
 		else if (action.name() == "ENTER") {
+			enterSound.setVolume(m_game->getVolume());
 			if (m_selectedMenuIndex == 0) {
 				m_game->changeScene("PLAY", std::make_shared<Scene_Play>(m_game), true);
 			}
 			else if (m_selectedMenuIndex == 1) {
+				enterSound.play();
 				m_game->changeScene("SHOP", std::make_shared<Scene_Shop>(m_game), true);
 			}
 			else if (m_selectedMenuIndex == 2) {
+				enterSound.play();
 				m_game->changeScene("SETTINGS", std::make_shared<Scene_Settings>(m_game), true);
 			}
 		}
-		else if (action.name() == "DOWN") { m_selectedMenuIndex = (m_selectedMenuIndex + 1) % 3; }
-		else if (action.name() == "UP") { m_selectedMenuIndex = (m_selectedMenuIndex + 2) % 3; }
+		else if (action.name() == "DOWN") { m_selectedMenuIndex = (m_selectedMenuIndex + 1) % 3; 
+			clickSound.setVolume(m_game->getVolume());
+			clickSound.play();
+		}
+		else if (action.name() == "UP") { m_selectedMenuIndex = (m_selectedMenuIndex + 2) % 3; 
+			clickSound.setVolume(m_game->getVolume());
+			clickSound.play();
+		}
 	}
 }
 

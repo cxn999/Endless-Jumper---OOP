@@ -93,6 +93,8 @@ Animation playerIdle mainIdle 11 6
 Animation playerJump mainJump 1 0
 Animation playerFall mainFall 1 0
 SoundEffects jumpSound Assets\SoundEffects\cartoon_jump.ogg
+SoundEffects clickSound Assets\SoundEffects\click1.ogg
+SoundEffects enterSound Assets\SoundEffects\enterSound.ogg
 Music play Assets\Musics\playfulmusic8.ogg
 Music menu Assets\Musics\playful_menu2.ogg
 Animation shopBackground shopBG 1 0
