@@ -59,6 +59,10 @@ void Scene_Settings::init() {
 	// Constant for the fontSize of the levels
 	int levels_fontSize = 50;
 
+	//background image texture
+	backgroundImage = m_game->getAssets().getTexture("settingsBG");
+	backgroundImage.setRepeated(true);
+
 	// Add levels text to the vector
 	m_texts.push_back(sf::Text("Volume", f, levels_fontSize));
 	m_texts.push_back(sf::Text("Music", f, levels_fontSize));
@@ -68,6 +72,8 @@ void Scene_Settings::init() {
 	m_texts.push_back(sf::Text(helpText, f, 30));
 	m_texts[3].setPosition(20, m_window.getSize().y - 50);
 	m_texts[3].setColor(sf::Color::Black);
+	m_texts[3].setOutlineColor(sf::Color::White);
+	m_texts[3].setOutlineThickness(1.f);
 
 	for (int i = 0; i < 3; i++) {
 		m_texts[i].setPosition(mx - m_texts[i].getGlobalBounds().width / 2.f, 150 + 150 * i);
@@ -81,6 +87,8 @@ void Scene_Settings::init() {
 	m_volumeText.setString(std::to_string(static_cast<int>(m_game->getVolume())));
 	m_volumeText.setCharacterSize(30);
 	m_volumeText.setFillColor(sf::Color::Black);
+	m_volumeText.setOutlineColor(sf::Color::White);
+	m_volumeText.setOutlineThickness(1.f);
 	m_volumeText.setPosition(mx + m_volumeSlider.getSize().x / 2 + 60, 210);
 
 	// Music toggle
@@ -88,6 +96,8 @@ void Scene_Settings::init() {
 	m_musicToggleText.setString(m_game->getMusic() ? "Music: On" : "Music: Off");
 	m_musicToggleText.setCharacterSize(30);
 	m_musicToggleText.setFillColor(sf::Color::Black);
+	m_musicToggleText.setOutlineColor(sf::Color::White);
+	m_musicToggleText.setOutlineThickness(1.f);
 	m_musicToggleText.setPosition(mx - m_musicToggleText.getGlobalBounds().width / 2, 350);
 
 	// Control scheme toggle
@@ -95,6 +105,8 @@ void Scene_Settings::init() {
 	m_controlSchemeText.setString(m_game->getWASD() ? "Controls: WASD" : "Controls: Arrow Keys");
 	m_controlSchemeText.setCharacterSize(30);
 	m_controlSchemeText.setFillColor(sf::Color::Black);
+	m_controlSchemeText.setOutlineColor(sf::Color::White);
+	m_controlSchemeText.setOutlineThickness(1.f);
 	m_controlSchemeText.setPosition(mx - m_controlSchemeText.getGlobalBounds().width / 2, 500);
 
 }
@@ -146,8 +158,19 @@ void Scene_Settings::sRender() {
 	auto& m_window = m_game->window();
 	// Calculate middle of the screen in X axis
 	auto mx = m_window.getSize().x / 2;
+	// Calculate middle of the screen in Y axis
+	auto my = m_window.getSize().y / 2;
 	// Clear the window with blue
 	m_window.clear(sf::Color(153, 255, 204));
+	
+	backgroundImage.setRepeated(true);
+	sf::Sprite backgroundSprite;
+	backgroundSprite.setTexture(backgroundImage);
+	//backgroundSprite.setPosition(mx, my);
+	//backgroundSprite.setTextureRect(sf::IntRect(0, 0, m_window.getSize().x, m_window.getSize().y));
+	backgroundSprite.setTextureRect(sf::IntRect(0, 0, m_window.getSize().x, m_window.getSize().y));
+	m_window.draw(backgroundSprite);
+
 
 	// Iterate through the text vector and set their respective color and position
 	for (int i = 0; i < 3; i++) {
@@ -157,8 +180,30 @@ void Scene_Settings::sRender() {
 		else {
 			m_texts[i].setColor(sf::Color::White);
 		}
+		if (m_selectedMenuIndex == 0) {
+			m_volumeText.setColor(sf::Color::White);
+		}
+		else{
+			m_volumeText.setColor(sf::Color::Black);
+		}
+		if (m_selectedMenuIndex == 1) {
+			m_musicToggleText.setColor(sf::Color::White);
+		}
+		else {
+			m_musicToggleText.setColor(sf::Color::Black);
+		}
+		if (m_selectedMenuIndex == 2) {
+			m_controlSchemeText.setColor(sf::Color::White);
+		}
+		else {
+			m_controlSchemeText.setColor(sf::Color::Black);
+		}
+		m_texts[i].setOutlineColor(sf::Color::White);
+		m_texts[i].setOutlineThickness(1.f);
 		// Draw the levels text
 		m_window.draw(m_texts[i]);
+
+
 	}
 
 	// Draw the title

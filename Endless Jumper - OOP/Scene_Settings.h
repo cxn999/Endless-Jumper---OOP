@@ -15,9 +15,10 @@ protected:
 	std::vector<std::string> m_menuStrings;	/// vector for the strings 
 	sf::Text m_menuText;					/// text for the menu
 	int m_selectedMenuIndex = 0;			/// is the selected menu index, it makes the index in which we are sitting highlighted
-
+	sf::Texture backgroundImage;			///background image texture
 	/// New UI elements
 	sf::RectangleShape m_volumeSlider;
+	std::vector<sf::Text> m_texts1;
 	sf::Text m_volumeText;
 	sf::Text m_musicToggleText;
 	sf::Text m_controlSchemeText;

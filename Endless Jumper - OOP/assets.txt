@@ -46,6 +46,7 @@ Texture layer73 Assets\Clouds\Clouds8\4.png
 Texture layer74 Assets\Clouds\Clouds8\5.png
 Texture layer75 Assets\Clouds\Clouds8\6.png
 Texture shopBG Assets\Shop\shopBackground.jpg
+Texture settingsBG Assets\Images\space.png
 Font RETROGAMING Assets\Fonts\Retro_Gaming.ttf
 Background 0 0 layer00
 Background 0 1 layer01
